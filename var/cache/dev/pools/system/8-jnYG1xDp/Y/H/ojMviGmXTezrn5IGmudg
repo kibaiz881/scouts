@@ -1,0 +1,3 @@
+<?php //8289b5d5331f7524593a38119d3f464d
+
+return [PHP_INT_MAX, 'images/logo-dark.svg'];

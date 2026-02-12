@@ -1,0 +1,3 @@
+<?php //fea1a9a928cfd08cc1cd7f586c69cd0b
+
+return [PHP_INT_MAX, 'images/brand-light-03.svg'];

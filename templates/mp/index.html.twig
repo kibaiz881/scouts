@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ mpPage }}
+{% endblock %}
+
+{% block body %}
+    {% include 'layout.html.twig' %}
+    <main>
+        <!-- ===== Hero Start ===== -->
+        <section class="gj do ir hj sp jr i pg">
+            <!-- Hero Images -->
+            <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
+                <img src="{{ asset('images/shape-01.svg') }}" alt="shape" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
+                <img src="{{ asset('images/shape-02.svg') }}" alt="shape" class="xc 2xl:ud-block h u p va" />
+                <img src="{{ asset('images/shape-03.svg') }}" alt="shape" class="xc 2xl:ud-block h v w va" />
+                <img src="{{ asset('images/shapehc.png') }}" alt="shape" class="h q r" />
+                <img src="{{ asset('images/scout11.png') }}" alt="Woman" class="h q r ua" />
+            </div>
+
+            <!-- Hero Content -->
+            <div class="bb ze ki xn 2xl:ud-px-0">
+                <div class="tc _o">
+                    <div class="animate_left jn/2">
+                        <h1 class="fk vj zp or kk wm wb">
+                            "
+                            <span style="color:red">
+                                Ireo Mpiandraikitra
+                            </span>
+                            ,ato @ Fivondrondronana"
+                        </h1>
+                        <p class="fq">
+                            "Scout un jour, scout toujours» ! Fondé par l'anglais Robert Stephenson Smyth Baden Powell, le scoutisme est bien plus qu'une simple organisation de jeunesse. Tout au long de sa vie, cet homme s'est pleinement dévoué à transformer celle des jeunes en leur enseignant des valeurs jugées fondamentales selon lui, telles que la fraternité, la loyauté, la foi et le respect de la nature."
+                        </p>
+
+                        <div class="tc tf yo zf mb">
+                            <a href="#!" class="ek jk lk gh gi hi rg ml il vc _d _l">
+                                Mpiandraikitra
+                            </a>
+
+                            <span class="tc sf">
+                                <a href="#!" class="inline-block ek xj kk wm">
+                                    Si vous souhaitez nous contacter : (+261) 34 03 651 11
+                                </a>
+                                <span class="inline-block">
+                                    Si vous avez des questions ou des préoccupations
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ===== Hero End ===== -->
+        
+        <!-- ===== FSM Start ===== -->
+        {% include 'fsmlayout.html.twig' %}
+        <!-- ===== FSM End ===== -->
+    </main>
+    {% include 'footer.html.twig' %}
+{% endblock %}

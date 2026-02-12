@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+          <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="megakit,business,company,agency,multipurpose,modern,bootstrap4">
+        <title>{% block title %}HC - {% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link href="{{asset('./styles/style.css')}}" rel="stylesheet">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode')); $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" :class="{'b eh': darkMode === true}">
+        {% block body %}{% endblock %}
+    </body>
+    {% block script%} 
+        <script>
+            //  Pricing Table
+            const setup = () => {
+            return {
+                isNavOpen: false,
+
+                billPlan: 'monthly',
+
+                plans: [
+                {
+                    name: 'Starter',
+                    price: {
+                    monthly: 29,
+                    annually: 29 * 12 - 199,
+                    },
+                    features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+                },
+                {
+                    name: 'Growth Plan',
+                    price: {
+                    monthly: 59,
+                    annually: 59 * 12 - 100,
+                    },
+                    features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+                },
+                {
+                    name: 'Business',
+                    price: {
+                    monthly: 139,
+                    annually: 139 * 12 - 100,
+                    },
+                    features: ['400 GB Storaget', 'Unlimited Photos & Videos', 'Exclusive Support'],
+                },
+                ],
+            };
+            };
+        </script>
+        <script defer src="{{asset('bundle.js')}}"></script>
+    {% endblock %}
+</html>

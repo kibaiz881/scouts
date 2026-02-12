@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Actualité du jours{% endblock %}
+
+{# {% block content %}
+    {% for post in posts %}
+        <div class="example-wrapper">
+        <h1>{{ post.title }}✅ and id : {{post.id}}</h1>
+            {{post.content}}
+            {{post.category.name}}
+
+    </div>
+    {% endfor %}
+        <ul style="...">
+            {% if totalItemsPost > 10 %}
+                {% for page in 1..noOfPages %}
+                    <li style="display: inline-block"> 
+                    {% if page == currentPage %}
+                        <span style="color: red">{{page}}</span>
+                    {% else %}
+                        <code><a href="{{path('app_blog', {'page': page})}}">{{page}}</a></code>
+                    {% endif %}
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    
+{% endblock %} #}
