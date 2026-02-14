@@ -73,7 +73,7 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Register";
+        yield "Helder Camara Register";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -170,7 +170,7 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Helder Camara Register{% endblock %}
 
 {% block body %}
     <h1>Register</h1>

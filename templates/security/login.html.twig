@@ -1,36 +1,90 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}
+   Helder Camara Log in!
+{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <!-- ===== Header Start ===== -->
+    {% include "layout.html.twig" %}
+    <!-- ===== Header End ===== -->
+    <main>
+        <!-- ===== SignIn Form Start ===== -->
+        <section class="i pg fh rm ki xn vq gj qp gr hj rp hr">
+            <!-- Bg Shapes -->
+            <img src="{{ asset('images/shape-06.svg') }}" alt="Shape" class="h j k" />
+            <img src="{{ asset('images/shape-03.svg') }}" alt="Shape" class="h l m" />
+            <img src="{{ asset('images/shape-17.svg') }}" alt="Shape" class="h n o" />
+            <img src="{{ asset('images/shape-18.svg') }}" alt="Shape" class="h p q" />
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ logout_path() }}">Logout</a>
-        </div>
-    {% endif %}
+            <div class="animate_top bb af i va sg hh sm vk xm yi _n jp hi ao kp">
+                <!-- Bg Border -->
+                <div class="rj">
+                    <h2 class="ek ck kk wm xb">
+                        Connexion
+                    </h2>
+                    <p>
+                        bienvenue sur votre espace de connexion, veuillez entrer vos identifiants pour accéder à votre compte.
+                    </p>
+                </div>
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-    <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
-        <input type="hidden" name="_csrf_token"
-            value="{{ csrf_token('authenticate') }}">
-        <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" name="_remember_me"> Remember me
-        </label>
-    </div>
+                <form class="sb" method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    {% endif %}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
-<p>Don't have an account? <a href="{{ path('app_register') }}">Register here</a>.</p>
-{% endblock %}
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as
+                            {{ app.user.userIdentifier }}
+                            ,
+                            <a href="{{ logout_path() }}">
+                                Logout
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="wb">
+                        <label class="rc kk wm vb" for="username">
+                            Email
+                        </label>
+                        <input type="email" name="email" value="{{ last_username }}" id="inputEmail" placeholder="example@gmail.com" class="vd hh rg zk _g ch hm dm fm pl/50 xi mi sm xm pm dn/40" />
+                    </div>
+
+                    <div class="wb">
+                        <label class="rc kk wm vb" for="password">
+                            Password
+                        </label>
+                        <input type="password" name="password" id="inputPassword" placeholder="**************" class="vd hh rg zk _g ch hm dm fm pl/50 xi mi sm xm pm dn/40" />
+                    </div>
+                    <input type="hidden" name="_csrf_token" data-controller="csrf-protection" value="{{ csrf_token('authenticate') }}">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="_remember_me">
+                                        Remember me
+                                    </label>
+                                </div>
+
+                                <button class="vd rj ek rc rg gh lk ml il _l gi hi" type="submit">
+                                    Sign In
+                                </button>
+
+                                <p class="sj hk xj rj ob">
+                                    Don't have an account?
+                                    <a class="mk" href="{{ path('app_register') }}">
+                                        Sign Up
+                                    </a>
+                                </p>
+                            </form>
+                        </div>
+                    </section>
+                <!-- ===== SignIn Form End ===== -->
+                </main>
+                <!-- ===== FSM Start ===== -->
+                {% include 'fsmlayout.html.twig' %}
+                <!-- ===== FSM End ===== -->
+                {% include 'footer.html.twig' %}
+            {% endblock %}
+            

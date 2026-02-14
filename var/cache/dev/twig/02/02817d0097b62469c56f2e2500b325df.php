@@ -73,7 +73,7 @@ class __TwigTemplate_0c8ef5430daaff89e87cef374291858f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Hello AdminController!";
+        yield "Helder camara Administrator";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -99,17 +99,13 @@ class __TwigTemplate_0c8ef5430daaff89e87cef374291858f extends Template
         // line 6
         yield "
 <div class=\"example-wrapper\">
-";
-        // line 8
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "user", [], "any", false, false, false, 8));
-        yield "
     <H1>Admin Dashboard</H1>
         <h2>Welcome to the admin dashboard! ";
-        // line 10
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "user", [], "any", false, false, false, 10), "email", [], "any", false, false, false, 10), "html", null, true);
+        // line 9
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9), "email", [], "any", false, false, false, 9), "html", null, true);
         yield "</h2>
     <a href=\"";
-        // line 11
+        // line 10
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">Logout</a>
 </div>
@@ -144,19 +140,18 @@ class __TwigTemplate_0c8ef5430daaff89e87cef374291858f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  113 => 11,  109 => 10,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  109 => 10,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Helder camara Administrator{% endblock %}
 
 {% block body %}
 
 <div class=\"example-wrapper\">
-{{ dump(app.user) }}
     <H1>Admin Dashboard</H1>
         <h2>Welcome to the admin dashboard! {{ app.user.email }}</h2>
     <a href=\"{{ path('app_logout') }}\">Logout</a>
