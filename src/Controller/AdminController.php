@@ -13,7 +13,6 @@ final class AdminController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function index(): Response
     {
-        
         // At this point, only authenticated users with ROLE_ADMIN can access
         return $this->render('admin/index.html.twig');
     }
