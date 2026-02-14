@@ -35,6 +35,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         array (
             'Webmozart\\Assert\\' => 17,
         ),
+        'V' =>
+        array (
+            'Vich\\UploaderBundle\\' => 20,
+        ),
         'T' =>
         array (
             'Twig\\Extra\\TwigExtraBundle\\' => 27,
@@ -115,6 +119,8 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
             'Symfony\\Bridge\\Twig\\' => 20,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'SymfonyCasts\\Bundle\\VerifyEmail\\' => 32,
+            'SymfonyCasts\\Bundle\\ResetPassword\\' => 34,
         ),
         'P' =>
         array (
@@ -130,6 +136,7 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'M' =>
         array (
             'Monolog\\' => 8,
+            'Metadata\\' => 9,
         ),
         'E' =>
         array (
@@ -175,6 +182,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'Webmozart\\Assert\\' =>
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Vich\\UploaderBundle\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/vich/uploader-bundle/src',
         ),
         'Twig\\Extra\\TwigExtraBundle\\' =>
         array (
@@ -476,6 +487,14 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
         ),
+        'SymfonyCasts\\Bundle\\VerifyEmail\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/symfonycasts/verify-email-bundle/src',
+        ),
+        'SymfonyCasts\\Bundle\\ResetPassword\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/symfonycasts/reset-password-bundle/src',
+        ),
         'Psr\\Log\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -511,6 +530,10 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'Monolog\\' =>
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Metadata\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/jms/metadata/src',
         ),
         'Egulias\\EmailValidator\\' =>
         array (

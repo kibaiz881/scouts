@@ -149,7 +149,7 @@
                             <ul>
                                 {% for category in categories %}
                                     <li class="ql vb du-ease-in-out il xl">
-                                        <a href="{{ path('app_actualite_show', {category: category.id}) }}" class="rc kk wm">
+                                        <a href="{{ path('app_actualite_category', {category: category.id}) }}" class="rc kk wm">
                                             {{ category.name }}
                                         </a>
                                     </li>

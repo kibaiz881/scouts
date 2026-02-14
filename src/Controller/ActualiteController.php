@@ -52,23 +52,25 @@ final class ActualiteController extends AbstractController
         ]);
     }
 
-    #[Route('/actualite/show/{category}', name: 'app_actualite_show')]
-    public function category(Category $category, PostRepository $postRepository): Response
+    #[Route('/actualite/category/{category}', name: 'app_actualite_category')]
+    public function category(Category $category, PostRepository $postRepository, CategoryRepository $categoryRepository): Response
     {
         $posts = $postRepository->createQueryBuilder('p')
-            ->innerJoin('p.categories', 'c')
+            ->innerJoin('p.category', 'c') // correction ici
             ->andWhere('c = :category')
             ->andWhere('p.isPublished = :published')
             ->setParameter('category', $category)
             ->setParameter('published', true)
-            ->orderBy('p.createdAt', 'DESC')
+            ->orderBy('p.postedAt', 'DESC') // correction ici
             ->getQuery()
             ->getResult();
 
-        return $this->render('actualite/show.html.twig', [
-            'actu' => 'Actualité du jour',
-            'category' => $category,
-            'posts' => $posts,
+        return $this->render('actualite/category.html.twig', [
+            "actu" => $category->getName(), 
+            'post' => $posts,
+            'categories' => $category,
+            'categorie' => $categoryRepository->findAll(),
+            'recentPosts' => $postRepository->findBy(['isPublished' => true], ['postedAt' => 'DESC'], 5),
         ]);
     }
 }

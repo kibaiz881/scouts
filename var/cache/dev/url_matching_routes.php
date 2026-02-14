@@ -15,12 +15,17 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/admin' => [[['_route' => 'app_admin', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/l/v/t' => [[['_route' => 'app_l_v_t', '_controller' => 'App\\Controller\\LVTController::index'], null, null, null, false, false, null]],
         '/m/p' => [[['_route' => 'app_m_p', '_controller' => 'App\\Controller\\MPController::index'], null, null, null, false, false, null]],
         '/m/p/d/l' => [[['_route' => 'app_m_p_d_l', '_controller' => 'App\\Controller\\MPDLController::index'], null, null, null, false, false, null]],
         '/m/p/j' => [[['_route' => 'app_m_p_j', '_controller' => 'App\\Controller\\MPJController::index'], null, null, null, false, false, null]],
         '/m/p/k' => [[['_route' => 'app_m_p_k', '_controller' => 'App\\Controller\\MPKController::index'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/user' => [[['_route' => 'app_user', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -44,9 +49,12 @@ return [
                 .')'
                 .'|/actualite(?'
                     .'|(?:/(\\d+)(?:/(\\d+))?)?(*:237)'
-                    .'|/show/([^/]++)(*:259)'
+                    .'|/(?'
+                        .'|show/([^/]++)(*:262)'
+                        .'|category/([^/]++)(*:287)'
+                    .')'
                 .')'
-                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:295)'
+                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:324)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -59,8 +67,9 @@ return [
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         237 => [[['_route' => 'app_actualite', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\ActualiteController::index'], ['page', 'itemsPerPage'], null, null, false, true, null]],
-        259 => [[['_route' => 'app_actualite_show', '_controller' => 'App\\Controller\\ActualiteController::show'], ['post'], null, null, false, true, null]],
-        295 => [
+        262 => [[['_route' => 'app_actualite_show', '_controller' => 'App\\Controller\\ActualiteController::show'], ['post'], null, null, false, true, null]],
+        287 => [[['_route' => 'app_actualite_category', '_controller' => 'App\\Controller\\ActualiteController::category'], ['category'], null, null, false, true, null]],
+        324 => [
             [['_route' => 'app_blog', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\BlogController::index'], ['page', 'itemsPerPage'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
