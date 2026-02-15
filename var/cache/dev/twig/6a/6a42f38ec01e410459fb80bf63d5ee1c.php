@@ -73,7 +73,9 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Helder Camara Register";
+        // line 4
+        yield "    Helder Camara Register
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +85,7 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
         yield from [];
     }
 
-    // line 5
+    // line 7
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,43 +98,108 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "    <h1>Register</h1>
-
-    ";
         // line 8
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 8, $this->source); })()), 'errors');
+        yield "    ";
+        yield from $this->load("layout.html.twig", 8)->unwrap()->yield($context);
+        // line 9
         yield "
+    <main>
+        <section class=\"i pg fh rm ki xn vq gj qp gr hj rp hr\">
 
-    ";
-        // line 10
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 10, $this->source); })()), 'form_start');
-        yield "
-        ";
-        // line 11
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 11, $this->source); })()), "email", [], "any", false, false, false, 11), 'row');
-        yield "
-        ";
-        // line 12
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 12, $this->source); })()), "plainPassword", [], "any", false, false, false, 12), 'row', ["label" => "Password"]);
+            <!-- Bg Shapes -->
+            <img src=\"";
         // line 14
-        yield "
-        ";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-06.svg"), "html", null, true);
+        yield "\" alt=\"Shape\" class=\"h j k\" />
+            <img src=\"";
         // line 15
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 15, $this->source); })()), "agreeTerms", [], "any", false, false, false, 15), 'row');
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-03.svg"), "html", null, true);
+        yield "\" alt=\"Shape\" class=\"h l m\" />
+            <img src=\"";
+        // line 16
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-17.svg"), "html", null, true);
+        yield "\" alt=\"Shape\" class=\"h n o\" />
+            <img src=\"";
+        // line 17
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-18.svg"), "html", null, true);
+        yield "\" alt=\"Shape\" class=\"h p q\" />
+
+            <div class=\"animate_top bb af i va sg hh sm vk xm yi _n jp hi ao kp\">
+                
+                ";
+        // line 21
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 21, $this->source); })()), 'form_start', ["attr" => ["class" => "sb"]]);
+        yield "
+                
+                ";
+        // line 23
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 23, $this->source); })()), 'errors');
         yield "
 
-        <button type=\"submit\" class=\"btn\">Register</button>
-    ";
-        // line 18
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 18, $this->source); })()), 'form_end');
+                <div class=\"rj\">
+                    <h2 class=\"ek ck kk wm xb\">
+                        Inscription
+                    </h2>
+                    <p>
+                        Bienvenue sur votre espace d'inscription, veuillez entrer vos identifiants pour créer votre compte.
+                    </p>
+                </div>
+
+                <div class=\"wb\">
+                    ";
+        // line 35
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 35, $this->source); })()), "username", [], "any", false, false, false, 35), 'row');
+        yield "
+                </div>
+
+                <div class=\"wb\">
+                    ";
+        // line 39
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 39, $this->source); })()), "email", [], "any", false, false, false, 39), 'row');
+        yield "
+                </div>
+
+                <div class=\"wb\">
+                    ";
+        // line 43
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 43, $this->source); })()), "plainPassword", [], "any", false, false, false, 43), 'row', ["label" => "Password"]);
+        // line 45
+        yield "
+                </div>
+
+                <div class=\"wb\">
+                    ";
+        // line 49
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 49, $this->source); })()), "agreeTerms", [], "any", false, false, false, 49), 'row');
+        yield "
+                </div>
+
+                <button class=\"vd rj ek rc rg gh lk ml il _l gi hi\" type=\"submit\">
+                    Sign Up
+                </button>
+
+                ";
+        // line 56
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 56, $this->source); })()), 'form_end');
         yield "
 
-    <p>Already have an account? <a href=\"";
-        // line 20
+                <p class=\"sj hk xj rj ob\">
+                    Already have an account?
+                    <a class=\"mk\" href=\"";
+        // line 60
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        yield "\">Login here</a>.</p>
-";
+        yield "\">
+                        Sign In
+                    </a>
+                </p>
+
+            </div>
+        </section>
+    </main>
+
+    ";
+        // line 69
+        yield from $this->load("footer.html.twig", 69)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -163,31 +230,80 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  133 => 20,  128 => 18,  122 => 15,  119 => 14,  117 => 12,  113 => 11,  109 => 10,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  202 => 69,  190 => 60,  183 => 56,  173 => 49,  167 => 45,  165 => 43,  158 => 39,  151 => 35,  136 => 23,  131 => 21,  124 => 17,  120 => 16,  116 => 15,  112 => 14,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Helder Camara Register{% endblock %}
+{% block title %}
+    Helder Camara Register
+{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    {% include \"layout.html.twig\" %}
 
-    {{ form_errors(registrationForm) }}
+    <main>
+        <section class=\"i pg fh rm ki xn vq gj qp gr hj rp hr\">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+            <!-- Bg Shapes -->
+            <img src=\"{{ asset('images/shape-06.svg') }}\" alt=\"Shape\" class=\"h j k\" />
+            <img src=\"{{ asset('images/shape-03.svg') }}\" alt=\"Shape\" class=\"h l m\" />
+            <img src=\"{{ asset('images/shape-17.svg') }}\" alt=\"Shape\" class=\"h n o\" />
+            <img src=\"{{ asset('images/shape-18.svg') }}\" alt=\"Shape\" class=\"h p q\" />
 
-        <button type=\"submit\" class=\"btn\">Register</button>
-    {{ form_end(registrationForm) }}
+            <div class=\"animate_top bb af i va sg hh sm vk xm yi _n jp hi ao kp\">
+                
+                {{ form_start(registrationForm, {'attr': {'class': 'sb'}}) }}
+                
+                {{ form_errors(registrationForm) }}
 
-    <p>Already have an account? <a href=\"{{ path('app_login') }}\">Login here</a>.</p>
+                <div class=\"rj\">
+                    <h2 class=\"ek ck kk wm xb\">
+                        Inscription
+                    </h2>
+                    <p>
+                        Bienvenue sur votre espace d'inscription, veuillez entrer vos identifiants pour créer votre compte.
+                    </p>
+                </div>
+
+                <div class=\"wb\">
+                    {{ form_row(registrationForm.username) }}
+                </div>
+
+                <div class=\"wb\">
+                    {{ form_row(registrationForm.email) }}
+                </div>
+
+                <div class=\"wb\">
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+                </div>
+
+                <div class=\"wb\">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
+
+                <button class=\"vd rj ek rc rg gh lk ml il _l gi hi\" type=\"submit\">
+                    Sign Up
+                </button>
+
+                {{ form_end(registrationForm) }}
+
+                <p class=\"sj hk xj rj ob\">
+                    Already have an account?
+                    <a class=\"mk\" href=\"{{ path('app_login') }}\">
+                        Sign In
+                    </a>
+                </p>
+
+            </div>
+        </section>
+    </main>
+
+    {% include 'footer.html.twig' %}
 {% endblock %}
 ", "registration/register.html.twig", "C:\\Users\\prodigy-188\\Music\\projet1\\templates\\registration\\register.html.twig");
     }

@@ -25,7 +25,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var list<string> The user roles
      */
     #[ORM\Column]
-    private array $roles = [];
+    private array $roles = ["ROLE_USER"];
 
     /**
      * @var string The hashed password
@@ -33,9 +33,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $username = null;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private \DateTimeImmutable $createdAt;
+
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): static
+    {
+        $this->username = $username;
+
+        return $this;
     }
 
     public function getEmail(): ?string
@@ -98,13 +117,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
+     * @see UserInterface
+     */
+    public function eraseCredentials(): void
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    /**
      * Ensure the session doesn't contain actual password hashes by CRC32C-hashing them, as supported since Symfony 7.3.
      */
     public function __serialize(): array
     {
-        $data = (array) $this;
-        $data["\0".self::class."\0password"] = hash('crc32c', $this->password);
+        return [$this->id, $this->email, $this->roles];
+    }
 
-        return $data;
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
+
+    public function getCreatedAt(): \DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    {
+        $this->createdAt = $createdAt;
+        return $this;
     }
 }

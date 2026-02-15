@@ -18,6 +18,23 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+        ->add('username', null, [
+                'attr' => [
+                    'placeholder' => 'Choose a unique username',
+                    'class' => 'vd hh rg zk _g ch hm dm fm pl/50 xi mi sm xm pm dn/40',
+                ],
+                'constraints' => [
+                    new NotBlank(
+                        message: 'Please enter a username',
+                    ),
+                    new Length(
+                        min: 3,
+                        minMessage: 'Your username should be at least {{ limit }} characters',
+                        max: 180,
+                        maxMessage: 'Your username should not exceed {{ limit }} characters',
+                    ),
+                ],
+            ])
             ->add('email', null, [
                 'attr' => [
                     'placeholder' => 'Enter your email address',
@@ -31,13 +48,17 @@ class RegistrationFormType extends AbstractType
                         max: 180,
                         maxMessage: 'Your email should not exceed {{ limit }} characters',
                     ),
-                    
+
                 ],
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
+                'attr' => [
+                    'name' => "_remember_me",
+                    'class' => 'mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2'
+                ],
                 'constraints' => [
-                    new IsTrue(
+                    new IsTrue( 
                         message: 'You should agree to our terms.',
                     ),
                 ],
