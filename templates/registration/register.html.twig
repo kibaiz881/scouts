@@ -17,9 +17,9 @@
             <img src="{{ asset('images/shape-18.svg') }}" alt="Shape" class="h p q" />
 
             <div class="animate_top bb af i va sg hh sm vk xm yi _n jp hi ao kp">
-                
-                {{ form_start(registrationForm, {'attr': {'class': 'sb'}}) }}
-                
+
+                {{ form_start(registrationForm, {'attr': {'class': 'sb' }}
+                ) }}
                 {{ form_errors(registrationForm) }}
 
                 <div class="rj">
@@ -44,7 +44,11 @@
                         label: 'Password'
                     }) }}
                 </div>
-
+                <div class="wb">
+                    {{ form_row(registrationForm.profilePictureFile, {
+                        label: 'Profile Picture (optional)'
+                    }) }}
+                </div>
                 <div class="wb">
                     {{ form_row(registrationForm.agreeTerms) }}
                 </div>

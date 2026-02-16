@@ -12,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -49,6 +50,12 @@ class RegistrationFormType extends AbstractType
                         maxMessage: 'Your email should not exceed {{ limit }} characters',
                     ),
 
+                ],
+            ])
+            ->add('profilePictureFile', VichImageType::class, [
+                'required' => false,
+                'attr' => [
+                    'class' => 'vd hh rg zk _g ch hm dm fm pl/50 xi mi sm xm pm dn/40',
                 ],
             ])
             ->add('agreeTerms', CheckboxType::class, [

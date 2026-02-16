@@ -18,8 +18,8 @@ class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
     public function register(
-        Request $request, 
-        UserPasswordHasherInterface $userPasswordHasher, 
+        Request $request,
+        UserPasswordHasherInterface $userPasswordHasher,
         UserAuthenticatorInterface $userAuthenticator,
         EntityManagerInterface $entityManager,
         AppAuthenticator $appAuthenticator
@@ -43,7 +43,12 @@ class RegistrationController extends AbstractController
                 $userPasswordHasher->hashPassword($user, $plainPassword)
             );
             $user->setRoles(['ROLE_ADMIN']);
-
+            $user->setEmail($form->get('email')->getData());
+            $user->setUsername($form->get('username')->getData());
+            $user->setCreatedAt(new \DateTimeImmutable());
+            $profilePictureFile = $form->get('profilePictureFile')->getData();
+            $user->setProfilePictureFile($profilePictureFile);
+            $user->setProfilePictureName($profilePictureFile ? $profilePictureFile->getClientOriginalName() : null);
             $entityManager->persist($user);
             $entityManager->flush();
 

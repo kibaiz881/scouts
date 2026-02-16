@@ -104,8 +104,25 @@ class __TwigTemplate_0c8ef5430daaff89e87cef374291858f extends Template
         // line 9
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9), "email", [], "any", false, false, false, 9), "html", null, true);
         yield "</h2>
-    <a href=\"";
-        // line 10
+
+
+    <div>
+        ";
+        // line 13
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "profilePictureName", [], "any", false, false, false, 13)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 14
+            yield "            <img src=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14), "profilePictureName", [], "any", false, false, false, 14))), "html", null, true);
+            yield "\" 
+                 alt=\"Photo de profil\" 
+                 width=\"120\">
+        ";
+        }
+        // line 18
+        yield "    </div>
+
+        <a href=\"";
+        // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\">Logout</a>
 </div>
@@ -140,7 +157,7 @@ class __TwigTemplate_0c8ef5430daaff89e87cef374291858f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  109 => 10,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  126 => 20,  122 => 18,  114 => 14,  112 => 13,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -154,7 +171,17 @@ class __TwigTemplate_0c8ef5430daaff89e87cef374291858f extends Template
 <div class=\"example-wrapper\">
     <H1>Admin Dashboard</H1>
         <h2>Welcome to the admin dashboard! {{ app.user.email }}</h2>
-    <a href=\"{{ path('app_logout') }}\">Logout</a>
+
+
+    <div>
+        {% if app.user.profilePictureName %}
+            <img src=\"{{ asset('images/profiles/' ~ app.user.profilePictureName) }}\" 
+                 alt=\"Photo de profil\" 
+                 width=\"120\">
+        {% endif %}
+    </div>
+
+        <a href=\"{{ path('app_logout') }}\">Logout</a>
 </div>
 {% endblock %}
 ", "admin/index.html.twig", "C:\\Users\\prodigy-188\\Music\\projet1\\templates\\admin\\index.html.twig");

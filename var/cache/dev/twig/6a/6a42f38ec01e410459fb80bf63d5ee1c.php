@@ -125,12 +125,12 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
         yield "\" alt=\"Shape\" class=\"h p q\" />
 
             <div class=\"animate_top bb af i va sg hh sm vk xm yi _n jp hi ao kp\">
-                
+
                 ";
         // line 21
         yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 21, $this->source); })()), 'form_start', ["attr" => ["class" => "sb"]]);
+        // line 22
         yield "
-                
                 ";
         // line 23
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 23, $this->source); })()), 'errors');
@@ -166,11 +166,17 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
         // line 45
         yield "
                 </div>
-
                 <div class=\"wb\">
                     ";
-        // line 49
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 49, $this->source); })()), "agreeTerms", [], "any", false, false, false, 49), 'row');
+        // line 48
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 48, $this->source); })()), "profilePictureFile", [], "any", false, false, false, 48), 'row', ["label" => "Profile Picture (optional)"]);
+        // line 50
+        yield "
+                </div>
+                <div class=\"wb\">
+                    ";
+        // line 53
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 53, $this->source); })()), "agreeTerms", [], "any", false, false, false, 53), 'row');
         yield "
                 </div>
 
@@ -179,14 +185,14 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
                 </button>
 
                 ";
-        // line 56
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 56, $this->source); })()), 'form_end');
+        // line 60
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 60, $this->source); })()), 'form_end');
         yield "
 
                 <p class=\"sj hk xj rj ob\">
                     Already have an account?
                     <a class=\"mk\" href=\"";
-        // line 60
+        // line 64
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         yield "\">
                         Sign In
@@ -198,8 +204,8 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
     </main>
 
     ";
-        // line 69
-        yield from $this->load("footer.html.twig", 69)->unwrap()->yield($context);
+        // line 73
+        yield from $this->load("footer.html.twig", 73)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -230,7 +236,7 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  202 => 69,  190 => 60,  183 => 56,  173 => 49,  167 => 45,  165 => 43,  158 => 39,  151 => 35,  136 => 23,  131 => 21,  124 => 17,  120 => 16,  116 => 15,  112 => 14,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  208 => 73,  196 => 64,  189 => 60,  179 => 53,  174 => 50,  172 => 48,  167 => 45,  165 => 43,  158 => 39,  151 => 35,  136 => 23,  133 => 22,  131 => 21,  124 => 17,  120 => 16,  116 => 15,  112 => 14,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -254,9 +260,9 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
             <img src=\"{{ asset('images/shape-18.svg') }}\" alt=\"Shape\" class=\"h p q\" />
 
             <div class=\"animate_top bb af i va sg hh sm vk xm yi _n jp hi ao kp\">
-                
-                {{ form_start(registrationForm, {'attr': {'class': 'sb'}}) }}
-                
+
+                {{ form_start(registrationForm, {'attr': {'class': 'sb' }}
+                ) }}
                 {{ form_errors(registrationForm) }}
 
                 <div class=\"rj\">
@@ -281,7 +287,11 @@ class __TwigTemplate_5e45cd022822d365239b9b7810e62c9f extends Template
                         label: 'Password'
                     }) }}
                 </div>
-
+                <div class=\"wb\">
+                    {{ form_row(registrationForm.profilePictureFile, {
+                        label: 'Profile Picture (optional)'
+                    }) }}
+                </div>
                 <div class=\"wb\">
                     {{ form_row(registrationForm.agreeTerms) }}
                 </div>
