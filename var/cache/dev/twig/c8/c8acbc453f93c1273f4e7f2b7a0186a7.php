@@ -1,0 +1,293 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\CoreExtension;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+use Twig\TemplateWrapper;
+
+/* layout.html.twig */
+class __TwigTemplate_1c93c1de4d32f84011237fae1397a9d2 extends Template
+{
+    private Source $source;
+    /**
+     * @var array<string, Template>
+     */
+    private array $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "layout.html.twig"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "layout.html.twig"));
+
+        // line 1
+        yield "  <!-- ===== Header Start ===== -->
+  <header class=\"g s r vd ya cj\" :class=\"{ 'hh sm _k dj bl ll' : stickyMenu }\"
+    @scroll.window=\"stickyMenu = (window.pageYOffset > 20) ? true : false\">
+    <div class=\"bb ze ki xn 2xl:ud-px-0 oo wf yf i\">
+      <div class=\"vd to/4 tc wf yf\">
+        <a href=\"";
+        // line 6
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\">
+          <img class=\"om\" src=\"";
+        // line 7
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/hc.png"), "html", null, true);
+        yield "\" alt=\"Logo Light\" />
+          <img class=\"xc nm\" src=\"";
+        // line 8
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/hc.png"), "html", null, true);
+        yield "\" alt=\"Logo Dark\" />
+        </a>
+
+        <!-- Hamburger Toggle BTN -->
+        <button class=\"po rc\" @click=\"navigationOpen = !navigationOpen\">
+          <span class=\"rc i pf re pd\">
+            <span class=\"du-block h q vd yc\">
+              <span class=\"rc i r s eh um tg te rd eb ml jl dl\" :class=\"{ 'ue el': !navigationOpen }\"></span>
+              <span class=\"rc i r s eh um tg te rd eb ml jl fl\" :class=\"{ 'ue qr': !navigationOpen }\"></span>
+              <span class=\"rc i r s eh um tg te rd eb ml jl gl\" :class=\"{ 'ue hl': !navigationOpen }\"></span>
+            </span>
+            <span class=\"du-block h q vd yc lf\">
+              <span class=\"rc eh um tg ml jl el h na r ve yc\" :class=\"{ 'sd dl': !navigationOpen }\"></span>
+              <span class=\"rc eh um tg ml jl qr h s pa vd rd\" :class=\"{ 'sd rr': !navigationOpen }\"></span>
+            </span>
+          </span>
+        </button>
+        <!-- Hamburger Toggle BTN -->
+      </div>
+
+      <div class=\"vd wo/4 sd qo f ho oo wf yf\" :class=\"{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }\">
+        <nav>
+          <ul class=\"tc _o sf yo cg ep\">
+            <li><a href=\"";
+        // line 31
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        yield "\" class=\"xl\" :class=\"{ 'mk': page === 'home' }\">Home</a></li>
+            <li><a href=\"";
+        // line 32
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite");
+        yield "#features\" class=\"xl\">Actualité</a></li>
+            <li class=\"c i\" x-data=\"{ dropdown: false }\">
+              <a href=\"#!\" class=\"xl tc wf yf bg\" @click.prevent=\"dropdown = !dropdown\"
+                :class=\"{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }\">
+                Pages
+
+                <svg :class=\"{ 'wh': dropdown }\" class=\"th mm we fd pf\" xmlns=\"http://www.w3.org/2000/svg\"
+                  viewBox=\"0 0 512 512\">
+                  <path
+                    d=\"M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z\" />
+                </svg>
+              </a>
+
+              <!-- Dropdown Start -->
+              <ul class=\"a\" :class=\"{ 'tc': dropdown }\">
+                <li><a href=\"";
+        // line 47
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_l_v_t");
+        yield "\" class=\"xl\" :class=\"{ 'mk': page === 'blog-grid' }\">Lovitao</a></li>
+                <li><a href=\"";
+        // line 48
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_m_p_j");
+        yield "\" class=\"xl\" :class=\"{ 'mk': page === 'blog-single' }\">Mpianjoria</a></li>
+                <li><a href=\"";
+        // line 49
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_m_p_k");
+        yield "\" class=\"xl\" :class=\"{ 'mk': page === 'signin' }\">Mpamakilay</a></li>
+                <li><a href=\"";
+        // line 50
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_m_p_d_l");
+        yield "\" class=\"xl\" :class=\"{ 'mk': page === 'signup' }\">Mpiandalana</a></li>
+                <li><a href=\"";
+        // line 51
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_m_p");
+        yield "\" class=\"xl\" :class=\"{ 'mk': page === '404' }\">Mpiandrakitra</a></li>
+              </ul>
+              <!-- Dropdown End -->
+            </li>
+            <li><a href=\"index.html#support\" class=\"xl\">Support</a></li>
+          </ul>
+        </nav>
+
+        <div class=\"tc wf ig pb no\">
+          <div class=\"pc h io pa ra\" :class=\"navigationOpen ? '!-ud-visible' : 'd'\">
+            <label class=\"rc ab i\">
+              <input type=\"checkbox\" :value=\"darkMode\" @change=\"darkMode = !darkMode\" class=\"pf vd yc uk h r za ab\" />
+              <!-- Icon Sun -->
+              <svg :class=\"{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }\" class=\"th om\" width=\"25\"
+                height=\"25\" viewBox=\"0 0 25 25\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
+                <path
+                  d=\"M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z\"
+                  fill=\"\" />
+              </svg>
+              <!-- Icon Sun -->
+              <img class=\"xc nm\" src=\"";
+        // line 71
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/icon-moon.svg"), "html", null, true);
+        yield "\" alt=\"Moon\" />
+            </label>
+          </div>
+
+          <a href=\"";
+        // line 75
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin");
+        yield "\" :class=\"{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }\"
+            class=\"ek pk xl\">Sign In</a>
+          <a href=\"";
+        // line 77
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        yield "\" :class=\"{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }\"
+            class=\"lk gh dk rg tc wf xf _l gi hi\">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Header End ===== -->
+";
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        yield from [];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getTemplateName(): string
+    {
+        return "layout.html.twig";
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function isTraitable(): bool
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    public function getDebugInfo(): array
+    {
+        return array (  162 => 77,  157 => 75,  150 => 71,  127 => 51,  123 => 50,  119 => 49,  115 => 48,  111 => 47,  93 => 32,  89 => 31,  63 => 8,  59 => 7,  55 => 6,  48 => 1,);
+    }
+
+    public function getSourceContext(): Source
+    {
+        return new Source("  <!-- ===== Header Start ===== -->
+  <header class=\"g s r vd ya cj\" :class=\"{ 'hh sm _k dj bl ll' : stickyMenu }\"
+    @scroll.window=\"stickyMenu = (window.pageYOffset > 20) ? true : false\">
+    <div class=\"bb ze ki xn 2xl:ud-px-0 oo wf yf i\">
+      <div class=\"vd to/4 tc wf yf\">
+        <a href=\"{{path('app_home')}}\">
+          <img class=\"om\" src=\"{{asset('images/hc.png')}}\" alt=\"Logo Light\" />
+          <img class=\"xc nm\" src=\"{{asset('images/hc.png')}}\" alt=\"Logo Dark\" />
+        </a>
+
+        <!-- Hamburger Toggle BTN -->
+        <button class=\"po rc\" @click=\"navigationOpen = !navigationOpen\">
+          <span class=\"rc i pf re pd\">
+            <span class=\"du-block h q vd yc\">
+              <span class=\"rc i r s eh um tg te rd eb ml jl dl\" :class=\"{ 'ue el': !navigationOpen }\"></span>
+              <span class=\"rc i r s eh um tg te rd eb ml jl fl\" :class=\"{ 'ue qr': !navigationOpen }\"></span>
+              <span class=\"rc i r s eh um tg te rd eb ml jl gl\" :class=\"{ 'ue hl': !navigationOpen }\"></span>
+            </span>
+            <span class=\"du-block h q vd yc lf\">
+              <span class=\"rc eh um tg ml jl el h na r ve yc\" :class=\"{ 'sd dl': !navigationOpen }\"></span>
+              <span class=\"rc eh um tg ml jl qr h s pa vd rd\" :class=\"{ 'sd rr': !navigationOpen }\"></span>
+            </span>
+          </span>
+        </button>
+        <!-- Hamburger Toggle BTN -->
+      </div>
+
+      <div class=\"vd wo/4 sd qo f ho oo wf yf\" :class=\"{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }\">
+        <nav>
+          <ul class=\"tc _o sf yo cg ep\">
+            <li><a href=\"{{path('app_home')}}\" class=\"xl\" :class=\"{ 'mk': page === 'home' }\">Home</a></li>
+            <li><a href=\"{{path('app_actualite')}}#features\" class=\"xl\">Actualité</a></li>
+            <li class=\"c i\" x-data=\"{ dropdown: false }\">
+              <a href=\"#!\" class=\"xl tc wf yf bg\" @click.prevent=\"dropdown = !dropdown\"
+                :class=\"{ 'mk': page === 'blog-grid' || page === 'blog-single' || page === 'signin' || page === 'signup' || page === '404' }\">
+                Pages
+
+                <svg :class=\"{ 'wh': dropdown }\" class=\"th mm we fd pf\" xmlns=\"http://www.w3.org/2000/svg\"
+                  viewBox=\"0 0 512 512\">
+                  <path
+                    d=\"M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z\" />
+                </svg>
+              </a>
+
+              <!-- Dropdown Start -->
+              <ul class=\"a\" :class=\"{ 'tc': dropdown }\">
+                <li><a href=\"{{path('app_l_v_t')}}\" class=\"xl\" :class=\"{ 'mk': page === 'blog-grid' }\">Lovitao</a></li>
+                <li><a href=\"{{path('app_m_p_j')}}\" class=\"xl\" :class=\"{ 'mk': page === 'blog-single' }\">Mpianjoria</a></li>
+                <li><a href=\"{{path('app_m_p_k')}}\" class=\"xl\" :class=\"{ 'mk': page === 'signin' }\">Mpamakilay</a></li>
+                <li><a href=\"{{path('app_m_p_d_l')}}\" class=\"xl\" :class=\"{ 'mk': page === 'signup' }\">Mpiandalana</a></li>
+                <li><a href=\"{{path('app_m_p')}}\" class=\"xl\" :class=\"{ 'mk': page === '404' }\">Mpiandrakitra</a></li>
+              </ul>
+              <!-- Dropdown End -->
+            </li>
+            <li><a href=\"index.html#support\" class=\"xl\">Support</a></li>
+          </ul>
+        </nav>
+
+        <div class=\"tc wf ig pb no\">
+          <div class=\"pc h io pa ra\" :class=\"navigationOpen ? '!-ud-visible' : 'd'\">
+            <label class=\"rc ab i\">
+              <input type=\"checkbox\" :value=\"darkMode\" @change=\"darkMode = !darkMode\" class=\"pf vd yc uk h r za ab\" />
+              <!-- Icon Sun -->
+              <svg :class=\"{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }\" class=\"th om\" width=\"25\"
+                height=\"25\" viewBox=\"0 0 25 25\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
+                <path
+                  d=\"M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z\"
+                  fill=\"\" />
+              </svg>
+              <!-- Icon Sun -->
+              <img class=\"xc nm\" src=\"{{asset('images/icon-moon.svg')}}\" alt=\"Moon\" />
+            </label>
+          </div>
+
+          <a href=\"{{path('app_admin')}}\" :class=\"{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }\"
+            class=\"ek pk xl\">Sign In</a>
+          <a href=\"{{path('app_register')}}\" :class=\"{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }\"
+            class=\"lk gh dk rg tc wf xf _l gi hi\">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Header End ===== -->
+", "layout.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\layout.html.twig");
+    }
+}

@@ -1455,16 +1455,6 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     generate_final_classes?: bool|Param, // Default: true
  *     generate_final_entities?: bool|Param, // Default: false
  * }
- * @psalm-type WebpackEncoreConfig = array{
- *     output_path: scalar|null|Param, // The path where Encore is building the assets - i.e. Encore.setOutputPath()
- *     crossorigin?: false|"anonymous"|"use-credentials"|Param, // crossorigin value when Encore.enableIntegrityHashes() is used, can be false (default), anonymous or use-credentials // Default: false
- *     preload?: bool|Param, // preload all rendered script and link tags automatically via the http2 Link header. // Default: false
- *     cache?: bool|Param, // Enable caching of the entry point file(s) // Default: false
- *     strict_mode?: bool|Param, // Throw an exception if the entrypoints.json file is missing or an entry is missing from the data // Default: true
- *     builds?: array<string, scalar|null|Param>,
- *     script_attributes?: array<string, scalar|null|Param>,
- *     link_attributes?: array<string, scalar|null|Param>,
- * }
  * @psalm-type VichUploaderConfig = array{
  *     default_filename_attribute_suffix?: scalar|null|Param, // Default: "_name"
  *     db_driver: scalar|null|Param,
@@ -1512,6 +1502,16 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  * @psalm-type SymfonycastsVerifyEmailConfig = array{
  *     lifetime?: int|Param, // The length of time in seconds that a signed URI is valid for after it is created. // Default: 3600
  * }
+ * @psalm-type WebpackEncoreConfig = array{
+ *     output_path: scalar|null|Param, // The path where Encore is building the assets - i.e. Encore.setOutputPath()
+ *     crossorigin?: false|"anonymous"|"use-credentials"|Param, // crossorigin value when Encore.enableIntegrityHashes() is used, can be false (default), anonymous or use-credentials // Default: false
+ *     preload?: bool|Param, // preload all rendered script and link tags automatically via the http2 Link header. // Default: false
+ *     cache?: bool|Param, // Enable caching of the entry point file(s) // Default: false
+ *     strict_mode?: bool|Param, // Throw an exception if the entrypoints.json file is missing or an entry is missing from the data // Default: true
+ *     builds?: array<string, scalar|null|Param>,
+ *     script_attributes?: array<string, scalar|null|Param>,
+ *     link_attributes?: array<string, scalar|null|Param>,
+ * }
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1525,9 +1525,9 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     twig_extra?: TwigExtraConfig,
  *     security?: SecurityConfig,
  *     monolog?: MonologConfig,
- *     webpack_encore?: WebpackEncoreConfig,
  *     vich_uploader?: VichUploaderConfig,
  *     symfonycasts_reset_password?: SymfonycastsResetPasswordConfig,
+ *     webpack_encore?: WebpackEncoreConfig,
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1544,10 +1544,10 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
  *         maker?: MakerConfig,
- *         webpack_encore?: WebpackEncoreConfig,
  *         vich_uploader?: VichUploaderConfig,
  *         symfonycasts_reset_password?: SymfonycastsResetPasswordConfig,
  *         symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
+ *         webpack_encore?: WebpackEncoreConfig,
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1562,9 +1562,9 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
- *         webpack_encore?: WebpackEncoreConfig,
  *         vich_uploader?: VichUploaderConfig,
  *         symfonycasts_reset_password?: SymfonycastsResetPasswordConfig,
+ *         webpack_encore?: WebpackEncoreConfig,
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1580,10 +1580,10 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
- *         webpack_encore?: WebpackEncoreConfig,
  *         vich_uploader?: VichUploaderConfig,
  *         symfonycasts_reset_password?: SymfonycastsResetPasswordConfig,
  *         symfonycasts_verify_email?: SymfonycastsVerifyEmailConfig,
+ *         webpack_encore?: WebpackEncoreConfig,
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,
@@ -1662,7 +1662,7 @@ namespace Symfony\Component\Routing\Loader\Configurator;
  * @psalm-type AliasConfig = array{
  *     alias: string,
  *     deprecated?: array{package:string, version:string, message?:string},
- * }
+ * }
  * @psalm-type RoutesConfig = array{
  *     "when@dev"?: array<string, RouteConfig|ImportConfig|AliasConfig>,
  *     "when@prod"?: array<string, RouteConfig|ImportConfig|AliasConfig>,
