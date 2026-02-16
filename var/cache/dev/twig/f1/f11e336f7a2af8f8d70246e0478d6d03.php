@@ -38,7 +38,7 @@ class __TwigTemplate_dfdc76ff350e297f7f403c63d5443690 extends Template
     protected function doGetParent(array $context): bool|string|Template|TemplateWrapper
     {
         // line 1
-        return "base.html.twig";
+        return "component/baseadmin.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = []): iterable
@@ -50,7 +50,7 @@ class __TwigTemplate_dfdc76ff350e297f7f403c63d5443690 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/index.html.twig"));
 
-        $this->parent = $this->load("base.html.twig", 1);
+        $this->parent = $this->load("component/baseadmin.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -73,7 +73,8 @@ class __TwigTemplate_dfdc76ff350e297f7f403c63d5443690 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Helder camara Administrator";
+        yield "Helder camara Administrator
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_dfdc76ff350e297f7f403c63d5443690 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,37 +97,24 @@ class __TwigTemplate_dfdc76ff350e297f7f403c63d5443690 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
+        yield "\t";
+        yield from $this->load("component/headeradmin.html.twig", 7)->unwrap()->yield($context);
+        // line 8
         yield "
-<div class=\"example-wrapper\">
-    <H1>Admin Dashboard</H1>
-        <h2>Welcome to the admin dashboard! ";
+\t";
         // line 9
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9), "email", [], "any", false, false, false, 9), "html", null, true);
-        yield "</h2>
-
-
-    <div>
-        ";
+        yield from $this->load("component/sidebaradmin.html.twig", 9)->unwrap()->yield($context);
+        // line 10
+        yield "
+    ";
+        // line 11
+        yield from $this->load("component/mainadmin.html.twig", 11)->unwrap()->yield($context);
+        // line 12
+        yield "
+\t";
         // line 13
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "profilePictureName", [], "any", false, false, false, 13)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 14
-            yield "            <img src=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14), "profilePictureName", [], "any", false, false, false, 14))), "html", null, true);
-            yield "\" 
-                 alt=\"Photo de profil\" 
-                 width=\"120\">
-        ";
-        }
-        // line 18
-        yield "    </div>
-
-        <a href=\"";
-        // line 20
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-        yield "\">Logout</a>
-</div>
-";
+        yield from $this->load("component/footeradmin.html.twig", 13)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -157,32 +145,24 @@ class __TwigTemplate_dfdc76ff350e297f7f403c63d5443690 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  126 => 20,  122 => 18,  114 => 14,  112 => 13,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  117 => 13,  114 => 12,  112 => 11,  109 => 10,  107 => 9,  104 => 8,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
-        return new Source("{% extends 'base.html.twig' %}
+        return new Source("{% extends 'component/baseadmin.html.twig' %}
 
-{% block title %}Helder camara Administrator{% endblock %}
+{% block title %}Helder camara Administrator
+{% endblock %}
 
 {% block body %}
+\t{% include 'component/headeradmin.html.twig' %}
 
-<div class=\"example-wrapper\">
-    <H1>Admin Dashboard</H1>
-        <h2>Welcome to the admin dashboard! {{ app.user.email }}</h2>
+\t{% include 'component/sidebaradmin.html.twig' %}
 
+    {% include 'component/mainadmin.html.twig' %}
 
-    <div>
-        {% if app.user.profilePictureName %}
-            <img src=\"{{ asset('images/profiles/' ~ app.user.profilePictureName) }}\" 
-                 alt=\"Photo de profil\" 
-                 width=\"120\">
-        {% endif %}
-    </div>
-
-        <a href=\"{{ path('app_logout') }}\">Logout</a>
-</div>
+\t{% include 'component/footeradmin.html.twig' %}
 {% endblock %}
 ", "admin/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\index.html.twig");
     }

@@ -1,22 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'component/baseadmin.html.twig' %}
 
-{% block title %}Helder camara Administrator{% endblock %}
+{% block title %}Helder camara Administrator
+{% endblock %}
 
 {% block body %}
+	{% include 'component/headeradmin.html.twig' %}
 
-<div class="example-wrapper">
-    <H1>Admin Dashboard</H1>
-        <h2>Welcome to the admin dashboard! {{ app.user.email }}</h2>
+	{% include 'component/sidebaradmin.html.twig' %}
 
+    {% include 'component/mainadmin.html.twig' %}
 
-    <div>
-        {% if app.user.profilePictureName %}
-            <img src="{{ asset('images/profiles/' ~ app.user.profilePictureName) }}" 
-                 alt="Photo de profil" 
-                 width="120">
-        {% endif %}
-    </div>
-
-        <a href="{{ path('app_logout') }}">Logout</a>
-</div>
+	{% include 'component/footeradmin.html.twig' %}
 {% endblock %}

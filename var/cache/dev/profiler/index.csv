@@ -1,4 +1,6 @@
-46495b,127.0.0.1,GET,http://127.0.0.1:8000/,1771245507,,200,request
-b8fcdb,127.0.0.1,GET,http://127.0.0.1:8000/register,1771245832,,200,request
-cad3ee,127.0.0.1,POST,http://127.0.0.1:8000/register,1771245861,,302,request
-483a5b,127.0.0.1,GET,http://127.0.0.1:8000/admin,1771245862,,200,request
+bdadcb,127.0.0.1,GET,http://127.0.0.1:8000/,1771240869,,200,request
+4f6fe0,127.0.0.1,GET,http://127.0.0.1:8000/admin,1771240913,,200,request
+6da4c1,127.0.0.1,GET,http://127.0.0.1:8000/project-create.html,1771240952,94f02a,404,request
+94f02a,127.0.0.1,GET,http://127.0.0.1:8000/project-create.html,1771240953,,404,request
+6198a1,127.0.0.1,GET,http://127.0.0.1:8000/admin,1771241093,,200,request
+773f2f,127.0.0.1,GET,http://127.0.0.1:8000/admin,1771241184,,200,request
