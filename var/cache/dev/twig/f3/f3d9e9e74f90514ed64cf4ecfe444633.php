@@ -52,10 +52,14 @@ class __TwigTemplate_835e02f1b4dd95dd79465f0f341e41d5 extends Template
 \t<div class=\"page-header\">
 \t\t<div class=\"page-title\">
 \t\t\t<h1>Dashboard</h1>
-\t\t\t<p>Welcome back, ";
-        // line 8
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "user", [], "any", false, false, false, 8), "username", [], "any", false, false, false, 8), "html", null, true);
-        yield " ! Here's what's happening with your action today.</p>
+\t\t\t<p>
+                Bienvenue dans l'espace d'administration Scout Helder Camara, ";
+        // line 9
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", [], "any", false, false, false, 9), "username", [], "any", false, false, false, 9), "html", null, true);
+        yield ". Voici votre tableau de bord du ";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate("now", "d/m/Y"), "html", null, true);
+        yield ".
+            </p>
 \t\t</div>
 \t\t<div class=\"page-actions\">
 \t\t\t<button class=\"btn-secondary\">
@@ -402,7 +406,7 @@ class __TwigTemplate_835e02f1b4dd95dd79465f0f341e41d5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  57 => 8,  48 => 1,);
+        return array (  58 => 9,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -414,7 +418,9 @@ class __TwigTemplate_835e02f1b4dd95dd79465f0f341e41d5 extends Template
 \t<div class=\"page-header\">
 \t\t<div class=\"page-title\">
 \t\t\t<h1>Dashboard</h1>
-\t\t\t<p>Welcome back, {{ app.user.username }} ! Here's what's happening with your action today.</p>
+\t\t\t<p>
+                Bienvenue dans l'espace d'administration Scout Helder Camara, {{ app.user.username }}. Voici votre tableau de bord du {{ \"now\"|date('d/m/Y') }}.
+            </p>
 \t\t</div>
 \t\t<div class=\"page-actions\">
 \t\t\t<button class=\"btn-secondary\">
