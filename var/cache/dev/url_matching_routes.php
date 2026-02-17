@@ -26,6 +26,7 @@ return [
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/user' => [[['_route' => 'app_user', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null]],
+        '/admin/settingadmin' => [[['_route' => 'app_admin_settingadmin', '_controller' => 'App\\Controller\\admin\\SettingadminController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

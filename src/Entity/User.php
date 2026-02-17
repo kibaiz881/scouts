@@ -45,6 +45,48 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $profilePictureName = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $adresse = null;
+
+    #[ORM\Column(length: 15, nullable: true)]
+    private ?string $phone = null;
+
+    #[ORM\Column(type: "text", nullable: true)]
+    private ?string $biography = null;
+
+    #[ORM\Column(type: "date", nullable: true)]
+    private ?\DateTimeInterface $dateNaissance = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $lieuNaissance = null;
+
+    #[ORM\Column(length: 25, nullable: true)]
+    private ?string $nationalite = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $profession = null;
+
+    #[ORM\Column(length: 18, nullable: true)]
+    private ?string $cin = null;
+
+    #[ORM\Column(type: "date", nullable: true)]
+    private ?\DateTimeInterface $dateDelivrance = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $lieuDelivrance = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $paysDelivrance = null;
+
+    #[ORM\Column(length: 10, nullable: true)]
+    private ?string $sexe = null;
+
+    #[ORM\Column(type: "date", nullable: true)]
+    private ?\DateTimeInterface $dateEntrescout = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $fonctionScout = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
@@ -178,5 +220,285 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setProfilePictureName(?string $profilePictureName): void
     {
         $this->profilePictureName = $profilePictureName;
+    }
+
+    /**
+     * Get the value of adresse
+     */ 
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set the value of adresse
+     *
+     * @return  self
+     */ 
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of phone
+     */ 
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Set the value of phone
+     *
+     * @return  self
+     */ 
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of biography
+     */ 
+    public function getBiography()
+    {
+        return $this->biography;
+    }
+
+    /**
+     * Set the value of biography
+     *
+     * @return  self
+     */ 
+    public function setBiography($biography)
+    {
+        $this->biography = $biography;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dateNaissance
+     */ 
+    public function getDateNaissance()
+    {
+        return $this->dateNaissance;
+    }
+
+    /**
+     * Set the value of dateNaissance
+     *
+     * @return  self
+     */ 
+    public function setDateNaissance($dateNaissance)
+    {
+        $this->dateNaissance = $dateNaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of lieuNaissance
+     */ 
+    public function getLieuNaissance()
+    {
+        return $this->lieuNaissance;
+    }
+
+    /**
+     * Set the value of lieuNaissance
+     *
+     * @return  self
+     */ 
+    public function setLieuNaissance($lieuNaissance)
+    {
+        $this->lieuNaissance = $lieuNaissance;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nationalite
+     */ 
+    public function getNationalite()
+    {
+        return $this->nationalite;
+    }
+
+    /**
+     * Set the value of nationalite
+     *
+     * @return  self
+     */ 
+    public function setNationalite($nationalite)
+    {
+        $this->nationalite = $nationalite;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of profession
+     */ 
+    public function getProfession()
+    {
+        return $this->profession;
+    }
+
+    /**
+     * Set the value of profession
+     *
+     * @return  self
+     */ 
+    public function setProfession($profession)
+    {
+        $this->profession = $profession;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cin
+     */ 
+    public function getCin()
+    {
+        return $this->cin;
+    }
+
+    /**
+     * Set the value of cin
+     *
+     * @return  self
+     */ 
+    public function setCin($cin)
+    {
+        $this->cin = $cin;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dateDelivrance
+     */ 
+    public function getDateDelivrance()
+    {
+        return $this->dateDelivrance;
+    }
+
+    /**
+     * Set the value of dateDelivrance
+     *
+     * @return  self
+     */ 
+    public function setDateDelivrance($dateDelivrance)
+    {
+        $this->dateDelivrance = $dateDelivrance;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of lieuDelivrance
+     */ 
+    public function getLieuDelivrance()
+    {
+        return $this->lieuDelivrance;
+    }
+
+    /**
+     * Set the value of lieuDelivrance
+     *
+     * @return  self
+     */ 
+    public function setLieuDelivrance($lieuDelivrance)
+    {
+        $this->lieuDelivrance = $lieuDelivrance;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of paysDelivrance
+     */ 
+    public function getPaysDelivrance()
+    {
+        return $this->paysDelivrance;
+    }
+
+    /**
+     * Set the value of paysDelivrance
+     *
+     * @return  self
+     */ 
+    public function setPaysDelivrance($paysDelivrance)
+    {
+        $this->paysDelivrance = $paysDelivrance;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of sexe
+     */ 
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    /**
+     * Set the value of sexe
+     *
+     * @return  self
+     */ 
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dateEntrescout
+     */ 
+    public function getDateEntrescout()
+    {
+        return $this->dateEntrescout;
+    }
+
+    /**
+     * Set the value of dateEntrescout
+     *
+     * @return  self
+     */ 
+    public function setDateEntrescout($dateEntrescout)
+    {
+        $this->dateEntrescout = $dateEntrescout;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fonctionScout
+     */ 
+    public function getFonctionScout()
+    {
+        return $this->fonctionScout;
+    }
+
+    /**
+     * Set the value of fonctionScout
+     *
+     * @return  self
+     */ 
+    public function setFonctionScout($fonctionScout)
+    {
+        $this->fonctionScout = $fonctionScout;
+
+        return $this;
     }
 }

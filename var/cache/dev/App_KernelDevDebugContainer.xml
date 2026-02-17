@@ -526,6 +526,14 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\UserController"/>
       </call>
     </service>
+    <service id="App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\SettingadminController"/>
+      </call>
+    </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;Doctrine\Bundle\FixturesBundle\Fixture&quot; not found while loading &quot;App\DataFixtures\AppFixtures&quot;."/>
     </service>
@@ -3913,6 +3921,7 @@
         <argument>App\Controller\RegistrationController</argument>
         <argument>App\Controller\SecurityController</argument>
         <argument>App\Controller\UserController</argument>
+        <argument>App\Controller\admin\SettingadminController</argument>
       </argument>
     </service>
     <service id="routing.loader.attribute.directory" class="Symfony\Component\Routing\Loader\AttributeDirectoryLoader">
@@ -8710,6 +8719,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\UserController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\admin\SettingadminController.0.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Category.0.App\Entity\Category" class="App\Entity\Category" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Category" class="App\Entity\Category" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Post.0.App\Entity\Post" class="App\Entity\Post" autowire="true" abstract="true"/>
@@ -10103,6 +10116,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.TJNRSaV" method="withContext"/>
     </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\admin\SettingadminController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\SettingadminController"/>
+      <argument>App\Controller\admin\SettingadminController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
     <service id=".service_locator.TJNRSaV.controller.helper" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="controller.helper"/>
       <argument>controller.helper</argument>
@@ -10327,6 +10346,7 @@
           <argument>App\Controller\RegistrationController</argument>
           <argument>App\Controller\SecurityController</argument>
           <argument>App\Controller\UserController</argument>
+          <argument>App\Controller\admin\SettingadminController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>

@@ -33,6 +33,7 @@ return [
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'app_user' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user']], [], [], []],
+    'app_admin_settingadmin' => [[], ['_controller' => 'App\\Controller\\admin\\SettingadminController::index'], [], [['text', '/admin/settingadmin']], [], [], []],
     'App\Controller\ActualiteController::index' => [['page', 'itemsPerPage'], ['page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\ActualiteController::index'], ['page' => '\\d+', 'itemsPerPage' => '\\d+'], [['variable', '/', '\\d+', 'itemsPerPage', true], ['variable', '/', '\\d+', 'page', true], ['text', '/actualite']], [], [], []],
     'App\Controller\ActualiteController::show' => [['post'], ['_controller' => 'App\\Controller\\ActualiteController::show'], [], [['variable', '/', '[^/]++', 'post', true], ['text', '/actualite/show']], [], [], []],
     'App\Controller\ActualiteController::category' => [['category'], ['_controller' => 'App\\Controller\\ActualiteController::category'], [], [['variable', '/', '[^/]++', 'category', true], ['text', '/actualite/category']], [], [], []],
@@ -48,4 +49,5 @@ return [
     'App\Controller\SecurityController::login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'App\Controller\SecurityController::logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'App\Controller\UserController::index' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user']], [], [], []],
+    'App\Controller\admin\SettingadminController::index' => [[], ['_controller' => 'App\\Controller\\admin\\SettingadminController::index'], [], [['text', '/admin/settingadmin']], [], [], []],
 ];
