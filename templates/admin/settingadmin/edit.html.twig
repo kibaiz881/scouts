@@ -1,0 +1,397 @@
+{% extends 'component/baseadmin.html.twig' %}
+
+{% block title %}
+	Settingadmin
+{% endblock %}
+
+{% block body %}
+	{% include 'component/headeradmin.html.twig' %}
+
+	{% include 'component/sidebaradmin.html.twig' %}
+	<!-- ========== MAIN CONTENT ========== -->
+	<main class="main" id="main" role="main">
+		<div class="page-header">
+			<div class="page-title">
+				<h1>Update
+					{{ app.user.fullName ?? app.user.username ?? 'User' }}</h1>
+				<p>{{ app.user ? 'Update your profiles access' }}</p>
+			</div>
+			<div class="page-actions">
+				<a href="{{ path('admin_setting_list') }}" class="btn-secondary">
+					<i class="bi bi-arrow-left"></i>
+					Back to task</a>
+			</div>
+		</div>
+
+		<!-- User Creation Form -->
+		<form id="userForm">
+			{{ form_start(form) }}
+			<!-- Basic Information Card -->
+			<div class="form-card">
+				<div class="form-header">
+					<h3 class="form-title">
+						<i class="bi bi-person"></i>
+						Basic Information</h3>
+					<p class="form-subtitle">Provide personal details and contact information</p>
+				</div>
+
+				<div class="avatar-upload">
+					<div class="avatar-preview" id="avatarPreviewWrapper">
+						<img id="avatarPreview" src="{{ asset('images/profiles/' ~ currentUser.profilePictureName) }}" alt="Avatar">
+					</div>
+
+					<div class="avatar-upload-controls">
+						{{ form_row(form.profilePictureFile, {
+							label: false,
+							attr: {
+								class: 'avatar-input form-control',
+								id: 'avatarInput',
+								accept: 'image/*',
+								type: 'file',
+
+							}
+						}) }}
+						<div class="avatar-hint">
+							Recommended: Square image, 500x500px, max 2MB
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<label class="form-label" for="firstName">Full Name
+								<span class="required">*</span>
+							</label>
+							{{form_row(form.username, {
+                                label: false,
+                                attr: {
+                                    class: 'form-control',
+                                    id: 'fullName',
+                                    placeholder: 'Enter full name',
+                                    required: true,
+                                    value: currentUser.username
+                                }
+                            })}}
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							<label class="form-label" for="lastName">Adresse
+								<span class="required">*</span>
+							</label>
+							{{form_row(form.adresse, {
+                                label: false,
+                                attr: {
+                                    class: 'form-control',
+                                    id: 'lastName',
+                                    placeholder: 'Enter address',
+                                    required: true,
+                                    value: currentUser.adresse
+                                }
+                            })}}
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<label class="form-label" for="email">Email Address
+								<span class="required">*</span>
+							</label>
+							{{form_row(form.email, {
+                                label: false,
+                                attr: {
+                                    class: 'form-control',
+                                    id: 'email',
+                                    placeholder: 'user@company.com',
+                                    value: currentUser.email
+                                }
+                            })}}
+						</div>
+					</div>
+					<div class="col">
+						<div class="form-group">
+							<label class="form-label" for="phone">Phone Number</label>
+							{{form_row(form.phone, {
+                                label: false,
+                                attr: {
+                                    class: 'form-control',
+                                    id: 'phone',
+                                    placeholder: '+1 (555) 000-0000',
+                                    value: currentUser.phone
+                                }
+                            })}}
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="form-group">
+							<label class="form-label" for="jobTitle">Profession Title
+								<span class="required">*</span>
+							</label>
+							{{form_row(form.profession, {
+                                label: false,
+                                attr: {
+                                    class: 'form-control',
+                                    id: 'jobTitle',
+                                    placeholder: 'e.g., Senior Designer, Project Manager',
+                                    value: currentUser.profession
+                                }
+                            })}}
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label" for="bio">Bio/Introduction</label>
+					{{form_row(form.biography, {
+                        label: false,
+                        attr: {
+                            class: 'form-control',
+                            id: 'bio',
+                            value: currentUser.biography,
+                            placeholder: 'Write a brief bio or introduction for the user...'
+                        }
+                    })}}
+				</div>
+
+				{# <!-- Department & Role Assignments Card -->
+												<div class="form-card">
+													<div class="form-header">
+														<h3 class="form-title">
+															<i class="bi bi-building"></i>
+															Department Assignments</h3>
+														<p class="form-subtitle">Assign user to departments with specific roles</p>
+													</div>
+								
+													<div class="department-assignments" id="assignmentsContainer">
+														<div class="assignment-item">
+															<div class="assignment-details">
+																<select class="department-select" name="department[]">
+																	<option value="">Select Department</option>
+																	<option value="design" selected>Design Team</option>
+																	<option value="development">Development</option>
+																	<option value="product">Product Management</option>
+																	<option value="marketing">Marketing</option>
+																	<option value="sales">Sales</option>
+																	<option value="support">Customer Support</option>
+																	<option value="operations">Operations</option>
+																	<option value="hr">Human Resources</option>
+																	<option value="finance">Finance</option>
+																</select>
+																<select class="role-select" name="role[]">
+																	<option value="">Select Role</option>
+																	<option value="member" selected>Team Member</option>
+																	<option value="lead">Team Lead</option>
+																	<option value="manager">Manager</option>
+																	<option value="director">Director</option>
+																	<option value="contributor">Contributor</option>
+																	<option value="reviewer">Reviewer</option>
+																	<option value="approver">Approver</option>
+																	<option value="observer">Observer</option>
+																</select>
+															</div>
+															<button type="button" class="remove-assignment" onclick="removeAssignment(this)">
+																<i class="bi bi-trash"></i>
+															</button>
+														</div>
+													</div>
+								
+													<button type="button" class="btn-outline w-100" id="addAssignmentBtn">
+														<i class="bi bi-plus-circle"></i>
+														Add Another Department Assignment
+													</button>
+												</div> #}
+
+
+				{# <!-- Skills & Expertise Card -->
+												<div class="form-card">
+													<div class="form-header">
+														<h3 class="form-title">
+															<i class="bi bi-lightning"></i>
+															Skills & Expertise</h3>
+														<p class="form-subtitle">Add user skills and areas of expertise</p>
+													</div>
+								
+													<div class="form-group">
+														<label class="form-label">Primary Skills</label>
+														<div class="skills-container" id="skillsContainer">
+															<span class="skill-tag">
+																UI Design
+																<button type="button" class="remove" data-skill="UI Design">
+																	<i class="bi bi-x"></i>
+																</button>
+															</span>
+															<span class="skill-tag">
+																User Research
+																<button type="button" class="remove" data-skill="User Research">
+																	<i class="bi bi-x"></i>
+																</button>
+															</span>
+															<span class="skill-tag">
+																Prototyping
+																<button type="button" class="remove" data-skill="Prototyping">
+																	<i class="bi bi-x"></i>
+																</button>
+															</span>
+														</div>
+														<div class="skill-input-group">
+															<input type="text" class="skill-input" id="newSkillInput" placeholder="Add a skill...">
+															<button type="button" class="btn-outline" id="addSkillBtn">
+																<i class="bi bi-plus"></i>
+																Add
+															</button>
+														</div>
+													</div>
+								
+													<div class="form-group">
+														<label class="form-label" for="experienceLevel">Experience Level</label>
+														<select class="form-select" id="experienceLevel">
+															<option value="">Select level</option>
+															<option value="entry">Entry Level (0-2 years)</option>
+															<option value="mid" selected>Mid Level (3-5 years)</option>
+															<option value="senior">Senior Level (6-10 years)</option>
+															<option value="lead">Lead (10+ years)</option>
+														</select>
+													</div>
+								
+													<div class="form-group">
+														<label class="form-label" for="tools">Tools & Technologies</label>
+														<textarea class="form-control" id="tools" placeholder="List tools and technologies the user is proficient with..."></textarea>
+													</div>
+												</div> #}
+
+				<!-- Account Setup Card -->
+					<div class="form-card"> <div class="form-header">
+						<h3 class="form-title">
+							<i class="bi bi-gear"></i>
+							Account Setup</h3>
+						<p class="form-subtitle">Configure user account and login credentials</p>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								<label class="form-label" for="username">Catrte d'identité National
+									<span class="required">*</span>
+								</label>
+								{{form_row(form.cin, {
+									label: false,
+									attr: {
+										class: 'form-control cin-input',
+										id: 'cin',
+										placeholder: 'Enter CIN',
+										required: false,
+										value: currentUser.cin
+									}
+								})}}
+								{# <input type="text" class="form-control" id="username" placeholder="Choose a username" required> #}
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								<label class="form-label" for="password">Password
+									<span class="required">*</span>
+								</label>
+								<div class="input-group">
+									<input type="password" class="form-control" id="password" placeholder="Create a password" required>
+									<button class="btn-outline" type="button" id="showPasswordBtn">
+										<i class="bi bi-eye"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								<label class="form-label" for="startDate">Start Date</label>
+								<input type="date" class="form-control" id="startDate">
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group">
+								<label class="form-label" for="reportingTo">Reporting To</label>
+								<select class="form-select" id="reportingTo">
+									<option value="">Select manager</option>
+									<option value="1">John Doe (Project Lead)</option>
+									<option value="2">Lisa Rodriguez (Product Manager)</option>
+									<option value="3">Michael Brown (Tech Lead)</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="form-label">Send Welcome Email</label>
+						<div class="d-flex align-items-center gap-2">
+							<label class="toggle-switch">
+								<input type="checkbox">
+								<span class="toggle-slider"></span>
+							</label>
+							<span class="form-check-label">Send welcome email with login instructions</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Form Actions -->
+				<div class="form-actions">
+					<div>
+						<button type="button" class="btn-outline" id="saveDraftBtn">
+							<i class="bi bi-save"></i>
+							Save as Draft
+						</button>
+					</div>
+					<div class="d-flex gap-3">
+						<button type="reset" class="btn-secondary">
+							<i class="bi bi-x-circle"></i>
+							Cancel
+						</button>
+						<button type="submit" class="btn-primary">
+							<i class="bi bi-plus-circle"></i>
+							Create User
+						</button>
+					</div>
+				</div>
+				{{ form_end(form) }}
+			</form>
+		</main>
+
+		{% include 'component/footeradmin.html.twig' %}
+		{% block javascript %}
+			 <script>
+				document.addEventListener('DOMContentLoaded', function() {
+			    const cinInput = document.querySelector('.cin-input'); // ⚠️ ID Symfony = nom_du_form + _ + nom_du_champ
+			    
+			    // Vérifie si l'élément existe avant d'ajouter l'event listener
+			    if (!cinInput) {
+			        console.warn('Champ CIN non trouvé (ID: cin-input)'). //Vérifiez le nom du champ dans le formulaire Symfony.');
+			        return;
+			    }
+			
+			    cinInput.addEventListener('input', function(e) {  // ⚠️ 'input' pas 'cin-input'
+			        let value = e.target.value.replace(/\s/g, '').replace(/[^\d]/g, '');  // ⚠️ \s pas \\s
+			
+			        // Formatage par groupes de 3
+			        let formatted = '';
+			        for (let i = 0; i < value.length; i += 3) {
+			            formatted += value.substr(i, 3) + ' ';
+			        }
+			        e.target.value = formatted.trim().substring(0, 21);
+			    });
+			    
+			    // Bonus : sélectionne tout au focus
+			    cinInput.addEventListener('focus', function() {
+			        this.select();
+			    });
+			});
+			
+						</script>
+		{% endblock %}
+	{% endblock %}

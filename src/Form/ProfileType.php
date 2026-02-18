@@ -11,6 +11,7 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class ProfileType extends AbstractType
 {
@@ -63,6 +64,12 @@ class ProfileType extends AbstractType
             ->add('profilePictureFile', VichImageType::class, [
                 'required' => false,
                 'label' => 'Photo de profil',
+                'allow_delete' => false,
+                'download_uri' => false,
+                'image_uri' => false,
+                'attr' => [
+                    'placeholder' => 'Photo de profil',
+                ]
             ])
             ->add('adresse', null, [
                 'required' => true,
@@ -132,12 +139,14 @@ class ProfileType extends AbstractType
                 ],
                 'constraints' => [
                     new NotBlank(
-                        message: 'Please enter a CIN',
+                        message: 'Please enter a number for CIN',
+                    ),
+                    new Regex(
+                        pattern: '/^\d{12}$/',
+                        message: 'Le CIN doit contenir exactement 12 chiffres',
                     ),
                     new Length(
-                        min: 12,
-                        minMessage: 'Your CIN should be at least {{ limit }} characters',
-                        max: 18,
+                        max: 12,
                         maxMessage: 'Your CIN should not exceed {{ limit }} characters',
                     ),
                 ],

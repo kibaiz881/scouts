@@ -72,14 +72,45 @@ final class SettingadminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/settingadmin/edit/{id}', name: 'admin_setting_edit')]
+ 
+ #[Route('/admin/settingadmin/edit/{id}', name: 'admin_setting_edit')]
     #[IsGranted('ROLE_ADMIN')]
-    public function edit(int $id): Response
-    {
-        
+    public function edit(
+        int $id,
+        Request $request,
+        EntityManagerInterface $em
+    ): Response {
+        // 1. Récupérer l’utilisateur à modifier
+        $user = $em->getRepository(User::class)->find($id);
+
+        if (!$user) {
+            throw $this->createNotFoundException('Utilisateur introuvable.');
+        }
+
+        // 2. Créer le formulaire pré-rempli avec les données de l’utilisateur
+        $form = $this->createForm(ProfileType::class, $user);
+
+        // 3. Traiter la requête (POST/GET)
+        $form->handleRequest($request);
+
+        // 4. Si soumis et valide, enregistrer en BDD
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Pas besoin de persist() si l’entité vient du repository
+            $em->flush();
+
+            $this->addFlash('success', 'Profil mis à jour avec succès.');
+
+            return $this->redirectToRoute('admin_setting_edit', [
+                'id' => $user->getId(),
+            ]);
+        }
+
+        // 5. Afficher le formulaire
         return $this->render('admin/settingadmin/edit.html.twig', [
             'currentUser' => $this->getUser(),
-            'id' => $id,
+            'user'        => $user,
+            'form'        => $form->createView(),
         ]);
     }
+    
 }
