@@ -1,0 +1,3 @@
+<?php //c7ff7962f10ec06489618ecad5fbef78
+
+return [PHP_INT_MAX, 'plugin/select2/css/select2.min.css'];

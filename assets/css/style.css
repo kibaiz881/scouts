@@ -6089,11 +6089,3 @@ input:checked + .toggle-slider:before {
     font-size: 14px;
     border: 2px solid #e9ecef;
 }
-
-/* Hover effect pour le conteneur parent */
-.profile:hover .avatar-img,
-.profile:hover .avatar-placeholder {
-    border-color: #007bff;
-    transform: scale(1.05);
-    transition: all 0.2s ease;
-}

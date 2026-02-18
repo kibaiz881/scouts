@@ -27,6 +27,7 @@ return [
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/user' => [[['_route' => 'app_user', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null]],
         '/admin/settingadmin' => [[['_route' => 'app_admin_settingadmin', '_controller' => 'App\\Controller\\admin\\SettingadminController::index'], null, null, null, false, false, null]],
+        '/admin/settingadmin/list' => [[['_route' => 'admin_setting_list', '_controller' => 'App\\Controller\\admin\\SettingadminController::list'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -48,14 +49,17 @@ return [
                         .')'
                     .')'
                 .')'
-                .'|/actualite(?'
-                    .'|(?:/(\\d+)(?:/(\\d+))?)?(*:237)'
-                    .'|/(?'
-                        .'|show/([^/]++)(*:262)'
-                        .'|category/([^/]++)(*:287)'
+                .'|/a(?'
+                    .'|ctualite(?'
+                        .'|(?:/(\\d+)(?:/(\\d+))?)?(*:240)'
+                        .'|/(?'
+                            .'|show/([^/]++)(*:265)'
+                            .'|category/([^/]++)(*:290)'
+                        .')'
                     .')'
+                    .'|dmin/settingadmin/edit/([^/]++)(*:331)'
                 .')'
-                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:324)'
+                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:367)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -67,10 +71,11 @@ return [
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        237 => [[['_route' => 'app_actualite', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\ActualiteController::index'], ['page', 'itemsPerPage'], null, null, false, true, null]],
-        262 => [[['_route' => 'app_actualite_show', '_controller' => 'App\\Controller\\ActualiteController::show'], ['post'], null, null, false, true, null]],
-        287 => [[['_route' => 'app_actualite_category', '_controller' => 'App\\Controller\\ActualiteController::category'], ['category'], null, null, false, true, null]],
-        324 => [
+        240 => [[['_route' => 'app_actualite', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\ActualiteController::index'], ['page', 'itemsPerPage'], null, null, false, true, null]],
+        265 => [[['_route' => 'app_actualite_show', '_controller' => 'App\\Controller\\ActualiteController::show'], ['post'], null, null, false, true, null]],
+        290 => [[['_route' => 'app_actualite_category', '_controller' => 'App\\Controller\\ActualiteController::category'], ['category'], null, null, false, true, null]],
+        331 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
+        367 => [
             [['_route' => 'app_blog', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\BlogController::index'], ['page', 'itemsPerPage'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

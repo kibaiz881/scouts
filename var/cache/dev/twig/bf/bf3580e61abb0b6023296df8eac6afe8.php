@@ -73,7 +73,9 @@ class __TwigTemplate_a7d925ced85aaa11499670e25ea8278f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield " Settingadmin ";
+        // line 4
+        yield "\tSettingadmin
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +85,7 @@ class __TwigTemplate_a7d925ced85aaa11499670e25ea8278f extends Template
         yield from [];
     }
 
-    // line 5
+    // line 7
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,280 +98,971 @@ class __TwigTemplate_a7d925ced85aaa11499670e25ea8278f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "\t";
-        yield from $this->load("component/headeradmin.html.twig", 6)->unwrap()->yield($context);
-        // line 7
-        yield "
-    ";
         // line 8
-        yield from $this->load("component/sidebaradmin.html.twig", 8)->unwrap()->yield($context);
+        yield "\t";
+        yield from $this->load("component/headeradmin.html.twig", 8)->unwrap()->yield($context);
         // line 9
-        yield "        <!-- ========== MAIN CONTENT ========== -->
-      <main class=\"main\" id=\"main\" role=\"main\">
-        <!-- Page Header -->
-        <div class=\"page-header\">
-            <div class=\"page-title\">
-                <h1>Settings</h1>
-                <p>Manage your account preferences and system configurations</p>
-            </div>
-            <div class=\"page-actions\">
-                <button class=\"btn-secondary\">
-                    <i class=\"bi bi-arrow-clockwise\"></i> Reset
-                </button>
-                <button class=\"btn-primary\">
-                    <i class=\"bi bi-check-lg\"></i> Save Changes
-                </button>
-            </div>
-        </div>
+        yield "
+\t";
+        // line 10
+        yield from $this->load("component/sidebaradmin.html.twig", 10)->unwrap()->yield($context);
+        // line 11
+        yield "\t<!-- ========== MAIN CONTENT ========== -->
+\t<main
+\t\tclass=\"main\" id=\"main\" role=\"main\">
+\t\t<!-- Page Header -->
+\t\t<div class=\"page-header\">
+\t\t\t<div class=\"page-title\">
+\t\t\t\t<h1>User Profile</h1>
+\t\t\t\t<p>View and manage user details, assignments, and performance</p>
+\t\t\t</div>
+\t\t\t<div class=\"page-actions\">
+\t\t\t\t<a href=\"";
+        // line 21
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_setting_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 21, $this->source); })()), "id", [], "any", false, false, false, 21)]), "html", null, true);
+        yield "\" class=\"btn-secondary\">
+\t\t\t\t\t<i class=\"bi bi-pencil\"></i>Edit Profile
+\t\t\t\t</a>
+\t\t\t\t<a href=\"";
+        // line 24
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_setting_list");
+        yield "\" class=\"btn-primary\">
+\t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
+\t\t\t\t\tBack to user</a>
+\t\t\t</div>
+\t\t</div>
 
-        <!-- Settings Container -->
-        <div class=\"settings-container\">
-            <!-- Settings Sidebar -->
-            <div class=\"settings-sidebar\">
-                <ul class=\"settings-nav\">
-                    <li class=\"settings-nav-item\">
-                        <a href=\"#profile\" class=\"settings-nav-link active\" data-section=\"profile\">
-                            <i class=\"bi bi-person\"></i> Profile
-                        </a>
-                    </li>
-                    ";
+
+\t\t<!-- User Header -->
+\t\t<div class=\"user-header\">
+\t\t\t<div class=\"user-header-background\"></div>
+\t\t\t<div class=\"user-header-content\">
+\t\t\t\t<div class=\"user-avatar\" id=\"userAvatar\">
+\t\t\t\t\t";
+        // line 36
+        if ((($tmp = (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 36, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 37
+            yield "\t\t\t\t\t\t\t<img src=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 37, $this->source); })()), "profilePictureName", [], "any", false, false, false, 37))), "html", null, true);
+            yield "\" alt=\"Photo de profil de ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37), "username", [], "any", false, false, false, 37), "html", null, true);
+            yield "\" class=\"avatar-img\" width=\"50\" height=\"50\" loading=\"lazy\" >
+\t\t\t\t\t";
+        }
+        // line 39
+        yield "\t\t\t\t</div>
+\t\t\t\t<div class=\"user-info\">
+\t\t\t\t\t<div class=\"user-name\">";
+        // line 41
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 41, $this->source); })()), "username", [], "any", false, false, false, 41), "html", null, true);
+        yield "</div>
+\t\t\t\t\t<div class=\"user-title\">";
         // line 42
-        yield "                    ";
-        // line 47
-        yield "                    <li class=\"settings-nav-item\">
-                        <a href=\"#appearance\" class=\"settings-nav-link\" data-section=\"appearance\">
-                            <i class=\"bi bi-palette\"></i> Appearance
-                        </a>
-                    </li>
-                    ";
-        // line 57
-        yield "                    <li class=\"settings-nav-item\">
-                        <a href=\"#security\" class=\"settings-nav-link\" data-section=\"security\">
-                            <i class=\"bi bi-lock\"></i> Security
-                        </a>
-                    </li>
-                    ";
-        // line 72
-        yield "                </ul>
-            </div>
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 42, $this->source); })()), "fonctionScout", [], "any", false, false, false, 42), "html", null, true);
+        yield "</div>
+\t\t\t\t\t<div class=\"user-contact\">
+\t\t\t\t\t\t<div class=\"contact-item\">
+\t\t\t\t\t\t\t<i class=\"bi bi-envelope\"></i>
+\t\t\t\t\t\t\t<span>";
+        // line 46
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 46, $this->source); })()), "email", [], "any", false, false, false, 46), "html", null, true);
+        yield "</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"contact-item\">
+\t\t\t\t\t\t\t<i class=\"bi bi-telephone\"></i>
+\t\t\t\t\t\t\t<span>";
+        // line 50
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 50, $this->source); })()), "phone", [], "any", false, false, false, 50), "html", null, true);
+        yield "</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"contact-item\">
+\t\t\t\t\t\t\t<i class=\"bi bi-building\"></i>
+\t\t\t\t\t\t\t<span>Scout ID: HC/AMI/-00";
+        // line 54
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 54, $this->source); })()), "id", [], "any", false, false, false, 54), "html", null, true);
+        yield "</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"d-flex align-items-center gap-3\">
+\t\t\t\t\t\t<span class=\"user-status\">
+\t\t\t\t\t\t\t<i class=\"bi bi-circle-fill\"></i>
+\t\t\t\t\t\t\tOnline
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"text-muted\">Joined: ";
+        // line 62
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 62, $this->source); })()), "createdAt", [], "any", false, false, false, 62), "F j, Y"), "html", null, true);
+        yield "</span>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
 
-            <!-- Settings Content -->
-            <div class=\"settings-content\">
-                <!-- Profile Section -->
-                <div id=\"profile\" class=\"settings-section active\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-person\"></i> Profile Settings</h2>
-                    </div>
-                    <p class=\"section-description\">Update your personal information and how others see you on the platform.</p>
+\t\t<!-- User Stats -->
+\t\t<div class=\"user-stats\">
+\t\t\t<div class=\"stat-card\">
+\t\t\t\t<div class=\"stat-header\">
+\t\t\t\t\t<div class=\"stat-icon\">
+\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"text-muted\">This Week</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"stat-content\">
+\t\t\t\t\t<h3>24</h3>
+\t\t\t\t\t<div class=\"stat-label\">Tasks Completed</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"stat-card\">
+\t\t\t\t<div class=\"stat-header\">
+\t\t\t\t\t<div class=\"stat-icon\">
+\t\t\t\t\t\t<i class=\"bi bi-clock\"></i>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"text-muted\">Total Hours</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"stat-content\">
+\t\t\t\t\t<h3>142</h3>
+\t\t\t\t\t<div class=\"stat-label\">Hours Worked</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"stat-card\">
+\t\t\t\t<div class=\"stat-header\">
+\t\t\t\t\t<div class=\"stat-icon\">
+\t\t\t\t\t\t<i class=\"bi bi-star\"></i>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"text-muted\">Rating</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"stat-content\">
+\t\t\t\t\t<h3>4.8</h3>
+\t\t\t\t\t<div class=\"stat-label\">Performance Score</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"stat-card\">
+\t\t\t\t<div class=\"stat-header\">
+\t\t\t\t\t<div class=\"stat-icon\">
+\t\t\t\t\t\t<i class=\"bi bi-people\"></i>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"text-muted\">Teams</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"stat-content\">
+\t\t\t\t\t<h3>3</h3>
+\t\t\t\t\t<div class=\"stat-label\">Active Teams</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
 
-                    <div class=\"avatar-upload\">
-                        <div class=\"avatar-preview\" id=\"avatarPreview\">
-                            <span>JD</span>
-                        </div>
-                        <div class=\"avatar-upload-controls\">
-                            <label for=\"avatarInput\" class=\"avatar-upload-btn\">
-                                <i class=\"bi bi-camera\"></i> Upload Photo
-                            </label>
-                            <input type=\"file\" id=\"avatarInput\" accept=\"image/*\" style=\"display: none;\">
-                            <div class=\"avatar-hint\">Recommended: Square image, 500x500px, max 2MB</div>
-                        </div>
-                    </div>
 
-                     <div class=\"row\">
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"firstName\">First Name</label>
-                            <input type=\"text\" class=\"form-control\" id=\"firstName\" value=\"Miller\" placeholder=\"Enter your first name\">
-                        </div>
-                        </div>
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"lastName\">Last Name</label>
-                            <input type=\"text\" class=\"form-control\" id=\"lastName\" value=\"Islam\" placeholder=\"Enter your last name\">
-                        </div>
-                        </div>
-                     </div>
+\t\t<div class=\"project-tabs user-details-tabs\">
+\t\t\t<div class=\"tabs-header\">
+\t\t\t\t<button class=\"tab-btn active\" data-tab=\"overview\">Overview</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"departments\">Departments</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"skills\">Skills & Expertise</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"activity\">Activity</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"tasks\">Tasks</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"performance\">Performance</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"reports\">Reports</button>
+\t\t\t</div>
 
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"email\">Email Address</label>
-                        <input type=\"email\" class=\"form-control\" id=\"email\" value=\"Miller@template.com\" placeholder=\"Enter your email\">
-                        <p class=\"form-text\">This will be used for login and notifications</p>
-                    </div>
+\t\t\t<!-- Overview Tab -->
+\t\t\t<div class=\"tab-content active\" id=\"overviewTab\">
+\t\t\t\t<div class=\"row\">
+\t\t\t\t\t<div class=\"col-lg-8\">
+\t\t\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-person-badge\"></i>
+\t\t\t\t\t\t\t\t\tAbout</h3>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"bio-content\" id=\"bioContent\">
+\t\t\t\t\t\t\t\tSenior UI/UX Designer with 8+ years of experience creating intuitive and beautiful
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                digital products. Currently leading the Design Team at Panelry while contributing
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                to cross-functional product initiatives. Passionate about user-centered design, design
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                systems, and mentoring junior designers.
 
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"bio\">Bio</label>
-                        <textarea class=\"form-control\" id=\"bio\" rows=\"4\" placeholder=\"Tell us about yourself\">Senior UI/UX Designer at Panelry with 5+ years of experience in creating beautiful and functional interfaces. Passionate about design systems and user-centered design.</textarea>
-                        <p class=\"form-text\">Brief description for your profile. URLs are hyperlinked.</p>
-                    </div>
+\t\t\t\t\t\t\t\t<div class=\"mt-3\">
+\t\t\t\t\t\t\t\t\t<strong>Key Responsibilities:</strong>
+\t\t\t\t\t\t\t\t\t<ul class=\"mt-2\">
+\t\t\t\t\t\t\t\t\t\t<li>Lead UI/UX design for web and mobile applications</li>
+\t\t\t\t\t\t\t\t\t\t<li>Manage design team and coordinate with product/engineering</li>
+\t\t\t\t\t\t\t\t\t\t<li>Develop and maintain design systems</li>
+\t\t\t\t\t\t\t\t\t\t<li>Conduct user research and usability testing</li>
+\t\t\t\t\t\t\t\t\t\t<li>Mentor junior designers and interns</li>
+\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-clock-history\"></i>
+\t\t\t\t\t\t\t\t\tRecent Activity</h3>
+\t\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewAllActivity()\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-arrow-right\"></i>
+\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-list\">
+\t\t\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t\t\t<div class=\"activity-icon\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-text\">
+\t\t\t\t\t\t\t\t\t\t\tCompleted task
+\t\t\t\t\t\t\t\t\t\t\t<strong>\"Redesign Dashboard Analytics Panel\"</strong>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t\t\t<span>Today, 10:30 AM</span>
+\t\t\t\t\t\t\t\t\t\t\t<span>Project: Dashboard Redesign</span>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t\t\t<div class=\"activity-icon\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-chat\"></i>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-text\">
+\t\t\t\t\t\t\t\t\t\t\tAdded comment on
+\t\t\t\t\t\t\t\t\t\t\t<strong>\"Mobile Banking App Design\"</strong>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t\t\t<span>Yesterday, 3:45 PM</span>
+\t\t\t\t\t\t\t\t\t\t\t<span>Project: Mobile Banking</span>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t\t\t<div class=\"activity-icon\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-file-earmark\"></i>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-text\">
+\t\t\t\t\t\t\t\t\t\t\tUploaded wireframes for
+\t\t\t\t\t\t\t\t\t\t\t<strong>\"E-commerce Checkout Flow\"</strong>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t\t\t<span>Dec 11, 2025</span>
+\t\t\t\t\t\t\t\t\t\t\t<span>Project: E-commerce Design</span>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
 
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"location\">Location</label>
-                        <input type=\"text\" class=\"form-control\" id=\"location\" value=\"San Francisco, CA\" placeholder=\"Enter your location\">
-                    </div>
+\t\t\t\t\t<div class=\"col-lg-4\">
+\t\t\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-info-circle\"></i>
+\t\t\t\t\t\t\t\t\tQuick Info</h3>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"quick-info\">
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Access Level</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">Manager</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Experience Level</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">Senior (8+ years)</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Reporting To</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">Lisa Rodriguez (Product Director)</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Location</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">San Francisco, CA</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Working Hours</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">9:00 AM - 6:00 PM PST</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Last Active</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">2 minutes ago</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-lightning\"></i>
+\t\t\t\t\t\t\t\t\tQuick Actions</h3>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"quick-actions\">
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"action-btn\" onclick=\"assignTask()\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-plus-circle\"></i>
+\t\t\t\t\t\t\t\t\t<span>Assign Task</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"action-btn\" onclick=\"scheduleMeeting()\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-calendar-plus\"></i>
+\t\t\t\t\t\t\t\t\t<span>Schedule Meeting</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"action-btn\" onclick=\"generateReport()\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-file-earmark-text\"></i>
+\t\t\t\t\t\t\t\t\t<span>Generate Report</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"action-btn\" onclick=\"viewDocuments()\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-folder\"></i>
+\t\t\t\t\t\t\t\t\t<span>View Documents</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
 
-                    <div class=\"row\">
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                                <label class=\"form-label\" for=\"phone\">Phone Number</label>
-                                <input type=\"tel\" class=\"form-control\" id=\"phone\" value=\"+1 (555) 123-4567\" placeholder=\"Enter your phone number\">
-                            </div>
-                        </div>
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                                <label class=\"form-label\" for=\"website\">Website</label>
-                                <input type=\"url\" class=\"form-control\" id=\"website\" value=\"https://Miller.dev\" placeholder=\"https://example.com\">
-                            </div>
-                        </div>
-                     </div>
-                </div>
+\t\t\t<!-- Department Tab -->
+\t\t\t<div class=\"tab-content\" id=\"departmentsTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-building\"></i>
+\t\t\t\t\t\t\tDepartment Assignments</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<button class=\"btn-outline\" onclick=\"addDepartmentAssignment()\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-plus\"></i>
+\t\t\t\t\t\t\t\tAdd Department
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"departments-grid\">
+\t\t\t\t\t\t<div class=\"department-card\">
+\t\t\t\t\t\t\t<div class=\"department-header\">
+\t\t\t\t\t\t\t\t<div class=\"department-icon\" style=\"background: var(--accent);\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-palette\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"department-info\">
+\t\t\t\t\t\t\t\t\t<div class=\"department-name\">Design Team</div>
+\t\t\t\t\t\t\t\t\t<div class=\"department-role\">Team Lead</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"department-details\">
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Team Size:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">8 members</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Joined:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Jan 15, 2024</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Projects:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">12 active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Status:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                <!-- Account Section -->
-                ";
-        // line 251
-        yield "
-                ";
-        // line 362
-        yield "
-                <!-- Appearance Section -->
-                <div id=\"appearance\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-palette\"></i> Appearance Settings</h2>
-                    </div>
-                    <p class=\"section-description\">Customize the look and feel of the application.</p>
+\t\t\t\t\t\t<div class=\"department-card\">
+\t\t\t\t\t\t\t<div class=\"department-header\">
+\t\t\t\t\t\t\t\t<div class=\"department-icon\" style=\"background: var(--info);\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-code-slash\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"department-info\">
+\t\t\t\t\t\t\t\t\t<div class=\"department-name\">Development</div>
+\t\t\t\t\t\t\t\t\t<div class=\"department-role\">Contributor</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"department-details\">
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Team Size:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">15 members</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Joined:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Mar 10, 2024</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Projects:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">6 active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Status:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                    <div class=\"form-group\">
-                        <label class=\"form-label\">Theme</label>
-                        <div class=\"radio-cards\">
-                            <label class=\"radio-card selected\" onclick=\"setTheme('light')\">
-                                <input type=\"radio\" name=\"theme\" checked>
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-sun\"></i>
-                                </div>
-                                <div class=\"radio-title\">Light</div>
-                                <div class=\"radio-description\">Clean and bright interface</div>
-                            </label>
-                            <label class=\"radio-card\" onclick=\"setTheme('dark')\">
-                                <input type=\"radio\" name=\"theme\">
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-moon\"></i>
-                                </div>
-                                <div class=\"radio-title\">Dark</div>
-                                <div class=\"radio-description\">Easy on the eyes</div>
-                            </label>
-                            <label class=\"radio-card\" onclick=\"setTheme('auto')\">
-                                <input type=\"radio\" name=\"theme\">
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-circle-half\"></i>
-                                </div>
-                                <div class=\"radio-title\">Auto</div>
-                                <div class=\"radio-description\">Match system preference</div>
-                            </label>
-                        </div>
-                    </div>
+\t\t\t\t\t\t<div class=\"department-card\">
+\t\t\t\t\t\t\t<div class=\"department-header\">
+\t\t\t\t\t\t\t\t<div class=\"department-icon\" style=\"background: var(--warning);\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-bullseye\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"department-info\">
+\t\t\t\t\t\t\t\t\t<div class=\"department-name\">Product Management</div>
+\t\t\t\t\t\t\t\t\t<div class=\"department-role\">Advisor</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"department-details\">
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Team Size:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">5 members</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Joined:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Jun 5, 2024</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Projects:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">8 active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Status:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-shield-check\"></i>
+\t\t\t\t\t\t\tDepartment Permissions</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"permissions-grid\">
+\t\t\t\t\t\t<div class=\"permission-item\">
+\t\t\t\t\t\t\t<div class=\"permission-info\">
+\t\t\t\t\t\t\t\t<div class=\"permission-name\">Create Design Tasks</div>
+\t\t\t\t\t\t\t\t<div class=\"permission-description\">Design Team</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"form-check form-switch\">
+\t\t\t\t\t\t\t\t<input class=\"form-check-input\" type=\"checkbox\" checked disabled>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"permission-item\">
+\t\t\t\t\t\t\t<div class=\"permission-info\">
+\t\t\t\t\t\t\t\t<div class=\"permission-name\">Review Code</div>
+\t\t\t\t\t\t\t\t<div class=\"permission-description\">Development</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"form-check form-switch\">
+\t\t\t\t\t\t\t\t<input class=\"form-check-input\" type=\"checkbox\" checked disabled>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"permission-item\">
+\t\t\t\t\t\t\t<div class=\"permission-info\">
+\t\t\t\t\t\t\t\t<div class=\"permission-name\">Approve Product Decisions</div>
+\t\t\t\t\t\t\t\t<div class=\"permission-description\">Product Management</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"form-check form-switch\">
+\t\t\t\t\t\t\t\t<input class=\"form-check-input\" type=\"checkbox\" disabled>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"permission-item\">
+\t\t\t\t\t\t\t<div class=\"permission-info\">
+\t\t\t\t\t\t\t\t<div class=\"permission-name\">Manage Team Members</div>
+\t\t\t\t\t\t\t\t<div class=\"permission-description\">Design Team</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"form-check form-switch\">
+\t\t\t\t\t\t\t\t<input class=\"form-check-input\" type=\"checkbox\" checked disabled>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
 
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"fontSize\">Font Size</label>
-                        <select class=\"form-control\" id=\"fontSize\">
-                            <option>Small</option>
-                            <option selected>Medium</option>
-                            <option>Large</option>
-                            <option>Extra Large</option>
-                        </select>
-                    </div>
+\t\t\t<!-- skills Tab -->
+\t\t\t<div class=\"tab-content skills-tab\" id=\"skillsTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-lightning\"></i>
+\t\t\t\t\t\t\tSkills & Expertise</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<button class=\"btn-outline\" onclick=\"addSkill()\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-plus\"></i>
+\t\t\t\t\t\t\t\tAdd Skill
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"skills-container\">
+\t\t\t\t\t\t<span class=\"skill-tag\">UI Design
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">User Research
+\t\t\t\t\t\t\t<span class=\"skill-level\">Advanced</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Prototyping
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Figma
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Adobe Creative Suite
+\t\t\t\t\t\t\t<span class=\"skill-level\">Advanced</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Design Systems
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">HTML/CSS
+\t\t\t\t\t\t\t<span class=\"skill-level\">Intermediate</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">JavaScript
+\t\t\t\t\t\t\t<span class=\"skill-level\">Intermediate</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">React
+\t\t\t\t\t\t\t<span class=\"skill-level\">Basic</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Product Strategy
+\t\t\t\t\t\t\t<span class=\"skill-level\">Advanced</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Team Leadership
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Agile Methodology
+\t\t\t\t\t\t\t<span class=\"skill-level\">Advanced</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-briefcase\"></i>
+\t\t\t\t\t\t\tWork Experience</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"timeline\">
+\t\t\t\t\t\t<div class=\"timeline-item\">
+\t\t\t\t\t\t\t<div class=\"timeline-dot\"></div>
+\t\t\t\t\t\t\t<div class=\"timeline-content\">
+\t\t\t\t\t\t\t\t<div class=\"timeline-date\">2024 - Present</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-title\">Senior UI/UX Designer & Project Lead</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-description\">Panelry Inc. • Leading design team, managing
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    projects, and contributing to product strategy.</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"timeline-item\">
+\t\t\t\t\t\t\t<div class=\"timeline-dot\"></div>
+\t\t\t\t\t\t\t<div class=\"timeline-content\">
+\t\t\t\t\t\t\t\t<div class=\"timeline-date\">2021 - 2024</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-title\">Senior Product Designer</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-description\">TechSolutions Corp. • Designed enterprise SaaS
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    products and established design systems.</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"timeline-item\">
+\t\t\t\t\t\t\t<div class=\"timeline-dot\"></div>
+\t\t\t\t\t\t\t<div class=\"timeline-content\">
+\t\t\t\t\t\t\t\t<div class=\"timeline-date\">2019 - 2021</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-title\">UI/UX Designer</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-description\">CreativeMinds Agency • Worked with various clients on
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    web and mobile applications.</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"timeline-item\">
+\t\t\t\t\t\t\t<div class=\"timeline-dot\"></div>
+\t\t\t\t\t\t\t<div class=\"timeline-content\">
+\t\t\t\t\t\t\t\t<div class=\"timeline-date\">2017 - 2019</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-title\">Junior Designer</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-description\">DigitalWorks Studio • Started career focusing on web
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    design and user interfaces.</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-tools\"></i>
+\t\t\t\t\t\t\tTools & Technologies</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"skills-container\">
+\t\t\t\t\t\t<span class=\"skill-tag\">Figma</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Adobe XD</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Sketch</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Photoshop</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Illustrator</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">InVision</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Zeplin</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Framer</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">VS Code</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Git</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Jira</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Confluence</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Notion</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Slack</span>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
 
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Compact Mode</div>
-                            <div class=\"toggle-description\">Reduce spacing for more content</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
+\t\t\t<!-- Activity Tab -->
+\t\t\t<div class=\"tab-content\" id=\"activityTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-activity\"></i>
+\t\t\t\t\t\t\tRecent Activity</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<select class=\"form-select\" style=\"width: auto;\" id=\"activityFilter\">
+\t\t\t\t\t\t\t\t<option value=\"all\">All Activities</option>
+\t\t\t\t\t\t\t\t<option value=\"tasks\">Tasks</option>
+\t\t\t\t\t\t\t\t<option value=\"comments\">Comments</option>
+\t\t\t\t\t\t\t\t<option value=\"uploads\">Uploads</option>
+\t\t\t\t\t\t\t\t<option value=\"meetings\">Meetings</option>
+\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"activity-list\" id=\"activityList\">
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--success);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Completed task 'Redesign Dashboard Analytics Panel'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Today, 10:30 AM</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Dashboard Redesign</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--info);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-chat\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Added comment on 'Mobile Banking App Design'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Yesterday, 3:45 PM</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Mobile Banking</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--warning);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-file-earmark\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Uploaded wireframes for 'E-commerce Checkout Flow'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 11, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: E-commerce Design</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--purple);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-people\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Attended weekly design review meeting</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 10, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Design Team</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--success);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Started work on 'Admin Panel Redesign'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 9, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Panelry Dashboard</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--info);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-chat\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Provided feedback on 'User Testing Results'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 8, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: User Research</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--warning);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-file-earmark\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Uploaded design system documentation</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 7, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Design System</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
 
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Reduced Motion</div>
-                            <div class=\"toggle-description\">Minimize animations and transitions</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
+\t\t\t<!-- tasks Tab -->
+\t\t\t<div class=\"tab-content user-details-task\" id=\"tasksTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t\t\tCurrent Tasks</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<button class=\"btn-outline\" onclick=\"assignNewTask()\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-plus\"></i>
+\t\t\t\t\t\t\t\tAssign Task
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"tasks-list\" id=\"tasksList\">
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox checked\" onclick=\"toggleTask(1)\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-check\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Design login page for mobile app</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>Mobile Banking</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Today</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-high\">High</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(1)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">High Contrast Mode</div>
-                            <div class=\"toggle-description\">Increase contrast for better visibility</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-                </div>
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox \" onclick=\"toggleTask(2)\"></div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Review user feedback from testing</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>User Research</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Tomorrow</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-medium\">Medium</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(2)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                ";
-        // line 532
-        yield "
-                <!-- Security Section -->
-                <div id=\"security\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-lock\"></i> Security Settings</h2>
-                    </div>
-                    <p class=\"section-description\">Manage your account security and privacy settings.</p>
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox \" onclick=\"toggleTask(3)\"></div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Update design system components</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>Design System</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Dec 20</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-medium\">Medium</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(3)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"currentPassword\">Current Password</label>
-                        <input type=\"password\" class=\"form-control\" id=\"currentPassword\" placeholder=\"Enter current password\">
-                    </div>
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox \" onclick=\"toggleTask(4)\"></div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Prepare presentation for stakeholders</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dashboard Redesign</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Dec 18</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-high\">High</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(4)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                    <div class=\"row\">
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                                <label class=\"form-label\" for=\"newPassword\">New Password</label>
-                                <input type=\"password\" class=\"form-control\" id=\"newPassword\" placeholder=\"Enter new password\">
-                            </div>
-                        </div>
-                        <div class=\"col\">
-                             <div class=\"form-group\">
-                                <label class=\"form-label\" for=\"confirmPassword\">Confirm Password</label>
-                                <input type=\"password\" class=\"form-control\" id=\"confirmPassword\" placeholder=\"Confirm new password\">
-                            </div>
-                        </div>
-                     </div>
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox \" onclick=\"toggleTask(5)\"></div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Mentor junior designer on prototyping</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>Design Team</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Dec 22</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-low\">Low</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(5)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                    <p class=\"form-text\">Use at least 8 characters with a mix of letters, numbers & symbols</p>
+\t\t\t\t<!-- Task Statistics -->
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-bar-chart\"></i>
+\t\t\t\t\t\t\tTask Statistics</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"metrics-grid\">
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">24</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Completed This Week</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">8</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">In Progress</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">3</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Overdue</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">92%</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">On-time Completion</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
 
-                    <button class=\"btn-outline\" onclick=\"changePassword()\">
-                        <i class=\"bi bi-key\"></i> Change Password
-                    </button>
+\t\t\t<!-- performance Tab -->
+\t\t\t<div class=\"tab-content\" id=\"performanceTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-graph-up\"></i>
+\t\t\t\t\t\t\tPerformance Metrics</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<select class=\"form-select\" style=\"width: auto;\" id=\"timeRange\">
+\t\t\t\t\t\t\t\t<option value=\"week\">This Week</option>
+\t\t\t\t\t\t\t\t<option value=\"month\" selected>This Month</option>
+\t\t\t\t\t\t\t\t<option value=\"quarter\">This Quarter</option>
+\t\t\t\t\t\t\t\t<option value=\"year\">This Year</option>
+\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"metrics-grid\">
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">4.8</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Quality Score</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">95%</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Task Completion</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">4.9</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Team Collaboration</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">4.7</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Initiative</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                    <div class=\"section-header mt-4\">
-                        <h3 class=\"fs-14 fw-600 mb-0\">Suppression du comptes</h3>
-                    </div>
+\t\t\t\t<!-- Workload Chart -->
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-calendar-check\"></i>
+\t\t\t\t\t\t\tCurrent Workload</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"workload-chart\">
+\t\t\t\t\t\t<div class=\"workload-bars\">
+\t\t\t\t\t\t\t<div class=\"workload-bar\">
+\t\t\t\t\t\t\t\t<div class=\"workload-fill\" style=\"width: 60%\"></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"workload-bar\">
+\t\t\t\t\t\t\t\t<div class=\"workload-fill\" style=\"width: 75%\"></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"workload-bar\">
+\t\t\t\t\t\t\t\t<div class=\"workload-fill\" style=\"width: 40%\"></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"workload-bar\">
+\t\t\t\t\t\t\t\t<div class=\"workload-fill\" style=\"width: 85%\"></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"workload-labels\">
+\t\t\t\t\t\t\t<span>Design Team</span>
+\t\t\t\t\t\t\t<span>Development</span>
+\t\t\t\t\t\t\t<span>Product</span>
+\t\t\t\t\t\t\t<span>Admin</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
 
-                    <div class=\"danger-zone mt-4\">
-                        <h3 class=\"danger-title\"><i class=\"bi bi-exclamation-triangle\"></i> Danger Zone</h3>
-                        <p class=\"danger-description\">Once you delete your account, there is no going back. Please be certain.</p>
-                        <button class=\"btn-danger\" onclick=\"deleteAccount()\">
-                            <i class=\"bi bi-trash\"></i> Delete Account
-                        </button>
-                    </div>
-                </div>
+\t\t\t<!-- reports Tab -->
+\t\t\t<div class=\"tab-content\" id=\"reportsTab\">
+\t\t\t\t<div class=\"reports-grid\">
+\t\t\t\t\t<div class=\"report-card\">
+\t\t\t\t\t\t<div class=\"report-icon\">
+\t\t\t\t\t\t\t<i class=\"bi bi-file-text\"></i>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"report-name\">Monthly Performance Report</div>
+\t\t\t\t\t\t<div class=\"report-meta\">
+\t\t\t\t\t\t\t<span>December 2025</span>
+\t\t\t\t\t\t\t<span>PDF • 2.4 MB</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<button class=\"btn-outline w-100\" onclick=\"downloadReport('monthly')\">
+\t\t\t\t\t\t\t<i class=\"bi bi-download\"></i>
+\t\t\t\t\t\t\tDownload
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"report-card\">
+\t\t\t\t\t\t<div class=\"report-icon\">
+\t\t\t\t\t\t\t<i class=\"bi bi-bar-chart\"></i>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"report-name\">Task Completion Analysis</div>
+\t\t\t\t\t\t<div class=\"report-meta\">
+\t\t\t\t\t\t\t<span>Q4 2025</span>
+\t\t\t\t\t\t\t<span>PDF • 1.8 MB</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<button class=\"btn-outline w-100\" onclick=\"downloadReport('task-analysis')\">
+\t\t\t\t\t\t\t<i class=\"bi bi-download\"></i>
+\t\t\t\t\t\t\tDownload
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"report-card\">
+\t\t\t\t\t\t<div class=\"report-icon\">
+\t\t\t\t\t\t\t<i class=\"bi bi-people\"></i>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"report-name\">Team Contribution Report</div>
+\t\t\t\t\t\t<div class=\"report-meta\">
+\t\t\t\t\t\t\t<span>November 2025</span>
+\t\t\t\t\t\t\t<span>PDF • 3.2 MB</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<button class=\"btn-outline w-100\" onclick=\"downloadReport('team-contribution')\">
+\t\t\t\t\t\t\t<i class=\"bi bi-download\"></i>
+\t\t\t\t\t\t\tDownload
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"report-card\">
+\t\t\t\t\t\t<div class=\"report-icon\">
+\t\t\t\t\t\t\t<i class=\"bi bi-clock-history\"></i>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"report-name\">Time Tracking Summary</div>
+\t\t\t\t\t\t<div class=\"report-meta\">
+\t\t\t\t\t\t\t<span>December 2025</span>
+\t\t\t\t\t\t\t<span>Excel • 1.5 MB</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<button class=\"btn-outline w-100\" onclick=\"downloadReport('time-tracking')\">
+\t\t\t\t\t\t\t<i class=\"bi bi-download\"></i>
+\t\t\t\t\t\t\tDownload
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
 
-                ";
-        // line 745
-        yield "            </div>
-        </div>
-    </main>
+\t</main>
 
 \t";
-        // line 749
-        yield from $this->load("component/footeradmin.html.twig", 749)->unwrap()->yield($context);
+        // line 931
+        yield from $this->load("component/footeradmin.html.twig", 931)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -400,758 +1093,940 @@ class __TwigTemplate_a7d925ced85aaa11499670e25ea8278f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  372 => 749,  366 => 745,  317 => 532,  233 => 362,  230 => 251,  154 => 72,  147 => 57,  140 => 47,  138 => 42,  108 => 9,  106 => 8,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  1065 => 931,  193 => 62,  182 => 54,  175 => 50,  168 => 46,  161 => 42,  157 => 41,  153 => 39,  145 => 37,  143 => 36,  128 => 24,  122 => 21,  110 => 11,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'component/baseadmin.html.twig' %}
 
-{% block title %} Settingadmin {% endblock %}
+{% block title %}
+\tSettingadmin
+{% endblock %}
 
 {% block body %}
 \t{% include 'component/headeradmin.html.twig' %}
 
-    {% include 'component/sidebaradmin.html.twig' %}
-        <!-- ========== MAIN CONTENT ========== -->
-      <main class=\"main\" id=\"main\" role=\"main\">
-        <!-- Page Header -->
-        <div class=\"page-header\">
-            <div class=\"page-title\">
-                <h1>Settings</h1>
-                <p>Manage your account preferences and system configurations</p>
-            </div>
-            <div class=\"page-actions\">
-                <button class=\"btn-secondary\">
-                    <i class=\"bi bi-arrow-clockwise\"></i> Reset
-                </button>
-                <button class=\"btn-primary\">
-                    <i class=\"bi bi-check-lg\"></i> Save Changes
-                </button>
-            </div>
-        </div>
-
-        <!-- Settings Container -->
-        <div class=\"settings-container\">
-            <!-- Settings Sidebar -->
-            <div class=\"settings-sidebar\">
-                <ul class=\"settings-nav\">
-                    <li class=\"settings-nav-item\">
-                        <a href=\"#profile\" class=\"settings-nav-link active\" data-section=\"profile\">
-                            <i class=\"bi bi-person\"></i> Profile
-                        </a>
-                    </li>
-                    {# <li class=\"settings-nav-item\">
-                        <a href=\"#account\" class=\"settings-nav-link\" data-section=\"account\">
-                            <i class=\"bi bi-shield-check\"></i> Account
-                        </a>
-                    </li> #}
-                    {# <li class=\"settings-nav-item\">
-                        <a href=\"#notifications\" class=\"settings-nav-link\" data-section=\"notifications\">
-                            <i class=\"bi bi-bell\"></i> Notifications
-                        </a>
-                    </li> #}
-                    <li class=\"settings-nav-item\">
-                        <a href=\"#appearance\" class=\"settings-nav-link\" data-section=\"appearance\">
-                            <i class=\"bi bi-palette\"></i> Appearance
-                        </a>
-                    </li>
-                    {# <li class=\"settings-nav-item\">
-                        <a href=\"#preferences\" class=\"settings-nav-link\" data-section=\"preferences\">
-                            <i class=\"bi bi-sliders\"></i> Preferences
-                        </a>
-                    </li> #}
-                    <li class=\"settings-nav-item\">
-                        <a href=\"#security\" class=\"settings-nav-link\" data-section=\"security\">
-                            <i class=\"bi bi-lock\"></i> Security
-                        </a>
-                    </li>
-                    {# <li class=\"settings-nav-item\">
-                        <a href=\"#integrations\" class=\"settings-nav-link\" data-section=\"integrations\">
-                            <i class=\"bi bi-plug\"></i> Integrations
-                        </a>
-                    </li>
-                    <li class=\"settings-nav-item\">
-                        <a href=\"#billing\" class=\"settings-nav-link\" data-section=\"billing\">
-                            <i class=\"bi bi-credit-card\"></i> Billing
-                        </a>
-                    </li> #}
-                </ul>
-            </div>
-
-            <!-- Settings Content -->
-            <div class=\"settings-content\">
-                <!-- Profile Section -->
-                <div id=\"profile\" class=\"settings-section active\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-person\"></i> Profile Settings</h2>
-                    </div>
-                    <p class=\"section-description\">Update your personal information and how others see you on the platform.</p>
-
-                    <div class=\"avatar-upload\">
-                        <div class=\"avatar-preview\" id=\"avatarPreview\">
-                            <span>JD</span>
-                        </div>
-                        <div class=\"avatar-upload-controls\">
-                            <label for=\"avatarInput\" class=\"avatar-upload-btn\">
-                                <i class=\"bi bi-camera\"></i> Upload Photo
-                            </label>
-                            <input type=\"file\" id=\"avatarInput\" accept=\"image/*\" style=\"display: none;\">
-                            <div class=\"avatar-hint\">Recommended: Square image, 500x500px, max 2MB</div>
-                        </div>
-                    </div>
-
-                     <div class=\"row\">
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"firstName\">First Name</label>
-                            <input type=\"text\" class=\"form-control\" id=\"firstName\" value=\"Miller\" placeholder=\"Enter your first name\">
-                        </div>
-                        </div>
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"lastName\">Last Name</label>
-                            <input type=\"text\" class=\"form-control\" id=\"lastName\" value=\"Islam\" placeholder=\"Enter your last name\">
-                        </div>
-                        </div>
-                     </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"email\">Email Address</label>
-                        <input type=\"email\" class=\"form-control\" id=\"email\" value=\"Miller@template.com\" placeholder=\"Enter your email\">
-                        <p class=\"form-text\">This will be used for login and notifications</p>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"bio\">Bio</label>
-                        <textarea class=\"form-control\" id=\"bio\" rows=\"4\" placeholder=\"Tell us about yourself\">Senior UI/UX Designer at Panelry with 5+ years of experience in creating beautiful and functional interfaces. Passionate about design systems and user-centered design.</textarea>
-                        <p class=\"form-text\">Brief description for your profile. URLs are hyperlinked.</p>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"location\">Location</label>
-                        <input type=\"text\" class=\"form-control\" id=\"location\" value=\"San Francisco, CA\" placeholder=\"Enter your location\">
-                    </div>
-
-                    <div class=\"row\">
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                                <label class=\"form-label\" for=\"phone\">Phone Number</label>
-                                <input type=\"tel\" class=\"form-control\" id=\"phone\" value=\"+1 (555) 123-4567\" placeholder=\"Enter your phone number\">
-                            </div>
-                        </div>
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                                <label class=\"form-label\" for=\"website\">Website</label>
-                                <input type=\"url\" class=\"form-control\" id=\"website\" value=\"https://Miller.dev\" placeholder=\"https://example.com\">
-                            </div>
-                        </div>
-                     </div>
-                </div>
-
-                <!-- Account Section -->
-                {# <div id=\"account\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-shield-check\"></i> Account Settings</h2>
-                    </div>
-                    <p class=\"section-description\">Manage your account preferences and data.</p>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Email Notifications</div>
-                            <div class=\"toggle-description\">Receive email updates about your account activity</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Two-Factor Authentication</div>
-                            <div class=\"toggle-description\">Add an extra layer of security to your account</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Auto-save Drafts</div>
-                            <div class=\"toggle-description\">Automatically save drafts as you work</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Show Online Status</div>
-                            <div class=\"toggle-description\">Allow others to see when you're online</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\">Account Visibility</label>
-                        <div class=\"radio-cards\">
-                            <label class=\"radio-card selected\">
-                                <input type=\"radio\" name=\"visibility\" checked>
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-globe\"></i>
-                                </div>
-                                <div class=\"radio-title\">Public</div>
-                                <div class=\"radio-description\">Anyone can see your profile</div>
-                            </label>
-                            <label class=\"radio-card\">
-                                <input type=\"radio\" name=\"visibility\">
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-people\"></i>
-                                </div>
-                                <div class=\"radio-title\">Team Only</div>
-                                <div class=\"radio-description\">Only team members can see</div>
-                            </label>
-                            <label class=\"radio-card\">
-                                <input type=\"radio\" name=\"visibility\">
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-lock\"></i>
-                                </div>
-                                <div class=\"radio-title\">Private</div>
-                                <div class=\"radio-description\">Only you can see your profile</div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"language\">Language</label>
-                        <select class=\"form-control\" id=\"language\">
-                            <option selected>English (US)</option>
-                            <option>English (UK)</option>
-                            <option>Spanish</option>
-                            <option>French</option>
-                            <option>German</option>
-                            <option>Japanese</option>
-                        </select>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"timezone\">Timezone</label>
-                        <select class=\"form-control\" id=\"timezone\">
-                            <option selected>(UTC-08:00) Pacific Time</option>
-                            <option>(UTC-07:00) Mountain Time</option>
-                            <option>(UTC-06:00) Central Time</option>
-                            <option>(UTC-05:00) Eastern Time</option>
-                            <option>(UTC+00:00) London</option>
-                            <option>(UTC+01:00) Berlin</option>
-                            <option>(UTC+05:30) India</option>
-                        </select>
-                    </div>
-                </div> #}
-
-                {# <!-- Notifications Section -->
-                <div id=\"notifications\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-bell\"></i> Notification Settings</h2>
-                    </div>
-                    <p class=\"section-description\">Configure how you receive notifications and alerts.</p>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Push Notifications</div>
-                            <div class=\"toggle-description\">Receive notifications in your browser</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Email Notifications</div>
-                            <div class=\"toggle-description\">Receive notifications via email</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Desktop Notifications</div>
-                            <div class=\"toggle-description\">Show notifications on your desktop</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"section-header mt-4\">
-                        <h3 class=\"fs-14 fw-600 mb-0\">Notification Types</h3>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">New Messages</div>
-                            <div class=\"toggle-description\">When someone sends you a message</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Task Assignments</div>
-                            <div class=\"toggle-description\">When you're assigned a new task</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Project Updates</div>
-                            <div class=\"toggle-description\">When projects you're in are updated</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Team Activity</div>
-                            <div class=\"toggle-description\">When team members complete tasks</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">System Alerts</div>
-                            <div class=\"toggle-description\">Important system notifications</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"notificationSound\">Notification Sound</label>
-                        <select class=\"form-control\" id=\"notificationSound\">
-                            <option selected>Default</option>
-                            <option>Chime</option>
-                            <option>Bell</option>
-                            <option>Beep</option>
-                            <option>None</option>
-                        </select>
-                    </div>
-                </div> #}
-
-                <!-- Appearance Section -->
-                <div id=\"appearance\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-palette\"></i> Appearance Settings</h2>
-                    </div>
-                    <p class=\"section-description\">Customize the look and feel of the application.</p>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\">Theme</label>
-                        <div class=\"radio-cards\">
-                            <label class=\"radio-card selected\" onclick=\"setTheme('light')\">
-                                <input type=\"radio\" name=\"theme\" checked>
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-sun\"></i>
-                                </div>
-                                <div class=\"radio-title\">Light</div>
-                                <div class=\"radio-description\">Clean and bright interface</div>
-                            </label>
-                            <label class=\"radio-card\" onclick=\"setTheme('dark')\">
-                                <input type=\"radio\" name=\"theme\">
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-moon\"></i>
-                                </div>
-                                <div class=\"radio-title\">Dark</div>
-                                <div class=\"radio-description\">Easy on the eyes</div>
-                            </label>
-                            <label class=\"radio-card\" onclick=\"setTheme('auto')\">
-                                <input type=\"radio\" name=\"theme\">
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-circle-half\"></i>
-                                </div>
-                                <div class=\"radio-title\">Auto</div>
-                                <div class=\"radio-description\">Match system preference</div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"fontSize\">Font Size</label>
-                        <select class=\"form-control\" id=\"fontSize\">
-                            <option>Small</option>
-                            <option selected>Medium</option>
-                            <option>Large</option>
-                            <option>Extra Large</option>
-                        </select>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Compact Mode</div>
-                            <div class=\"toggle-description\">Reduce spacing for more content</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Reduced Motion</div>
-                            <div class=\"toggle-description\">Minimize animations and transitions</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">High Contrast Mode</div>
-                            <div class=\"toggle-description\">Increase contrast for better visibility</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-                </div>
-
-                {# <!-- Preferences Section -->
-                <div id=\"preferences\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-sliders\"></i> Preferences</h2>
-                    </div>
-                    <p class=\"section-description\">Configure your workflow and application behavior.</p>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"defaultView\">Default Dashboard View</label>
-                        <select class=\"form-control\" id=\"defaultView\">
-                            <option selected>Overview</option>
-                            <option>Analytics</option>
-                            <option>Projects</option>
-                            <option>Tasks</option>
-                            <option>Team</option>
-                        </select>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"dateFormat\">Date Format</label>
-                        <select class=\"form-control\" id=\"dateFormat\">
-                            <option selected>MM/DD/YYYY</option>
-                            <option>DD/MM/YYYY</option>
-                            <option>YYYY-MM-DD</option>
-                            <option>Month D, YYYY</option>
-                        </select>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"timeFormat\">Time Format</label>
-                        <select class=\"form-control\" id=\"timeFormat\">
-                            <option selected>12-hour</option>
-                            <option>24-hour</option>
-                        </select>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"weekStart\">Week Starts On</label>
-                        <select class=\"form-control\" id=\"weekStart\">
-                            <option selected>Sunday</option>
-                            <option>Monday</option>
-                        </select>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Auto-refresh Data</div>
-                            <div class=\"toggle-description\">Automatically refresh data every 5 minutes</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Show Confirmation Dialogs</div>
-                            <div class=\"toggle-description\">Ask for confirmation before destructive actions</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Enable Keyboard Shortcuts</div>
-                            <div class=\"toggle-description\">Use keyboard shortcuts for faster navigation</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Show Tooltips</div>
-                            <div class=\"toggle-description\">Display helpful tooltips for icons and buttons</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-                </div> #}
-
-                <!-- Security Section -->
-                <div id=\"security\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-lock\"></i> Security Settings</h2>
-                    </div>
-                    <p class=\"section-description\">Manage your account security and privacy settings.</p>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"currentPassword\">Current Password</label>
-                        <input type=\"password\" class=\"form-control\" id=\"currentPassword\" placeholder=\"Enter current password\">
-                    </div>
-
-                    <div class=\"row\">
-                        <div class=\"col\">
-                            <div class=\"form-group\">
-                                <label class=\"form-label\" for=\"newPassword\">New Password</label>
-                                <input type=\"password\" class=\"form-control\" id=\"newPassword\" placeholder=\"Enter new password\">
-                            </div>
-                        </div>
-                        <div class=\"col\">
-                             <div class=\"form-group\">
-                                <label class=\"form-label\" for=\"confirmPassword\">Confirm Password</label>
-                                <input type=\"password\" class=\"form-control\" id=\"confirmPassword\" placeholder=\"Confirm new password\">
-                            </div>
-                        </div>
-                     </div>
-
-                    <p class=\"form-text\">Use at least 8 characters with a mix of letters, numbers & symbols</p>
-
-                    <button class=\"btn-outline\" onclick=\"changePassword()\">
-                        <i class=\"bi bi-key\"></i> Change Password
-                    </button>
-
-                    <div class=\"section-header mt-4\">
-                        <h3 class=\"fs-14 fw-600 mb-0\">Suppression du comptes</h3>
-                    </div>
-
-                    <div class=\"danger-zone mt-4\">
-                        <h3 class=\"danger-title\"><i class=\"bi bi-exclamation-triangle\"></i> Danger Zone</h3>
-                        <p class=\"danger-description\">Once you delete your account, there is no going back. Please be certain.</p>
-                        <button class=\"btn-danger\" onclick=\"deleteAccount()\">
-                            <i class=\"bi bi-trash\"></i> Delete Account
-                        </button>
-                    </div>
-                </div>
-
-                {# <!-- Integrations Section -->
-                <div id=\"integrations\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-plug\"></i> Integrations</h2>
-                    </div>
-                    <p class=\"section-description\">Connect with third-party services and tools.</p>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Google Calendar</div>
-                            <div class=\"toggle-description\">Sync your calendar events</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Slack</div>
-                            <div class=\"toggle-description\">Get notifications in Slack</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">GitHub</div>
-                            <div class=\"toggle-description\">Link repositories and issues</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Jira</div>
-                            <div class=\"toggle-description\">Sync projects and tasks</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Dropbox</div>
-                            <div class=\"toggle-description\">Access and sync files</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\">
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Zapier</div>
-                            <div class=\"toggle-description\">Create custom automations</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <button class=\"btn-outline mt-3\" onclick=\"connectNewIntegration()\">
-                        <i class=\"bi bi-plus-lg\"></i> Connect New Integration
-                    </button>
-                </div>
-
-                <!-- Billing Section -->
-                <div id=\"billing\" class=\"settings-section\">
-                    <div class=\"section-header\">
-                        <h2 class=\"section-title\"><i class=\"bi bi-credit-card\"></i> Billing & Subscription</h2>
-                    </div>
-                    <p class=\"section-description\">Manage your subscription and billing information.</p>
-
-                    <div class=\"form-group\">
-                        <div class=\"radio-cards\">
-                            <label class=\"radio-card selected\">
-                                <input type=\"radio\" name=\"plan\" checked>
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-star\"></i>
-                                </div>
-                                <div class=\"radio-title\">Pro Plan</div>
-                                <div class=\"radio-description\">\$29/month • 10 team members</div>
-                            </label>
-                            <label class=\"radio-card\">
-                                <input type=\"radio\" name=\"plan\">
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-rocket-takeoff\"></i>
-                                </div>
-                                <div class=\"radio-title\">Business Plan</div>
-                                <div class=\"radio-description\">\$99/month • Unlimited members</div>
-                            </label>
-                            <label class=\"radio-card\">
-                                <input type=\"radio\" name=\"plan\">
-                                <div class=\"radio-icon\">
-                                    <i class=\"bi bi-building\"></i>
-                                </div>
-                                <div class=\"radio-title\">Enterprise</div>
-                                <div class=\"radio-description\">Custom pricing • Advanced features</div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\">Payment Method</label>
-                        <div class=\"toggle-item\">
-                            <div class=\"toggle-info\">
-                                <div class=\"toggle-title\">Visa ending in 4242</div>
-                                <div class=\"toggle-description\">Expires 12/2025</div>
-                            </div>
-                            <button class=\"btn-outline\" onclick=\"editPaymentMethod()\">
-                                <i class=\"bi bi-pencil\"></i> Edit
-                            </button>
-                        </div>
-                        <button class=\"btn-outline\" onclick=\"addPaymentMethod()\">
-                            <i class=\"bi bi-plus-lg\"></i> Add Payment Method
-                        </button>
-                    </div>
-
-                    <div class=\"form-group\">
-                        <label class=\"form-label\" for=\"billingEmail\">Billing Email</label>
-                        <input type=\"email\" class=\"form-control\" id=\"billingEmail\" value=\"billing@template.com\" placeholder=\"Enter billing email\">
-                        <p class=\"form-text\">Receipts and invoices will be sent to this email</p>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Auto-renew Subscription</div>
-                            <div class=\"toggle-description\">Automatically renew your subscription</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"toggle-item\">
-                        <div class=\"toggle-info\">
-                            <div class=\"toggle-title\">Send Invoice Receipts</div>
-                            <div class=\"toggle-description\">Email receipts after each payment</div>
-                        </div>
-                        <label class=\"toggle-switch\">
-                            <input type=\"checkbox\" checked>
-                            <span class=\"toggle-slider\"></span>
-                        </label>
-                    </div>
-
-                    <div class=\"danger-zone mt-4\">
-                        <h3 class=\"danger-title\"><i class=\"bi bi-x-circle\"></i> Cancel Subscription</h3>
-                        <p class=\"danger-description\">Your subscription will remain active until the end of the current billing period.</p>
-                        <button class=\"btn-danger\" onclick=\"cancelSubscription()\">
-                            <i class=\"bi bi-x-lg\"></i> Cancel Subscription
-                        </button>
-                    </div>
-                </div> #}
-            </div>
-        </div>
-    </main>
+\t{% include 'component/sidebaradmin.html.twig' %}
+\t<!-- ========== MAIN CONTENT ========== -->
+\t<main
+\t\tclass=\"main\" id=\"main\" role=\"main\">
+\t\t<!-- Page Header -->
+\t\t<div class=\"page-header\">
+\t\t\t<div class=\"page-title\">
+\t\t\t\t<h1>User Profile</h1>
+\t\t\t\t<p>View and manage user details, assignments, and performance</p>
+\t\t\t</div>
+\t\t\t<div class=\"page-actions\">
+\t\t\t\t<a href=\"{{ path('admin_setting_edit', {'id': currentUser.id}) }}\" class=\"btn-secondary\">
+\t\t\t\t\t<i class=\"bi bi-pencil\"></i>Edit Profile
+\t\t\t\t</a>
+\t\t\t\t<a href=\"{{ path('admin_setting_list') }}\" class=\"btn-primary\">
+\t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
+\t\t\t\t\tBack to user</a>
+\t\t\t</div>
+\t\t</div>
+
+
+\t\t<!-- User Header -->
+\t\t<div class=\"user-header\">
+\t\t\t<div class=\"user-header-background\"></div>
+\t\t\t<div class=\"user-header-content\">
+\t\t\t\t<div class=\"user-avatar\" id=\"userAvatar\">
+\t\t\t\t\t{% if currentUser %}
+\t\t\t\t\t\t\t<img src=\"{{ asset('images/profiles/' ~ currentUser.profilePictureName) }}\" alt=\"Photo de profil de {{ app.user.username }}\" class=\"avatar-img\" width=\"50\" height=\"50\" loading=\"lazy\" >
+\t\t\t\t\t{% endif %}
+\t\t\t\t</div>
+\t\t\t\t<div class=\"user-info\">
+\t\t\t\t\t<div class=\"user-name\">{{ currentUser.username }}</div>
+\t\t\t\t\t<div class=\"user-title\">{{ currentUser.fonctionScout }}</div>
+\t\t\t\t\t<div class=\"user-contact\">
+\t\t\t\t\t\t<div class=\"contact-item\">
+\t\t\t\t\t\t\t<i class=\"bi bi-envelope\"></i>
+\t\t\t\t\t\t\t<span>{{ currentUser.email }}</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"contact-item\">
+\t\t\t\t\t\t\t<i class=\"bi bi-telephone\"></i>
+\t\t\t\t\t\t\t<span>{{ currentUser.phone }}</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"contact-item\">
+\t\t\t\t\t\t\t<i class=\"bi bi-building\"></i>
+\t\t\t\t\t\t\t<span>Scout ID: HC/AMI/-00{{ currentUser.id }}</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"d-flex align-items-center gap-3\">
+\t\t\t\t\t\t<span class=\"user-status\">
+\t\t\t\t\t\t\t<i class=\"bi bi-circle-fill\"></i>
+\t\t\t\t\t\t\tOnline
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"text-muted\">Joined: {{ currentUser.createdAt|date('F j, Y') }}</span>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<!-- User Stats -->
+\t\t<div class=\"user-stats\">
+\t\t\t<div class=\"stat-card\">
+\t\t\t\t<div class=\"stat-header\">
+\t\t\t\t\t<div class=\"stat-icon\">
+\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"text-muted\">This Week</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"stat-content\">
+\t\t\t\t\t<h3>24</h3>
+\t\t\t\t\t<div class=\"stat-label\">Tasks Completed</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"stat-card\">
+\t\t\t\t<div class=\"stat-header\">
+\t\t\t\t\t<div class=\"stat-icon\">
+\t\t\t\t\t\t<i class=\"bi bi-clock\"></i>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"text-muted\">Total Hours</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"stat-content\">
+\t\t\t\t\t<h3>142</h3>
+\t\t\t\t\t<div class=\"stat-label\">Hours Worked</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"stat-card\">
+\t\t\t\t<div class=\"stat-header\">
+\t\t\t\t\t<div class=\"stat-icon\">
+\t\t\t\t\t\t<i class=\"bi bi-star\"></i>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"text-muted\">Rating</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"stat-content\">
+\t\t\t\t\t<h3>4.8</h3>
+\t\t\t\t\t<div class=\"stat-label\">Performance Score</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"stat-card\">
+\t\t\t\t<div class=\"stat-header\">
+\t\t\t\t\t<div class=\"stat-icon\">
+\t\t\t\t\t\t<i class=\"bi bi-people\"></i>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"text-muted\">Teams</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"stat-content\">
+\t\t\t\t\t<h3>3</h3>
+\t\t\t\t\t<div class=\"stat-label\">Active Teams</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+
+\t\t<div class=\"project-tabs user-details-tabs\">
+\t\t\t<div class=\"tabs-header\">
+\t\t\t\t<button class=\"tab-btn active\" data-tab=\"overview\">Overview</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"departments\">Departments</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"skills\">Skills & Expertise</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"activity\">Activity</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"tasks\">Tasks</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"performance\">Performance</button>
+\t\t\t\t<button class=\"tab-btn\" data-tab=\"reports\">Reports</button>
+\t\t\t</div>
+
+\t\t\t<!-- Overview Tab -->
+\t\t\t<div class=\"tab-content active\" id=\"overviewTab\">
+\t\t\t\t<div class=\"row\">
+\t\t\t\t\t<div class=\"col-lg-8\">
+\t\t\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-person-badge\"></i>
+\t\t\t\t\t\t\t\t\tAbout</h3>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"bio-content\" id=\"bioContent\">
+\t\t\t\t\t\t\t\tSenior UI/UX Designer with 8+ years of experience creating intuitive and beautiful
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                digital products. Currently leading the Design Team at Panelry while contributing
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                to cross-functional product initiatives. Passionate about user-centered design, design
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                systems, and mentoring junior designers.
+
+\t\t\t\t\t\t\t\t<div class=\"mt-3\">
+\t\t\t\t\t\t\t\t\t<strong>Key Responsibilities:</strong>
+\t\t\t\t\t\t\t\t\t<ul class=\"mt-2\">
+\t\t\t\t\t\t\t\t\t\t<li>Lead UI/UX design for web and mobile applications</li>
+\t\t\t\t\t\t\t\t\t\t<li>Manage design team and coordinate with product/engineering</li>
+\t\t\t\t\t\t\t\t\t\t<li>Develop and maintain design systems</li>
+\t\t\t\t\t\t\t\t\t\t<li>Conduct user research and usability testing</li>
+\t\t\t\t\t\t\t\t\t\t<li>Mentor junior designers and interns</li>
+\t\t\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-clock-history\"></i>
+\t\t\t\t\t\t\t\t\tRecent Activity</h3>
+\t\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewAllActivity()\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-arrow-right\"></i>
+\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-list\">
+\t\t\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t\t\t<div class=\"activity-icon\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-text\">
+\t\t\t\t\t\t\t\t\t\t\tCompleted task
+\t\t\t\t\t\t\t\t\t\t\t<strong>\"Redesign Dashboard Analytics Panel\"</strong>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t\t\t<span>Today, 10:30 AM</span>
+\t\t\t\t\t\t\t\t\t\t\t<span>Project: Dashboard Redesign</span>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t\t\t<div class=\"activity-icon\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-chat\"></i>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-text\">
+\t\t\t\t\t\t\t\t\t\t\tAdded comment on
+\t\t\t\t\t\t\t\t\t\t\t<strong>\"Mobile Banking App Design\"</strong>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t\t\t<span>Yesterday, 3:45 PM</span>
+\t\t\t\t\t\t\t\t\t\t\t<span>Project: Mobile Banking</span>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t\t\t<div class=\"activity-icon\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-file-earmark\"></i>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-text\">
+\t\t\t\t\t\t\t\t\t\t\tUploaded wireframes for
+\t\t\t\t\t\t\t\t\t\t\t<strong>\"E-commerce Checkout Flow\"</strong>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t\t\t<span>Dec 11, 2025</span>
+\t\t\t\t\t\t\t\t\t\t\t<span>Project: E-commerce Design</span>
+\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+
+\t\t\t\t\t<div class=\"col-lg-4\">
+\t\t\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-info-circle\"></i>
+\t\t\t\t\t\t\t\t\tQuick Info</h3>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"quick-info\">
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Access Level</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">Manager</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Experience Level</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">Senior (8+ years)</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Reporting To</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">Lisa Rodriguez (Product Director)</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Location</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">San Francisco, CA</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Working Hours</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">9:00 AM - 6:00 PM PST</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"mb-3\">
+\t\t\t\t\t\t\t\t\t<div class=\"fs-12 text-muted\">Last Active</div>
+\t\t\t\t\t\t\t\t\t<div class=\"fw-600\">2 minutes ago</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-lightning\"></i>
+\t\t\t\t\t\t\t\t\tQuick Actions</h3>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"quick-actions\">
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"action-btn\" onclick=\"assignTask()\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-plus-circle\"></i>
+\t\t\t\t\t\t\t\t\t<span>Assign Task</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"action-btn\" onclick=\"scheduleMeeting()\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-calendar-plus\"></i>
+\t\t\t\t\t\t\t\t\t<span>Schedule Meeting</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"action-btn\" onclick=\"generateReport()\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-file-earmark-text\"></i>
+\t\t\t\t\t\t\t\t\t<span>Generate Report</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"action-btn\" onclick=\"viewDocuments()\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-folder\"></i>
+\t\t\t\t\t\t\t\t\t<span>View Documents</span>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<!-- Department Tab -->
+\t\t\t<div class=\"tab-content\" id=\"departmentsTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-building\"></i>
+\t\t\t\t\t\t\tDepartment Assignments</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<button class=\"btn-outline\" onclick=\"addDepartmentAssignment()\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-plus\"></i>
+\t\t\t\t\t\t\t\tAdd Department
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"departments-grid\">
+\t\t\t\t\t\t<div class=\"department-card\">
+\t\t\t\t\t\t\t<div class=\"department-header\">
+\t\t\t\t\t\t\t\t<div class=\"department-icon\" style=\"background: var(--accent);\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-palette\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"department-info\">
+\t\t\t\t\t\t\t\t\t<div class=\"department-name\">Design Team</div>
+\t\t\t\t\t\t\t\t\t<div class=\"department-role\">Team Lead</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"department-details\">
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Team Size:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">8 members</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Joined:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Jan 15, 2024</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Projects:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">12 active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Status:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<div class=\"department-card\">
+\t\t\t\t\t\t\t<div class=\"department-header\">
+\t\t\t\t\t\t\t\t<div class=\"department-icon\" style=\"background: var(--info);\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-code-slash\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"department-info\">
+\t\t\t\t\t\t\t\t\t<div class=\"department-name\">Development</div>
+\t\t\t\t\t\t\t\t\t<div class=\"department-role\">Contributor</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"department-details\">
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Team Size:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">15 members</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Joined:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Mar 10, 2024</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Projects:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">6 active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Status:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<div class=\"department-card\">
+\t\t\t\t\t\t\t<div class=\"department-header\">
+\t\t\t\t\t\t\t\t<div class=\"department-icon\" style=\"background: var(--warning);\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-bullseye\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"department-info\">
+\t\t\t\t\t\t\t\t\t<div class=\"department-name\">Product Management</div>
+\t\t\t\t\t\t\t\t\t<div class=\"department-role\">Advisor</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"department-details\">
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Team Size:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">5 members</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Joined:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Jun 5, 2024</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Projects:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">8 active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"detail-item\">
+\t\t\t\t\t\t\t\t\t<span class=\"detail-label\">Status:</span>
+\t\t\t\t\t\t\t\t\t<span class=\"detail-value\">Active</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-shield-check\"></i>
+\t\t\t\t\t\t\tDepartment Permissions</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"permissions-grid\">
+\t\t\t\t\t\t<div class=\"permission-item\">
+\t\t\t\t\t\t\t<div class=\"permission-info\">
+\t\t\t\t\t\t\t\t<div class=\"permission-name\">Create Design Tasks</div>
+\t\t\t\t\t\t\t\t<div class=\"permission-description\">Design Team</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"form-check form-switch\">
+\t\t\t\t\t\t\t\t<input class=\"form-check-input\" type=\"checkbox\" checked disabled>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"permission-item\">
+\t\t\t\t\t\t\t<div class=\"permission-info\">
+\t\t\t\t\t\t\t\t<div class=\"permission-name\">Review Code</div>
+\t\t\t\t\t\t\t\t<div class=\"permission-description\">Development</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"form-check form-switch\">
+\t\t\t\t\t\t\t\t<input class=\"form-check-input\" type=\"checkbox\" checked disabled>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"permission-item\">
+\t\t\t\t\t\t\t<div class=\"permission-info\">
+\t\t\t\t\t\t\t\t<div class=\"permission-name\">Approve Product Decisions</div>
+\t\t\t\t\t\t\t\t<div class=\"permission-description\">Product Management</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"form-check form-switch\">
+\t\t\t\t\t\t\t\t<input class=\"form-check-input\" type=\"checkbox\" disabled>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"permission-item\">
+\t\t\t\t\t\t\t<div class=\"permission-info\">
+\t\t\t\t\t\t\t\t<div class=\"permission-name\">Manage Team Members</div>
+\t\t\t\t\t\t\t\t<div class=\"permission-description\">Design Team</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"form-check form-switch\">
+\t\t\t\t\t\t\t\t<input class=\"form-check-input\" type=\"checkbox\" checked disabled>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<!-- skills Tab -->
+\t\t\t<div class=\"tab-content skills-tab\" id=\"skillsTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-lightning\"></i>
+\t\t\t\t\t\t\tSkills & Expertise</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<button class=\"btn-outline\" onclick=\"addSkill()\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-plus\"></i>
+\t\t\t\t\t\t\t\tAdd Skill
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"skills-container\">
+\t\t\t\t\t\t<span class=\"skill-tag\">UI Design
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">User Research
+\t\t\t\t\t\t\t<span class=\"skill-level\">Advanced</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Prototyping
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Figma
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Adobe Creative Suite
+\t\t\t\t\t\t\t<span class=\"skill-level\">Advanced</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Design Systems
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">HTML/CSS
+\t\t\t\t\t\t\t<span class=\"skill-level\">Intermediate</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">JavaScript
+\t\t\t\t\t\t\t<span class=\"skill-level\">Intermediate</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">React
+\t\t\t\t\t\t\t<span class=\"skill-level\">Basic</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Product Strategy
+\t\t\t\t\t\t\t<span class=\"skill-level\">Advanced</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Team Leadership
+\t\t\t\t\t\t\t<span class=\"skill-level\">Expert</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Agile Methodology
+\t\t\t\t\t\t\t<span class=\"skill-level\">Advanced</span>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-briefcase\"></i>
+\t\t\t\t\t\t\tWork Experience</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"timeline\">
+\t\t\t\t\t\t<div class=\"timeline-item\">
+\t\t\t\t\t\t\t<div class=\"timeline-dot\"></div>
+\t\t\t\t\t\t\t<div class=\"timeline-content\">
+\t\t\t\t\t\t\t\t<div class=\"timeline-date\">2024 - Present</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-title\">Senior UI/UX Designer & Project Lead</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-description\">Panelry Inc. • Leading design team, managing
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    projects, and contributing to product strategy.</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"timeline-item\">
+\t\t\t\t\t\t\t<div class=\"timeline-dot\"></div>
+\t\t\t\t\t\t\t<div class=\"timeline-content\">
+\t\t\t\t\t\t\t\t<div class=\"timeline-date\">2021 - 2024</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-title\">Senior Product Designer</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-description\">TechSolutions Corp. • Designed enterprise SaaS
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    products and established design systems.</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"timeline-item\">
+\t\t\t\t\t\t\t<div class=\"timeline-dot\"></div>
+\t\t\t\t\t\t\t<div class=\"timeline-content\">
+\t\t\t\t\t\t\t\t<div class=\"timeline-date\">2019 - 2021</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-title\">UI/UX Designer</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-description\">CreativeMinds Agency • Worked with various clients on
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    web and mobile applications.</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"timeline-item\">
+\t\t\t\t\t\t\t<div class=\"timeline-dot\"></div>
+\t\t\t\t\t\t\t<div class=\"timeline-content\">
+\t\t\t\t\t\t\t\t<div class=\"timeline-date\">2017 - 2019</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-title\">Junior Designer</div>
+\t\t\t\t\t\t\t\t<div class=\"timeline-description\">DigitalWorks Studio • Started career focusing on web
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    design and user interfaces.</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-tools\"></i>
+\t\t\t\t\t\t\tTools & Technologies</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"skills-container\">
+\t\t\t\t\t\t<span class=\"skill-tag\">Figma</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Adobe XD</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Sketch</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Photoshop</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Illustrator</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">InVision</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Zeplin</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Framer</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">VS Code</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Git</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Jira</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Confluence</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Notion</span>
+\t\t\t\t\t\t<span class=\"skill-tag\">Slack</span>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<!-- Activity Tab -->
+\t\t\t<div class=\"tab-content\" id=\"activityTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-activity\"></i>
+\t\t\t\t\t\t\tRecent Activity</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<select class=\"form-select\" style=\"width: auto;\" id=\"activityFilter\">
+\t\t\t\t\t\t\t\t<option value=\"all\">All Activities</option>
+\t\t\t\t\t\t\t\t<option value=\"tasks\">Tasks</option>
+\t\t\t\t\t\t\t\t<option value=\"comments\">Comments</option>
+\t\t\t\t\t\t\t\t<option value=\"uploads\">Uploads</option>
+\t\t\t\t\t\t\t\t<option value=\"meetings\">Meetings</option>
+\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"activity-list\" id=\"activityList\">
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--success);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Completed task 'Redesign Dashboard Analytics Panel'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Today, 10:30 AM</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Dashboard Redesign</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--info);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-chat\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Added comment on 'Mobile Banking App Design'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Yesterday, 3:45 PM</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Mobile Banking</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--warning);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-file-earmark\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Uploaded wireframes for 'E-commerce Checkout Flow'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 11, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: E-commerce Design</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--purple);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-people\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Attended weekly design review meeting</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 10, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Design Team</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--success);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Started work on 'Admin Panel Redesign'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 9, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Panelry Dashboard</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--info);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-chat\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Provided feedback on 'User Testing Results'</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 8, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: User Research</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"activity-item\">
+\t\t\t\t\t\t\t<div class=\"activity-icon\" style=\"background: rgba(10, NaN, NaN, 0.1); color: var(--warning);\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-file-earmark\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"activity-content\">
+\t\t\t\t\t\t\t\t<div class=\"activity-text\">Uploaded design system documentation</div>
+\t\t\t\t\t\t\t\t<div class=\"activity-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dec 7, 2025</span>
+\t\t\t\t\t\t\t\t\t<span>Project: Design System</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<!-- tasks Tab -->
+\t\t\t<div class=\"tab-content user-details-task\" id=\"tasksTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-check-circle\"></i>
+\t\t\t\t\t\t\tCurrent Tasks</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<button class=\"btn-outline\" onclick=\"assignNewTask()\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-plus\"></i>
+\t\t\t\t\t\t\t\tAssign Task
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"tasks-list\" id=\"tasksList\">
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox checked\" onclick=\"toggleTask(1)\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-check\"></i>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Design login page for mobile app</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>Mobile Banking</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Today</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-high\">High</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(1)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox \" onclick=\"toggleTask(2)\"></div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Review user feedback from testing</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>User Research</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Tomorrow</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-medium\">Medium</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(2)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox \" onclick=\"toggleTask(3)\"></div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Update design system components</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>Design System</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Dec 20</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-medium\">Medium</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(3)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox \" onclick=\"toggleTask(4)\"></div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Prepare presentation for stakeholders</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>Dashboard Redesign</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Dec 18</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-high\">High</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(4)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<div class=\"task-item\">
+\t\t\t\t\t\t\t<div class=\"task-checkbox \" onclick=\"toggleTask(5)\"></div>
+\t\t\t\t\t\t\t<div class=\"task-info\">
+\t\t\t\t\t\t\t\t<div class=\"task-title\">Mentor junior designer on prototyping</div>
+\t\t\t\t\t\t\t\t<div class=\"task-meta\">
+\t\t\t\t\t\t\t\t\t<span>Design Team</span>
+\t\t\t\t\t\t\t\t\t<span>• Due: Dec 22</span>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-low\">Low</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t\t<button class=\"btn-primary\" onclick=\"viewTask(5)\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+
+\t\t\t\t<!-- Task Statistics -->
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-bar-chart\"></i>
+\t\t\t\t\t\t\tTask Statistics</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"metrics-grid\">
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">24</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Completed This Week</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">8</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">In Progress</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">3</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Overdue</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">92%</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">On-time Completion</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<!-- performance Tab -->
+\t\t\t<div class=\"tab-content\" id=\"performanceTab\">
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-graph-up\"></i>
+\t\t\t\t\t\t\tPerformance Metrics</h3>
+\t\t\t\t\t\t<div class=\"card-actions\">
+\t\t\t\t\t\t\t<select class=\"form-select\" style=\"width: auto;\" id=\"timeRange\">
+\t\t\t\t\t\t\t\t<option value=\"week\">This Week</option>
+\t\t\t\t\t\t\t\t<option value=\"month\" selected>This Month</option>
+\t\t\t\t\t\t\t\t<option value=\"quarter\">This Quarter</option>
+\t\t\t\t\t\t\t\t<option value=\"year\">This Year</option>
+\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"metrics-grid\">
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">4.8</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Quality Score</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">95%</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Task Completion</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">4.9</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Team Collaboration</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"metric-card\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">4.7</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Initiative</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+
+\t\t\t\t<!-- Workload Chart -->
+\t\t\t\t<div class=\"content-card\">
+\t\t\t\t\t<div class=\"card-header\">
+\t\t\t\t\t\t<h3 class=\"card-title\">
+\t\t\t\t\t\t\t<i class=\"bi bi-calendar-check\"></i>
+\t\t\t\t\t\t\tCurrent Workload</h3>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"workload-chart\">
+\t\t\t\t\t\t<div class=\"workload-bars\">
+\t\t\t\t\t\t\t<div class=\"workload-bar\">
+\t\t\t\t\t\t\t\t<div class=\"workload-fill\" style=\"width: 60%\"></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"workload-bar\">
+\t\t\t\t\t\t\t\t<div class=\"workload-fill\" style=\"width: 75%\"></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"workload-bar\">
+\t\t\t\t\t\t\t\t<div class=\"workload-fill\" style=\"width: 40%\"></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"workload-bar\">
+\t\t\t\t\t\t\t\t<div class=\"workload-fill\" style=\"width: 85%\"></div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"workload-labels\">
+\t\t\t\t\t\t\t<span>Design Team</span>
+\t\t\t\t\t\t\t<span>Development</span>
+\t\t\t\t\t\t\t<span>Product</span>
+\t\t\t\t\t\t\t<span>Admin</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<!-- reports Tab -->
+\t\t\t<div class=\"tab-content\" id=\"reportsTab\">
+\t\t\t\t<div class=\"reports-grid\">
+\t\t\t\t\t<div class=\"report-card\">
+\t\t\t\t\t\t<div class=\"report-icon\">
+\t\t\t\t\t\t\t<i class=\"bi bi-file-text\"></i>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"report-name\">Monthly Performance Report</div>
+\t\t\t\t\t\t<div class=\"report-meta\">
+\t\t\t\t\t\t\t<span>December 2025</span>
+\t\t\t\t\t\t\t<span>PDF • 2.4 MB</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<button class=\"btn-outline w-100\" onclick=\"downloadReport('monthly')\">
+\t\t\t\t\t\t\t<i class=\"bi bi-download\"></i>
+\t\t\t\t\t\t\tDownload
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"report-card\">
+\t\t\t\t\t\t<div class=\"report-icon\">
+\t\t\t\t\t\t\t<i class=\"bi bi-bar-chart\"></i>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"report-name\">Task Completion Analysis</div>
+\t\t\t\t\t\t<div class=\"report-meta\">
+\t\t\t\t\t\t\t<span>Q4 2025</span>
+\t\t\t\t\t\t\t<span>PDF • 1.8 MB</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<button class=\"btn-outline w-100\" onclick=\"downloadReport('task-analysis')\">
+\t\t\t\t\t\t\t<i class=\"bi bi-download\"></i>
+\t\t\t\t\t\t\tDownload
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"report-card\">
+\t\t\t\t\t\t<div class=\"report-icon\">
+\t\t\t\t\t\t\t<i class=\"bi bi-people\"></i>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"report-name\">Team Contribution Report</div>
+\t\t\t\t\t\t<div class=\"report-meta\">
+\t\t\t\t\t\t\t<span>November 2025</span>
+\t\t\t\t\t\t\t<span>PDF • 3.2 MB</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<button class=\"btn-outline w-100\" onclick=\"downloadReport('team-contribution')\">
+\t\t\t\t\t\t\t<i class=\"bi bi-download\"></i>
+\t\t\t\t\t\t\tDownload
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"report-card\">
+\t\t\t\t\t\t<div class=\"report-icon\">
+\t\t\t\t\t\t\t<i class=\"bi bi-clock-history\"></i>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"report-name\">Time Tracking Summary</div>
+\t\t\t\t\t\t<div class=\"report-meta\">
+\t\t\t\t\t\t\t<span>December 2025</span>
+\t\t\t\t\t\t\t<span>Excel • 1.5 MB</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<button class=\"btn-outline w-100\" onclick=\"downloadReport('time-tracking')\">
+\t\t\t\t\t\t\t<i class=\"bi bi-download\"></i>
+\t\t\t\t\t\t\tDownload
+\t\t\t\t\t\t</button>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t</main>
 
 \t{% include 'component/footeradmin.html.twig' %}
 {% endblock %}

@@ -1,750 +1,932 @@
 {% extends 'component/baseadmin.html.twig' %}
 
-{% block title %} Settingadmin {% endblock %}
+{% block title %}
+	Settingadmin
+{% endblock %}
 
 {% block body %}
 	{% include 'component/headeradmin.html.twig' %}
 
-    {% include 'component/sidebaradmin.html.twig' %}
-        <!-- ========== MAIN CONTENT ========== -->
-      <main class="main" id="main" role="main">
-        <!-- Page Header -->
-        <div class="page-header">
-            <div class="page-title">
-                <h1>Settings</h1>
-                <p>Manage your account preferences and system configurations</p>
-            </div>
-            <div class="page-actions">
-                <button class="btn-secondary">
-                    <i class="bi bi-arrow-clockwise"></i> Reset
-                </button>
-                <button class="btn-primary">
-                    <i class="bi bi-check-lg"></i> Save Changes
-                </button>
-            </div>
-        </div>
-
-        <!-- Settings Container -->
-        <div class="settings-container">
-            <!-- Settings Sidebar -->
-            <div class="settings-sidebar">
-                <ul class="settings-nav">
-                    <li class="settings-nav-item">
-                        <a href="#profile" class="settings-nav-link active" data-section="profile">
-                            <i class="bi bi-person"></i> Profile
-                        </a>
-                    </li>
-                    {# <li class="settings-nav-item">
-                        <a href="#account" class="settings-nav-link" data-section="account">
-                            <i class="bi bi-shield-check"></i> Account
-                        </a>
-                    </li> #}
-                    {# <li class="settings-nav-item">
-                        <a href="#notifications" class="settings-nav-link" data-section="notifications">
-                            <i class="bi bi-bell"></i> Notifications
-                        </a>
-                    </li> #}
-                    <li class="settings-nav-item">
-                        <a href="#appearance" class="settings-nav-link" data-section="appearance">
-                            <i class="bi bi-palette"></i> Appearance
-                        </a>
-                    </li>
-                    {# <li class="settings-nav-item">
-                        <a href="#preferences" class="settings-nav-link" data-section="preferences">
-                            <i class="bi bi-sliders"></i> Preferences
-                        </a>
-                    </li> #}
-                    <li class="settings-nav-item">
-                        <a href="#security" class="settings-nav-link" data-section="security">
-                            <i class="bi bi-lock"></i> Security
-                        </a>
-                    </li>
-                    {# <li class="settings-nav-item">
-                        <a href="#integrations" class="settings-nav-link" data-section="integrations">
-                            <i class="bi bi-plug"></i> Integrations
-                        </a>
-                    </li>
-                    <li class="settings-nav-item">
-                        <a href="#billing" class="settings-nav-link" data-section="billing">
-                            <i class="bi bi-credit-card"></i> Billing
-                        </a>
-                    </li> #}
-                </ul>
-            </div>
-
-            <!-- Settings Content -->
-            <div class="settings-content">
-                <!-- Profile Section -->
-                <div id="profile" class="settings-section active">
-                    <div class="section-header">
-                        <h2 class="section-title"><i class="bi bi-person"></i> Profile Settings</h2>
-                    </div>
-                    <p class="section-description">Update your personal information and how others see you on the platform.</p>
-
-                    <div class="avatar-upload">
-                        <div class="avatar-preview" id="avatarPreview">
-                            <span>JD</span>
-                        </div>
-                        <div class="avatar-upload-controls">
-                            <label for="avatarInput" class="avatar-upload-btn">
-                                <i class="bi bi-camera"></i> Upload Photo
-                            </label>
-                            <input type="file" id="avatarInput" accept="image/*" style="display: none;">
-                            <div class="avatar-hint">Recommended: Square image, 500x500px, max 2MB</div>
-                        </div>
-                    </div>
-
-                     <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                            <label class="form-label" for="firstName">First Name</label>
-                            <input type="text" class="form-control" id="firstName" value="Miller" placeholder="Enter your first name">
-                        </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                            <label class="form-label" for="lastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastName" value="Islam" placeholder="Enter your last name">
-                        </div>
-                        </div>
-                     </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email" value="Miller@template.com" placeholder="Enter your email">
-                        <p class="form-text">This will be used for login and notifications</p>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="bio">Bio</label>
-                        <textarea class="form-control" id="bio" rows="4" placeholder="Tell us about yourself">Senior UI/UX Designer at Panelry with 5+ years of experience in creating beautiful and functional interfaces. Passionate about design systems and user-centered design.</textarea>
-                        <p class="form-text">Brief description for your profile. URLs are hyperlinked.</p>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="location">Location</label>
-                        <input type="text" class="form-control" id="location" value="San Francisco, CA" placeholder="Enter your location">
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label class="form-label" for="phone">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" value="+1 (555) 123-4567" placeholder="Enter your phone number">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label class="form-label" for="website">Website</label>
-                                <input type="url" class="form-control" id="website" value="https://Miller.dev" placeholder="https://example.com">
-                            </div>
-                        </div>
-                     </div>
-                </div>
-
-                <!-- Account Section -->
-                {# <div id="account" class="settings-section">
-                    <div class="section-header">
-                        <h2 class="section-title"><i class="bi bi-shield-check"></i> Account Settings</h2>
-                    </div>
-                    <p class="section-description">Manage your account preferences and data.</p>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Email Notifications</div>
-                            <div class="toggle-description">Receive email updates about your account activity</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Two-Factor Authentication</div>
-                            <div class="toggle-description">Add an extra layer of security to your account</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Auto-save Drafts</div>
-                            <div class="toggle-description">Automatically save drafts as you work</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Show Online Status</div>
-                            <div class="toggle-description">Allow others to see when you're online</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Account Visibility</label>
-                        <div class="radio-cards">
-                            <label class="radio-card selected">
-                                <input type="radio" name="visibility" checked>
-                                <div class="radio-icon">
-                                    <i class="bi bi-globe"></i>
-                                </div>
-                                <div class="radio-title">Public</div>
-                                <div class="radio-description">Anyone can see your profile</div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="visibility">
-                                <div class="radio-icon">
-                                    <i class="bi bi-people"></i>
-                                </div>
-                                <div class="radio-title">Team Only</div>
-                                <div class="radio-description">Only team members can see</div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="visibility">
-                                <div class="radio-icon">
-                                    <i class="bi bi-lock"></i>
-                                </div>
-                                <div class="radio-title">Private</div>
-                                <div class="radio-description">Only you can see your profile</div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="language">Language</label>
-                        <select class="form-control" id="language">
-                            <option selected>English (US)</option>
-                            <option>English (UK)</option>
-                            <option>Spanish</option>
-                            <option>French</option>
-                            <option>German</option>
-                            <option>Japanese</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="timezone">Timezone</label>
-                        <select class="form-control" id="timezone">
-                            <option selected>(UTC-08:00) Pacific Time</option>
-                            <option>(UTC-07:00) Mountain Time</option>
-                            <option>(UTC-06:00) Central Time</option>
-                            <option>(UTC-05:00) Eastern Time</option>
-                            <option>(UTC+00:00) London</option>
-                            <option>(UTC+01:00) Berlin</option>
-                            <option>(UTC+05:30) India</option>
-                        </select>
-                    </div>
-                </div> #}
-
-                {# <!-- Notifications Section -->
-                <div id="notifications" class="settings-section">
-                    <div class="section-header">
-                        <h2 class="section-title"><i class="bi bi-bell"></i> Notification Settings</h2>
-                    </div>
-                    <p class="section-description">Configure how you receive notifications and alerts.</p>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Push Notifications</div>
-                            <div class="toggle-description">Receive notifications in your browser</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Email Notifications</div>
-                            <div class="toggle-description">Receive notifications via email</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Desktop Notifications</div>
-                            <div class="toggle-description">Show notifications on your desktop</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="section-header mt-4">
-                        <h3 class="fs-14 fw-600 mb-0">Notification Types</h3>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">New Messages</div>
-                            <div class="toggle-description">When someone sends you a message</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Task Assignments</div>
-                            <div class="toggle-description">When you're assigned a new task</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Project Updates</div>
-                            <div class="toggle-description">When projects you're in are updated</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Team Activity</div>
-                            <div class="toggle-description">When team members complete tasks</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">System Alerts</div>
-                            <div class="toggle-description">Important system notifications</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="notificationSound">Notification Sound</label>
-                        <select class="form-control" id="notificationSound">
-                            <option selected>Default</option>
-                            <option>Chime</option>
-                            <option>Bell</option>
-                            <option>Beep</option>
-                            <option>None</option>
-                        </select>
-                    </div>
-                </div> #}
-
-                <!-- Appearance Section -->
-                <div id="appearance" class="settings-section">
-                    <div class="section-header">
-                        <h2 class="section-title"><i class="bi bi-palette"></i> Appearance Settings</h2>
-                    </div>
-                    <p class="section-description">Customize the look and feel of the application.</p>
-
-                    <div class="form-group">
-                        <label class="form-label">Theme</label>
-                        <div class="radio-cards">
-                            <label class="radio-card selected" onclick="setTheme('light')">
-                                <input type="radio" name="theme" checked>
-                                <div class="radio-icon">
-                                    <i class="bi bi-sun"></i>
-                                </div>
-                                <div class="radio-title">Light</div>
-                                <div class="radio-description">Clean and bright interface</div>
-                            </label>
-                            <label class="radio-card" onclick="setTheme('dark')">
-                                <input type="radio" name="theme">
-                                <div class="radio-icon">
-                                    <i class="bi bi-moon"></i>
-                                </div>
-                                <div class="radio-title">Dark</div>
-                                <div class="radio-description">Easy on the eyes</div>
-                            </label>
-                            <label class="radio-card" onclick="setTheme('auto')">
-                                <input type="radio" name="theme">
-                                <div class="radio-icon">
-                                    <i class="bi bi-circle-half"></i>
-                                </div>
-                                <div class="radio-title">Auto</div>
-                                <div class="radio-description">Match system preference</div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="fontSize">Font Size</label>
-                        <select class="form-control" id="fontSize">
-                            <option>Small</option>
-                            <option selected>Medium</option>
-                            <option>Large</option>
-                            <option>Extra Large</option>
-                        </select>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Compact Mode</div>
-                            <div class="toggle-description">Reduce spacing for more content</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Reduced Motion</div>
-                            <div class="toggle-description">Minimize animations and transitions</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">High Contrast Mode</div>
-                            <div class="toggle-description">Increase contrast for better visibility</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-                </div>
-
-                {# <!-- Preferences Section -->
-                <div id="preferences" class="settings-section">
-                    <div class="section-header">
-                        <h2 class="section-title"><i class="bi bi-sliders"></i> Preferences</h2>
-                    </div>
-                    <p class="section-description">Configure your workflow and application behavior.</p>
-
-                    <div class="form-group">
-                        <label class="form-label" for="defaultView">Default Dashboard View</label>
-                        <select class="form-control" id="defaultView">
-                            <option selected>Overview</option>
-                            <option>Analytics</option>
-                            <option>Projects</option>
-                            <option>Tasks</option>
-                            <option>Team</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="dateFormat">Date Format</label>
-                        <select class="form-control" id="dateFormat">
-                            <option selected>MM/DD/YYYY</option>
-                            <option>DD/MM/YYYY</option>
-                            <option>YYYY-MM-DD</option>
-                            <option>Month D, YYYY</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="timeFormat">Time Format</label>
-                        <select class="form-control" id="timeFormat">
-                            <option selected>12-hour</option>
-                            <option>24-hour</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="weekStart">Week Starts On</label>
-                        <select class="form-control" id="weekStart">
-                            <option selected>Sunday</option>
-                            <option>Monday</option>
-                        </select>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Auto-refresh Data</div>
-                            <div class="toggle-description">Automatically refresh data every 5 minutes</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Show Confirmation Dialogs</div>
-                            <div class="toggle-description">Ask for confirmation before destructive actions</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Enable Keyboard Shortcuts</div>
-                            <div class="toggle-description">Use keyboard shortcuts for faster navigation</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Show Tooltips</div>
-                            <div class="toggle-description">Display helpful tooltips for icons and buttons</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-                </div> #}
-
-                <!-- Security Section -->
-                <div id="security" class="settings-section">
-                    <div class="section-header">
-                        <h2 class="section-title"><i class="bi bi-lock"></i> Security Settings</h2>
-                    </div>
-                    <p class="section-description">Manage your account security and privacy settings.</p>
-
-                    <div class="form-group">
-                        <label class="form-label" for="currentPassword">Current Password</label>
-                        <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label class="form-label" for="newPassword">New Password</label>
-                                <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
-                            </div>
-                        </div>
-                        <div class="col">
-                             <div class="form-group">
-                                <label class="form-label" for="confirmPassword">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
-                            </div>
-                        </div>
-                     </div>
-
-                    <p class="form-text">Use at least 8 characters with a mix of letters, numbers & symbols</p>
-
-                    <button class="btn-outline" onclick="changePassword()">
-                        <i class="bi bi-key"></i> Change Password
-                    </button>
-
-                    <div class="section-header mt-4">
-                        <h3 class="fs-14 fw-600 mb-0">Suppression du comptes</h3>
-                    </div>
-
-                    <div class="danger-zone mt-4">
-                        <h3 class="danger-title"><i class="bi bi-exclamation-triangle"></i> Danger Zone</h3>
-                        <p class="danger-description">Once you delete your account, there is no going back. Please be certain.</p>
-                        <button class="btn-danger" onclick="deleteAccount()">
-                            <i class="bi bi-trash"></i> Delete Account
-                        </button>
-                    </div>
-                </div>
-
-                {# <!-- Integrations Section -->
-                <div id="integrations" class="settings-section">
-                    <div class="section-header">
-                        <h2 class="section-title"><i class="bi bi-plug"></i> Integrations</h2>
-                    </div>
-                    <p class="section-description">Connect with third-party services and tools.</p>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Google Calendar</div>
-                            <div class="toggle-description">Sync your calendar events</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Slack</div>
-                            <div class="toggle-description">Get notifications in Slack</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">GitHub</div>
-                            <div class="toggle-description">Link repositories and issues</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Jira</div>
-                            <div class="toggle-description">Sync projects and tasks</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Dropbox</div>
-                            <div class="toggle-description">Access and sync files</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox">
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Zapier</div>
-                            <div class="toggle-description">Create custom automations</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <button class="btn-outline mt-3" onclick="connectNewIntegration()">
-                        <i class="bi bi-plus-lg"></i> Connect New Integration
-                    </button>
-                </div>
-
-                <!-- Billing Section -->
-                <div id="billing" class="settings-section">
-                    <div class="section-header">
-                        <h2 class="section-title"><i class="bi bi-credit-card"></i> Billing & Subscription</h2>
-                    </div>
-                    <p class="section-description">Manage your subscription and billing information.</p>
-
-                    <div class="form-group">
-                        <div class="radio-cards">
-                            <label class="radio-card selected">
-                                <input type="radio" name="plan" checked>
-                                <div class="radio-icon">
-                                    <i class="bi bi-star"></i>
-                                </div>
-                                <div class="radio-title">Pro Plan</div>
-                                <div class="radio-description">$29/month • 10 team members</div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="plan">
-                                <div class="radio-icon">
-                                    <i class="bi bi-rocket-takeoff"></i>
-                                </div>
-                                <div class="radio-title">Business Plan</div>
-                                <div class="radio-description">$99/month • Unlimited members</div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="plan">
-                                <div class="radio-icon">
-                                    <i class="bi bi-building"></i>
-                                </div>
-                                <div class="radio-title">Enterprise</div>
-                                <div class="radio-description">Custom pricing • Advanced features</div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Payment Method</label>
-                        <div class="toggle-item">
-                            <div class="toggle-info">
-                                <div class="toggle-title">Visa ending in 4242</div>
-                                <div class="toggle-description">Expires 12/2025</div>
-                            </div>
-                            <button class="btn-outline" onclick="editPaymentMethod()">
-                                <i class="bi bi-pencil"></i> Edit
-                            </button>
-                        </div>
-                        <button class="btn-outline" onclick="addPaymentMethod()">
-                            <i class="bi bi-plus-lg"></i> Add Payment Method
-                        </button>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="billingEmail">Billing Email</label>
-                        <input type="email" class="form-control" id="billingEmail" value="billing@template.com" placeholder="Enter billing email">
-                        <p class="form-text">Receipts and invoices will be sent to this email</p>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Auto-renew Subscription</div>
-                            <div class="toggle-description">Automatically renew your subscription</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="toggle-item">
-                        <div class="toggle-info">
-                            <div class="toggle-title">Send Invoice Receipts</div>
-                            <div class="toggle-description">Email receipts after each payment</div>
-                        </div>
-                        <label class="toggle-switch">
-                            <input type="checkbox" checked>
-                            <span class="toggle-slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="danger-zone mt-4">
-                        <h3 class="danger-title"><i class="bi bi-x-circle"></i> Cancel Subscription</h3>
-                        <p class="danger-description">Your subscription will remain active until the end of the current billing period.</p>
-                        <button class="btn-danger" onclick="cancelSubscription()">
-                            <i class="bi bi-x-lg"></i> Cancel Subscription
-                        </button>
-                    </div>
-                </div> #}
-            </div>
-        </div>
-    </main>
+	{% include 'component/sidebaradmin.html.twig' %}
+	<!-- ========== MAIN CONTENT ========== -->
+	<main
+		class="main" id="main" role="main">
+		<!-- Page Header -->
+		<div class="page-header">
+			<div class="page-title">
+				<h1>User Profile</h1>
+				<p>View and manage user details, assignments, and performance</p>
+			</div>
+			<div class="page-actions">
+				<a href="{{ path('admin_setting_edit', {'id': currentUser.id}) }}" class="btn-secondary">
+					<i class="bi bi-pencil"></i>Edit Profile
+				</a>
+				<a href="{{ path('admin_setting_list') }}" class="btn-primary">
+					<i class="bi bi-arrow-left"></i>
+					Back to user</a>
+			</div>
+		</div>
+
+
+		<!-- User Header -->
+		<div class="user-header">
+			<div class="user-header-background"></div>
+			<div class="user-header-content">
+				<div class="user-avatar" id="userAvatar">
+					{% if currentUser %}
+							<img src="{{ asset('images/profiles/' ~ currentUser.profilePictureName) }}" alt="Photo de profil de {{ app.user.username }}" class="avatar-img" width="50" height="50" loading="lazy" >
+					{% endif %}
+				</div>
+				<div class="user-info">
+					<div class="user-name">{{ currentUser.username }}</div>
+					<div class="user-title">{{ currentUser.fonctionScout }}</div>
+					<div class="user-contact">
+						<div class="contact-item">
+							<i class="bi bi-envelope"></i>
+							<span>{{ currentUser.email }}</span>
+						</div>
+						<div class="contact-item">
+							<i class="bi bi-telephone"></i>
+							<span>{{ currentUser.phone }}</span>
+						</div>
+						<div class="contact-item">
+							<i class="bi bi-building"></i>
+							<span>Scout ID: HC/AMI/-00{{ currentUser.id }}</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-center gap-3">
+						<span class="user-status">
+							<i class="bi bi-circle-fill"></i>
+							Online
+						</span>
+						<span class="text-muted">Joined: {{ currentUser.createdAt|date('F j, Y') }}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- User Stats -->
+		<div class="user-stats">
+			<div class="stat-card">
+				<div class="stat-header">
+					<div class="stat-icon">
+						<i class="bi bi-check-circle"></i>
+					</div>
+					<div class="text-muted">This Week</div>
+				</div>
+				<div class="stat-content">
+					<h3>24</h3>
+					<div class="stat-label">Tasks Completed</div>
+				</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-header">
+					<div class="stat-icon">
+						<i class="bi bi-clock"></i>
+					</div>
+					<div class="text-muted">Total Hours</div>
+				</div>
+				<div class="stat-content">
+					<h3>142</h3>
+					<div class="stat-label">Hours Worked</div>
+				</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-header">
+					<div class="stat-icon">
+						<i class="bi bi-star"></i>
+					</div>
+					<div class="text-muted">Rating</div>
+				</div>
+				<div class="stat-content">
+					<h3>4.8</h3>
+					<div class="stat-label">Performance Score</div>
+				</div>
+			</div>
+			<div class="stat-card">
+				<div class="stat-header">
+					<div class="stat-icon">
+						<i class="bi bi-people"></i>
+					</div>
+					<div class="text-muted">Teams</div>
+				</div>
+				<div class="stat-content">
+					<h3>3</h3>
+					<div class="stat-label">Active Teams</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="project-tabs user-details-tabs">
+			<div class="tabs-header">
+				<button class="tab-btn active" data-tab="overview">Overview</button>
+				<button class="tab-btn" data-tab="departments">Departments</button>
+				<button class="tab-btn" data-tab="skills">Skills & Expertise</button>
+				<button class="tab-btn" data-tab="activity">Activity</button>
+				<button class="tab-btn" data-tab="tasks">Tasks</button>
+				<button class="tab-btn" data-tab="performance">Performance</button>
+				<button class="tab-btn" data-tab="reports">Reports</button>
+			</div>
+
+			<!-- Overview Tab -->
+			<div class="tab-content active" id="overviewTab">
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="content-card">
+							<div class="card-header">
+								<h3 class="card-title">
+									<i class="bi bi-person-badge"></i>
+									About</h3>
+							</div>
+							<div class="bio-content" id="bioContent">
+								Senior UI/UX Designer with 8+ years of experience creating intuitive and beautiful
+																								                                digital products. Currently leading the Design Team at Panelry while contributing
+																								                                to cross-functional product initiatives. Passionate about user-centered design, design
+																								                                systems, and mentoring junior designers.
+
+								<div class="mt-3">
+									<strong>Key Responsibilities:</strong>
+									<ul class="mt-2">
+										<li>Lead UI/UX design for web and mobile applications</li>
+										<li>Manage design team and coordinate with product/engineering</li>
+										<li>Develop and maintain design systems</li>
+										<li>Conduct user research and usability testing</li>
+										<li>Mentor junior designers and interns</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="content-card">
+							<div class="card-header">
+								<h3 class="card-title">
+									<i class="bi bi-clock-history"></i>
+									Recent Activity</h3>
+								<div class="card-actions">
+									<button class="btn-primary" onclick="viewAllActivity()">
+										<i class="bi bi-arrow-right"></i>
+									</button>
+								</div>
+							</div>
+							<div class="activity-list">
+								<div class="activity-item">
+									<div class="activity-icon">
+										<i class="bi bi-check-circle"></i>
+									</div>
+									<div class="activity-content">
+										<div class="activity-text">
+											Completed task
+											<strong>"Redesign Dashboard Analytics Panel"</strong>
+										</div>
+										<div class="activity-meta">
+											<span>Today, 10:30 AM</span>
+											<span>Project: Dashboard Redesign</span>
+										</div>
+									</div>
+								</div>
+								<div class="activity-item">
+									<div class="activity-icon">
+										<i class="bi bi-chat"></i>
+									</div>
+									<div class="activity-content">
+										<div class="activity-text">
+											Added comment on
+											<strong>"Mobile Banking App Design"</strong>
+										</div>
+										<div class="activity-meta">
+											<span>Yesterday, 3:45 PM</span>
+											<span>Project: Mobile Banking</span>
+										</div>
+									</div>
+								</div>
+								<div class="activity-item">
+									<div class="activity-icon">
+										<i class="bi bi-file-earmark"></i>
+									</div>
+									<div class="activity-content">
+										<div class="activity-text">
+											Uploaded wireframes for
+											<strong>"E-commerce Checkout Flow"</strong>
+										</div>
+										<div class="activity-meta">
+											<span>Dec 11, 2025</span>
+											<span>Project: E-commerce Design</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="content-card">
+							<div class="card-header">
+								<h3 class="card-title">
+									<i class="bi bi-info-circle"></i>
+									Quick Info</h3>
+							</div>
+							<div class="quick-info">
+								<div class="mb-3">
+									<div class="fs-12 text-muted">Access Level</div>
+									<div class="fw-600">Manager</div>
+								</div>
+								<div class="mb-3">
+									<div class="fs-12 text-muted">Experience Level</div>
+									<div class="fw-600">Senior (8+ years)</div>
+								</div>
+								<div class="mb-3">
+									<div class="fs-12 text-muted">Reporting To</div>
+									<div class="fw-600">Lisa Rodriguez (Product Director)</div>
+								</div>
+								<div class="mb-3">
+									<div class="fs-12 text-muted">Location</div>
+									<div class="fw-600">San Francisco, CA</div>
+								</div>
+								<div class="mb-3">
+									<div class="fs-12 text-muted">Working Hours</div>
+									<div class="fw-600">9:00 AM - 6:00 PM PST</div>
+								</div>
+								<div class="mb-3">
+									<div class="fs-12 text-muted">Last Active</div>
+									<div class="fw-600">2 minutes ago</div>
+								</div>
+							</div>
+						</div>
+						<div class="content-card">
+							<div class="card-header">
+								<h3 class="card-title">
+									<i class="bi bi-lightning"></i>
+									Quick Actions</h3>
+							</div>
+							<div class="quick-actions">
+								<a href="#" class="action-btn" onclick="assignTask()">
+									<i class="bi bi-plus-circle"></i>
+									<span>Assign Task</span>
+								</a>
+								<a href="#" class="action-btn" onclick="scheduleMeeting()">
+									<i class="bi bi-calendar-plus"></i>
+									<span>Schedule Meeting</span>
+								</a>
+								<a href="#" class="action-btn" onclick="generateReport()">
+									<i class="bi bi-file-earmark-text"></i>
+									<span>Generate Report</span>
+								</a>
+								<a href="#" class="action-btn" onclick="viewDocuments()">
+									<i class="bi bi-folder"></i>
+									<span>View Documents</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Department Tab -->
+			<div class="tab-content" id="departmentsTab">
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-building"></i>
+							Department Assignments</h3>
+						<div class="card-actions">
+							<button class="btn-outline" onclick="addDepartmentAssignment()">
+								<i class="bi bi-plus"></i>
+								Add Department
+							</button>
+						</div>
+					</div>
+					<div class="departments-grid">
+						<div class="department-card">
+							<div class="department-header">
+								<div class="department-icon" style="background: var(--accent);">
+									<i class="bi bi-palette"></i>
+								</div>
+								<div class="department-info">
+									<div class="department-name">Design Team</div>
+									<div class="department-role">Team Lead</div>
+								</div>
+							</div>
+							<div class="department-details">
+								<div class="detail-item">
+									<span class="detail-label">Team Size:</span>
+									<span class="detail-value">8 members</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Joined:</span>
+									<span class="detail-value">Jan 15, 2024</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Projects:</span>
+									<span class="detail-value">12 active</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Status:</span>
+									<span class="detail-value">Active</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="department-card">
+							<div class="department-header">
+								<div class="department-icon" style="background: var(--info);">
+									<i class="bi bi-code-slash"></i>
+								</div>
+								<div class="department-info">
+									<div class="department-name">Development</div>
+									<div class="department-role">Contributor</div>
+								</div>
+							</div>
+							<div class="department-details">
+								<div class="detail-item">
+									<span class="detail-label">Team Size:</span>
+									<span class="detail-value">15 members</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Joined:</span>
+									<span class="detail-value">Mar 10, 2024</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Projects:</span>
+									<span class="detail-value">6 active</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Status:</span>
+									<span class="detail-value">Active</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="department-card">
+							<div class="department-header">
+								<div class="department-icon" style="background: var(--warning);">
+									<i class="bi bi-bullseye"></i>
+								</div>
+								<div class="department-info">
+									<div class="department-name">Product Management</div>
+									<div class="department-role">Advisor</div>
+								</div>
+							</div>
+							<div class="department-details">
+								<div class="detail-item">
+									<span class="detail-label">Team Size:</span>
+									<span class="detail-value">5 members</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Joined:</span>
+									<span class="detail-value">Jun 5, 2024</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Projects:</span>
+									<span class="detail-value">8 active</span>
+								</div>
+								<div class="detail-item">
+									<span class="detail-label">Status:</span>
+									<span class="detail-value">Active</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-shield-check"></i>
+							Department Permissions</h3>
+					</div>
+					<div class="permissions-grid">
+						<div class="permission-item">
+							<div class="permission-info">
+								<div class="permission-name">Create Design Tasks</div>
+								<div class="permission-description">Design Team</div>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" checked disabled>
+							</div>
+						</div>
+						<div class="permission-item">
+							<div class="permission-info">
+								<div class="permission-name">Review Code</div>
+								<div class="permission-description">Development</div>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" checked disabled>
+							</div>
+						</div>
+						<div class="permission-item">
+							<div class="permission-info">
+								<div class="permission-name">Approve Product Decisions</div>
+								<div class="permission-description">Product Management</div>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" disabled>
+							</div>
+						</div>
+						<div class="permission-item">
+							<div class="permission-info">
+								<div class="permission-name">Manage Team Members</div>
+								<div class="permission-description">Design Team</div>
+							</div>
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" checked disabled>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- skills Tab -->
+			<div class="tab-content skills-tab" id="skillsTab">
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-lightning"></i>
+							Skills & Expertise</h3>
+						<div class="card-actions">
+							<button class="btn-outline" onclick="addSkill()">
+								<i class="bi bi-plus"></i>
+								Add Skill
+							</button>
+						</div>
+					</div>
+					<div class="skills-container">
+						<span class="skill-tag">UI Design
+							<span class="skill-level">Expert</span>
+						</span>
+						<span class="skill-tag">User Research
+							<span class="skill-level">Advanced</span>
+						</span>
+						<span class="skill-tag">Prototyping
+							<span class="skill-level">Expert</span>
+						</span>
+						<span class="skill-tag">Figma
+							<span class="skill-level">Expert</span>
+						</span>
+						<span class="skill-tag">Adobe Creative Suite
+							<span class="skill-level">Advanced</span>
+						</span>
+						<span class="skill-tag">Design Systems
+							<span class="skill-level">Expert</span>
+						</span>
+						<span class="skill-tag">HTML/CSS
+							<span class="skill-level">Intermediate</span>
+						</span>
+						<span class="skill-tag">JavaScript
+							<span class="skill-level">Intermediate</span>
+						</span>
+						<span class="skill-tag">React
+							<span class="skill-level">Basic</span>
+						</span>
+						<span class="skill-tag">Product Strategy
+							<span class="skill-level">Advanced</span>
+						</span>
+						<span class="skill-tag">Team Leadership
+							<span class="skill-level">Expert</span>
+						</span>
+						<span class="skill-tag">Agile Methodology
+							<span class="skill-level">Advanced</span>
+						</span>
+					</div>
+				</div>
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-briefcase"></i>
+							Work Experience</h3>
+					</div>
+					<div class="timeline">
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<div class="timeline-date">2024 - Present</div>
+								<div class="timeline-title">Senior UI/UX Designer & Project Lead</div>
+								<div class="timeline-description">Panelry Inc. • Leading design team, managing
+																											                                    projects, and contributing to product strategy.</div>
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<div class="timeline-date">2021 - 2024</div>
+								<div class="timeline-title">Senior Product Designer</div>
+								<div class="timeline-description">TechSolutions Corp. • Designed enterprise SaaS
+																											                                    products and established design systems.</div>
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<div class="timeline-date">2019 - 2021</div>
+								<div class="timeline-title">UI/UX Designer</div>
+								<div class="timeline-description">CreativeMinds Agency • Worked with various clients on
+																											                                    web and mobile applications.</div>
+							</div>
+						</div>
+						<div class="timeline-item">
+							<div class="timeline-dot"></div>
+							<div class="timeline-content">
+								<div class="timeline-date">2017 - 2019</div>
+								<div class="timeline-title">Junior Designer</div>
+								<div class="timeline-description">DigitalWorks Studio • Started career focusing on web
+																											                                    design and user interfaces.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-tools"></i>
+							Tools & Technologies</h3>
+					</div>
+					<div class="skills-container">
+						<span class="skill-tag">Figma</span>
+						<span class="skill-tag">Adobe XD</span>
+						<span class="skill-tag">Sketch</span>
+						<span class="skill-tag">Photoshop</span>
+						<span class="skill-tag">Illustrator</span>
+						<span class="skill-tag">InVision</span>
+						<span class="skill-tag">Zeplin</span>
+						<span class="skill-tag">Framer</span>
+						<span class="skill-tag">VS Code</span>
+						<span class="skill-tag">Git</span>
+						<span class="skill-tag">Jira</span>
+						<span class="skill-tag">Confluence</span>
+						<span class="skill-tag">Notion</span>
+						<span class="skill-tag">Slack</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Activity Tab -->
+			<div class="tab-content" id="activityTab">
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-activity"></i>
+							Recent Activity</h3>
+						<div class="card-actions">
+							<select class="form-select" style="width: auto;" id="activityFilter">
+								<option value="all">All Activities</option>
+								<option value="tasks">Tasks</option>
+								<option value="comments">Comments</option>
+								<option value="uploads">Uploads</option>
+								<option value="meetings">Meetings</option>
+							</select>
+						</div>
+					</div>
+					<div class="activity-list" id="activityList">
+						<div class="activity-item">
+							<div class="activity-icon" style="background: rgba(10, NaN, NaN, 0.1); color: var(--success);">
+								<i class="bi bi-check-circle"></i>
+							</div>
+							<div class="activity-content">
+								<div class="activity-text">Completed task 'Redesign Dashboard Analytics Panel'</div>
+								<div class="activity-meta">
+									<span>Today, 10:30 AM</span>
+									<span>Project: Dashboard Redesign</span>
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="activity-icon" style="background: rgba(10, NaN, NaN, 0.1); color: var(--info);">
+								<i class="bi bi-chat"></i>
+							</div>
+							<div class="activity-content">
+								<div class="activity-text">Added comment on 'Mobile Banking App Design'</div>
+								<div class="activity-meta">
+									<span>Yesterday, 3:45 PM</span>
+									<span>Project: Mobile Banking</span>
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="activity-icon" style="background: rgba(10, NaN, NaN, 0.1); color: var(--warning);">
+								<i class="bi bi-file-earmark"></i>
+							</div>
+							<div class="activity-content">
+								<div class="activity-text">Uploaded wireframes for 'E-commerce Checkout Flow'</div>
+								<div class="activity-meta">
+									<span>Dec 11, 2025</span>
+									<span>Project: E-commerce Design</span>
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="activity-icon" style="background: rgba(10, NaN, NaN, 0.1); color: var(--purple);">
+								<i class="bi bi-people"></i>
+							</div>
+							<div class="activity-content">
+								<div class="activity-text">Attended weekly design review meeting</div>
+								<div class="activity-meta">
+									<span>Dec 10, 2025</span>
+									<span>Project: Design Team</span>
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="activity-icon" style="background: rgba(10, NaN, NaN, 0.1); color: var(--success);">
+								<i class="bi bi-check-circle"></i>
+							</div>
+							<div class="activity-content">
+								<div class="activity-text">Started work on 'Admin Panel Redesign'</div>
+								<div class="activity-meta">
+									<span>Dec 9, 2025</span>
+									<span>Project: Panelry Dashboard</span>
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="activity-icon" style="background: rgba(10, NaN, NaN, 0.1); color: var(--info);">
+								<i class="bi bi-chat"></i>
+							</div>
+							<div class="activity-content">
+								<div class="activity-text">Provided feedback on 'User Testing Results'</div>
+								<div class="activity-meta">
+									<span>Dec 8, 2025</span>
+									<span>Project: User Research</span>
+								</div>
+							</div>
+						</div>
+						<div class="activity-item">
+							<div class="activity-icon" style="background: rgba(10, NaN, NaN, 0.1); color: var(--warning);">
+								<i class="bi bi-file-earmark"></i>
+							</div>
+							<div class="activity-content">
+								<div class="activity-text">Uploaded design system documentation</div>
+								<div class="activity-meta">
+									<span>Dec 7, 2025</span>
+									<span>Project: Design System</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- tasks Tab -->
+			<div class="tab-content user-details-task" id="tasksTab">
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-check-circle"></i>
+							Current Tasks</h3>
+						<div class="card-actions">
+							<button class="btn-outline" onclick="assignNewTask()">
+								<i class="bi bi-plus"></i>
+								Assign Task
+							</button>
+						</div>
+					</div>
+					<div class="tasks-list" id="tasksList">
+						<div class="task-item">
+							<div class="task-checkbox checked" onclick="toggleTask(1)">
+								<i class="bi bi-check"></i>
+							</div>
+							<div class="task-info">
+								<div class="task-title">Design login page for mobile app</div>
+								<div class="task-meta">
+									<span>Mobile Banking</span>
+									<span>• Due: Today</span>
+									<span class="task-priority priority-high">High</span>
+								</div>
+							</div>
+							<div class="card-actions">
+								<button class="btn-primary" onclick="viewTask(1)">
+									<i class="bi bi-eye"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="task-item">
+							<div class="task-checkbox " onclick="toggleTask(2)"></div>
+							<div class="task-info">
+								<div class="task-title">Review user feedback from testing</div>
+								<div class="task-meta">
+									<span>User Research</span>
+									<span>• Due: Tomorrow</span>
+									<span class="task-priority priority-medium">Medium</span>
+								</div>
+							</div>
+							<div class="card-actions">
+								<button class="btn-primary" onclick="viewTask(2)">
+									<i class="bi bi-eye"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="task-item">
+							<div class="task-checkbox " onclick="toggleTask(3)"></div>
+							<div class="task-info">
+								<div class="task-title">Update design system components</div>
+								<div class="task-meta">
+									<span>Design System</span>
+									<span>• Due: Dec 20</span>
+									<span class="task-priority priority-medium">Medium</span>
+								</div>
+							</div>
+							<div class="card-actions">
+								<button class="btn-primary" onclick="viewTask(3)">
+									<i class="bi bi-eye"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="task-item">
+							<div class="task-checkbox " onclick="toggleTask(4)"></div>
+							<div class="task-info">
+								<div class="task-title">Prepare presentation for stakeholders</div>
+								<div class="task-meta">
+									<span>Dashboard Redesign</span>
+									<span>• Due: Dec 18</span>
+									<span class="task-priority priority-high">High</span>
+								</div>
+							</div>
+							<div class="card-actions">
+								<button class="btn-primary" onclick="viewTask(4)">
+									<i class="bi bi-eye"></i>
+								</button>
+							</div>
+						</div>
+
+						<div class="task-item">
+							<div class="task-checkbox " onclick="toggleTask(5)"></div>
+							<div class="task-info">
+								<div class="task-title">Mentor junior designer on prototyping</div>
+								<div class="task-meta">
+									<span>Design Team</span>
+									<span>• Due: Dec 22</span>
+									<span class="task-priority priority-low">Low</span>
+								</div>
+							</div>
+							<div class="card-actions">
+								<button class="btn-primary" onclick="viewTask(5)">
+									<i class="bi bi-eye"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Task Statistics -->
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-bar-chart"></i>
+							Task Statistics</h3>
+					</div>
+					<div class="metrics-grid">
+						<div class="metric-card">
+							<div class="metric-value">24</div>
+							<div class="metric-label">Completed This Week</div>
+						</div>
+						<div class="metric-card">
+							<div class="metric-value">8</div>
+							<div class="metric-label">In Progress</div>
+						</div>
+						<div class="metric-card">
+							<div class="metric-value">3</div>
+							<div class="metric-label">Overdue</div>
+						</div>
+						<div class="metric-card">
+							<div class="metric-value">92%</div>
+							<div class="metric-label">On-time Completion</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- performance Tab -->
+			<div class="tab-content" id="performanceTab">
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-graph-up"></i>
+							Performance Metrics</h3>
+						<div class="card-actions">
+							<select class="form-select" style="width: auto;" id="timeRange">
+								<option value="week">This Week</option>
+								<option value="month" selected>This Month</option>
+								<option value="quarter">This Quarter</option>
+								<option value="year">This Year</option>
+							</select>
+						</div>
+					</div>
+					<div class="metrics-grid">
+						<div class="metric-card">
+							<div class="metric-value">4.8</div>
+							<div class="metric-label">Quality Score</div>
+						</div>
+						<div class="metric-card">
+							<div class="metric-value">95%</div>
+							<div class="metric-label">Task Completion</div>
+						</div>
+						<div class="metric-card">
+							<div class="metric-value">4.9</div>
+							<div class="metric-label">Team Collaboration</div>
+						</div>
+						<div class="metric-card">
+							<div class="metric-value">4.7</div>
+							<div class="metric-label">Initiative</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Workload Chart -->
+				<div class="content-card">
+					<div class="card-header">
+						<h3 class="card-title">
+							<i class="bi bi-calendar-check"></i>
+							Current Workload</h3>
+					</div>
+					<div class="workload-chart">
+						<div class="workload-bars">
+							<div class="workload-bar">
+								<div class="workload-fill" style="width: 60%"></div>
+							</div>
+							<div class="workload-bar">
+								<div class="workload-fill" style="width: 75%"></div>
+							</div>
+							<div class="workload-bar">
+								<div class="workload-fill" style="width: 40%"></div>
+							</div>
+							<div class="workload-bar">
+								<div class="workload-fill" style="width: 85%"></div>
+							</div>
+						</div>
+						<div class="workload-labels">
+							<span>Design Team</span>
+							<span>Development</span>
+							<span>Product</span>
+							<span>Admin</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- reports Tab -->
+			<div class="tab-content" id="reportsTab">
+				<div class="reports-grid">
+					<div class="report-card">
+						<div class="report-icon">
+							<i class="bi bi-file-text"></i>
+						</div>
+						<div class="report-name">Monthly Performance Report</div>
+						<div class="report-meta">
+							<span>December 2025</span>
+							<span>PDF • 2.4 MB</span>
+						</div>
+						<button class="btn-outline w-100" onclick="downloadReport('monthly')">
+							<i class="bi bi-download"></i>
+							Download
+						</button>
+					</div>
+					<div class="report-card">
+						<div class="report-icon">
+							<i class="bi bi-bar-chart"></i>
+						</div>
+						<div class="report-name">Task Completion Analysis</div>
+						<div class="report-meta">
+							<span>Q4 2025</span>
+							<span>PDF • 1.8 MB</span>
+						</div>
+						<button class="btn-outline w-100" onclick="downloadReport('task-analysis')">
+							<i class="bi bi-download"></i>
+							Download
+						</button>
+					</div>
+					<div class="report-card">
+						<div class="report-icon">
+							<i class="bi bi-people"></i>
+						</div>
+						<div class="report-name">Team Contribution Report</div>
+						<div class="report-meta">
+							<span>November 2025</span>
+							<span>PDF • 3.2 MB</span>
+						</div>
+						<button class="btn-outline w-100" onclick="downloadReport('team-contribution')">
+							<i class="bi bi-download"></i>
+							Download
+						</button>
+					</div>
+					<div class="report-card">
+						<div class="report-icon">
+							<i class="bi bi-clock-history"></i>
+						</div>
+						<div class="report-name">Time Tracking Summary</div>
+						<div class="report-meta">
+							<span>December 2025</span>
+							<span>Excel • 1.5 MB</span>
+						</div>
+						<button class="btn-outline w-100" onclick="downloadReport('time-tracking')">
+							<i class="bi bi-download"></i>
+							Download
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
 
 	{% include 'component/footeradmin.html.twig' %}
 {% endblock %}
