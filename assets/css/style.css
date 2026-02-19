@@ -6129,3 +6129,33 @@ input:checked + .toggle-slider:before {
     color: #777;
     margin-top: 0.25rem;
 }
+
+.avatars {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;        /* ✅ Cercle parfait */
+    overflow: hidden;          /* ✅ Cache les débordements */
+    display: inline-block;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* ✅ Remplit le cercle */
+    object-position: center;   /* ✅ Centre l'image */
+    display: block;
+}
+
+.avatars-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 50%;        /* ✅ Cercle pour placeholder aussi */
+    text-align: center;
+}

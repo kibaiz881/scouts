@@ -224,7 +224,7 @@ class __TwigTemplate_77d13042424c5e358f5bedc7ea958e68 extends Template
 \t\t\t<div class=\"dropdown profile-dropdown\">
 \t\t\t\t<div class=\"dropdown-toggle d-flex align-items-center\" data-bs-toggle=\"dropdown\" data-bs-auto-close=\"outside\" aria-expanded=\"false\" role=\"button\">
 \t\t\t\t\t<div class=\"profile\" id=\"profileBtn\" tabindex=\"0\" title=\"Account\">
-\t\t\t\t\t\t<div class=\"avatar\">
+\t\t\t\t\t\t<div class=\"avatars\">
 \t\t\t\t\t\t\t";
         // line 169
         if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 169, $this->source); })()), "user", [], "any", false, false, false, 169), "profilePictureName", [], "any", false, false, false, 169)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
@@ -237,7 +237,7 @@ class __TwigTemplate_77d13042424c5e358f5bedc7ea958e68 extends Template
 \t\t\t\t\t\t\t";
         } else {
             // line 172
-            yield "\t\t\t\t\t\t\t\t<div class=\"avatar-placeholder\">
+            yield "\t\t\t\t\t\t\t\t<div class=\"avatars-placeholder\">
 \t\t\t\t\t\t\t\t\t";
             // line 173
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::upper($this->env->getCharset(), Twig\Extension\CoreExtension::first($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 173, $this->source); })()), "user", [], "any", false, false, false, 173), "username", [], "any", false, false, false, 173))), "html", null, true);
@@ -497,11 +497,11 @@ class __TwigTemplate_77d13042424c5e358f5bedc7ea958e68 extends Template
 \t\t\t<div class=\"dropdown profile-dropdown\">
 \t\t\t\t<div class=\"dropdown-toggle d-flex align-items-center\" data-bs-toggle=\"dropdown\" data-bs-auto-close=\"outside\" aria-expanded=\"false\" role=\"button\">
 \t\t\t\t\t<div class=\"profile\" id=\"profileBtn\" tabindex=\"0\" title=\"Account\">
-\t\t\t\t\t\t<div class=\"avatar\">
+\t\t\t\t\t\t<div class=\"avatars\">
 \t\t\t\t\t\t\t{% if app.user.profilePictureName %}
 \t\t\t\t\t\t\t\t<img src=\"{{ asset('images/profiles/' ~ app.user.profilePictureName) }}\" alt=\"Photo de profil de {{ app.user.username }}\" class=\"avatar-img\" width=\"40\" height=\"40\" loading=\"lazy\">
 \t\t\t\t\t\t\t{% else %}
-\t\t\t\t\t\t\t\t<div class=\"avatar-placeholder\">
+\t\t\t\t\t\t\t\t<div class=\"avatars-placeholder\">
 \t\t\t\t\t\t\t\t\t{{ app.user.username|first|upper }}
 \t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t{% endif %}

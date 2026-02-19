@@ -103,24 +103,20 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
         yield "\t";
         yield from $this->load("component/headeradmin.html.twig", 8)->unwrap()->yield($context);
         // line 9
-        yield "
-\t";
+        yield "\t";
+        yield from $this->load("component/sidebaradmin.html.twig", 9)->unwrap()->yield($context);
         // line 10
-        yield from $this->load("component/sidebaradmin.html.twig", 10)->unwrap()->yield($context);
-        // line 11
-        yield "\t<!-- ========== MAIN CONTENT ========== -->
+        yield "
+\t<!-- ========== MAIN CONTENT ========== -->
 \t<main class=\"main\" id=\"main\" role=\"main\">
 \t\t<div class=\"page-header\">
 \t\t\t<div class=\"page-title\">
 \t\t\t\t<h1>Update
 \t\t\t\t\t";
         // line 16
-        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 16), "fullName", [], "any", true, true, false, 16) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "fullName", [], "any", false, false, false, 16)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "fullName", [], "any", false, false, false, 16), "html", null, true)) : ((((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 16), "username", [], "any", true, true, false, 16) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "username", [], "any", false, false, false, 16)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "user", [], "any", false, false, false, 16), "username", [], "any", false, false, false, 16), "html", null, true)) : ("User"))));
+        yield (((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "fullName", [], "any", true, true, false, 16) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "fullName", [], "any", false, false, false, 16)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "fullName", [], "any", false, false, false, 16), "html", null, true)) : ((((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", true, true, false, 16) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "username", [], "any", false, false, false, 16)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "username", [], "any", false, false, false, 16), "html", null, true)) : ("User"))));
         yield "</h1>
-\t\t\t\t<p>";
-        // line 17
-        yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 17, $this->source); })()), "user", [], "any", false, false, false, 17)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ("Update your profiles access") : (""));
-        yield "</p>
+\t\t\t\t<p>Update user profile access</p>
 \t\t\t</div>
 \t\t\t<div class=\"page-actions\">
 \t\t\t\t<a href=\"";
@@ -128,240 +124,341 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_setting_list");
         yield "\" class=\"btn-secondary\">
 \t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
-\t\t\t\t\tBack to task</a>
+\t\t\t\t\tBack to task
+\t\t\t\t</a>
 \t\t\t</div>
 \t\t</div>
 
-\t\t<!-- User Creation Form -->
-\t\t<form id=\"userForm\">
-\t\t\t";
+\t\t<!-- User Update Form -->
+\t\t";
         // line 28
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_start');
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 28, $this->source); })()), 'form_start', ["attr" => ["id" => "userForm"]]);
+        // line 32
         yield "
-\t\t\t<!-- Basic Information Card -->
-\t\t\t<div class=\"form-card\">
-\t\t\t\t<div class=\"form-header\">
-\t\t\t\t\t<h3 class=\"form-title\">
-\t\t\t\t\t\t<i class=\"bi bi-person\"></i>
-\t\t\t\t\t\tBasic Information</h3>
-\t\t\t\t\t<p class=\"form-subtitle\">Provide personal details and contact information</p>
-\t\t\t\t</div>
 
-\t\t\t\t<div class=\"avatar-upload\">
-\t\t\t\t\t<div class=\"avatar-preview\" id=\"avatarPreviewWrapper\">
-\t\t\t\t\t\t<img id=\"avatarPreview\" src=\"";
-        // line 40
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 40, $this->source); })()), "profilePictureName", [], "any", false, false, false, 40))), "html", null, true);
+\t\t<!-- Basic Information Card -->
+\t\t<div class=\"form-card\">
+\t\t\t<div class=\"form-header\">
+\t\t\t\t<h3 class=\"form-title\">
+\t\t\t\t\t<i class=\"bi bi-person\"></i>
+\t\t\t\t\tBasic Information
+\t\t\t\t</h3>
+\t\t\t\t<p class=\"form-subtitle\">Provide personal details and contact information</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"avatar-upload\">
+\t\t\t\t<div class=\"avatar-preview\" id=\"avatarPreviewWrapper\">
+\t\t\t\t\t<img id=\"avatarPreview\" src=\"";
+        // line 46
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 46, $this->source); })()), "profilePictureName", [], "any", false, false, false, 46))), "html", null, true);
         yield "\" alt=\"Avatar\">
-\t\t\t\t\t</div>
-
-\t\t\t\t\t<div class=\"avatar-upload-controls\">
-\t\t\t\t\t\t";
-        // line 44
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), "profilePictureFile", [], "any", false, false, false, 44), 'row', ["label" => false, "attr" => ["class" => "avatar-input form-control", "id" => "avatarInput", "accept" => "image/*", "type" => "file"]]);
-        // line 53
-        yield "
-\t\t\t\t\t\t<div class=\"avatar-hint\">
-\t\t\t\t\t\t\tRecommended: Square image, 500x500px, max 2MB
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
 \t\t\t\t</div>
 
-
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"firstName\">Full Name
-\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t";
-        // line 67
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 67, $this->source); })()), "username", [], "any", false, false, false, 67), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "fullName", "placeholder" => "Enter full name", "required" => true, "value" => CoreExtension::getAttribute($this->env, $this->source,         // line 74
-(isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 74, $this->source); })()), "username", [], "any", false, false, false, 74)]]);
-        // line 76
-        yield "
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"lastName\">Adresse
-\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t";
-        // line 84
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 84, $this->source); })()), "adresse", [], "any", false, false, false, 84), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "lastName", "placeholder" => "Enter address", "required" => true, "value" => CoreExtension::getAttribute($this->env, $this->source,         // line 91
-(isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 91, $this->source); })()), "adresse", [], "any", false, false, false, 91)]]);
-        // line 93
-        yield "
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"email\">Email Address
-\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t";
-        // line 104
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 104, $this->source); })()), "email", [], "any", false, false, false, 104), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "email", "placeholder" => "user@company.com", "value" => CoreExtension::getAttribute($this->env, $this->source,         // line 110
-(isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 110, $this->source); })()), "email", [], "any", false, false, false, 110)]]);
-        // line 112
-        yield "
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"phone\">Phone Number</label>
-\t\t\t\t\t\t\t";
-        // line 118
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 118, $this->source); })()), "phone", [], "any", false, false, false, 118), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "phone", "placeholder" => "+1 (555) 000-0000", "value" => CoreExtension::getAttribute($this->env, $this->source,         // line 124
-(isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 124, $this->source); })()), "phone", [], "any", false, false, false, 124)]]);
-        // line 126
-        yield "
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"jobTitle\">Profession Title
-\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t";
-        // line 137
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 137, $this->source); })()), "profession", [], "any", false, false, false, 137), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "jobTitle", "placeholder" => "e.g., Senior Designer, Project Manager", "value" => CoreExtension::getAttribute($this->env, $this->source,         // line 143
-(isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 143, $this->source); })()), "profession", [], "any", false, false, false, 143)]]);
-        // line 145
-        yield "
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t<label class=\"form-label\" for=\"bio\">Bio/Introduction</label>
+\t\t\t\t<div class=\"avatar-upload-controls\">
 \t\t\t\t\t";
-        // line 152
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 152, $this->source); })()), "biography", [], "any", false, false, false, 152), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "bio", "value" => CoreExtension::getAttribute($this->env, $this->source,         // line 157
-(isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 157, $this->source); })()), "biography", [], "any", false, false, false, 157), "placeholder" => "Write a brief bio or introduction for the user..."]]);
-        // line 160
+        // line 50
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 50, $this->source); })()), "profilePictureFile", [], "any", false, false, false, 50), 'row', ["label" => false, "attr" => ["class" => "avatar-input form-control", "id" => "avatarInput", "accept" => "image/*", "type" => "file"]]);
+        // line 58
         yield "
+\t\t\t\t\t<div class=\"avatar-hint\">
+\t\t\t\t\t\tRecommended: Square image, 500x500px, max 2MB
+\t\t\t\t\t</div>
 \t\t\t\t</div>
+\t\t\t</div>
 
-\t\t\t\t";
-        // line 210
-        yield "
-
-\t\t\t\t";
-        // line 268
-        yield "
-\t\t\t\t<!-- Account Setup Card -->
-\t\t\t\t\t<div class=\"form-card\"> <div class=\"form-header\">
-\t\t\t\t\t\t<h3 class=\"form-title\">
-\t\t\t\t\t\t\t<i class=\"bi bi-gear\"></i>
-\t\t\t\t\t\t\tAccount Setup</h3>
-\t\t\t\t\t\t<p class=\"form-subtitle\">Configure user account and login credentials</p>
-\t\t\t\t\t</div>
-
-\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"username\">Catrte d'identité National
-\t\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t\t";
-        // line 283
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 283, $this->source); })()), "cin", [], "any", false, false, false, 283), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "cin", "placeholder" => "Enter CIN", "required" => false, "value" => CoreExtension::getAttribute($this->env, $this->source,         // line 290
-(isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 290, $this->source); })()), "cin", [], "any", false, false, false, 290)]]);
-        // line 292
-        yield "
-\t\t\t\t\t\t\t\t";
-        // line 294
-        yield "\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"password\">Password
-\t\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t\t<div class=\"input-group\">
-\t\t\t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Create a password\" required>
-\t\t\t\t\t\t\t\t\t<button class=\"btn-outline\" type=\"button\" id=\"showPasswordBtn\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
-\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-
-\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"startDate\">Start Date</label>
-\t\t\t\t\t\t\t\t<input type=\"date\" class=\"form-control\" id=\"startDate\">
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"reportingTo\">Reporting To</label>
-\t\t\t\t\t\t\t\t<select class=\"form-select\" id=\"reportingTo\">
-\t\t\t\t\t\t\t\t\t<option value=\"\">Select manager</option>
-\t\t\t\t\t\t\t\t\t<option value=\"1\">John Doe (Project Lead)</option>
-\t\t\t\t\t\t\t\t\t<option value=\"2\">Lisa Rodriguez (Product Manager)</option>
-\t\t\t\t\t\t\t\t\t<option value=\"3\">Michael Brown (Tech Lead)</option>
-\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
 \t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t<label class=\"form-label\">Send Welcome Email</label>
-\t\t\t\t\t\t<div class=\"d-flex align-items-center gap-2\">
-\t\t\t\t\t\t\t<label class=\"toggle-switch\">
-\t\t\t\t\t\t\t\t<input type=\"checkbox\">
-\t\t\t\t\t\t\t\t<span class=\"toggle-slider\"></span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t<span class=\"form-check-label\">Send welcome email with login instructions</span>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<!-- Form Actions -->
-\t\t\t\t<div class=\"form-actions\">
-\t\t\t\t\t<div>
-\t\t\t\t\t\t<button type=\"button\" class=\"btn-outline\" id=\"saveDraftBtn\">
-\t\t\t\t\t\t\t<i class=\"bi bi-save\"></i>
-\t\t\t\t\t\t\tSave as Draft
-\t\t\t\t\t\t</button>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"d-flex gap-3\">
-\t\t\t\t\t\t<button type=\"reset\" class=\"btn-secondary\">
-\t\t\t\t\t\t\t<i class=\"bi bi-x-circle\"></i>
-\t\t\t\t\t\t\tCancel
-\t\t\t\t\t\t</button>
-\t\t\t\t\t\t<button type=\"submit\" class=\"btn-primary\">
-\t\t\t\t\t\t\t<i class=\"bi bi-plus-circle\"></i>
-\t\t\t\t\t\t\tCreate User
-\t\t\t\t\t\t</button>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-\t\t\t\t";
-        // line 362
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 362, $this->source); })()), 'form_end');
+\t\t\t\t\t\t<label class=\"form-label\" for=\"fullName\">
+\t\t\t\t\t\t\tFull Name
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 72
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 72, $this->source); })()), "username", [], "any", false, false, false, 72), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "fullName", "placeholder" => "Enter full name", "required" => true]]);
+        // line 80
         yield "
-\t\t\t</form>
-\t\t</main>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"adresse\">
+\t\t\t\t\t\t\tAdresse
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 89
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 89, $this->source); })()), "adresse", [], "any", false, false, false, 89), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "adresse", "placeholder" => "Enter address", "required" => true]]);
+        // line 97
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"email\">
+\t\t\t\t\t\t\tEmail Address
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 109
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 109, $this->source); })()), "email", [], "any", false, false, false, 109), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "email", "placeholder" => "user@company.com"]]);
+        // line 116
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"phone\">Phone Number</label>
+\t\t\t\t\t\t";
+        // line 122
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 122, $this->source); })()), "phone", [], "any", false, false, false, 122), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "phone", "placeholder" => "+1 (555) 000-0000"]]);
+        // line 129
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"jobTitle\">
+\t\t\t\t\t\t\tProfession Title
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 141
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 141, $this->source); })()), "profession", [], "any", false, false, false, 141), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "jobTitle", "placeholder" => "e.g., Senior Designer, Project Manager"]]);
+        // line 148
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"sexe\">
+\t\t\t\t\t\t\tSexe
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 157
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 157, $this->source); })()), "sexe", [], "any", false, false, false, 157), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "sexe", "placeholder" => "e.g., Male, Female"]]);
+        // line 164
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateNaissance\">
+\t\t\t\t\t\t\tDate de naissance
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 176
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 176, $this->source); })()), "dateNaissance", [], "any", false, false, false, 176), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "dateNaissance"]]);
+        // line 182
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"lieuNaissance\">
+\t\t\t\t\t\t\tLieu de naissance
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 191
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 191, $this->source); })()), "lieuNaissance", [], "any", false, false, false, 191), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "lieuNaissance", "placeholder" => "e.g., Paris, London"]]);
+        // line 198
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"form-group\">
+\t\t\t\t<label class=\"form-label\" for=\"bio\">Bio/Introduction</label>
+\t\t\t\t";
+        // line 205
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 205, $this->source); })()), "biography", [], "any", false, false, false, 205), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "bio", "placeholder" => "Write a brief bio or introduction for the user..."]]);
+        // line 212
+        yield "
+\t\t\t</div>
+\t\t</div>
+
+\t\t<!-- National Identity Card Setup -->
+\t\t<div class=\"form-card\">
+\t\t\t<div class=\"form-header\">
+\t\t\t\t<h3 class=\"form-title\">
+\t\t\t\t\t<i class=\"bi bi-gear\"></i>
+\t\t\t\t\tNational Identity Card Setup
+\t\t\t\t</h3>
+\t\t\t\t<p class=\"form-subtitle\">Configure CIN</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"cin\">
+\t\t\t\t\t\t\tCarte d'identité Nationale
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 233
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 233, $this->source); })()), "cin", [], "any", false, false, false, 233), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "cin", "placeholder" => "Enter CIN", "required" => false]]);
+        // line 241
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"nationalite\">
+\t\t\t\t\t\t\tNationalité
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 250
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 250, $this->source); })()), "nationalite", [], "any", false, false, false, 250), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "nationalite", "placeholder" => "Enter nationalité", "required" => false]]);
+        // line 258
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"lieuDelivrance\">
+\t\t\t\t\t\t\tLieu de délivrance
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 269
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 269, $this->source); })()), "lieuDelivrance", [], "any", false, false, false, 269), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "lieuDelivrance", "placeholder" => "Enter lieu de delivrance", "required" => false]]);
+        // line 277
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateDelivrance\">
+\t\t\t\t\t\t\tDate de delivrance
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 286
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 286, $this->source); })()), "dateDelivrance", [], "any", false, false, false, 286), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "dateDelivrance", "placeholder" => "Enter date of delivrance", "required" => false]]);
+        // line 294
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"paysDelivrance\">
+\t\t\t\t\t\t\tPays de délivrance
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 303
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 303, $this->source); })()), "paysDelivrance", [], "any", false, false, false, 303), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "paysDelivrance", "placeholder" => "Enter pays de delivrance", "required" => false]]);
+        // line 311
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<!-- Scouts Assignments -->
+\t\t<div class=\"form-card\">
+\t\t\t<div class=\"form-header\">
+\t\t\t\t<h3 class=\"form-title\">
+\t\t\t\t\t<i class=\"bi bi-building\"></i>
+\t\t\t\t\tScouts Assignments
+\t\t\t\t</h3>
+\t\t\t\t<p class=\"form-subtitle\">Assign user to scouts with specific roles</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"fonctionScout\">
+\t\t\t\t\t\t\tFonction Scout
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 334
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 334, $this->source); })()), "fonctionScout", [], "any", false, false, false, 334), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "fonctionScout", "placeholder" => "Enter fonction dans le scout", "required" => true]]);
+        // line 342
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tStart Date for scout
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 350
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 350, $this->source); })()), "dateEntrescout", [], "any", false, false, false, 350), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "dateEntrescout"]]);
+        // line 356
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"password\">
+\t\t\t\t\t\t\tPassword
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 368
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 368, $this->source); })()), "plainPassword", [], "any", false, false, false, 368), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "password", "placeholder" => "Create a password", "required" => true]]);
+        // line 376
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<!-- Form Actions -->
+\t\t<div class=\"form-actions\">
+\t\t\t<div>
+\t\t\t\t<button type=\"button\" class=\"btn-outline\" id=\"saveDraftBtn\">
+\t\t\t\t\t<i class=\"bi bi-save\"></i>
+\t\t\t\t\tSave as Draft
+\t\t\t\t</button>
+\t\t\t</div>
+\t\t\t<div class=\"d-flex gap-3\">
+\t\t\t\t<button type=\"reset\" class=\"btn-secondary\">
+\t\t\t\t\t<i class=\"bi bi-x-circle\"></i>
+\t\t\t\t\tCancel
+\t\t\t\t</button>
+\t\t\t\t<button type=\"submit\" class=\"btn-primary\">
+\t\t\t\t\t<i class=\"bi bi-plus-circle\"></i>
+\t\t\t\t\tUpdate User
+\t\t\t\t</button>
+\t\t\t</div>
+\t\t</div>
 
 \t\t";
-        // line 366
-        yield from $this->load("component/footeradmin.html.twig", 366)->unwrap()->yield($context);
-        // line 367
-        yield "\t\t";
+        // line 402
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 402, $this->source); })()), 'form_end');
+        yield "
+\t</main>
+
+\t";
+        // line 405
+        yield from $this->load("component/footeradmin.html.twig", 405)->unwrap()->yield($context);
+        // line 406
+        yield "
+\t";
+        // line 407
         yield from $this->unwrap()->yieldBlock('javascript', $context, $blocks);
-        // line 397
-        yield "\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -371,7 +468,6 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
         yield from [];
     }
 
-    // line 367
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -384,36 +480,68 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 368
-        yield "\t\t\t <script>
-\t\t\t\tdocument.addEventListener('DOMContentLoaded', function() {
-\t\t\t    const cinInput = document.querySelector('.cin-input'); // ⚠️ ID Symfony = nom_du_form + _ + nom_du_champ
-\t\t\t    
-\t\t\t    // Vérifie si l'élément existe avant d'ajouter l'event listener
-\t\t\t    if (!cinInput) {
-\t\t\t        console.warn('Champ CIN non trouvé (ID: cin-input)'). //Vérifiez le nom du champ dans le formulaire Symfony.');
-\t\t\t        return;
-\t\t\t    }
-\t\t\t
-\t\t\t    cinInput.addEventListener('input', function(e) {  // ⚠️ 'input' pas 'cin-input'
-\t\t\t        let value = e.target.value.replace(/\\s/g, '').replace(/[^\\d]/g, '');  // ⚠️ \\s pas \\\\s
-\t\t\t
-\t\t\t        // Formatage par groupes de 3
-\t\t\t        let formatted = '';
-\t\t\t        for (let i = 0; i < value.length; i += 3) {
-\t\t\t            formatted += value.substr(i, 3) + ' ';
-\t\t\t        }
-\t\t\t        e.target.value = formatted.trim().substring(0, 21);
-\t\t\t    });
-\t\t\t    
-\t\t\t    // Bonus : sélectionne tout au focus
-\t\t\t    cinInput.addEventListener('focus', function() {
-\t\t\t        this.select();
-\t\t\t    });
-\t\t\t});
-\t\t\t
-\t\t\t\t\t\t</script>
-\t\t";
+        // line 408
+        yield "\t\t <script>
+\t\tdocument.addEventListener('DOMContentLoaded', function() {
+\t\t    const cinInput = document.querySelector('.cin-input');
+\t\t
+\t\t    if (!cinInput) {
+\t\t        console.warn('Champ CIN non trouvé (classe: .cin-input)');
+\t\t        return;
+\t\t    }
+\t\t
+\t\t    // Fonction pour nettoyer et obtenir la valeur brute
+\t\t    function getCleanCinValue(value) {
+\t\t        return value
+\t\t            .replace(/\\s/g, '')           // Supprime tous les espaces
+\t\t            .replace(/[^\\d]/g, '')        // Garde uniquement les chiffres
+\t\t            .slice(0, 12);                // Limite à 12 chiffres maximum
+\t\t    }
+\t\t
+\t\t    // Événement input : formatage en temps réel
+\t\t    cinInput.addEventListener('input', function(e) {
+\t\t        let value = e.target.value;
+\t\t        let cleanValue = getCleanCinValue(value);
+\t\t        
+\t\t        // Formatage avec espaces tous les 3 chiffres
+\t\t        let formatted = '';
+\t\t        for (let i = 0; i < cleanValue.length; i += 3) {
+\t\t            formatted += cleanValue.substr(i, 3) + ' ';
+\t\t        }
+\t\t        e.target.value = formatted.trim();
+\t\t    });
+\t\t
+\t\t    // Événement focus : sélectionne tout le texte
+\t\t    cinInput.addEventListener('focus', function() {
+\t\t        this.select();
+\t\t    });
+\t\t
+\t\t    // Événement blur : nettoie complètement (optionnel)
+\t\t    cinInput.addEventListener('blur', function() {
+\t\t        let cleanValue = getCleanCinValue(this.value);
+\t\t        if (cleanValue.length === 12) {
+\t\t            // Reformate proprement si complet
+\t\t            let formatted = '';
+\t\t            for (let i = 0; i < cleanValue.length; i += 3) {
+\t\t                formatted += cleanValue.substr(i, 3) + ' ';
+\t\t            }
+\t\t            this.value = formatted.trim();
+\t\t        } else if (cleanValue.length === 0) {
+\t\t            this.value = ''; // Vide si rien
+\t\t        }
+\t\t    });
+\t\t
+\t\t    // Fonction utilitaire pour récupérer la valeur brute n'importe où
+\t\t    window.getCinValue = function() {
+\t\t        return getCleanCinValue(cinInput.value);
+\t\t    };
+\t\t
+\t\t    // Exemple d'utilisation
+\t\t    console.log('CIN brute:', window.getCinValue());
+\t\t});
+\t\t
+\t</script>
+\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -444,7 +572,7 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  388 => 368,  375 => 367,  364 => 397,  361 => 367,  359 => 366,  352 => 362,  282 => 294,  279 => 292,  277 => 290,  276 => 283,  259 => 268,  255 => 210,  250 => 160,  248 => 157,  247 => 152,  238 => 145,  236 => 143,  235 => 137,  222 => 126,  220 => 124,  219 => 118,  211 => 112,  209 => 110,  208 => 104,  195 => 93,  193 => 91,  192 => 84,  182 => 76,  180 => 74,  179 => 67,  163 => 53,  161 => 44,  154 => 40,  139 => 28,  128 => 20,  122 => 17,  118 => 16,  111 => 11,  109 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
+        return array (  484 => 408,  461 => 407,  458 => 406,  456 => 405,  450 => 402,  422 => 376,  420 => 368,  406 => 356,  404 => 350,  394 => 342,  392 => 334,  367 => 311,  365 => 303,  354 => 294,  352 => 286,  341 => 277,  339 => 269,  326 => 258,  324 => 250,  313 => 241,  311 => 233,  288 => 212,  286 => 205,  277 => 198,  275 => 191,  264 => 182,  262 => 176,  248 => 164,  246 => 157,  235 => 148,  233 => 141,  219 => 129,  217 => 122,  209 => 116,  207 => 109,  193 => 97,  191 => 89,  180 => 80,  178 => 72,  162 => 58,  160 => 50,  153 => 46,  137 => 32,  135 => 28,  124 => 20,  117 => 16,  109 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -457,395 +585,467 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
 
 {% block body %}
 \t{% include 'component/headeradmin.html.twig' %}
-
 \t{% include 'component/sidebaradmin.html.twig' %}
+
 \t<!-- ========== MAIN CONTENT ========== -->
 \t<main class=\"main\" id=\"main\" role=\"main\">
 \t\t<div class=\"page-header\">
 \t\t\t<div class=\"page-title\">
 \t\t\t\t<h1>Update
-\t\t\t\t\t{{ app.user.fullName ?? app.user.username ?? 'User' }}</h1>
-\t\t\t\t<p>{{ app.user ? 'Update your profiles access' }}</p>
+\t\t\t\t\t{{ user.fullName ?? user.username ?? 'User' }}</h1>
+\t\t\t\t<p>Update user profile access</p>
 \t\t\t</div>
 \t\t\t<div class=\"page-actions\">
 \t\t\t\t<a href=\"{{ path('admin_setting_list') }}\" class=\"btn-secondary\">
 \t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
-\t\t\t\t\tBack to task</a>
+\t\t\t\t\tBack to task
+\t\t\t\t</a>
 \t\t\t</div>
 \t\t</div>
 
-\t\t<!-- User Creation Form -->
-\t\t<form id=\"userForm\">
-\t\t\t{{ form_start(form) }}
-\t\t\t<!-- Basic Information Card -->
-\t\t\t<div class=\"form-card\">
-\t\t\t\t<div class=\"form-header\">
-\t\t\t\t\t<h3 class=\"form-title\">
-\t\t\t\t\t\t<i class=\"bi bi-person\"></i>
-\t\t\t\t\t\tBasic Information</h3>
-\t\t\t\t\t<p class=\"form-subtitle\">Provide personal details and contact information</p>
+\t\t<!-- User Update Form -->
+\t\t{{ form_start(form, {
+            attr: {
+                id: 'userForm'
+            }
+        }) }}
+
+\t\t<!-- Basic Information Card -->
+\t\t<div class=\"form-card\">
+\t\t\t<div class=\"form-header\">
+\t\t\t\t<h3 class=\"form-title\">
+\t\t\t\t\t<i class=\"bi bi-person\"></i>
+\t\t\t\t\tBasic Information
+\t\t\t\t</h3>
+\t\t\t\t<p class=\"form-subtitle\">Provide personal details and contact information</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"avatar-upload\">
+\t\t\t\t<div class=\"avatar-preview\" id=\"avatarPreviewWrapper\">
+\t\t\t\t\t<img id=\"avatarPreview\" src=\"{{ asset('images/profiles/' ~ user.profilePictureName) }}\" alt=\"Avatar\">
 \t\t\t\t</div>
 
-\t\t\t\t<div class=\"avatar-upload\">
-\t\t\t\t\t<div class=\"avatar-preview\" id=\"avatarPreviewWrapper\">
-\t\t\t\t\t\t<img id=\"avatarPreview\" src=\"{{ asset('images/profiles/' ~ currentUser.profilePictureName) }}\" alt=\"Avatar\">
-\t\t\t\t\t</div>
-
-\t\t\t\t\t<div class=\"avatar-upload-controls\">
-\t\t\t\t\t\t{{ form_row(form.profilePictureFile, {
-\t\t\t\t\t\t\tlabel: false,
-\t\t\t\t\t\t\tattr: {
-\t\t\t\t\t\t\t\tclass: 'avatar-input form-control',
-\t\t\t\t\t\t\t\tid: 'avatarInput',
-\t\t\t\t\t\t\t\taccept: 'image/*',
-\t\t\t\t\t\t\t\ttype: 'file',
-
-\t\t\t\t\t\t\t}
-\t\t\t\t\t\t}) }}
-\t\t\t\t\t\t<div class=\"avatar-hint\">
-\t\t\t\t\t\t\tRecommended: Square image, 500x500px, max 2MB
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"firstName\">Full Name
-\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t{{form_row(form.username, {
-                                label: false,
-                                attr: {
-                                    class: 'form-control',
-                                    id: 'fullName',
-                                    placeholder: 'Enter full name',
-                                    required: true,
-                                    value: currentUser.username
-                                }
-                            })}}
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"lastName\">Adresse
-\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t{{form_row(form.adresse, {
-                                label: false,
-                                attr: {
-                                    class: 'form-control',
-                                    id: 'lastName',
-                                    placeholder: 'Enter address',
-                                    required: true,
-                                    value: currentUser.adresse
-                                }
-                            })}}
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"email\">Email Address
-\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t{{form_row(form.email, {
-                                label: false,
-                                attr: {
-                                    class: 'form-control',
-                                    id: 'email',
-                                    placeholder: 'user@company.com',
-                                    value: currentUser.email
-                                }
-                            })}}
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"phone\">Phone Number</label>
-\t\t\t\t\t\t\t{{form_row(form.phone, {
-                                label: false,
-                                attr: {
-                                    class: 'form-control',
-                                    id: 'phone',
-                                    placeholder: '+1 (555) 000-0000',
-                                    value: currentUser.phone
-                                }
-                            })}}
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<div class=\"row\">
-\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t<label class=\"form-label\" for=\"jobTitle\">Profession Title
-\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t{{form_row(form.profession, {
-                                label: false,
-                                attr: {
-                                    class: 'form-control',
-                                    id: 'jobTitle',
-                                    placeholder: 'e.g., Senior Designer, Project Manager',
-                                    value: currentUser.profession
-                                }
-                            })}}
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t</div>
-
-\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t<label class=\"form-label\" for=\"bio\">Bio/Introduction</label>
-\t\t\t\t\t{{form_row(form.biography, {
+\t\t\t\t<div class=\"avatar-upload-controls\">
+\t\t\t\t\t{{ form_row(form.profilePictureFile, {
                         label: false,
                         attr: {
-                            class: 'form-control',
-                            id: 'bio',
-                            value: currentUser.biography,
-                            placeholder: 'Write a brief bio or introduction for the user...'
+                            class: 'avatar-input form-control',
+                            id: 'avatarInput',
+                            accept: 'image/*',
+                            type: 'file'
                         }
-                    })}}
+                    }) }}
+\t\t\t\t\t<div class=\"avatar-hint\">
+\t\t\t\t\t\tRecommended: Square image, 500x500px, max 2MB
+\t\t\t\t\t</div>
 \t\t\t\t</div>
+\t\t\t</div>
 
-\t\t\t\t{# <!-- Department & Role Assignments Card -->
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-card\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-header\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"form-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-building\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tDepartment Assignments</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"form-subtitle\">Assign user to departments with specific roles</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"department-assignments\" id=\"assignmentsContainer\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"assignment-item\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"assignment-details\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select class=\"department-select\" name=\"department[]\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"\">Select Department</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"design\" selected>Design Team</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"development\">Development</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"product\">Product Management</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"marketing\">Marketing</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"sales\">Sales</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"support\">Customer Support</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"operations\">Operations</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"hr\">Human Resources</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"finance\">Finance</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select class=\"role-select\" name=\"role[]\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"\">Select Role</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"member\" selected>Team Member</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"lead\">Team Lead</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"manager\">Manager</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"director\">Director</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"contributor\">Contributor</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"reviewer\">Reviewer</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"approver\">Approver</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"observer\">Observer</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"remove-assignment\" onclick=\"removeAssignment(this)\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-trash\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn-outline w-100\" id=\"addAssignmentBtn\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-plus-circle\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tAdd Another Department Assignment
-\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t</div> #}
-
-
-\t\t\t\t{# <!-- Skills & Expertise Card -->
-\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-card\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-header\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"form-title\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-lightning\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSkills & Expertise</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"form-subtitle\">Add user skills and areas of expertise</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"form-label\">Primary Skills</label>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"skills-container\" id=\"skillsContainer\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"skill-tag\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tUI Design
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"remove\" data-skill=\"UI Design\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-x\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"skill-tag\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tUser Research
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"remove\" data-skill=\"User Research\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-x\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"skill-tag\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tPrototyping
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"remove\" data-skill=\"Prototyping\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-x\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"skill-input-group\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"skill-input\" id=\"newSkillInput\" placeholder=\"Add a skill...\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button type=\"button\" class=\"btn-outline\" id=\"addSkillBtn\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-plus\"></i>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tAdd
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"experienceLevel\">Experience Level</label>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select class=\"form-select\" id=\"experienceLevel\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"\">Select level</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"entry\">Entry Level (0-2 years)</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"mid\" selected>Mid Level (3-5 years)</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"senior\">Senior Level (6-10 years)</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"lead\">Lead (10+ years)</option>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"tools\">Tools & Technologies</label>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" id=\"tools\" placeholder=\"List tools and technologies the user is proficient with...\"></textarea>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t</div> #}
-
-\t\t\t\t<!-- Account Setup Card -->
-\t\t\t\t\t<div class=\"form-card\"> <div class=\"form-header\">
-\t\t\t\t\t\t<h3 class=\"form-title\">
-\t\t\t\t\t\t\t<i class=\"bi bi-gear\"></i>
-\t\t\t\t\t\t\tAccount Setup</h3>
-\t\t\t\t\t\t<p class=\"form-subtitle\">Configure user account and login credentials</p>
-\t\t\t\t\t</div>
-
-\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"username\">Catrte d'identité National
-\t\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t\t{{form_row(form.cin, {
-\t\t\t\t\t\t\t\t\tlabel: false,
-\t\t\t\t\t\t\t\t\tattr: {
-\t\t\t\t\t\t\t\t\t\tclass: 'form-control cin-input',
-\t\t\t\t\t\t\t\t\t\tid: 'cin',
-\t\t\t\t\t\t\t\t\t\tplaceholder: 'Enter CIN',
-\t\t\t\t\t\t\t\t\t\trequired: false,
-\t\t\t\t\t\t\t\t\t\tvalue: currentUser.cin
-\t\t\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\t\t})}}
-\t\t\t\t\t\t\t\t{# <input type=\"text\" class=\"form-control\" id=\"username\" placeholder=\"Choose a username\" required> #}
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"password\">Password
-\t\t\t\t\t\t\t\t\t<span class=\"required\">*</span>
-\t\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t\t<div class=\"input-group\">
-\t\t\t\t\t\t\t\t\t<input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Create a password\" required>
-\t\t\t\t\t\t\t\t\t<button class=\"btn-outline\" type=\"button\" id=\"showPasswordBtn\">
-\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
-\t\t\t\t\t\t\t\t\t</button>
-\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-
-\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"startDate\">Start Date</label>
-\t\t\t\t\t\t\t\t<input type=\"date\" class=\"form-control\" id=\"startDate\">
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t\t<div class=\"col\">
-\t\t\t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t\t\t<label class=\"form-label\" for=\"reportingTo\">Reporting To</label>
-\t\t\t\t\t\t\t\t<select class=\"form-select\" id=\"reportingTo\">
-\t\t\t\t\t\t\t\t\t<option value=\"\">Select manager</option>
-\t\t\t\t\t\t\t\t\t<option value=\"1\">John Doe (Project Lead)</option>
-\t\t\t\t\t\t\t\t\t<option value=\"2\">Lisa Rodriguez (Product Manager)</option>
-\t\t\t\t\t\t\t\t\t<option value=\"3\">Michael Brown (Tech Lead)</option>
-\t\t\t\t\t\t\t\t</select>
-\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
 \t\t\t\t\t<div class=\"form-group\">
-\t\t\t\t\t\t<label class=\"form-label\">Send Welcome Email</label>
-\t\t\t\t\t\t<div class=\"d-flex align-items-center gap-2\">
-\t\t\t\t\t\t\t<label class=\"toggle-switch\">
-\t\t\t\t\t\t\t\t<input type=\"checkbox\">
-\t\t\t\t\t\t\t\t<span class=\"toggle-slider\"></span>
-\t\t\t\t\t\t\t</label>
-\t\t\t\t\t\t\t<span class=\"form-check-label\">Send welcome email with login instructions</span>
-\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<label class=\"form-label\" for=\"fullName\">
+\t\t\t\t\t\t\tFull Name
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.username, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'fullName',
+                                placeholder: 'Enter full name',
+                                required: true
+                            }
+                        }) }}
 \t\t\t\t\t</div>
 \t\t\t\t</div>
-
-\t\t\t\t<!-- Form Actions -->
-\t\t\t\t<div class=\"form-actions\">
-\t\t\t\t\t<div>
-\t\t\t\t\t\t<button type=\"button\" class=\"btn-outline\" id=\"saveDraftBtn\">
-\t\t\t\t\t\t\t<i class=\"bi bi-save\"></i>
-\t\t\t\t\t\t\tSave as Draft
-\t\t\t\t\t\t</button>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"d-flex gap-3\">
-\t\t\t\t\t\t<button type=\"reset\" class=\"btn-secondary\">
-\t\t\t\t\t\t\t<i class=\"bi bi-x-circle\"></i>
-\t\t\t\t\t\t\tCancel
-\t\t\t\t\t\t</button>
-\t\t\t\t\t\t<button type=\"submit\" class=\"btn-primary\">
-\t\t\t\t\t\t\t<i class=\"bi bi-plus-circle\"></i>
-\t\t\t\t\t\t\tCreate User
-\t\t\t\t\t\t</button>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"adresse\">
+\t\t\t\t\t\t\tAdresse
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.adresse, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'adresse',
+                                placeholder: 'Enter address',
+                                required: true
+                            }
+                        }) }}
 \t\t\t\t\t</div>
 \t\t\t\t</div>
-\t\t\t\t{{ form_end(form) }}
-\t\t\t</form>
-\t\t</main>
+\t\t\t</div>
 
-\t\t{% include 'component/footeradmin.html.twig' %}
-\t\t{% block javascript %}
-\t\t\t <script>
-\t\t\t\tdocument.addEventListener('DOMContentLoaded', function() {
-\t\t\t    const cinInput = document.querySelector('.cin-input'); // ⚠️ ID Symfony = nom_du_form + _ + nom_du_champ
-\t\t\t    
-\t\t\t    // Vérifie si l'élément existe avant d'ajouter l'event listener
-\t\t\t    if (!cinInput) {
-\t\t\t        console.warn('Champ CIN non trouvé (ID: cin-input)'). //Vérifiez le nom du champ dans le formulaire Symfony.');
-\t\t\t        return;
-\t\t\t    }
-\t\t\t
-\t\t\t    cinInput.addEventListener('input', function(e) {  // ⚠️ 'input' pas 'cin-input'
-\t\t\t        let value = e.target.value.replace(/\\s/g, '').replace(/[^\\d]/g, '');  // ⚠️ \\s pas \\\\s
-\t\t\t
-\t\t\t        // Formatage par groupes de 3
-\t\t\t        let formatted = '';
-\t\t\t        for (let i = 0; i < value.length; i += 3) {
-\t\t\t            formatted += value.substr(i, 3) + ' ';
-\t\t\t        }
-\t\t\t        e.target.value = formatted.trim().substring(0, 21);
-\t\t\t    });
-\t\t\t    
-\t\t\t    // Bonus : sélectionne tout au focus
-\t\t\t    cinInput.addEventListener('focus', function() {
-\t\t\t        this.select();
-\t\t\t    });
-\t\t\t});
-\t\t\t
-\t\t\t\t\t\t</script>
-\t\t{% endblock %}
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"email\">
+\t\t\t\t\t\t\tEmail Address
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.email, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'email',
+                                placeholder: 'user@company.com'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"phone\">Phone Number</label>
+\t\t\t\t\t\t{{ form_row(form.phone, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'phone',
+                                placeholder: '+1 (555) 000-0000'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"jobTitle\">
+\t\t\t\t\t\t\tProfession Title
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.profession, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'jobTitle',
+                                placeholder: 'e.g., Senior Designer, Project Manager'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"sexe\">
+\t\t\t\t\t\t\tSexe
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.sexe, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'sexe',
+                                placeholder: 'e.g., Male, Female'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateNaissance\">
+\t\t\t\t\t\t\tDate de naissance
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.dateNaissance, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'dateNaissance'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"lieuNaissance\">
+\t\t\t\t\t\t\tLieu de naissance
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.lieuNaissance, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieuNaissance',
+                                placeholder: 'e.g., Paris, London'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"form-group\">
+\t\t\t\t<label class=\"form-label\" for=\"bio\">Bio/Introduction</label>
+\t\t\t\t{{ form_row(form.biography, {
+                    label: false,
+                    attr: {
+                        class: 'form-control',
+                        id: 'bio',
+                        placeholder: 'Write a brief bio or introduction for the user...'
+                    }
+                }) }}
+\t\t\t</div>
+\t\t</div>
+
+\t\t<!-- National Identity Card Setup -->
+\t\t<div class=\"form-card\">
+\t\t\t<div class=\"form-header\">
+\t\t\t\t<h3 class=\"form-title\">
+\t\t\t\t\t<i class=\"bi bi-gear\"></i>
+\t\t\t\t\tNational Identity Card Setup
+\t\t\t\t</h3>
+\t\t\t\t<p class=\"form-subtitle\">Configure CIN</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"cin\">
+\t\t\t\t\t\t\tCarte d'identité Nationale
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.cin, {
+                            label: false,
+                            attr: {
+                                class: 'form-control cin-input',
+                                id: 'cin',
+                                placeholder: 'Enter CIN',
+                                required: false
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"nationalite\">
+\t\t\t\t\t\t\tNationalité
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.nationalite, {
+                            label: false,
+                            attr: {
+                                class: 'form-control cin-input',
+                                id: 'nationalite',
+                                placeholder: 'Enter nationalité',
+                                required: false
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"lieuDelivrance\">
+\t\t\t\t\t\t\tLieu de délivrance
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.lieuDelivrance, {
+                            label: false,
+                            attr: {
+                                class: 'form-control cin-input',
+                                id: 'lieuDelivrance',
+                                placeholder: 'Enter lieu de delivrance',
+                                required: false
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateDelivrance\">
+\t\t\t\t\t\t\tDate de delivrance
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.dateDelivrance, {
+                            label: false,
+                            attr: {
+                                class: 'form-control cin-input',
+                                id: 'dateDelivrance',
+                                placeholder: 'Enter date of delivrance',
+                                required: false
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"paysDelivrance\">
+\t\t\t\t\t\t\tPays de délivrance
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.paysDelivrance, {
+                            label: false,
+                            attr: {
+                                class: 'form-control cin-input',
+                                id: 'paysDelivrance',
+                                placeholder: 'Enter pays de delivrance',
+                                required: false
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<!-- Scouts Assignments -->
+\t\t<div class=\"form-card\">
+\t\t\t<div class=\"form-header\">
+\t\t\t\t<h3 class=\"form-title\">
+\t\t\t\t\t<i class=\"bi bi-building\"></i>
+\t\t\t\t\tScouts Assignments
+\t\t\t\t</h3>
+\t\t\t\t<p class=\"form-subtitle\">Assign user to scouts with specific roles</p>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"fonctionScout\">
+\t\t\t\t\t\t\tFonction Scout
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.fonctionScout, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'fonctionScout',
+                                placeholder: 'Enter fonction dans le scout',
+                                required: true
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tStart Date for scout
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.dateEntrescout, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'dateEntrescout'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"password\">
+\t\t\t\t\t\t\tPassword
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.plainPassword, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'password',
+                                placeholder: 'Create a password',
+                                required: true
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<!-- Form Actions -->
+\t\t<div class=\"form-actions\">
+\t\t\t<div>
+\t\t\t\t<button type=\"button\" class=\"btn-outline\" id=\"saveDraftBtn\">
+\t\t\t\t\t<i class=\"bi bi-save\"></i>
+\t\t\t\t\tSave as Draft
+\t\t\t\t</button>
+\t\t\t</div>
+\t\t\t<div class=\"d-flex gap-3\">
+\t\t\t\t<button type=\"reset\" class=\"btn-secondary\">
+\t\t\t\t\t<i class=\"bi bi-x-circle\"></i>
+\t\t\t\t\tCancel
+\t\t\t\t</button>
+\t\t\t\t<button type=\"submit\" class=\"btn-primary\">
+\t\t\t\t\t<i class=\"bi bi-plus-circle\"></i>
+\t\t\t\t\tUpdate User
+\t\t\t\t</button>
+\t\t\t</div>
+\t\t</div>
+
+\t\t{{ form_end(form) }}
+\t</main>
+
+\t{% include 'component/footeradmin.html.twig' %}
+
+\t{% block javascript %}
+\t\t <script>
+\t\tdocument.addEventListener('DOMContentLoaded', function() {
+\t\t    const cinInput = document.querySelector('.cin-input');
+\t\t
+\t\t    if (!cinInput) {
+\t\t        console.warn('Champ CIN non trouvé (classe: .cin-input)');
+\t\t        return;
+\t\t    }
+\t\t
+\t\t    // Fonction pour nettoyer et obtenir la valeur brute
+\t\t    function getCleanCinValue(value) {
+\t\t        return value
+\t\t            .replace(/\\s/g, '')           // Supprime tous les espaces
+\t\t            .replace(/[^\\d]/g, '')        // Garde uniquement les chiffres
+\t\t            .slice(0, 12);                // Limite à 12 chiffres maximum
+\t\t    }
+\t\t
+\t\t    // Événement input : formatage en temps réel
+\t\t    cinInput.addEventListener('input', function(e) {
+\t\t        let value = e.target.value;
+\t\t        let cleanValue = getCleanCinValue(value);
+\t\t        
+\t\t        // Formatage avec espaces tous les 3 chiffres
+\t\t        let formatted = '';
+\t\t        for (let i = 0; i < cleanValue.length; i += 3) {
+\t\t            formatted += cleanValue.substr(i, 3) + ' ';
+\t\t        }
+\t\t        e.target.value = formatted.trim();
+\t\t    });
+\t\t
+\t\t    // Événement focus : sélectionne tout le texte
+\t\t    cinInput.addEventListener('focus', function() {
+\t\t        this.select();
+\t\t    });
+\t\t
+\t\t    // Événement blur : nettoie complètement (optionnel)
+\t\t    cinInput.addEventListener('blur', function() {
+\t\t        let cleanValue = getCleanCinValue(this.value);
+\t\t        if (cleanValue.length === 12) {
+\t\t            // Reformate proprement si complet
+\t\t            let formatted = '';
+\t\t            for (let i = 0; i < cleanValue.length; i += 3) {
+\t\t                formatted += cleanValue.substr(i, 3) + ' ';
+\t\t            }
+\t\t            this.value = formatted.trim();
+\t\t        } else if (cleanValue.length === 0) {
+\t\t            this.value = ''; // Vide si rien
+\t\t        }
+\t\t    });
+\t\t
+\t\t    // Fonction utilitaire pour récupérer la valeur brute n'importe où
+\t\t    window.getCinValue = function() {
+\t\t        return getCleanCinValue(cinInput.value);
+\t\t    };
+\t\t
+\t\t    // Exemple d'utilisation
+\t\t    console.log('CIN brute:', window.getCinValue());
+\t\t});
+\t\t
+\t</script>
 \t{% endblock %}
+{% endblock %}
 ", "admin/settingadmin/edit.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\settingadmin\\edit.html.twig");
     }
 }

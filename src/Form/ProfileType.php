@@ -34,15 +34,15 @@ class ProfileType extends AbstractType
                     ),
                 ],
             ])
-            ->add('roles', ChoiceType::class, [
-                'choices' => [
-                    'Admin' => 'ROLE_ADMIN',
-                    'User' => 'ROLE_USER',
-                ],
-                'expanded' => true,
-                'multiple' => true,
-                'label' => 'Rôles',
-            ])
+            // ->add('roles', ChoiceType::class, [
+            //     'choices' => [
+            //         'Admin' => 'ROLE_ADMIN',
+            //         'User' => 'ROLE_USER',
+            //     ],
+            //     'expanded' => true,
+            //     'multiple' => true,
+            //     'label' => 'Rôles',
+            // ])
             ->add('username', null, [
                 'required' => true,
                 'label' => 'Nom d\'utilisateur',
@@ -141,12 +141,12 @@ class ProfileType extends AbstractType
                     new NotBlank(
                         message: 'Please enter a number for CIN',
                     ),
-                    new Regex(
-                        pattern: '/^\d{12}$/',
+                    new Regex(  
+                        pattern: '/^(?:\s*\d){12}\s*$/',
                         message: 'Le CIN doit contenir exactement 12 chiffres',
                     ),
                     new Length(
-                        max: 12,
+                        max: 15,
                         maxMessage: 'Your CIN should not exceed {{ limit }} characters',
                     ),
                 ],

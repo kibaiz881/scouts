@@ -12,6 +12,14 @@
 	<main
 		class="main" id="main" role="main">
 		<!-- Page Header -->
+
+		    {# ✅ ICI : Messages flash en haut #}
+			{% for message in app.flashes('success') %}
+				<div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+					<i class="bi bi-check-circle-fill me-2"></i>{{ message }}
+					<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+				</div>
+			{% endfor %}
 		<div class="page-header">
 			<div class="page-title">
 				<h1>User Profile</h1>

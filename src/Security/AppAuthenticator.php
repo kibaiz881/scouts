@@ -31,9 +31,13 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         private EntityManagerInterface $entityManager
     ) {}
 
+    /**
+     * ✅ CORRECTION PRINCIPALE : Noms des champs Symfony (_email, _password)
+     */
     public function authenticate(Request $request): Passport
     {
-        $email = $request->request->get('email', '');
+        // CHANGÉ : 'email' → '_email' et 'password' → '_password'
+        $email = $request->request->get('_email', '');
         
         // Sauvegarder le dernier nom d'utilisateur pour le formulaire
         $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
@@ -52,7 +56,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
                 return $user;
             }),
-            new PasswordCredentials($request->request->get('password', '')),
+            new PasswordCredentials($request->request->get('_password', '')), // ✅ _password
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
                 new RememberMeBadge(),

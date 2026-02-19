@@ -72,45 +72,45 @@ final class SettingadminController extends AbstractController
         ]);
     }
 
- 
- #[Route('/admin/settingadmin/edit/{id}', name: 'admin_setting_edit')]
+    #[Route('/admin/settingadmin/edit/{id}', name: 'admin_setting_edit')]
     #[IsGranted('ROLE_ADMIN')]
     public function edit(
         int $id,
         Request $request,
-        EntityManagerInterface $em
+        EntityManagerInterface $em,
+        UserPasswordHasherInterface $passwordHasher  // ✅ Ajoutez ce service
     ): Response {
-        // 1. Récupérer l’utilisateur à modifier
+        // 1. Récupérer l'utilisateur à modifier
         $user = $em->getRepository(User::class)->find($id);
 
         if (!$user) {
             throw $this->createNotFoundException('Utilisateur introuvable.');
         }
 
-        // 2. Créer le formulaire pré-rempli avec les données de l’utilisateur
+        // 2. Créer le formulaire pré-rempli avec les données de l'utilisateur
         $form = $this->createForm(ProfileType::class, $user);
-
-        // 3. Traiter la requête (POST/GET)
         $form->handleRequest($request);
 
-        // 4. Si soumis et valide, enregistrer en BDD
+        // 3. Si soumis et valide, enregistrer en BDD
         if ($form->isSubmitted() && $form->isValid()) {
-            // Pas besoin de persist() si l’entité vient du repository
+            // Gestion du mot de passe (optionnel pour edit)
+            $plainPassword = $form->get('plainPassword')->getData();
+            if ($plainPassword) {
+                $hashedPassword = $passwordHasher->hashPassword($user, $plainPassword);  // ✅ Hashage automatique
+                $user->setPassword($hashedPassword);
+            }
+
             $em->flush();
 
-            $this->addFlash('success', 'Profil mis à jour avec succès.');
+            $this->addFlash('success', 'Profil mis à jour avec succès !');
 
-            return $this->redirectToRoute('admin_setting_edit', [
-                'id' => $user->getId(),
-            ]);
+            return $this->redirectToRoute('app_admin_settingadmin');
         }
 
-        // 5. Afficher le formulaire
+        // 4. Afficher le formulaire
         return $this->render('admin/settingadmin/edit.html.twig', [
-            'currentUser' => $this->getUser(),
-            'user'        => $user,
-            'form'        => $form->createView(),
+            'user' => $user,
+            'form' => $form->createView(),
         ]);
     }
-    
 }
