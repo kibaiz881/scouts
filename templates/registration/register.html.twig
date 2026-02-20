@@ -1,74 +1,73 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Helder Camara Register
+	Helder Camara Register
 {% endblock %}
 
 {% block body %}
-    {% include "layout.html.twig" %}
+	{% include "layout.html.twig" %}
 
-    <main>
-        <section class="i pg fh rm ki xn vq gj qp gr hj rp hr">
+	<main>
+		<section
+			class="i pg fh rm ki xn vq gj qp gr hj rp hr">
 
-            <!-- Bg Shapes -->
-            <img src="{{ asset('images/shape-06.svg') }}" alt="Shape" class="h j k" />
-            <img src="{{ asset('images/shape-03.svg') }}" alt="Shape" class="h l m" />
-            <img src="{{ asset('images/shape-17.svg') }}" alt="Shape" class="h n o" />
-            <img src="{{ asset('images/shape-18.svg') }}" alt="Shape" class="h p q" />
+			<!-- Bg Shapes -->
+			<img src="{{ asset('images/shape-06.svg') }}" alt="Shape" class="h j k"/>
+			<img src="{{ asset('images/shape-03.svg') }}" alt="Shape" class="h l m"/>
+			<img src="{{ asset('images/shape-17.svg') }}" alt="Shape" class="h n o"/>
+			<img src="{{ asset('images/shape-18.svg') }}" alt="Shape" class="h p q"/>
 
-            <div class="animate_top bb af i va sg hh sm vk xm yi _n jp hi ao kp">
+			<div class="animate_top bb af i va sg hh sm vk xm yi _n jp hi ao kp">
 
-                {{ form_start(registrationForm, {'attr': {'class': 'sb' }}
-                ) }}
-                {{ form_errors(registrationForm) }}
+				{{ form_start(registrationForm, {'attr': {'class': 'sb' }}
+				) }}
+				{{ form_errors(registrationForm) }}
 
-                <div class="rj">
-                    <h2 class="ek ck kk wm xb">
-                        Inscription
-                    </h2>
-                    <p>
-                        Bienvenue sur votre espace d'inscription, veuillez entrer vos identifiants pour créer votre compte.
-                    </p>
-                </div>
+				<div class="rj">
+					<h2 class="ek ck kk wm xb">
+						Inscription
+					</h2>
+					<p>
+						Bienvenue sur votre espace d'inscription, veuillez entrer vos identifiants pour créer votre compte.
+					</p>
+				</div>
 
-                <div class="wb">
-                    {{ form_row(registrationForm.username) }}
-                </div>
+				<div class="wb">
+					{{ form_row(registrationForm.username) }}
+				</div>
 
-                <div class="wb">
-                    {{ form_row(registrationForm.email) }}
-                </div>
+				<div class="wb">
+					{{ form_row(registrationForm.email) }}
+				</div>
 
-                <div class="wb">
-                    {{ form_row(registrationForm.plainPassword, {
+				<div class="wb">
+					{{ form_row(registrationForm.plainPassword, {
                         label: 'Password'
                     }) }}
-                </div>
-                <div class="wb">
-                    {{ form_row(registrationForm.profilePictureFile, {
-                        label: 'Profile Picture (optional)'
-                    }) }}
-                </div>
-                <div class="wb">
-                    {{ form_row(registrationForm.agreeTerms) }}
-                </div>
+				</div>
+				<div class="wb fileinput">
+					{{ form_row(registrationForm.profilePictureFile) }}
+				</div>
+				<div class="wb">
+					{{ form_row(registrationForm.agreeTerms) }}
+				</div>
 
-                <button class="vd rj ek rc rg gh lk ml il _l gi hi" type="submit">
-                    Sign Up
-                </button>
+				<button class="vd rj ek rc rg gh lk ml il _l gi hi" type="submit">
+					Sign Up
+				</button>
 
-                {{ form_end(registrationForm) }}
+				{{ form_end(registrationForm) }}
 
-                <p class="sj hk xj rj ob">
-                    Already have an account?
-                    <a class="mk" href="{{ path('app_login') }}">
-                        Sign In
-                    </a>
-                </p>
+				<p class="sj hk xj rj ob">
+					Already have an account?
+					<a class="mk" href="{{ path('app_login') }}">
+						Sign In
+					</a>
+				</p>
 
-            </div>
-        </section>
-    </main>
+			</div>
+		</section>
+	</main>
 
-    {% include 'footer.html.twig' %}
+	{% include 'footer.html.twig' %}
 {% endblock %}

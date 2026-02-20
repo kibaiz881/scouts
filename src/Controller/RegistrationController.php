@@ -24,10 +24,15 @@ class RegistrationController extends AbstractController
         EntityManagerInterface $entityManager,
         AppAuthenticator $appAuthenticator
     ): Response {
-        // Vérifier si l'utilisateur est déjà connecté
+
         if ($this->getUser()) {
-            return $this->redirectToRoute('app_admin');
+            if ($this->isGranted('ROLE_ADMIN')) {
+                return $this->redirectToRoute('app_admin');
+            } elseif ($this->isGranted('ROLE_USER')) {
+                return $this->redirectToRoute('app_user');
+            }
         }
+
 
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -42,7 +47,7 @@ class RegistrationController extends AbstractController
             $user->setPassword(
                 $userPasswordHasher->hashPassword($user, $plainPassword)
             );
-            $user->setRoles(['ROLE_ADMIN']);
+            $user->setRoles(['ROLE_USER']);
             $user->setEmail($form->get('email')->getData());
             $user->setUsername($form->get('username')->getData());
             $user->setCreatedAt(new \DateTimeImmutable());

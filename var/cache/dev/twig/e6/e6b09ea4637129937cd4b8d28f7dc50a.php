@@ -85,7 +85,10 @@ class __TwigTemplate_77d13042424c5e358f5bedc7ea958e68 extends Template
 \t\t\t\t\t</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"project.html\">
+\t\t\t\t\t<a class=\"nav-link\" href=\"";
+        // line 29
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_post_admin");
+        yield "\">
 \t\t\t\t\t\t<svg viewbox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">
 \t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-width=\"1.6\" d=\"M3 7h18M7 10h10M5 14h14M9 18h6\"/>
 \t\t\t\t\t\t</svg>
@@ -325,7 +328,7 @@ class __TwigTemplate_77d13042424c5e358f5bedc7ea958e68 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  286 => 208,  253 => 178,  249 => 176,  243 => 173,  240 => 172,  232 => 170,  230 => 169,  79 => 21,  68 => 13,  63 => 11,  59 => 10,  48 => 1,);
+        return array (  289 => 208,  256 => 178,  252 => 176,  246 => 173,  243 => 172,  235 => 170,  233 => 169,  90 => 29,  79 => 21,  68 => 13,  63 => 11,  59 => 10,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -358,7 +361,7 @@ class __TwigTemplate_77d13042424c5e358f5bedc7ea958e68 extends Template
 \t\t\t\t\t</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"project.html\">
+\t\t\t\t\t<a class=\"nav-link\" href=\"{{path('app_admin_post_admin')}}\">
 \t\t\t\t\t\t<svg viewbox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">
 \t\t\t\t\t\t\t<path stroke=\"currentColor\" stroke-width=\"1.6\" d=\"M3 7h18M7 10h10M5 14h14M9 18h6\"/>
 \t\t\t\t\t\t</svg>

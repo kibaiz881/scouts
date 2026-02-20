@@ -2585,3 +2585,30 @@ h1,  h2,  h3,  h4,  h5,  h6{
   }
 }
 
+
+.wb.fileinput {
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wb.fileinput:hover {
+    border-color: #007bff;
+    background: #f0f8ff;
+}
+
+.wb.fileinput input[type="file"]::-webkit-file-upload-button {
+    background: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.wb.fileinput input[type="file"]::-webkit-file-upload-button:hover {
+    background: #0056b3;
+}

@@ -66,9 +66,12 @@ class __TwigTemplate_835e02f1b4dd95dd79465f0f341e41d5 extends Template
 \t\t\t\t<i class=\"bi bi-download\"></i>
 \t\t\t\tExport Report
 \t\t\t</button>
-\t\t\t<a href=\"project-create.html\" class=\"btn-primary\">
+\t\t\t<a href=\"";
+        // line 17
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_post_newpostadmin");
+        yield "\" class=\"btn-primary\">
 \t\t\t\t<i class=\"bi bi-plus\"></i>
-\t\t\t\tNew Project
+\t\t\t\tNew Post
 \t\t\t</a>
 \t\t</div>
 \t</div>
@@ -406,7 +409,7 @@ class __TwigTemplate_835e02f1b4dd95dd79465f0f341e41d5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  58 => 9,  48 => 1,);
+        return array (  71 => 17,  58 => 9,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -427,9 +430,9 @@ class __TwigTemplate_835e02f1b4dd95dd79465f0f341e41d5 extends Template
 \t\t\t\t<i class=\"bi bi-download\"></i>
 \t\t\t\tExport Report
 \t\t\t</button>
-\t\t\t<a href=\"project-create.html\" class=\"btn-primary\">
+\t\t\t<a href=\"{{ path('app_admin_post_newpostadmin') }}\" class=\"btn-primary\">
 \t\t\t\t<i class=\"bi bi-plus\"></i>
-\t\t\t\tNew Project
+\t\t\t\tNew Post
 \t\t\t</a>
 \t\t</div>
 \t</div>

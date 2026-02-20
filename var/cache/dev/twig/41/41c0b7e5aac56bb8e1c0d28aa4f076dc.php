@@ -68,26 +68,28 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         // line 11
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./styles/style.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
+
+
         ";
-        // line 12
+        // line 14
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 16
+        // line 18
         yield "
         ";
-        // line 17
+        // line 19
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 22
+        // line 24
         yield "    </head>
     <body x-data=\"{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }\" x-init=\"darkMode = JSON.parse(localStorage.getItem('darkMode')); \$watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))\" :class=\"{'b eh': darkMode === true}\">
         ";
-        // line 24
+        // line 26
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 25
+        // line 27
         yield "    </body>
     ";
-        // line 26
+        // line 28
         yield from $this->unwrap()->yieldBlock('script', $context, $blocks);
-        // line 66
+        // line 68
         yield "</html>
 ";
         
@@ -122,7 +124,7 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         yield from [];
     }
 
-    // line 12
+    // line 14
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -135,10 +137,10 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 13
+        // line 15
         yield "
             ";
-        // line 14
+        // line 16
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         yield "
         ";
@@ -151,7 +153,7 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         yield from [];
     }
 
-    // line 17
+    // line 19
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -164,16 +166,16 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 18
+        // line 20
         yield "
             ";
-        // line 19
+        // line 21
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         yield "
             ";
-        // line 20
+        // line 22
         yield from $this->unwrap()->yieldBlock('importmap', $context, $blocks);
-        // line 21
+        // line 23
         yield "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -184,7 +186,7 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         yield from [];
     }
 
-    // line 20
+    // line 22
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -207,7 +209,7 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         yield from [];
     }
 
-    // line 24
+    // line 26
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -229,7 +231,7 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         yield from [];
     }
 
-    // line 26
+    // line 28
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -281,7 +283,7 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
             };
         </script>
         <script defer src=\"";
-        // line 64
+        // line 66
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundle.js"), "html", null, true);
         yield "\"></script>
     ";
@@ -315,7 +317,7 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  285 => 64,  233 => 26,  211 => 24,  188 => 20,  177 => 21,  175 => 20,  171 => 19,  168 => 18,  155 => 17,  142 => 14,  139 => 13,  126 => 12,  103 => 9,  91 => 66,  89 => 26,  86 => 25,  84 => 24,  80 => 22,  78 => 17,  75 => 16,  73 => 12,  69 => 11,  64 => 9,  54 => 1,);
+        return array (  287 => 66,  235 => 28,  213 => 26,  190 => 22,  179 => 23,  177 => 22,  173 => 21,  170 => 20,  157 => 19,  144 => 16,  141 => 15,  128 => 14,  105 => 9,  93 => 68,  91 => 28,  88 => 27,  86 => 26,  82 => 24,  80 => 19,  77 => 18,  75 => 14,  69 => 11,  64 => 9,  54 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -331,11 +333,15 @@ class __TwigTemplate_2c2c0af4324ef0f88951f396d72f851c extends Template
         <title>{% block title %}HC - {% endblock %}</title>
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
         <link href=\"{{asset('./styles/style.css')}}\" rel=\"stylesheet\">
-        {% block stylesheets %}
+
+
+        {% block stylesheets %}
+
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
-        {% block javascripts %}
+        {% block javascripts %}
+
             {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}

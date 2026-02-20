@@ -72,19 +72,25 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
                 </a>
                 <ul class=\"submenu\">
                     <li>
-                        <a href=\"project.html\" title=\"All Projects\">
+                        <a href=\"";
+        // line 25
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_post_admin");
+        yield "\" title=\"All Projects\">
                             <svg viewBox=\"0 0 24 24\" fill=\"none\">
                             <path d=\"M4 6h16M4 12h16M4 18h16\"  stroke=\"currentColor\" stroke-width=\"1.6\"/>
                             </svg>
-                            <span class=\"label\">All Projects</span>
+                            <span class=\"label\">All Posts</span>
                         </a>
                     </li>
                     <li>
-                        <a href=\"project-create.html\" title=\"Project Created\">
+                        <a href=\"";
+        // line 33
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_post_newpostadmin");
+        yield " \" title=\"Project Created\">
                             <svg viewBox=\"0 0 24 24\" fill=\"none\">
                              <path d=\"M12 5v14M5 12h14\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                             </svg>
-                            <span class=\"label\">Create Project</span>
+                            <span class=\"label\">Create Post</span>
                         </a>
                     </li>
                 </ul>
@@ -276,7 +282,7 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  178 => 126,  54 => 5,  48 => 1,);
+        return array (  184 => 126,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -305,19 +311,19 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
                 </a>
                 <ul class=\"submenu\">
                     <li>
-                        <a href=\"project.html\" title=\"All Projects\">
+                        <a href=\"{{ path('app_admin_post_admin') }}\" title=\"All Projects\">
                             <svg viewBox=\"0 0 24 24\" fill=\"none\">
                             <path d=\"M4 6h16M4 12h16M4 18h16\"  stroke=\"currentColor\" stroke-width=\"1.6\"/>
                             </svg>
-                            <span class=\"label\">All Projects</span>
+                            <span class=\"label\">All Posts</span>
                         </a>
                     </li>
                     <li>
-                        <a href=\"project-create.html\" title=\"Project Created\">
+                        <a href=\"{{ path('app_admin_post_newpostadmin') }} \" title=\"Project Created\">
                             <svg viewBox=\"0 0 24 24\" fill=\"none\">
                              <path d=\"M12 5v14M5 12h14\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                             </svg>
-                            <span class=\"label\">Create Project</span>
+                            <span class=\"label\">Create Post</span>
                         </a>
                     </li>
                 </ul>

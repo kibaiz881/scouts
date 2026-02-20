@@ -55,7 +55,7 @@ class RegistrationFormType extends AbstractType
             ->add('profilePictureFile', VichImageType::class, [
                 'required' => false,
                 'attr' => [
-                    'class' => 'vd hh rg zk _g ch hm dm fm pl/50 xi mi sm xm pm dn/40',
+                    'class' => 'vd hh rg zk _g ch hm dm fm pl/50 xi mi sm xm pm dn/40 form-control-file',
                 ],
             ])
             ->add('agreeTerms', CheckboxType::class, [

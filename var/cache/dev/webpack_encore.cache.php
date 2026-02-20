@@ -13,6 +13,7 @@ return [[
         'app' => [
             'js' => [
                 '/build/runtime.js',
+                '/build/vendors-node_modules_bootstrap_dist_js_bootstrap_bundle_min_js.js',
                 '/build/app.js',
             ],
             'css' => [
