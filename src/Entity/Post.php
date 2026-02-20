@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
@@ -32,6 +34,12 @@ class Post
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'posts')]
     #[ORM\JoinColumn(nullable: false)]
     private User $user;
+
+    #[Vich\UploadableField(mapping: 'post_image', fileNameProperty: 'postPictureName')]
+    private ?File $postPictureFile = null;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $postPictureName = null;
 
     public function getId(): ?int
     {
@@ -107,5 +115,19 @@ class Post
     {
         $this->user = $user;
         return $this;
+    }
+
+        public function getProfilePictureFile(): ?File
+    {
+        return $this->postPictureFile;
+    }
+
+    public function setPostPictureFile(?File $file = null): void
+    {
+        $this->postPictureFile = $file;
+
+        if ($file !== null) {
+            $this->postedAt = new \DateTimeImmutable();
+        }
     }
 }
