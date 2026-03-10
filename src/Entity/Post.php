@@ -130,4 +130,14 @@ class Post
             $this->postedAt = new \DateTimeImmutable();
         }
     }
+
+        public function getPostPictureName(): ?string
+    {
+        return $this->postPictureName;
+    }
+
+    public function setPostPictureName(?string $postPictureName): void
+    {
+        $this->postPictureName = $postPictureName;
+    }
 }
