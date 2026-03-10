@@ -8,6 +8,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
+#[Vich\Uploadable]
 class Post
 {
     #[ORM\Id]
@@ -27,13 +28,16 @@ class Post
     #[ORM\Column]
     private bool $isPublished = false;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
     #[ORM\ManyToOne(inversedBy: 'posts')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'posts')]
     #[ORM\JoinColumn(nullable: false)]
-    private User $user;
+    private ?User $user = null;
 
     #[Vich\UploadableField(mapping: 'post_image', fileNameProperty: 'postPictureName')]
     private ?File $postPictureFile = null;
@@ -54,7 +58,6 @@ class Post
     public function setTitle(string $title): static
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -66,7 +69,6 @@ class Post
     public function setContent(string $content): static
     {
         $this->content = $content;
-
         return $this;
     }
 
@@ -78,11 +80,10 @@ class Post
     public function setPostedAt(\DateTimeImmutable $postedAt): static
     {
         $this->postedAt = $postedAt;
-
         return $this;
     }
 
-    public function isPublished(): ?bool
+    public function isPublished(): bool
     {
         return $this->isPublished;
     }
@@ -90,8 +91,17 @@ class Post
     public function setIsPublished(bool $isPublished): static
     {
         $this->isPublished = $isPublished;
-
         return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
     }
 
     public function getCategory(): ?Category
@@ -102,22 +112,21 @@ class Post
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
-
         return $this;
     }
 
-    public function getUser(): User
+    public function getUser(): ?User
     {
         return $this->user;
     }
 
-    public function setUser(User $user): self
+    public function setUser(?User $user): static
     {
         $this->user = $user;
         return $this;
     }
 
-        public function getProfilePictureFile(): ?File
+    public function getPostPictureFile(): ?File
     {
         return $this->postPictureFile;
     }
@@ -127,11 +136,11 @@ class Post
         $this->postPictureFile = $file;
 
         if ($file !== null) {
-            $this->postedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable();
         }
     }
 
-        public function getPostPictureName(): ?string
+    public function getPostPictureName(): ?string
     {
         return $this->postPictureName;
     }
