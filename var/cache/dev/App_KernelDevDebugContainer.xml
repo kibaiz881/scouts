@@ -610,7 +610,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.aRXwakn"/>
+      <argument type="service" id=".service_locator.0SjVH86"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -3851,7 +3851,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.aRXwakn"/>
+      <argument type="service" id=".service_locator.0SjVH86"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -9432,6 +9432,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0MQaTBY" method="withContext"/>
     </service>
+    <service id=".service_locator.3BoFVFw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\PostAdminController::new()"/>
+      <argument>App\Controller\admin\PostAdminController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.3BoFVFw" method="withContext"/>
+    </service>
     <service id=".service_locator.4XYvBdG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -9458,7 +9470,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.j3kKXma" method="withContext"/>
     </service>
-    <service id=".service_locator.aRXwakn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.0SjVH86" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9471,6 +9483,7 @@
         <argument key="App\Controller\BlogController::index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\BlogController::index()"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.K8m4mRx.App\Controller\RegistrationController::register()"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
+        <argument key="App\Controller\admin\PostAdminController::new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\SettingadminController::index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
         <argument key="App\Controller\admin\SettingadminController::edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9481,6 +9494,7 @@
         <argument key="App\Controller\BlogController:index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\BlogController::index()"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.K8m4mRx.App\Controller\RegistrationController::register()"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
+        <argument key="App\Controller\admin\PostAdminController:new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\SettingadminController:index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
         <argument key="App\Controller\admin\SettingadminController:edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
       </argument>
@@ -11955,7 +11969,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.aRXwakn"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.0SjVH86"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>
@@ -12018,6 +12032,7 @@
     <service id=".service_locator.o8dn8wd" alias=".service_locator.3yATBZT"/>
     <service id=".service_locator.kidjPyb" alias=".service_locator.K8m4mRx"/>
     <service id=".service_locator.uBwBrvQ" alias=".service_locator.0MQaTBY"/>
+    <service id=".service_locator.UOV1jy9" alias=".service_locator.3BoFVFw"/>
     <service id=".service_locator.GnylMfi" alias=".service_locator.4XYvBdG"/>
     <service id=".service_locator.rm_qkBw" alias=".service_locator.j3kKXma"/>
     <service id=".service_locator.D6tJ4Px" alias=".service_locator.TJNRSaV"/>

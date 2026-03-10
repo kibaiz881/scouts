@@ -121,6 +121,10 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
 
         <!-- Publication Creation Form -->
         <form id=\"publicationForm\" class=\"publication-form\">
+            ";
+        // line 25
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_start');
+        yield "
             <!-- Basic Information Card -->
             <div class=\"form-card\">
                 <div class=\"form-header\">
@@ -133,22 +137,19 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                         <div class=\"form-group\">
                             <label class=\"form-label\" for=\"publicationName\">Publication Name <span
                                     class=\"required\">*</span></label>
-                            <input type=\"text\" class=\"form-control\" id=\"publicationName\" placeholder=\"Enter publication name\"
-                                required>
+                            ";
+        // line 38
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 38, $this->source); })()), "title", [], "any", false, false, false, 38), 'row', ["label" => false, "attr" => ["class" => "form-control", "placeholder" => "Enter publication name", "required" => "required"]]);
+        yield "
                         </div>
                     </div>
                     <div class=\"col-md-4\">
                         <div class=\"form-group\">
                             <label class=\"form-label\" for=\"publicationCategory\">Category</label>
-                            <select class=\"form-select\" id=\"publicationCategory\">
-                                <option value=\"\">Select category</option>
-                                <option value=\"web\">Web Development</option>
-                                <option value=\"mobile\">Mobile App</option>
-                                <option value=\"design\">UI/UX Design</option>
-                                <option value=\"marketing\">Marketing</option>
-                                <option value=\"research\">Research</option>
-                                <option value=\"other\">Other</option>
-                            </select>
+                            ";
+        // line 44
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), "category", [], "any", false, false, false, 44), 'row', ["label" => false, "attr" => ["class" => "form-select"]]);
+        yield "
                         </div>
                     </div>
                 </div>
@@ -156,16 +157,20 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                 <div class=\"form-group\">
                     <label class=\"form-label\" for=\"projectDescription\">Description <span
                             class=\"required\">*</span></label>
-                    <textarea class=\"form-control\" id=\"projectDescription\"
-                        placeholder=\"Describe the project goals, objectives, and scope...\" rows=\"4\" required></textarea>
+                    ";
+        // line 52
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 52, $this->source); })()), "content", [], "any", false, false, false, 52), 'row', ["label" => false, "attr" => ["class" => "form-control", "placeholder" => "Enter publication description", "rows" => "5", "required" => "required"]]);
+        yield "
                 </div>
 
                 <div class=\"row\">
                     <div class=\"col-md-6\">
                         <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"projectClient\">Client / Company</label>
-                            <input type=\"text\" class=\"form-control\" id=\"projectClient\"
-                                placeholder=\"Client or company name\">
+                            <label class=\"form-label\" for=\"projectClient\">Users</label>
+                            ";
+        // line 59
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 59, $this->source); })()), "user", [], "any", false, false, false, 59), 'row', ["label" => false, "attr" => ["class" => "form-select"]]);
+        yield "
                         </div>
                     </div>
                     <div class=\"col-md-6\">
@@ -182,48 +187,6 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                 </div>
             </div>
 
-            <!-- Team & Timeline Card -->
-            <div class=\"form-card\">
-                <div class=\"form-header\">
-                    <h3 class=\"form-title\"><i class=\"bi bi-people\"></i> Team & Timeline</h3>
-                    <p class=\"form-subtitle\">Assign team members and set project timeline</p>
-                </div>
-
-                <div class=\"form-group\">
-                    <label class=\"form-label\">Assign To <span class=\"required\">*</span></label>
-                    <select class=\"form-control select2-assignee\" id=\"assigneeSelect\" multiple=\"multiple\" required>
-                        <option value=\"1\" data-avatar-bg=\"#4A67FF\" data-avatar-text=\"JD\">John Doe (Project Lead)</option>
-                        <option value=\"2\" data-avatar-bg=\"#00B7FF\" data-avatar-text=\"SS\">Sarah Smith (UI Designer)</option>
-                        <option value=\"3\" data-avatar-bg=\"#10b981\" data-avatar-text=\"MB\">Michael Brown (Frontend Dev)</option>
-                        <option value=\"4\" data-avatar-bg=\"#f59e0b\" data-avatar-text=\"EJ\">Emily Johnson (Backend Dev)</option>
-                        <option value=\"5\" data-avatar-bg=\"#8b5cf6\" data-avatar-text=\"DC\">David Chen (QA Engineer)</option>
-                        <option value=\"6\" data-avatar-bg=\"#ec4899\" data-avatar-text=\"LR\">Lisa Rodriguez (Product Manager)</option>
-                        <option value=\"7\" data-avatar-bg=\"#14b8a6\" data-avatar-text=\"TK\">Tom Kim (DevOps)</option>
-                        <option value=\"8\" data-avatar-bg=\"#f97316\" data-avatar-text=\"AP\">Alex Parker (UX Researcher)</option>
-                    </select>
-                </div>
-
-                <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"startDate\">Start Date <span class=\"required\">*</span></label>
-                            <input type=\"date\" class=\"form-control\" id=\"startDate\" required>
-                        </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                        <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"endDate\">End Date</label>
-                            <input type=\"date\" class=\"form-control\" id=\"endDate\">
-                        </div>
-                    </div>
-                </div>
-
-                <div class=\"form-group\">
-                    <label class=\"form-label\" for=\"projectBudget\">Budget (\$)</label>
-                    <input type=\"number\" class=\"form-control\" id=\"projectBudget\" placeholder=\"Enter project budget\">
-                </div>
-            </div>
-
             <!-- Files & Attachments Card -->
             <div class=\"form-card\">
                 <div class=\"form-header\">
@@ -236,7 +199,10 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                         <i class=\"bi bi-cloud-arrow-up\"></i>
                         <p>Drop files here or click to upload</p>
                         <span>Supports: PDF, DOC, XLS, JPG, PNG (Max 10MB)</span>
-                        <input type=\"file\" id=\"fileInput\" multiple style=\"display: none;\">
+                        ";
+        // line 88
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 88, $this->source); })()), "PostPictureFile", [], "any", false, false, false, 88), 'row', ["label" => false, "attr" => ["class" => "form-control btn btn-primary", "accept" => ".pdf,.doc,.xls,.jpg,.png"]]);
+        yield "
                     </div>
                     <div id=\"fileList\" class=\"mt-3\"></div>
                 </div>
@@ -258,12 +224,16 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                     </button>
                 </div>
             </div>
+            ";
+        // line 110
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 110, $this->source); })()), 'form_end');
+        yield "
         </form>
     </main>
     ";
-        // line 164
-        yield from $this->load("component/footeradmin.html.twig", 164)->unwrap()->yield($context);
-        // line 165
+        // line 113
+        yield from $this->load("component/footeradmin.html.twig", 113)->unwrap()->yield($context);
+        // line 114
         yield "
 ";
         
@@ -296,7 +266,7 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  267 => 165,  265 => 164,  108 => 9,  106 => 8,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  237 => 114,  235 => 113,  229 => 110,  204 => 88,  172 => 59,  162 => 52,  151 => 44,  142 => 38,  126 => 25,  108 => 9,  106 => 8,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -325,6 +295,7 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
 
         <!-- Publication Creation Form -->
         <form id=\"publicationForm\" class=\"publication-form\">
+            {{form_start(form)}}
             <!-- Basic Information Card -->
             <div class=\"form-card\">
                 <div class=\"form-header\">
@@ -337,22 +308,13 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                         <div class=\"form-group\">
                             <label class=\"form-label\" for=\"publicationName\">Publication Name <span
                                     class=\"required\">*</span></label>
-                            <input type=\"text\" class=\"form-control\" id=\"publicationName\" placeholder=\"Enter publication name\"
-                                required>
+                            {{form_row(form.title, {label: false ,'attr': {'class': 'form-control', 'placeholder': 'Enter publication name', 'required': 'required'}})}}
                         </div>
                     </div>
                     <div class=\"col-md-4\">
                         <div class=\"form-group\">
                             <label class=\"form-label\" for=\"publicationCategory\">Category</label>
-                            <select class=\"form-select\" id=\"publicationCategory\">
-                                <option value=\"\">Select category</option>
-                                <option value=\"web\">Web Development</option>
-                                <option value=\"mobile\">Mobile App</option>
-                                <option value=\"design\">UI/UX Design</option>
-                                <option value=\"marketing\">Marketing</option>
-                                <option value=\"research\">Research</option>
-                                <option value=\"other\">Other</option>
-                            </select>
+                            {{form_row(form.category, {label: false ,'attr': {'class': 'form-select'}})}}
                         </div>
                     </div>
                 </div>
@@ -360,16 +322,14 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                 <div class=\"form-group\">
                     <label class=\"form-label\" for=\"projectDescription\">Description <span
                             class=\"required\">*</span></label>
-                    <textarea class=\"form-control\" id=\"projectDescription\"
-                        placeholder=\"Describe the project goals, objectives, and scope...\" rows=\"4\" required></textarea>
+                    {{form_row(form.content, {label: false ,'attr': {'class': 'form-control', 'placeholder': 'Enter publication description', 'rows': '5', 'required': 'required'}})}}
                 </div>
 
                 <div class=\"row\">
                     <div class=\"col-md-6\">
                         <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"projectClient\">Client / Company</label>
-                            <input type=\"text\" class=\"form-control\" id=\"projectClient\"
-                                placeholder=\"Client or company name\">
+                            <label class=\"form-label\" for=\"projectClient\">Users</label>
+                            {{form_row(form.user, {label: false ,'attr': {'class': 'form-select'}})}}
                         </div>
                     </div>
                     <div class=\"col-md-6\">
@@ -386,48 +346,6 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                 </div>
             </div>
 
-            <!-- Team & Timeline Card -->
-            <div class=\"form-card\">
-                <div class=\"form-header\">
-                    <h3 class=\"form-title\"><i class=\"bi bi-people\"></i> Team & Timeline</h3>
-                    <p class=\"form-subtitle\">Assign team members and set project timeline</p>
-                </div>
-
-                <div class=\"form-group\">
-                    <label class=\"form-label\">Assign To <span class=\"required\">*</span></label>
-                    <select class=\"form-control select2-assignee\" id=\"assigneeSelect\" multiple=\"multiple\" required>
-                        <option value=\"1\" data-avatar-bg=\"#4A67FF\" data-avatar-text=\"JD\">John Doe (Project Lead)</option>
-                        <option value=\"2\" data-avatar-bg=\"#00B7FF\" data-avatar-text=\"SS\">Sarah Smith (UI Designer)</option>
-                        <option value=\"3\" data-avatar-bg=\"#10b981\" data-avatar-text=\"MB\">Michael Brown (Frontend Dev)</option>
-                        <option value=\"4\" data-avatar-bg=\"#f59e0b\" data-avatar-text=\"EJ\">Emily Johnson (Backend Dev)</option>
-                        <option value=\"5\" data-avatar-bg=\"#8b5cf6\" data-avatar-text=\"DC\">David Chen (QA Engineer)</option>
-                        <option value=\"6\" data-avatar-bg=\"#ec4899\" data-avatar-text=\"LR\">Lisa Rodriguez (Product Manager)</option>
-                        <option value=\"7\" data-avatar-bg=\"#14b8a6\" data-avatar-text=\"TK\">Tom Kim (DevOps)</option>
-                        <option value=\"8\" data-avatar-bg=\"#f97316\" data-avatar-text=\"AP\">Alex Parker (UX Researcher)</option>
-                    </select>
-                </div>
-
-                <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"startDate\">Start Date <span class=\"required\">*</span></label>
-                            <input type=\"date\" class=\"form-control\" id=\"startDate\" required>
-                        </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                        <div class=\"form-group\">
-                            <label class=\"form-label\" for=\"endDate\">End Date</label>
-                            <input type=\"date\" class=\"form-control\" id=\"endDate\">
-                        </div>
-                    </div>
-                </div>
-
-                <div class=\"form-group\">
-                    <label class=\"form-label\" for=\"projectBudget\">Budget (\$)</label>
-                    <input type=\"number\" class=\"form-control\" id=\"projectBudget\" placeholder=\"Enter project budget\">
-                </div>
-            </div>
-
             <!-- Files & Attachments Card -->
             <div class=\"form-card\">
                 <div class=\"form-header\">
@@ -440,7 +358,7 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                         <i class=\"bi bi-cloud-arrow-up\"></i>
                         <p>Drop files here or click to upload</p>
                         <span>Supports: PDF, DOC, XLS, JPG, PNG (Max 10MB)</span>
-                        <input type=\"file\" id=\"fileInput\" multiple style=\"display: none;\">
+                        {{ form_row(form.PostPictureFile, {label: false, 'attr': {'class': 'form-control btn btn-primary', 'accept': '.pdf,.doc,.xls,.jpg,.png'}}) }}
                     </div>
                     <div id=\"fileList\" class=\"mt-3\"></div>
                 </div>
@@ -462,6 +380,7 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                     </button>
                 </div>
             </div>
+            {{ form_end(form) }}
         </form>
     </main>
     {% include 'component/footeradmin.html.twig' %}
