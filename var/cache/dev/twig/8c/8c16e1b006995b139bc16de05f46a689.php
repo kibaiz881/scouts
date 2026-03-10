@@ -114,7 +114,7 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
 \t\t\t\t<h1>Update
 \t\t\t\t\t";
         // line 16
-        yield (((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "fullName", [], "any", true, true, false, 16) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "fullName", [], "any", false, false, false, 16)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "fullName", [], "any", false, false, false, 16), "html", null, true)) : ((((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", true, true, false, 16) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "username", [], "any", false, false, false, 16)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "username", [], "any", false, false, false, 16), "html", null, true)) : ("User"))));
+        yield (((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", true, true, false, 16) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "username", [], "any", false, false, false, 16)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 16, $this->source); })()), "username", [], "any", false, false, false, 16), "html", null, true)) : ("User"));
         yield "</h1>
 \t\t\t\t<p>Update user profile access</p>
 \t\t\t</div>
@@ -124,7 +124,7 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_setting_list");
         yield "\" class=\"btn-secondary\">
 \t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
-\t\t\t\t\tBack to task
+\t\t\t\t\tBack to users list
 \t\t\t\t</a>
 \t\t\t</div>
 \t\t</div>
@@ -592,13 +592,13 @@ class __TwigTemplate_b34bb8860c16d60eaa9889dd4018314e extends Template
 \t\t<div class=\"page-header\">
 \t\t\t<div class=\"page-title\">
 \t\t\t\t<h1>Update
-\t\t\t\t\t{{ user.fullName ?? user.username ?? 'User' }}</h1>
+\t\t\t\t\t{{ user.username ?? 'User' }}</h1>
 \t\t\t\t<p>Update user profile access</p>
 \t\t\t</div>
 \t\t\t<div class=\"page-actions\">
 \t\t\t\t<a href=\"{{ path('admin_setting_list') }}\" class=\"btn-secondary\">
 \t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
-\t\t\t\t\tBack to task
+\t\t\t\t\tBack to users list
 \t\t\t\t</a>
 \t\t\t</div>
 \t\t</div>

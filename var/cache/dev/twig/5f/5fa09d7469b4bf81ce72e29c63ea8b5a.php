@@ -223,8 +223,8 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
 
                 ";
         // line 125
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 125, $this->source); })()), "PostPictureFile", [], "any", false, false, false, 125), 'row', ["label" => false, "attr" => ["class" => "form-control"]]);
-        // line 130
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 125, $this->source); })()), "PostPictureFile", [], "any", false, false, false, 125), 'row', ["label" => false, "attr" => ["class" => "form-control btn btn-outline-primary", "id" => "liveToastBtn"]]);
+        // line 131
         yield "
 
             </div>
@@ -257,16 +257,16 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
     </div>
 
     ";
-        // line 161
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 161, $this->source); })()), 'form_end');
+        // line 162
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 162, $this->source); })()), 'form_end');
         yield "
 
 </main>
 
 ";
-        // line 165
-        yield from $this->load("component/footeradmin.html.twig", 165)->unwrap()->yield($context);
         // line 166
+        yield from $this->load("component/footeradmin.html.twig", 166)->unwrap()->yield($context);
+        // line 167
         yield "
 ";
         
@@ -299,7 +299,7 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  270 => 166,  268 => 165,  261 => 161,  228 => 130,  226 => 125,  185 => 86,  183 => 83,  173 => 75,  171 => 68,  161 => 60,  159 => 57,  150 => 50,  148 => 44,  126 => 25,  117 => 19,  104 => 8,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  270 => 167,  268 => 166,  261 => 162,  228 => 131,  226 => 125,  185 => 86,  183 => 83,  173 => 75,  171 => 68,  161 => 60,  159 => 57,  150 => 50,  148 => 44,  126 => 25,  117 => 19,  104 => 8,  102 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -431,7 +431,8 @@ class __TwigTemplate_a69cf0c76e4cbd5d943e087ca23b201c extends Template
                 {{ form_row(form.PostPictureFile, {
                     label: false,
                     attr: {
-                        class: 'form-control'
+                        class: 'form-control btn btn-outline-primary',
+                        id: 'liveToastBtn'                    
                     }
                 }) }}
 

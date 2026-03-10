@@ -17,7 +17,11 @@ final class PostAdminController extends AbstractController
     #[Route('/admin/post/admin', name: 'app_admin_post_admin')]
     public function index(): Response
     {
-        return $this->render('admin/post_admin/index.html.twig', []);
+        //find all post
+        
+        return $this->render('admin/post_admin/index.html.twig', [
+
+        ]);
     }
 
     // new post admin create post
@@ -48,7 +52,7 @@ final class PostAdminController extends AbstractController
 
             $entityManager->persist($post);
             $entityManager->flush();
-
+            $this->addFlash('success', 'Publication créée avec succès !');
             return $this->redirectToRoute('app_admin_post_admin');
         }
 
