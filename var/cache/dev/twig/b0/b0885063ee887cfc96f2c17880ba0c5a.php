@@ -118,14 +118,26 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
                 <div class=\"tc sf yo zf kq\">
                     <div class=\"ro\">
                         <div class=\"animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10\">
-                            <img src=\"";
+                            ";
         // line 17
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/blog-big.png"), "html", null, true);
-        yield "\" alt=\"Blog\" />
-                            <h2 class=\"ek vj 2xl:ud-text-title-lg kk wm nb gb\">
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 17, $this->source); })()), "postPictureName", [], "any", false, false, false, 17)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 18
+            yield "                                <img src=\"";
+            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 18, $this->source); })()), "postPictureName", [], "any", false, false, false, 18)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/posts/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 18, $this->source); })()), "postPictureName", [], "any", false, false, false, 18))), "html", null, true)) : ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/75hc.jpg"), "html", null, true)));
+            yield "\" alt=\"Blog\" />
+                            ";
+        } else {
+            // line 20
+            yield "                                <img src=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/posts/75hc.jpg"), "html", null, true);
+            yield "\" alt=\"Blog\" />
+                            ";
+        }
+        // line 22
+        yield "                            <h2 class=\"ek vj 2xl:ud-text-title-lg kk wm nb gb\">
                                 ";
-        // line 19
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 19, $this->source); })()), "title", [], "any", false, false, false, 19), "html", null, true);
+        // line 23
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 23, $this->source); })()), "title", [], "any", false, false, false, 23), "html", null, true);
         yield "
                             </h2>
                             <ul class=\"tc uf cg 2xl:ud-gap-15 fb\">
@@ -134,8 +146,8 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
                                         Author:
                                     </span>
                                     ";
-        // line 26
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 26, $this->source); })()), "category", [], "any", false, false, false, 26), "id", [], "any", false, false, false, 26), "html", null, true);
+        // line 30
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 30, $this->source); })()), "category", [], "any", false, false, false, 30), "id", [], "any", false, false, false, 30), "html", null, true);
         yield "
                                 </li>
                                 <li>
@@ -143,8 +155,8 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
                                         Published On:
                                     </span>
                                     ";
-        // line 32
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 32, $this->source); })()), "postedAt", [], "any", false, false, false, 32), "jS F, Y"), "html", null, true);
+        // line 36
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 36, $this->source); })()), "postedAt", [], "any", false, false, false, 36), "jS F, Y"), "html", null, true);
         yield "
                                 </li>
                                 <li>
@@ -152,8 +164,8 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
                                         Category:
                                     </span>
                                     ";
-        // line 38
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 38, $this->source); })()), "category", [], "any", false, false, false, 38), "name", [], "any", false, false, false, 38), "html", null, true);
+        // line 42
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 42, $this->source); })()), "category", [], "any", false, false, false, 42), "name", [], "any", false, false, false, 42), "html", null, true);
         yield "
                                 </li>
                             </ul>
@@ -172,11 +184,11 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
                             </p>
                             <div class=\"wc qf pn dg cb\">
                                 <img src=\"";
-        // line 55
+        // line 59
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/blog-04.png"), "html", null, true);
         yield "\" alt=\"Blog\" />
                                 <img src=\"";
-        // line 56
+        // line 60
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/blog-05.png"), "html", null, true);
         yield "\" alt=\"Blog\" />
                             </div>
@@ -273,19 +285,19 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
                             </h4>
                             <ul>
                                 ";
-        // line 150
+        // line 154
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 150, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 154, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 151
+            // line 155
             yield "                                    <li class=\"ql vb du-ease-in-out il xl\">
                                         <a href=\"";
-            // line 152
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite_category", ["category" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 152)]), "html", null, true);
+            // line 156
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite_category", ["category" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 156)]), "html", null, true);
             yield "\" class=\"rc kk wm\">
                                             ";
-            // line 153
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 153), "html", null, true);
+            // line 157
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 157), "html", null, true);
             yield "
                                         </a>
                                     </li>
@@ -294,7 +306,7 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['category'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 157
+        // line 161
         yield "                            </ul>
                         </div>
                         <div class=\"animate_top\">
@@ -302,24 +314,24 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
                                 Related Posts
                             </h4>
                             ";
-        // line 163
+        // line 167
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["recentPosts"]) || array_key_exists("recentPosts", $context) ? $context["recentPosts"] : (function () { throw new RuntimeError('Variable "recentPosts" does not exist.', 163, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["recentPosts"]) || array_key_exists("recentPosts", $context) ? $context["recentPosts"] : (function () { throw new RuntimeError('Variable "recentPosts" does not exist.', 167, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 164
+            // line 168
             yield "                                <div class=\"tc fg 2xl:ud-gap-6 qb\">
                                     <img src=\"";
-            // line 165
+            // line 169
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/blog-small-01.png"), "html", null, true);
             yield "\" alt=\"Blog\" />
                                     <h5 class=\"wj kk wm xl bn ml il\">
                                         <a href=\"";
-            // line 167
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite_show", ["post" => CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 167)]), "html", null, true);
+            // line 171
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite_show", ["post" => CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 171)]), "html", null, true);
             yield "\">
                                             ";
-            // line 168
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 168), "html", null, true);
+            // line 172
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 172), "html", null, true);
             yield "
                                         </a>
                                     </h5>
@@ -329,7 +341,7 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['post'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 173
+        // line 177
         yield "                        </div>
                     </div>
                 </div>
@@ -338,20 +350,20 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
         <!-- ===== Blog Single End ===== -->
         <!-- ===== CTA Start ===== -->
         ";
-        // line 180
-        yield from $this->load("component/rejoindre.html.twig", 180)->unwrap()->yield($context);
-        // line 181
+        // line 184
+        yield from $this->load("component/rejoindre.html.twig", 184)->unwrap()->yield($context);
+        // line 185
         yield "        <!-- ===== CTA End ===== -->
         <!-- ===== FSM Start ===== -->
     ";
-        // line 183
-        yield from $this->load("fsmlayout.html.twig", 183)->unwrap()->yield($context);
-        // line 184
+        // line 187
+        yield from $this->load("fsmlayout.html.twig", 187)->unwrap()->yield($context);
+        // line 188
         yield "    <!-- ===== FSM End ===== -->
     </main>
 ";
-        // line 186
-        yield from $this->load("footer.html.twig", 186)->unwrap()->yield($context);
+        // line 190
+        yield from $this->load("footer.html.twig", 190)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -382,7 +394,7 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  354 => 186,  350 => 184,  348 => 183,  344 => 181,  342 => 180,  333 => 173,  322 => 168,  318 => 167,  313 => 165,  310 => 164,  306 => 163,  298 => 157,  288 => 153,  284 => 152,  281 => 151,  277 => 150,  180 => 56,  176 => 55,  156 => 38,  147 => 32,  138 => 26,  128 => 19,  123 => 17,  114 => 10,  111 => 9,  109 => 8,  96 => 7,  83 => 5,  77 => 3,  64 => 2,  41 => 1,);
+        return array (  366 => 190,  362 => 188,  360 => 187,  356 => 185,  354 => 184,  345 => 177,  334 => 172,  330 => 171,  325 => 169,  322 => 168,  318 => 167,  310 => 161,  300 => 157,  296 => 156,  293 => 155,  289 => 154,  192 => 60,  188 => 59,  168 => 42,  159 => 36,  150 => 30,  140 => 23,  137 => 22,  131 => 20,  125 => 18,  123 => 17,  114 => 10,  111 => 9,  109 => 8,  96 => 7,  83 => 5,  77 => 3,  64 => 2,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -403,7 +415,11 @@ class __TwigTemplate_ed17049e96acaf5a92a58f0a008192a7 extends Template
                 <div class=\"tc sf yo zf kq\">
                     <div class=\"ro\">
                         <div class=\"animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10\">
-                            <img src=\"{{ asset('images/blog-big.png') }}\" alt=\"Blog\" />
+                            {% if post.postPictureName %}
+                                <img src=\"{{ post.postPictureName ? asset('images/posts/' ~ post.postPictureName) : asset('images/75hc.jpg') }}\" alt=\"Blog\" />
+                            {% else %}
+                                <img src=\"{{ asset('images/posts/75hc.jpg') }}\" alt=\"Blog\" />
+                            {% endif %}
                             <h2 class=\"ek vj 2xl:ud-text-title-lg kk wm nb gb\">
                                 {{ post.title }}
                             </h2>

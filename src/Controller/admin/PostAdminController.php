@@ -4,6 +4,7 @@ namespace App\Controller\admin;
 
 use App\Entity\Post;
 use App\Form\PostFormType;
+use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,12 +16,12 @@ final class PostAdminController extends AbstractController
 {
     // find all post
     #[Route('/admin/post/admin', name: 'app_admin_post_admin')]
-    public function index(): Response
+    public function index(PostRepository $postRepository): Response
     {
         //find all post
-        
+        $posts = $postRepository->findAll();
         return $this->render('admin/post_admin/index.html.twig', [
-
+            'posts' => $posts
         ]);
     }
 

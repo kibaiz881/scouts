@@ -1,0 +1,3 @@
+<?php //ec059b97a1a1d3d7d3b0712cf3fae497
+
+return [PHP_INT_MAX, 'images/icon-calender.svg'];

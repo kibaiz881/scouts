@@ -74,7 +74,7 @@ class __TwigTemplate_3b5d3f9380d50a72d3dce385b0b56e64 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
         // line 4
-        yield "    ";
+        yield "\t";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["actu"]) || array_key_exists("actu", $context) ? $context["actu"] : (function () { throw new RuntimeError('Variable "actu" does not exist.', 4, $this->source); })()), "html", null, true);
         yield "
 ";
@@ -101,259 +101,259 @@ class __TwigTemplate_3b5d3f9380d50a72d3dce385b0b56e64 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
-        yield "    ";
+        yield "\t";
         // line 9
-        yield "    ";
+        yield "\t";
         yield from $this->load("layout.html.twig", 9)->unwrap()->yield($context);
         // line 10
-        yield "    <main>
-        <!-- ===== Hero Start ===== -->
-        <section class=\"gj do ir hj sp jr i pg\">
-            <!-- Hero Images -->
-            <div class=\"xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r\">
-                <img src=\"";
-        // line 15
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-01.svg"), "html", null, true);
-        yield "\" alt=\"shape\" class=\"xc 2xl:ud-block h t -ud-left-[10%] ua\" />
-                <img src=\"";
+        yield "\t<main>
+\t\t<!-- ===== Hero Start ===== -->
+\t\t<section
+\t\t\tclass=\"gj do ir hj sp jr i pg\">
+\t\t\t<!-- Hero Images -->
+\t\t\t<div class=\"xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r\">
+\t\t\t\t<img src=\"";
         // line 16
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-02.svg"), "html", null, true);
-        yield "\" alt=\"shape\" class=\"xc 2xl:ud-block h u p va\" />
-                <img src=\"";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-01.svg"), "html", null, true);
+        yield "\" alt=\"shape\" class=\"xc 2xl:ud-block h t -ud-left-[10%] ua\"/>
+\t\t\t\t<img src=\"";
         // line 17
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-03.svg"), "html", null, true);
-        yield "\" alt=\"shape\" class=\"xc 2xl:ud-block h v w va\" />
-                <img src=\"";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-02.svg"), "html", null, true);
+        yield "\" alt=\"shape\" class=\"xc 2xl:ud-block h u p va\"/>
+\t\t\t\t<img src=\"";
         // line 18
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shapehc.png"), "html", null, true);
-        yield "\" alt=\"shape\" class=\"h q r\" />
-                <img src=\"";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shape-03.svg"), "html", null, true);
+        yield "\" alt=\"shape\" class=\"xc 2xl:ud-block h v w va\"/>
+\t\t\t\t<img src=\"";
         // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/shapehc.png"), "html", null, true);
+        yield "\" alt=\"shape\" class=\"h q r\"/>
+\t\t\t\t<img src=\"";
+        // line 20
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/scout16.png"), "html", null, true);
-        yield "\" alt=\"Woman\" class=\"h q r ua\" />
-            </div>
+        yield "\" alt=\"Woman\" class=\"h q r ua\"/>
+\t\t\t</div>
 
-            <!-- Hero Content -->
-            <div class=\"bb ze ki xn 2xl:ud-px-0\">
-                <div class=\"tc _o\">
-                    <div class=\"animate_left jn/2\">
-                        <h1 class=\"fk vj zp or kk wm wb\">
-                            \"
-                            <span style=\"color:red\">
-                                Scout un jour
-                            </span>
-                            , scout toujours!\"
-                        </h1>
-                        <p class=\"fq\">
-                            \"Scout un jour, scout toujours» ! Fondé par l'anglais Robert Stephenson Smyth Baden Powell, le scoutisme est bien plus qu'une simple organisation de jeunesse. Tout au long de sa vie, cet homme s'est pleinement dévoué à transformer celle des jeunes en leur enseignant des valeurs jugées fondamentales selon lui, telles que la fraternité, la loyauté, la foi et le respect de la nature.\"
-                        </p>
+\t\t\t<!-- Hero Content -->
+\t\t\t<div class=\"bb ze ki xn 2xl:ud-px-0\">
+\t\t\t\t<div class=\"tc _o\">
+\t\t\t\t\t<div class=\"animate_left jn/2\">
+\t\t\t\t\t\t<h1 class=\"fk vj zp or kk wm wb\">
+\t\t\t\t\t\t\t\"
+\t\t\t\t\t\t\t<span style=\"color:red\">
+\t\t\t\t\t\t\t\tScout un jour
+\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t, scout toujours!\"
+\t\t\t\t\t\t</h1>
+\t\t\t\t\t\t<p class=\"fq\">
+\t\t\t\t\t\t\t\"Scout un jour, scout toujours» ! Fondé par l'anglais Robert Stephenson Smyth Baden Powell, le scoutisme est bien plus qu'une simple organisation de jeunesse. Tout au long de sa vie, cet homme s'est pleinement dévoué à transformer celle des jeunes en leur enseignant des valeurs jugées fondamentales selon lui, telles que la fraternité, la loyauté, la foi et le respect de la nature.\"
+\t\t\t\t\t\t</p>
 
-                        <div class=\"tc tf yo zf mb\">
-                            <a href=\"#!\" class=\"ek jk lk gh gi hi rg ml il vc _d _l\">
-                                Actualité du jours
-                            </a>
+\t\t\t\t\t\t<div class=\"tc tf yo zf mb\">
+\t\t\t\t\t\t\t<a href=\"#!\" class=\"ek jk lk gh gi hi rg ml il vc _d _l\">
+\t\t\t\t\t\t\t\tActualité du jours
+\t\t\t\t\t\t\t</a>
 
-                            <span class=\"tc sf\">
-                                <a href=\"#!\" class=\"inline-block ek xj kk wm\">
-                                    Si vous souhaitez nous contacter : (+261) 34 03 651 11
-                                </a>
-                                <span class=\"inline-block\">
-                                    Si vous avez des questions ou des préoccupations
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+\t\t\t\t\t\t\t<span class=\"tc sf\">
+\t\t\t\t\t\t\t\t<a href=\"#!\" class=\"inline-block ek xj kk wm\">
+\t\t\t\t\t\t\t\t\tSi vous souhaitez nous contacter : (+261) 34 03 651 11
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<span class=\"inline-block\">
+\t\t\t\t\t\t\t\t\tSi vous avez des questions ou des préoccupations
+\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</section>
 
-        ";
-        // line 56
-        yield from $this->load("component/rejoindre.html.twig", 56)->unwrap()->yield($context);
+\t\t";
         // line 57
+        yield from $this->load("component/rejoindre.html.twig", 57)->unwrap()->yield($context);
+        // line 58
         yield "
-        <!-- ===== Blog Grid Start ===== -->
-        <section class=\"ji gp uq\">
-            <div class=\"bb ye ki xn vq jb jo\">
-                <div class=\"wc qf pn xo zf iq\">
-                    ";
-        // line 62
+\t\t<!-- ===== Blog Grid Start ===== -->
+\t\t<section class=\"ji gp uq\">
+\t\t\t<div class=\"bb ye ki xn vq jb jo\">
+\t\t\t\t<div class=\"wc qf pn xo zf iq\">
+\t\t\t\t\t";
+        // line 63
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 62, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 63, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 63
-            yield "                        <!-- Blog Item -->
-                        <div class=\"animate_top sg vk rm xm\">
-                            <div class=\"c rc i z-1 pg\">
-                                <img class=\"w-full\" src=\"";
-            // line 66
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/blog-01.png"), "html", null, true);
-            yield "\" alt=\"Blog\" />
+            // line 64
+            yield "\t\t\t\t\t\t<!-- Blog Item -->
+\t\t\t\t\t\t<div class=\"animate_top sg vk rm xm\">
+\t\t\t\t\t\t\t<div class=\"c rc i z-1 pg\">
+\t\t\t\t\t\t\t\t<img class=\"w-full\" src=\"";
+            // line 67
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/posts/" . CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postPictureName", [], "any", false, false, false, 67))), "html", null, true);
+            yield "\" alt=\"Blog\"/>
 
-                                <div class=\"im h r s df vd yc wg tc wf xf al hh/20 nl il z-10\">
-                                    <a href=\"";
-            // line 69
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite_show", ["post" => CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 69)]), "html", null, true);
+\t\t\t\t\t\t\t\t<div class=\"im h r s df vd yc wg tc wf xf al hh/20 nl il z-10\">
+\t\t\t\t\t\t\t\t\t<a href=\"";
+            // line 70
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite_show", ["post" => CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 70)]), "html", null, true);
             yield "\" class=\"vc ek rg lk gh sl ml il gi hi\">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
+\t\t\t\t\t\t\t\t\t\tRead More
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
 
-                            <div class=\"yh\">
-                                <div class=\"tc uf wf ag jq\">
-                                    <div class=\"tc wf ag\">
-                                        <img src=\"";
-            // line 78
+\t\t\t\t\t\t\t<div class=\"yh\">
+\t\t\t\t\t\t\t\t<div class=\"tc uf wf ag jq\">
+\t\t\t\t\t\t\t\t\t<div class=\"tc wf ag\">
+\t\t\t\t\t\t\t\t\t\t<img src=\"";
+            // line 79
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/icon-man.svg"), "html", null, true);
-            yield "\" alt=\"User\" />
-                                        <p>
-                                            ";
-            // line 80
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 80), "html", null, true);
+            yield "\" alt=\"User\"/>
+\t\t\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\t\t\t";
+            // line 81
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 81), "html", null, true);
             yield "
-                                        </p>
-                                    </div>
-                                    <div class=\"tc wf ag\">
-                                        <img src=\"";
-            // line 84
+\t\t\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"tc wf ag\">
+\t\t\t\t\t\t\t\t\t\t<img src=\"";
+            // line 85
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/icon-calender.svg"), "html", null, true);
-            yield "\" alt=\"Calender\" />
-                                        <p>
-                                            ";
-            // line 86
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postedAt", [], "any", false, false, false, 86), "d/m/Y"), "html", null, true);
+            yield "\" alt=\"Calender\"/>
+\t\t\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\t\t\t";
+            // line 87
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postedAt", [], "any", false, false, false, 87), "d/m/Y"), "html", null, true);
             yield "
-                                        </p>
-                                    </div>
-                                </div>
-                                <h4 class=\"ek tj ml il kk wm xl eq lb\">
-                                    <a href=\"";
-            // line 91
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite_show", ["post" => CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 91)]), "html", null, true);
-            yield "\">
-                                        ";
+\t\t\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<h4 class=\"ek tj ml il kk wm xl eq lb\">
+\t\t\t\t\t\t\t\t\t<a href=\"";
             // line 92
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["post"], "category", [], "any", false, false, false, 92), "name", [], "any", false, false, false, 92), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite_show", ["post" => CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 92)]), "html", null, true);
+            yield "\">
+\t\t\t\t\t\t\t\t\t\t";
+            // line 93
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["post"], "category", [], "any", false, false, false, 93), "name", [], "any", false, false, false, 93), "html", null, true);
             yield "
-                                    </a>
-                                </h4>
-                                <p>
-                                    ";
-            // line 96
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 96), 0, 200), "html", null, true);
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</h4>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\t";
+            // line 97
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 97), 0, 200), "html", null, true);
             yield "
-                                </p>
-                            </div>
-                        </div>
-                    ";
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['post'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 101
-        yield "                </div>
+        // line 102
+        yield "\t\t\t\t</div>
 
-                <!-- Pagination -->
-                <div class=\"mb lo bq i ua\">
-                    <nav>
-                        <ul class=\"tc wf xf bg\">
-                            <li>
-                                ";
-        // line 108
-        if (((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 108, $this->source); })()) > 1)) {
-            // line 109
-            yield "                                    <a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite", ["page" => ((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 109, $this->source); })()) - 1)]), "html", null, true);
-            yield "\">
-                                        <svg class=\"th lm ml il\" width=\"8\" height=\"14\" viewBox=\"0 0 8 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
-                                            <path d=\"M2.93884 6.99999L7.88884 11.95L6.47484 13.364L0.11084 6.99999L6.47484 0.635986L7.88884 2.04999L2.93884 6.99999Z\" />
-                                        </svg>
-                                    </a>
-                                ";
-        }
-        // line 115
-        yield "                            </li>
-                            ";
-        // line 116
-        $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(range(1, (isset($context["noOfPages"]) || array_key_exists("noOfPages", $context) ? $context["noOfPages"] : (function () { throw new RuntimeError('Variable "noOfPages" does not exist.', 116, $this->source); })())));
-        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-            // line 117
-            yield "
-                                ";
-            // line 118
-            if (($context["page"] == (isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 118, $this->source); })()))) {
-                // line 119
-                yield "                                    <li>
-                                        <a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"";
-                // line 120
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite", ["page" => $context["page"]]), "html", null, true);
+\t\t\t\t<!-- Pagination -->
+\t\t\t\t";
+        // line 105
+        if (((isset($context["noOfPages"]) || array_key_exists("noOfPages", $context) ? $context["noOfPages"] : (function () { throw new RuntimeError('Variable "noOfPages" does not exist.', 105, $this->source); })()) >= 1)) {
+            // line 106
+            yield "\t\t\t\t\t<div class=\"mb lo bq i ua\">
+\t\t\t\t\t\t<nav>
+\t\t\t\t\t\t\t<ul
+\t\t\t\t\t\t\t\tclass=\"tc wf xf bg\">
+
+\t\t\t\t\t\t\t\t<!-- Previous page -->
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t";
+            // line 113
+            if (((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 113, $this->source); })()) > 1)) {
+                // line 114
+                yield "\t\t\t\t\t\t\t\t\t\t<a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite", ["page" => ((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 114, $this->source); })()) - 1)]), "html", null, true);
                 yield "\">
-                                            ";
-                // line 121
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["page"], "html", null, true);
-                yield "
-                                        </a>
-                                    </li>
-                                ";
-            } else {
-                // line 125
-                yield "                                    <li>
-                                        <a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"";
+\t\t\t\t\t\t\t\t\t\t\t<svg class=\"th lm ml il\" width=\"8\" height=\"14\" viewbox=\"0 0 8 14\" fill=\"none\">
+\t\t\t\t\t\t\t\t\t\t\t\t<path d=\"M2.93884 6.99999L7.88884 11.95L6.47484 13.364L0.11084 6.99999L6.47484 0.635986L7.88884 2.04999L2.93884 6.99999Z\"/>
+\t\t\t\t\t\t\t\t\t\t\t</svg>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t";
+            }
+            // line 120
+            yield "\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t\t<!-- Pages -->
+\t\t\t\t\t\t\t\t";
+            // line 123
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable(range(1, (isset($context["noOfPages"]) || array_key_exists("noOfPages", $context) ? $context["noOfPages"] : (function () { throw new RuntimeError('Variable "noOfPages" does not exist.', 123, $this->source); })())));
+            foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
+                // line 124
+                yield "\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an
+\t\t\t\t\t\t\t\t\t\t\t                        ";
                 // line 126
+                if (($context["page"] == (isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 126, $this->source); })()))) {
+                    yield " active ";
+                }
+                yield "\" href=\"";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite", ["page" => $context["page"]]), "html", null, true);
                 yield "\">
-                                            ";
+\t\t\t\t\t\t\t\t\t\t\t";
                 // line 127
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["page"], "html", null, true);
                 yield "
-                                        </a>
-                                    </li>
-                                ";
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t";
             }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_key'], $context['page'], $context['_parent']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
             // line 131
             yield "
-                            ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_key'], $context['page'], $context['_parent']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 133
-        yield "                            <li>
-                                ";
-        // line 134
-        if (((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 134, $this->source); })()) < (isset($context["noOfPages"]) || array_key_exists("noOfPages", $context) ? $context["noOfPages"] : (function () { throw new RuntimeError('Variable "noOfPages" does not exist.', 134, $this->source); })()))) {
-            // line 135
-            yield "                                    <a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite", ["page" => ((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 135, $this->source); })()) + 1)]), "html", null, true);
-            yield "\">
-                                        <svg class=\"th lm ml il\" width=\"8\" height=\"14\" viewBox=\"0 0 8 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
-                                            <path d=\"M5.06067 7.00001L0.110671 2.05001L1.52467 0.636014L7.88867 7.00001L1.52467 13.364L0.110672 11.95L5.06067 7.00001Z\" fill=\"#fefdfo\" />
-                                        </svg>
-                                    </a>
-                                ";
-        }
-        // line 141
-        yield "                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            <!-- Pagination -->
-            </div>
-        </section>
-        <!-- ===== Blog Grid End ===== -->
+\t\t\t\t\t\t\t\t<!-- Next page -->
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t";
+            // line 134
+            if (((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 134, $this->source); })()) < (isset($context["noOfPages"]) || array_key_exists("noOfPages", $context) ? $context["noOfPages"] : (function () { throw new RuntimeError('Variable "noOfPages" does not exist.', 134, $this->source); })()))) {
+                // line 135
+                yield "\t\t\t\t\t\t\t\t\t\t<a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_actualite", ["page" => ((isset($context["currentPage"]) || array_key_exists("currentPage", $context) ? $context["currentPage"] : (function () { throw new RuntimeError('Variable "currentPage" does not exist.', 135, $this->source); })()) + 1)]), "html", null, true);
+                yield "\">
+\t\t\t\t\t\t\t\t\t\t\t<svg class=\"th lm ml il\" width=\"8\" height=\"14\" viewbox=\"0 0 8 14\" fill=\"none\">
+\t\t\t\t\t\t\t\t\t\t\t\t<path d=\"M5.06067 7.00001L0.110671 2.05001L1.52467 0.636014L7.88867 7.00001L1.52467 13.364L0.110672 11.95L5.06067 7.00001Z\"/>
+\t\t\t\t\t\t\t\t\t\t\t</svg>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t";
+            }
+            // line 141
+            yield "\t\t\t\t\t\t\t\t</li>
 
-        <!-- ===== FSM Start ===== -->
-        ";
-        // line 151
-        yield from $this->load("fsmlayout.html.twig", 151)->unwrap()->yield($context);
-        // line 152
-        yield "    <!-- ===== FSM End ===== -->
-    </main>
-    ";
-        // line 154
-        yield from $this->load("footer.html.twig", 154)->unwrap()->yield($context);
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</nav>
+\t\t\t\t\t</div>
+\t\t\t\t";
+        }
+        // line 147
+        yield "\t\t\t\t<!-- Pagination -->
+
+
+\t\t\t</div>
+\t\t</section>
+\t\t<!-- ===== Blog Grid End ===== -->
+
+\t\t<!-- ===== FSM Start ===== -->
+\t\t";
+        // line 155
+        yield from $this->load("fsmlayout.html.twig", 155)->unwrap()->yield($context);
+        // line 156
+        yield "\t\t<!-- ===== FSM End ===== -->
+\t</main>
+\t";
+        // line 158
+        yield from $this->load("footer.html.twig", 158)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -384,7 +384,7 @@ class __TwigTemplate_3b5d3f9380d50a72d3dce385b0b56e64 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  356 => 154,  352 => 152,  350 => 151,  338 => 141,  328 => 135,  326 => 134,  323 => 133,  316 => 131,  309 => 127,  305 => 126,  302 => 125,  295 => 121,  291 => 120,  288 => 119,  286 => 118,  283 => 117,  279 => 116,  276 => 115,  266 => 109,  264 => 108,  255 => 101,  244 => 96,  237 => 92,  233 => 91,  225 => 86,  220 => 84,  213 => 80,  208 => 78,  196 => 69,  190 => 66,  185 => 63,  181 => 62,  174 => 57,  172 => 56,  132 => 19,  128 => 18,  124 => 17,  120 => 16,  116 => 15,  109 => 10,  106 => 9,  104 => 8,  91 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  356 => 158,  352 => 156,  350 => 155,  340 => 147,  332 => 141,  322 => 135,  320 => 134,  315 => 131,  305 => 127,  297 => 126,  293 => 124,  289 => 123,  284 => 120,  274 => 114,  272 => 113,  263 => 106,  261 => 105,  256 => 102,  245 => 97,  238 => 93,  234 => 92,  226 => 87,  221 => 85,  214 => 81,  209 => 79,  197 => 70,  191 => 67,  186 => 64,  182 => 63,  175 => 58,  173 => 57,  133 => 20,  129 => 19,  125 => 18,  121 => 17,  117 => 16,  109 => 10,  106 => 9,  104 => 8,  91 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -392,157 +392,161 @@ class __TwigTemplate_3b5d3f9380d50a72d3dce385b0b56e64 extends Template
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ actu }}
+\t{{ actu }}
 {% endblock %}
 
 {% block body %}
-    {# header components #}
-    {% include 'layout.html.twig' %}
-    <main>
-        <!-- ===== Hero Start ===== -->
-        <section class=\"gj do ir hj sp jr i pg\">
-            <!-- Hero Images -->
-            <div class=\"xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r\">
-                <img src=\"{{ asset('images/shape-01.svg') }}\" alt=\"shape\" class=\"xc 2xl:ud-block h t -ud-left-[10%] ua\" />
-                <img src=\"{{ asset('images/shape-02.svg') }}\" alt=\"shape\" class=\"xc 2xl:ud-block h u p va\" />
-                <img src=\"{{ asset('images/shape-03.svg') }}\" alt=\"shape\" class=\"xc 2xl:ud-block h v w va\" />
-                <img src=\"{{ asset('images/shapehc.png') }}\" alt=\"shape\" class=\"h q r\" />
-                <img src=\"{{ asset('images/scout16.png') }}\" alt=\"Woman\" class=\"h q r ua\" />
-            </div>
+\t{# header components #}
+\t{% include 'layout.html.twig' %}
+\t<main>
+\t\t<!-- ===== Hero Start ===== -->
+\t\t<section
+\t\t\tclass=\"gj do ir hj sp jr i pg\">
+\t\t\t<!-- Hero Images -->
+\t\t\t<div class=\"xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r\">
+\t\t\t\t<img src=\"{{ asset('images/shape-01.svg') }}\" alt=\"shape\" class=\"xc 2xl:ud-block h t -ud-left-[10%] ua\"/>
+\t\t\t\t<img src=\"{{ asset('images/shape-02.svg') }}\" alt=\"shape\" class=\"xc 2xl:ud-block h u p va\"/>
+\t\t\t\t<img src=\"{{ asset('images/shape-03.svg') }}\" alt=\"shape\" class=\"xc 2xl:ud-block h v w va\"/>
+\t\t\t\t<img src=\"{{ asset('images/shapehc.png') }}\" alt=\"shape\" class=\"h q r\"/>
+\t\t\t\t<img src=\"{{ asset('images/scout16.png') }}\" alt=\"Woman\" class=\"h q r ua\"/>
+\t\t\t</div>
 
-            <!-- Hero Content -->
-            <div class=\"bb ze ki xn 2xl:ud-px-0\">
-                <div class=\"tc _o\">
-                    <div class=\"animate_left jn/2\">
-                        <h1 class=\"fk vj zp or kk wm wb\">
-                            \"
-                            <span style=\"color:red\">
-                                Scout un jour
-                            </span>
-                            , scout toujours!\"
-                        </h1>
-                        <p class=\"fq\">
-                            \"Scout un jour, scout toujours» ! Fondé par l'anglais Robert Stephenson Smyth Baden Powell, le scoutisme est bien plus qu'une simple organisation de jeunesse. Tout au long de sa vie, cet homme s'est pleinement dévoué à transformer celle des jeunes en leur enseignant des valeurs jugées fondamentales selon lui, telles que la fraternité, la loyauté, la foi et le respect de la nature.\"
-                        </p>
+\t\t\t<!-- Hero Content -->
+\t\t\t<div class=\"bb ze ki xn 2xl:ud-px-0\">
+\t\t\t\t<div class=\"tc _o\">
+\t\t\t\t\t<div class=\"animate_left jn/2\">
+\t\t\t\t\t\t<h1 class=\"fk vj zp or kk wm wb\">
+\t\t\t\t\t\t\t\"
+\t\t\t\t\t\t\t<span style=\"color:red\">
+\t\t\t\t\t\t\t\tScout un jour
+\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t, scout toujours!\"
+\t\t\t\t\t\t</h1>
+\t\t\t\t\t\t<p class=\"fq\">
+\t\t\t\t\t\t\t\"Scout un jour, scout toujours» ! Fondé par l'anglais Robert Stephenson Smyth Baden Powell, le scoutisme est bien plus qu'une simple organisation de jeunesse. Tout au long de sa vie, cet homme s'est pleinement dévoué à transformer celle des jeunes en leur enseignant des valeurs jugées fondamentales selon lui, telles que la fraternité, la loyauté, la foi et le respect de la nature.\"
+\t\t\t\t\t\t</p>
 
-                        <div class=\"tc tf yo zf mb\">
-                            <a href=\"#!\" class=\"ek jk lk gh gi hi rg ml il vc _d _l\">
-                                Actualité du jours
-                            </a>
+\t\t\t\t\t\t<div class=\"tc tf yo zf mb\">
+\t\t\t\t\t\t\t<a href=\"#!\" class=\"ek jk lk gh gi hi rg ml il vc _d _l\">
+\t\t\t\t\t\t\t\tActualité du jours
+\t\t\t\t\t\t\t</a>
 
-                            <span class=\"tc sf\">
-                                <a href=\"#!\" class=\"inline-block ek xj kk wm\">
-                                    Si vous souhaitez nous contacter : (+261) 34 03 651 11
-                                </a>
-                                <span class=\"inline-block\">
-                                    Si vous avez des questions ou des préoccupations
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+\t\t\t\t\t\t\t<span class=\"tc sf\">
+\t\t\t\t\t\t\t\t<a href=\"#!\" class=\"inline-block ek xj kk wm\">
+\t\t\t\t\t\t\t\t\tSi vous souhaitez nous contacter : (+261) 34 03 651 11
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<span class=\"inline-block\">
+\t\t\t\t\t\t\t\t\tSi vous avez des questions ou des préoccupations
+\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</section>
 
-        {% include 'component/rejoindre.html.twig' %}
+\t\t{% include 'component/rejoindre.html.twig' %}
 
-        <!-- ===== Blog Grid Start ===== -->
-        <section class=\"ji gp uq\">
-            <div class=\"bb ye ki xn vq jb jo\">
-                <div class=\"wc qf pn xo zf iq\">
-                    {% for post in posts %}
-                        <!-- Blog Item -->
-                        <div class=\"animate_top sg vk rm xm\">
-                            <div class=\"c rc i z-1 pg\">
-                                <img class=\"w-full\" src=\"{{ asset('images/blog-01.png') }}\" alt=\"Blog\" />
+\t\t<!-- ===== Blog Grid Start ===== -->
+\t\t<section class=\"ji gp uq\">
+\t\t\t<div class=\"bb ye ki xn vq jb jo\">
+\t\t\t\t<div class=\"wc qf pn xo zf iq\">
+\t\t\t\t\t{% for post in posts %}
+\t\t\t\t\t\t<!-- Blog Item -->
+\t\t\t\t\t\t<div class=\"animate_top sg vk rm xm\">
+\t\t\t\t\t\t\t<div class=\"c rc i z-1 pg\">
+\t\t\t\t\t\t\t\t<img class=\"w-full\" src=\"{{ asset('images/posts/' ~ post.postPictureName) }}\" alt=\"Blog\"/>
 
-                                <div class=\"im h r s df vd yc wg tc wf xf al hh/20 nl il z-10\">
-                                    <a href=\"{{ path('app_actualite_show', {'post': post.id}) }}\" class=\"vc ek rg lk gh sl ml il gi hi\">
-                                        Read More
-                                    </a>
-                                </div>
-                            </div>
+\t\t\t\t\t\t\t\t<div class=\"im h r s df vd yc wg tc wf xf al hh/20 nl il z-10\">
+\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_actualite_show', {'post': post.id}) }}\" class=\"vc ek rg lk gh sl ml il gi hi\">
+\t\t\t\t\t\t\t\t\t\tRead More
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
 
-                            <div class=\"yh\">
-                                <div class=\"tc uf wf ag jq\">
-                                    <div class=\"tc wf ag\">
-                                        <img src=\"{{ asset('images/icon-man.svg') }}\" alt=\"User\" />
-                                        <p>
-                                            {{ post.title }}
-                                        </p>
-                                    </div>
-                                    <div class=\"tc wf ag\">
-                                        <img src=\"{{ asset('images/icon-calender.svg') }}\" alt=\"Calender\" />
-                                        <p>
-                                            {{ post.postedAt|date('d/m/Y') }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <h4 class=\"ek tj ml il kk wm xl eq lb\">
-                                    <a href=\"{{ path('app_actualite_show', {'post': post.id}) }}\">
-                                        {{ post.category.name }}
-                                    </a>
-                                </h4>
-                                <p>
-                                    {{ post.content | slice(0,200) }}
-                                </p>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+\t\t\t\t\t\t\t<div class=\"yh\">
+\t\t\t\t\t\t\t\t<div class=\"tc uf wf ag jq\">
+\t\t\t\t\t\t\t\t\t<div class=\"tc wf ag\">
+\t\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('images/icon-man.svg') }}\" alt=\"User\"/>
+\t\t\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\t\t\t{{ post.title }}
+\t\t\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"tc wf ag\">
+\t\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('images/icon-calender.svg') }}\" alt=\"Calender\"/>
+\t\t\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\t\t\t{{ post.postedAt|date('d/m/Y') }}
+\t\t\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<h4 class=\"ek tj ml il kk wm xl eq lb\">
+\t\t\t\t\t\t\t\t\t<a href=\"{{ path('app_actualite_show', {'post': post.id}) }}\">
+\t\t\t\t\t\t\t\t\t\t{{ post.category.name }}
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</h4>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\t{{ post.content | slice(0,200) }}
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t{% endfor %}
+\t\t\t\t</div>
 
-                <!-- Pagination -->
-                <div class=\"mb lo bq i ua\">
-                    <nav>
-                        <ul class=\"tc wf xf bg\">
-                            <li>
-                                {% if currentPage > 1 %}
-                                    <a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"{{ path('app_actualite', {'page': currentPage - 1}) }}\">
-                                        <svg class=\"th lm ml il\" width=\"8\" height=\"14\" viewBox=\"0 0 8 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
-                                            <path d=\"M2.93884 6.99999L7.88884 11.95L6.47484 13.364L0.11084 6.99999L6.47484 0.635986L7.88884 2.04999L2.93884 6.99999Z\" />
-                                        </svg>
-                                    </a>
-                                {% endif %}
-                            </li>
-                            {% for page in 1 .. noOfPages %}
+\t\t\t\t<!-- Pagination -->
+\t\t\t\t{% if noOfPages >= 1 %}
+\t\t\t\t\t<div class=\"mb lo bq i ua\">
+\t\t\t\t\t\t<nav>
+\t\t\t\t\t\t\t<ul
+\t\t\t\t\t\t\t\tclass=\"tc wf xf bg\">
 
-                                {% if page == currentPage %}
-                                    <li>
-                                        <a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"{{ path('app_actualite', {'page': page}) }}\">
-                                            {{ page }}
-                                        </a>
-                                    </li>
-                                {% else %}
-                                    <li>
-                                        <a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"{{ path('app_actualite', {'page': page}) }}\">
-                                            {{ page }}
-                                        </a>
-                                    </li>
-                                {% endif %}
+\t\t\t\t\t\t\t\t<!-- Previous page -->
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t{% if currentPage > 1 %}
+\t\t\t\t\t\t\t\t\t\t<a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"{{ path('app_actualite', {'page': currentPage - 1}) }}\">
+\t\t\t\t\t\t\t\t\t\t\t<svg class=\"th lm ml il\" width=\"8\" height=\"14\" viewbox=\"0 0 8 14\" fill=\"none\">
+\t\t\t\t\t\t\t\t\t\t\t\t<path d=\"M2.93884 6.99999L7.88884 11.95L6.47484 13.364L0.11084 6.99999L6.47484 0.635986L7.88884 2.04999L2.93884 6.99999Z\"/>
+\t\t\t\t\t\t\t\t\t\t\t</svg>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t</li>
 
-                            {% endfor %}
-                            <li>
-                                {% if currentPage < noOfPages %}
-                                    <a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"{{ path('app_actualite', {'page': currentPage + 1}) }}\">
-                                        <svg class=\"th lm ml il\" width=\"8\" height=\"14\" viewBox=\"0 0 8 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
-                                            <path d=\"M5.06067 7.00001L0.110671 2.05001L1.52467 0.636014L7.88867 7.00001L1.52467 13.364L0.110672 11.95L5.06067 7.00001Z\" fill=\"#fefdfo\" />
-                                        </svg>
-                                    </a>
-                                {% endif %}
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            <!-- Pagination -->
-            </div>
-        </section>
-        <!-- ===== Blog Grid End ===== -->
+\t\t\t\t\t\t\t\t<!-- Pages -->
+\t\t\t\t\t\t\t\t{% for page in 1..noOfPages %}
+\t\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t\t<a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an
+\t\t\t\t\t\t\t\t\t\t\t                        {% if page == currentPage %} active {% endif %}\" href=\"{{ path('app_actualite', {'page': page}) }}\">
+\t\t\t\t\t\t\t\t\t\t\t{{ page }}
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t{% endfor %}
 
-        <!-- ===== FSM Start ===== -->
-        {% include 'fsmlayout.html.twig' %}
-    <!-- ===== FSM End ===== -->
-    </main>
-    {% include 'footer.html.twig' %}
+\t\t\t\t\t\t\t\t<!-- Next page -->
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t{% if currentPage < noOfPages %}
+\t\t\t\t\t\t\t\t\t\t<a class=\"c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an\" href=\"{{ path('app_actualite', {'page': currentPage + 1}) }}\">
+\t\t\t\t\t\t\t\t\t\t\t<svg class=\"th lm ml il\" width=\"8\" height=\"14\" viewbox=\"0 0 8 14\" fill=\"none\">
+\t\t\t\t\t\t\t\t\t\t\t\t<path d=\"M5.06067 7.00001L0.110671 2.05001L1.52467 0.636014L7.88867 7.00001L1.52467 13.364L0.110672 11.95L5.06067 7.00001Z\"/>
+\t\t\t\t\t\t\t\t\t\t\t</svg>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t</li>
+
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</nav>
+\t\t\t\t\t</div>
+\t\t\t\t{% endif %}
+\t\t\t\t<!-- Pagination -->
+
+
+\t\t\t</div>
+\t\t</section>
+\t\t<!-- ===== Blog Grid End ===== -->
+
+\t\t<!-- ===== FSM Start ===== -->
+\t\t{% include 'fsmlayout.html.twig' %}
+\t\t<!-- ===== FSM End ===== -->
+\t</main>
+\t{% include 'footer.html.twig' %}
 {% endblock %}
 ", "actualite/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\actualite\\index.html.twig");
     }

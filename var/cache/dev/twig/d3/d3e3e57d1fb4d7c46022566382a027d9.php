@@ -73,7 +73,8 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Helder Camara posts list";
+        yield "Helder Camara posts list
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,624 +97,285 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "
-";
         // line 7
-        yield from $this->load("component/headeradmin.html.twig", 7)->unwrap()->yield($context);
-        // line 8
-        yield from $this->load("component/sidebaradmin.html.twig", 8)->unwrap()->yield($context);
-        // line 9
         yield "
-   <main class=\"main\" id=\"main\" role=\"main\">
-           <!-- Page Header -->
-        <div class=\"page-header\">
-            <div class=\"page-title\">
-                <h1>Publication</h1>
-                <p>Manage and track all your publication in one place</p>
-            </div>
-            <div class=\"page-actions\">
-                <button class=\"btn-secondary\">
-                    <i class=\"bi bi-filter\"></i> Filter
-                </button>
-                <a href=\"";
-        // line 21
+\t";
+        // line 8
+        yield from $this->load("component/headeradmin.html.twig", 8)->unwrap()->yield($context);
+        // line 9
+        yield "\t";
+        yield from $this->load("component/sidebaradmin.html.twig", 9)->unwrap()->yield($context);
+        // line 10
+        yield "
+\t<main
+\t\tclass=\"main\" id=\"main\" role=\"main\">
+\t\t<!-- Page Header -->
+\t\t<div class=\"page-header\">
+\t\t\t<div class=\"page-title\">
+\t\t\t\t<h1>Publication</h1>
+\t\t\t\t<p>Manage and track all your publication in one place</p>
+\t\t\t</div>
+\t\t\t<div class=\"page-actions\">
+\t\t\t\t<button class=\"btn-secondary\">
+\t\t\t\t\t<i class=\"bi bi-filter\"></i>
+\t\t\t\t\tFilter
+\t\t\t\t</button>
+\t\t\t\t<a href=\"";
+        // line 24
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_post_newpostadmin");
         yield "\" class=\"btn-primary\">
-                    <i class=\"bi bi-plus\"></i> New Task
-                </a>
-            </div>
-        </div>
+\t\t\t\t\t<i class=\"bi bi-plus\"></i>
+\t\t\t\t\tNew Task
+\t\t\t\t</a>
+\t\t\t</div>
+\t\t</div>
 
-        <!-- Tasks Header -->
-        <div class=\"task-page tasks-header\">
-            <div class=\"filter-controls\">
-                <div class=\"view-toggle\">
-                    <button class=\"view-btn active\" id=\"listViewBtn\">
-                        <i class=\"bi bi-list\"></i> List
-                    </button>
-                    <button class=\"view-btn\" id=\"gridViewBtn\">
-                        <i class=\"bi bi-grid-3x3-gap\"></i> Grid
-                    </button>
-                </div>
-                <button class=\"filter-btn active\" data-filter=\"all\">All Tasks</button>
-                <button class=\"filter-btn\" data-filter=\"todo\">To Do</button>
-                <button class=\"filter-btn\" data-filter=\"in-progress\">In Progress</button>
-                <button class=\"filter-btn\" data-filter=\"review\">Review</button>
-                <button class=\"filter-btn\" data-filter=\"completed\">Completed</button>
-                <button class=\"filter-btn\" data-filter=\"high\">High Priority</button>
-            </div>
-            <div class=\"search-box\">
-                <i class=\"bi bi-search\"></i>
-                <input type=\"text\" id=\"searchInput\" placeholder=\"Search tasks...\">
-            </div>
-        </div>
+\t\t<!-- Tasks Header -->
+\t\t<div class=\"task-page tasks-header\">
+\t\t\t<div class=\"filter-controls\">
+\t\t\t\t<div class=\"view-toggle\">
+\t\t\t\t\t<button class=\"view-btn active\" id=\"listViewBtn\">
+\t\t\t\t\t\t<i class=\"bi bi-list\"></i>
+\t\t\t\t\t\tList
+\t\t\t\t\t</button>
+\t\t\t\t\t<button class=\"view-btn\" id=\"gridViewBtn\">
+\t\t\t\t\t\t<i class=\"bi bi-grid-3x3-gap\"></i>
+\t\t\t\t\t\tGrid
+\t\t\t\t\t</button>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"search-box\">
+\t\t\t\t<i class=\"bi bi-search\"></i>
+\t\t\t\t<input type=\"text\" id=\"searchInput\" placeholder=\"Search tasks...\">
+\t\t\t</div>
+\t\t</div>
 
-        <!-- Empty State (Hidden by default) -->
-        <div class=\"empty-state\" id=\"emptyState\" style=\"display: none;\">
-            <i class=\"bi bi-check2-square\"></i>
-            <h3>No tasks found</h3>
-            <p>Try adjusting your search or filter to find what you're looking for.</p>
-        </div>
+\t\t<!-- Empty State (Hidden by default) -->
+\t\t<div class=\"empty-state\" id=\"emptyState\" style=\"display: none;\">
+\t\t\t<i class=\"bi bi-check2-square\"></i>
+\t\t\t<h3>No tasks found</h3>
+\t\t\t<p>Try adjusting your search or filter to find what you're looking for.</p>
+\t\t</div>
 
-        <!-- Tasks List View -->
-        <div class=\"tasks-list-view\" id=\"listView\">
-            <div class=\"tasks-table-container\">
-                <div class=\"tasks-table-header\">
-                    <h3 class=\"section-title mb-0\">All Tasks</h3>
-                    <div class=\"d-flex align-items-center gap-2\">
-                        <span class=\"text-muted\">Showing 12 of 45 tasks</span>
-                        <select class=\"form-select\" style=\"width: auto; background: var(--card); color: var(--text); border-color: var(--border);\">
-                            <option>Sort by: Due Date</option>
-                            <option>Sort by: Priority</option>
-                            <option>Sort by: Status</option>
-                            <option>Sort by: Assignee</option>
-                        </select>
-                    </div>
-                </div>
-                <table class=\"tasks-table\">
-                    <thead>
-                        <tr>
-                            <th class=\"task-checkbox-cell\"></th>
-                            <th>Task</th>
-                            <th>Assignee</th>
-                            <th>Priority</th>
-                            <th>Status</th>
-                            <th>Due Date</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id=\"tasksTableBody\">
-                        <!-- Task 1 -->
-                        <tr class=\"task-row\" data-status=\"in-progress\" data-priority=\"high\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Design dashboard layout components</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #00B7FF; color: white;\">SS</div>
-                                    <span>Sarah Smith</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-high\">High</span></td>
-                            <td><span class=\"task-status status-in-progress\">In Progress</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Dec 5, 2023</span>
-                                <span class=\"days-left\">2 days left</span>
-                            </td>
-                            <td>
-                               <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 2 -->
-                        <tr class=\"task-row\" data-status=\"completed\" data-priority=\"medium\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox completed\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Implement dark mode toggle</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #10b981; color: white;\">MB</div>
-                                    <span>Michael Brown</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-medium\">Medium</span></td>
-                            <td><span class=\"task-status status-completed\">Completed</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Nov 25, 2023</span>
-                                <span class=\"days-left\">Completed</span>
-                            </td>
-                            <td>
-                                <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 3 -->
-                        <tr class=\"task-row\" data-status=\"in-progress\" data-priority=\"high\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Integrate charting libraries for analytics</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #f59e0b; color: white;\">EJ</div>
-                                    <span>Emily Johnson</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-high\">High</span></td>
-                            <td><span class=\"task-status status-in-progress\">In Progress</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Dec 8, 2023</span>
-                                <span class=\"days-left\">5 days left</span>
-                            </td>
-                            <td>
-                                <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 4 -->
-                        <tr class=\"task-row\" data-status=\"completed\" data-priority=\"low\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox completed\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Create user documentation</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #ef4444; color: white;\">RW</div>
-                                    <span>Robert Wilson</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-low\">Low</span></td>
-                            <td><span class=\"task-status status-completed\">Completed</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Nov 28, 2023</span>
-                                <span class=\"days-left\">Completed</span>
-                            </td>
-                            <td>
-                                <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 5 -->
-                        <tr class=\"task-row\" data-status=\"review\" data-priority=\"medium\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Responsive design testing on mobile devices</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #00B7FF; color: white;\">SS</div>
-                                    <span>Sarah Smith</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-medium\">Medium</span></td>
-                            <td><span class=\"task-status status-review\">Review</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Dec 12, 2023</span>
-                                <span class=\"days-left\">9 days left</span>
-                            </td>
-                            <td>
-                               <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 6 -->
-                        <tr class=\"task-row\" data-status=\"todo\" data-priority=\"high\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Performance optimization and code review</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #10b981; color: white;\">MB</div>
-                                    <span>Michael Brown</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-high\">High</span></td>
-                            <td><span class=\"task-status status-todo\">To Do</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Dec 18, 2023</span>
-                                <span class=\"days-left\">15 days left</span>
-                            </td>
-                            <td>
-                                <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+\t\t<!-- Tasks List View -->
+\t\t<div class=\"tasks-list-view\" id=\"listView\">
+\t\t\t<div class=\"tasks-table-container\">
+\t\t\t\t<div class=\"tasks-table-header\">
+\t\t\t\t\t<h3 class=\"section-title mb-0\">All Tasks</h3>
+\t\t\t\t\t<div class=\"d-flex align-items-center gap-2\">
+\t\t\t\t\t\t<span class=\"text-muted\">Showing 12 of 45 tasks</span>
+\t\t\t\t\t\t<select class=\"form-select\" style=\"width: auto; background: var(--card); color: var(--text); border-color: var(--border);\">
+\t\t\t\t\t\t\t<option>Sort by: Due Date</option>
+\t\t\t\t\t\t\t<option>Sort by: Priority</option>
+\t\t\t\t\t\t\t<option>Sort by: Status</option>
+\t\t\t\t\t\t\t<option>Sort by: Assignee</option>
+\t\t\t\t\t\t</select>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<table class=\"tasks-table\">
+\t\t\t\t\t<thead>
+\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t<th class=\"task-checkbox-cell\"></th>
+\t\t\t\t\t\t\t<th>Task</th>
+\t\t\t\t\t\t\t<th>Assignee</th>
+\t\t\t\t\t\t\t<th>Priority</th>
+\t\t\t\t\t\t\t<th>Status</th>
+\t\t\t\t\t\t\t<th>Due Date</th>
+\t\t\t\t\t\t\t<th>Actions</th>
+\t\t\t\t\t\t</tr>
+\t\t\t\t\t</thead>
+\t\t\t\t\t<tbody
+\t\t\t\t\t\tid=\"tasksTableBody\">
+\t\t\t\t\t\t<!-- Task 1 -->
+\t\t\t\t\t\t";
+        // line 88
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 88, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 89
+            yield "\t\t\t\t\t\t\t<tr class=\"task-row\" data-status=\"in-progress\" data-priority=\"high\">
+\t\t\t\t\t\t\t\t<td class=\"task-checkbox-cell\">
+\t\t\t\t\t\t\t\t\t<div class=\"task-checkbox\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-check\"></i>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td class=\"task-title-cell\">
+\t\t\t\t\t\t\t\t\t<div class=\"task-title\">";
+            // line 96
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 96), "html", null, true);
+            yield "</div>
+\t\t\t\t\t\t\t\t\t<div class=\"task-project\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-kanban\"></i>
+\t\t\t\t\t\t\t\t\t\t<a href=\"project-details.html\">";
+            // line 99
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 99), "html", null, true);
+            yield "</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t<div class=\"task-assignee\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"assignee-avatar\" style=\"background: #00B7FF; color: white;\">";
+            // line 104
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::upper($this->env->getCharset(), Twig\Extension\CoreExtension::first($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["post"], "user", [], "any", false, false, false, 104), "username", [], "any", false, false, false, 104))), "html", null, true);
+            yield "</div>
+\t\t\t\t\t\t\t\t\t\t<span>";
+            // line 105
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["post"], "user", [], "any", false, false, false, 105), "username", [], "any", false, false, false, 105), "html", null, true);
+            yield "</span>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-high\">High</span>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t<span class=\"task-status status-in-progress\">In Progress</span>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td class=\"task-due-date\">
+\t\t\t\t\t\t\t\t\t<span class=\"due-date\">Dec 5, 2023</span>
+\t\t\t\t\t\t\t\t\t<span class=\"days-left\">2 days left</span>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t<div class=\"task-actions\">
+\t\t\t\t\t\t\t\t\t\t<a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
+\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-pencil\"></i>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
+\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t<button class=\"task-action-btn\" title=\"Delete\">
+\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-trash\"></i>
+\t\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['post'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 133
+        yield "
+\t\t\t\t\t</tbody>
+\t\t\t\t</table>
+\t\t\t</div>
+\t\t</div>
 
-        <!-- Tasks Grid View -->
-        <div class=\"tasks-grid-view\" id=\"gridView\">
-            <div class=\"tasks-grid\" id=\"tasksGrid\">
-                <!-- Task Card 1 -->
-                <div class=\"task-card\" data-status=\"in-progress\" data-priority=\"high\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Design dashboard layout components</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Create responsive layout components for the new Panelry Dashboard with modern design patterns.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Due: Dec 5, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-high\">High</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #00B7FF; color: white;\">SS</div>
-                            <div>
-                                <div class=\"assignee-name\">Sarah Smith</div>
-                                <div class=\"task-status status-in-progress\">In Progress</div>
-                            </div>
-                        </div>
-                        <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 2 -->
-                <div class=\"task-card\" data-status=\"completed\" data-priority=\"medium\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox completed\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Implement dark mode toggle</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Add theme switching functionality with system preference detection and user override.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Completed: Nov 25, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-medium\">Medium</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #10b981; color: white;\">MB</div>
-                            <div>
-                                <div class=\"assignee-name\">Michael Brown</div>
-                                <div class=\"task-status status-completed\">Completed</div>
-                            </div>
-                        </div>
-                        <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 3 -->
-                <div class=\"task-card\" data-status=\"in-progress\" data-priority=\"high\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Integrate charting libraries</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Integrate Chart.js for data visualization and create interactive analytics components.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Due: Dec 8, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-high\">High</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #f59e0b; color: white;\">EJ</div>
-                            <div>
-                                <div class=\"assignee-name\">Emily Johnson</div>
-                                <div class=\"task-status status-in-progress\">In Progress</div>
-                            </div>
-                        </div>
-                        <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 4 -->
-                <div class=\"task-card\" data-status=\"completed\" data-priority=\"low\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox completed\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Create user documentation</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Write comprehensive user guide and technical documentation for the dashboard features.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Completed: Nov 28, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-low\">Low</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #ef4444; color: white;\">RW</div>
-                            <div>
-                                <div class=\"assignee-name\">Robert Wilson</div>
-                                <div class=\"task-status status-completed\">Completed</div>
-                            </div>
-                        </div>
-                       <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 5 -->
-                <div class=\"task-card\" data-status=\"review\" data-priority=\"medium\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Responsive design testing</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Test dashboard responsiveness across different screen sizes and devices.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Due: Dec 12, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-medium\">Medium</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #00B7FF; color: white;\">SS</div>
-                            <div>
-                                <div class=\"assignee-name\">Sarah Smith</div>
-                                <div class=\"task-status status-review\">Review</div>
-                            </div>
-                        </div>
-                       <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 6 -->
-                <div class=\"task-card\" data-status=\"todo\" data-priority=\"high\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Performance optimization</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Optimize loading times, implement code splitting, and reduce bundle size.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Due: Dec 18, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-high\">High</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #10b981; color: white;\">MB</div>
-                            <div>
-                                <div class=\"assignee-name\">Michael Brown</div>
-                                <div class=\"task-status status-todo\">To Do</div>
-                            </div>
-                        </div>
-                       <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </main>
+\t\t<!-- Tasks Grid View -->
+\t\t<div class=\"tasks-grid-view\" id=\"gridView\">
+\t\t\t<div
+\t\t\t\tclass=\"tasks-grid\" id=\"tasksGrid\">
+\t\t\t\t<!-- Task Card 1 -->
+\t\t\t\t";
+        // line 144
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 144, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 145
+            yield "\t\t\t\t\t<div class=\"task-card\" data-status=\"in-progress\" data-priority=\"high\">
+\t\t\t\t\t\t<div class=\"task-card-header\">
+\t\t\t\t\t\t\t<div class=\"task-card-checkbox\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-check\"></i>
+\t\t\t\t\t\t\t</div>
 
-";
-        // line 612
-        yield from $this->load("component/footeradmin.html.twig", 612)->unwrap()->yield($context);
-        // line 613
+\t\t\t\t\t\t\t<div class=\"task-card-title\">
+\t\t\t\t\t\t\t\t<h4>";
+            // line 152
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 152), "html", null, true);
+            yield "</h4>
+\t\t\t\t\t\t\t\t<div class=\"task-card-project\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-kanban\"></i>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">";
+            // line 155
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["post"], "user", [], "any", false, false, false, 155), "fonctionScout", [], "any", false, false, false, 155), "html", null, true);
+            yield "</a>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t";
+            // line 159
+            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postPictureName", [], "any", false, false, false, 159)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                // line 160
+                yield "\t\t\t\t\t\t\t<img src=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/posts/" . CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postPictureName", [], "any", false, false, false, 160))), "html", null, true);
+                yield "\" alt=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 160), "html", null, true);
+                yield "\" class=\"img-fluid\" style=\"width:100%; height:200px; object-fit:cover; border-radius:10px 10px 0 0;\">
+\t\t\t\t\t\t";
+            }
+            // line 162
+            yield "\t\t\t\t\t\t<p class=\"task-card-description\">
+\t\t\t\t\t\t\t";
+            // line 163
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 163), "html", null, true);
+            yield "
+\t\t\t\t\t\t</p>
+
+\t\t\t\t\t\t<div class=\"task-card-meta\">
+\t\t\t\t\t\t\t<div class=\"meta-item\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-calendar\"></i>
+\t\t\t\t\t\t\t\t<span>";
+            // line 169
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postedAt", [], "any", false, false, false, 169), "d/m/Y"), "html", null, true);
+            yield "</span>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"meta-item\">
+\t\t\t\t\t\t\t\t<span class=\"task-priority priority-high\">High</span>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<div class=\"task-card-footer\">
+\t\t\t\t\t\t\t<div class=\"task-card-assignee\">
+
+\t\t\t\t\t\t\t\t<div class=\"card-assignee-avatar\">
+\t\t\t\t\t\t\t\t\t<img src=\"";
+            // line 181
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["post"], "user", [], "any", false, false, false, 181), "profilePictureName", [], "any", false, false, false, 181))), "html", null, true);
+            yield "\" alt=\"Photo de profil de ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["post"], "user", [], "any", false, false, false, 181), "username", [], "any", false, false, false, 181), "html", null, true);
+            yield "\" width=\"40\" height=\"40\" style=\"border-radius:50%; object-fit:cover;\">
+\t\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t\t<div>
+\t\t\t\t\t\t\t\t\t<div class=\"assignee-name\">
+\t\t\t\t\t\t\t\t\t\t";
+            // line 186
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::upper($this->env->getCharset(), Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["post"], "user", [], "any", false, false, false, 186), "username", [], "any", false, false, false, 186), 0, 15)), "html", null, true);
+            yield "
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"task-status status-in-progress\">
+\t\t\t\t\t\t\t\t\t\tIn Progress
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"task-card-actions\">
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn\" title=\"Edit\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-pencil\"></i>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn\" title=\"View\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+
+\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['post'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 208
+        yield "\t\t\t</div>
+\t\t</div>
+\t</main>
+
+\t";
+        // line 212
+        yield from $this->load("component/footeradmin.html.twig", 212)->unwrap()->yield($context);
+        // line 213
         yield "
 ";
         
@@ -746,623 +408,223 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  717 => 613,  715 => 612,  121 => 21,  107 => 9,  105 => 8,  103 => 7,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  379 => 213,  377 => 212,  371 => 208,  343 => 186,  333 => 181,  318 => 169,  309 => 163,  306 => 162,  298 => 160,  296 => 159,  289 => 155,  283 => 152,  274 => 145,  270 => 144,  257 => 133,  223 => 105,  219 => 104,  211 => 99,  205 => 96,  196 => 89,  192 => 88,  125 => 24,  109 => 10,  106 => 9,  104 => 8,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'component/baseadmin.html.twig' %}
 
-{% block title %}Helder Camara posts list{% endblock %}
+{% block title %}Helder Camara posts list
+{% endblock %}
 
 {% block body %}
 
-{% include 'component/headeradmin.html.twig' %}
-{% include 'component/sidebaradmin.html.twig' %}
+\t{% include 'component/headeradmin.html.twig' %}
+\t{% include 'component/sidebaradmin.html.twig' %}
 
-   <main class=\"main\" id=\"main\" role=\"main\">
-           <!-- Page Header -->
-        <div class=\"page-header\">
-            <div class=\"page-title\">
-                <h1>Publication</h1>
-                <p>Manage and track all your publication in one place</p>
-            </div>
-            <div class=\"page-actions\">
-                <button class=\"btn-secondary\">
-                    <i class=\"bi bi-filter\"></i> Filter
-                </button>
-                <a href=\"{{path('app_admin_post_newpostadmin')}}\" class=\"btn-primary\">
-                    <i class=\"bi bi-plus\"></i> New Task
-                </a>
-            </div>
-        </div>
+\t<main
+\t\tclass=\"main\" id=\"main\" role=\"main\">
+\t\t<!-- Page Header -->
+\t\t<div class=\"page-header\">
+\t\t\t<div class=\"page-title\">
+\t\t\t\t<h1>Publication</h1>
+\t\t\t\t<p>Manage and track all your publication in one place</p>
+\t\t\t</div>
+\t\t\t<div class=\"page-actions\">
+\t\t\t\t<button class=\"btn-secondary\">
+\t\t\t\t\t<i class=\"bi bi-filter\"></i>
+\t\t\t\t\tFilter
+\t\t\t\t</button>
+\t\t\t\t<a href=\"{{path('app_admin_post_newpostadmin')}}\" class=\"btn-primary\">
+\t\t\t\t\t<i class=\"bi bi-plus\"></i>
+\t\t\t\t\tNew Task
+\t\t\t\t</a>
+\t\t\t</div>
+\t\t</div>
 
-        <!-- Tasks Header -->
-        <div class=\"task-page tasks-header\">
-            <div class=\"filter-controls\">
-                <div class=\"view-toggle\">
-                    <button class=\"view-btn active\" id=\"listViewBtn\">
-                        <i class=\"bi bi-list\"></i> List
-                    </button>
-                    <button class=\"view-btn\" id=\"gridViewBtn\">
-                        <i class=\"bi bi-grid-3x3-gap\"></i> Grid
-                    </button>
-                </div>
-                <button class=\"filter-btn active\" data-filter=\"all\">All Tasks</button>
-                <button class=\"filter-btn\" data-filter=\"todo\">To Do</button>
-                <button class=\"filter-btn\" data-filter=\"in-progress\">In Progress</button>
-                <button class=\"filter-btn\" data-filter=\"review\">Review</button>
-                <button class=\"filter-btn\" data-filter=\"completed\">Completed</button>
-                <button class=\"filter-btn\" data-filter=\"high\">High Priority</button>
-            </div>
-            <div class=\"search-box\">
-                <i class=\"bi bi-search\"></i>
-                <input type=\"text\" id=\"searchInput\" placeholder=\"Search tasks...\">
-            </div>
-        </div>
+\t\t<!-- Tasks Header -->
+\t\t<div class=\"task-page tasks-header\">
+\t\t\t<div class=\"filter-controls\">
+\t\t\t\t<div class=\"view-toggle\">
+\t\t\t\t\t<button class=\"view-btn active\" id=\"listViewBtn\">
+\t\t\t\t\t\t<i class=\"bi bi-list\"></i>
+\t\t\t\t\t\tList
+\t\t\t\t\t</button>
+\t\t\t\t\t<button class=\"view-btn\" id=\"gridViewBtn\">
+\t\t\t\t\t\t<i class=\"bi bi-grid-3x3-gap\"></i>
+\t\t\t\t\t\tGrid
+\t\t\t\t\t</button>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"search-box\">
+\t\t\t\t<i class=\"bi bi-search\"></i>
+\t\t\t\t<input type=\"text\" id=\"searchInput\" placeholder=\"Search tasks...\">
+\t\t\t</div>
+\t\t</div>
 
-        <!-- Empty State (Hidden by default) -->
-        <div class=\"empty-state\" id=\"emptyState\" style=\"display: none;\">
-            <i class=\"bi bi-check2-square\"></i>
-            <h3>No tasks found</h3>
-            <p>Try adjusting your search or filter to find what you're looking for.</p>
-        </div>
+\t\t<!-- Empty State (Hidden by default) -->
+\t\t<div class=\"empty-state\" id=\"emptyState\" style=\"display: none;\">
+\t\t\t<i class=\"bi bi-check2-square\"></i>
+\t\t\t<h3>No tasks found</h3>
+\t\t\t<p>Try adjusting your search or filter to find what you're looking for.</p>
+\t\t</div>
 
-        <!-- Tasks List View -->
-        <div class=\"tasks-list-view\" id=\"listView\">
-            <div class=\"tasks-table-container\">
-                <div class=\"tasks-table-header\">
-                    <h3 class=\"section-title mb-0\">All Tasks</h3>
-                    <div class=\"d-flex align-items-center gap-2\">
-                        <span class=\"text-muted\">Showing 12 of 45 tasks</span>
-                        <select class=\"form-select\" style=\"width: auto; background: var(--card); color: var(--text); border-color: var(--border);\">
-                            <option>Sort by: Due Date</option>
-                            <option>Sort by: Priority</option>
-                            <option>Sort by: Status</option>
-                            <option>Sort by: Assignee</option>
-                        </select>
-                    </div>
-                </div>
-                <table class=\"tasks-table\">
-                    <thead>
-                        <tr>
-                            <th class=\"task-checkbox-cell\"></th>
-                            <th>Task</th>
-                            <th>Assignee</th>
-                            <th>Priority</th>
-                            <th>Status</th>
-                            <th>Due Date</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id=\"tasksTableBody\">
-                        <!-- Task 1 -->
-                        <tr class=\"task-row\" data-status=\"in-progress\" data-priority=\"high\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Design dashboard layout components</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #00B7FF; color: white;\">SS</div>
-                                    <span>Sarah Smith</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-high\">High</span></td>
-                            <td><span class=\"task-status status-in-progress\">In Progress</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Dec 5, 2023</span>
-                                <span class=\"days-left\">2 days left</span>
-                            </td>
-                            <td>
-                               <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 2 -->
-                        <tr class=\"task-row\" data-status=\"completed\" data-priority=\"medium\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox completed\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Implement dark mode toggle</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #10b981; color: white;\">MB</div>
-                                    <span>Michael Brown</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-medium\">Medium</span></td>
-                            <td><span class=\"task-status status-completed\">Completed</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Nov 25, 2023</span>
-                                <span class=\"days-left\">Completed</span>
-                            </td>
-                            <td>
-                                <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 3 -->
-                        <tr class=\"task-row\" data-status=\"in-progress\" data-priority=\"high\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Integrate charting libraries for analytics</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #f59e0b; color: white;\">EJ</div>
-                                    <span>Emily Johnson</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-high\">High</span></td>
-                            <td><span class=\"task-status status-in-progress\">In Progress</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Dec 8, 2023</span>
-                                <span class=\"days-left\">5 days left</span>
-                            </td>
-                            <td>
-                                <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 4 -->
-                        <tr class=\"task-row\" data-status=\"completed\" data-priority=\"low\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox completed\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Create user documentation</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #ef4444; color: white;\">RW</div>
-                                    <span>Robert Wilson</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-low\">Low</span></td>
-                            <td><span class=\"task-status status-completed\">Completed</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Nov 28, 2023</span>
-                                <span class=\"days-left\">Completed</span>
-                            </td>
-                            <td>
-                                <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 5 -->
-                        <tr class=\"task-row\" data-status=\"review\" data-priority=\"medium\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Responsive design testing on mobile devices</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #00B7FF; color: white;\">SS</div>
-                                    <span>Sarah Smith</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-medium\">Medium</span></td>
-                            <td><span class=\"task-status status-review\">Review</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Dec 12, 2023</span>
-                                <span class=\"days-left\">9 days left</span>
-                            </td>
-                            <td>
-                               <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <!-- Task 6 -->
-                        <tr class=\"task-row\" data-status=\"todo\" data-priority=\"high\">
-                            <td class=\"task-checkbox-cell\">
-                                <div class=\"task-checkbox\">
-                                    <i class=\"bi bi-check\"></i>
-                                </div>
-                            </td>
-                            <td class=\"task-title-cell\">
-                                <div class=\"task-title\">Performance optimization and code review</div>
-                                <div class=\"task-project\">
-                                    <i class=\"bi bi-kanban\"></i>
-                                    <a href=\"project-details.html\">Dashboard Redesign</a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class=\"task-assignee\">
-                                    <div class=\"assignee-avatar\" style=\"background: #10b981; color: white;\">MB</div>
-                                    <span>Michael Brown</span>
-                                </div>
-                            </td>
-                            <td><span class=\"task-priority priority-high\">High</span></td>
-                            <td><span class=\"task-status status-todo\">To Do</span></td>
-                            <td class=\"task-due-date\">
-                                <span class=\"due-date\">Dec 18, 2023</span>
-                                <span class=\"days-left\">15 days left</span>
-                            </td>
-                            <td>
-                                <div class=\"task-actions\">
-                                    <a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
-                                        <i class=\"bi bi-pencil\"></i>
-                                    </a>
-                                    <a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
-                                        <i class=\"bi bi-eye\"></i>
-                                    </a>
-                                    <button class=\"task-action-btn\" title=\"Delete\">
-                                        <i class=\"bi bi-trash\"></i>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+\t\t<!-- Tasks List View -->
+\t\t<div class=\"tasks-list-view\" id=\"listView\">
+\t\t\t<div class=\"tasks-table-container\">
+\t\t\t\t<div class=\"tasks-table-header\">
+\t\t\t\t\t<h3 class=\"section-title mb-0\">All Tasks</h3>
+\t\t\t\t\t<div class=\"d-flex align-items-center gap-2\">
+\t\t\t\t\t\t<span class=\"text-muted\">Showing 12 of 45 tasks</span>
+\t\t\t\t\t\t<select class=\"form-select\" style=\"width: auto; background: var(--card); color: var(--text); border-color: var(--border);\">
+\t\t\t\t\t\t\t<option>Sort by: Due Date</option>
+\t\t\t\t\t\t\t<option>Sort by: Priority</option>
+\t\t\t\t\t\t\t<option>Sort by: Status</option>
+\t\t\t\t\t\t\t<option>Sort by: Assignee</option>
+\t\t\t\t\t\t</select>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<table class=\"tasks-table\">
+\t\t\t\t\t<thead>
+\t\t\t\t\t\t<tr>
+\t\t\t\t\t\t\t<th class=\"task-checkbox-cell\"></th>
+\t\t\t\t\t\t\t<th>Task</th>
+\t\t\t\t\t\t\t<th>Assignee</th>
+\t\t\t\t\t\t\t<th>Priority</th>
+\t\t\t\t\t\t\t<th>Status</th>
+\t\t\t\t\t\t\t<th>Due Date</th>
+\t\t\t\t\t\t\t<th>Actions</th>
+\t\t\t\t\t\t</tr>
+\t\t\t\t\t</thead>
+\t\t\t\t\t<tbody
+\t\t\t\t\t\tid=\"tasksTableBody\">
+\t\t\t\t\t\t<!-- Task 1 -->
+\t\t\t\t\t\t{% for post in posts %}
+\t\t\t\t\t\t\t<tr class=\"task-row\" data-status=\"in-progress\" data-priority=\"high\">
+\t\t\t\t\t\t\t\t<td class=\"task-checkbox-cell\">
+\t\t\t\t\t\t\t\t\t<div class=\"task-checkbox\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-check\"></i>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td class=\"task-title-cell\">
+\t\t\t\t\t\t\t\t\t<div class=\"task-title\">{{post.title}}</div>
+\t\t\t\t\t\t\t\t\t<div class=\"task-project\">
+\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-kanban\"></i>
+\t\t\t\t\t\t\t\t\t\t<a href=\"project-details.html\">{{post.content}}</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t<div class=\"task-assignee\">
+\t\t\t\t\t\t\t\t\t\t<div class=\"assignee-avatar\" style=\"background: #00B7FF; color: white;\">{{post.user.username|first|upper}}</div>
+\t\t\t\t\t\t\t\t\t\t<span>{{post.user.username}}</span>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t<span class=\"task-priority priority-high\">High</span>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t<span class=\"task-status status-in-progress\">In Progress</span>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td class=\"task-due-date\">
+\t\t\t\t\t\t\t\t\t<span class=\"due-date\">Dec 5, 2023</span>
+\t\t\t\t\t\t\t\t\t<span class=\"days-left\">2 days left</span>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t\t<td>
+\t\t\t\t\t\t\t\t\t<div class=\"task-actions\">
+\t\t\t\t\t\t\t\t\t\t<a href=\"task-create.html\" class=\"task-action-btn\" title=\"Edit\">
+\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-pencil\"></i>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t<a href=\"task-details.html\" class=\"task-action-btn\" title=\"View\">
+\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t\t\t<button class=\"task-action-btn\" title=\"Delete\">
+\t\t\t\t\t\t\t\t\t\t\t<i class=\"bi bi-trash\"></i>
+\t\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t</tr>
+\t\t\t\t\t\t{% endfor %}
 
-        <!-- Tasks Grid View -->
-        <div class=\"tasks-grid-view\" id=\"gridView\">
-            <div class=\"tasks-grid\" id=\"tasksGrid\">
-                <!-- Task Card 1 -->
-                <div class=\"task-card\" data-status=\"in-progress\" data-priority=\"high\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Design dashboard layout components</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Create responsive layout components for the new Panelry Dashboard with modern design patterns.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Due: Dec 5, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-high\">High</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #00B7FF; color: white;\">SS</div>
-                            <div>
-                                <div class=\"assignee-name\">Sarah Smith</div>
-                                <div class=\"task-status status-in-progress\">In Progress</div>
-                            </div>
-                        </div>
-                        <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 2 -->
-                <div class=\"task-card\" data-status=\"completed\" data-priority=\"medium\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox completed\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Implement dark mode toggle</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Add theme switching functionality with system preference detection and user override.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Completed: Nov 25, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-medium\">Medium</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #10b981; color: white;\">MB</div>
-                            <div>
-                                <div class=\"assignee-name\">Michael Brown</div>
-                                <div class=\"task-status status-completed\">Completed</div>
-                            </div>
-                        </div>
-                        <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 3 -->
-                <div class=\"task-card\" data-status=\"in-progress\" data-priority=\"high\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Integrate charting libraries</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Integrate Chart.js for data visualization and create interactive analytics components.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Due: Dec 8, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-high\">High</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #f59e0b; color: white;\">EJ</div>
-                            <div>
-                                <div class=\"assignee-name\">Emily Johnson</div>
-                                <div class=\"task-status status-in-progress\">In Progress</div>
-                            </div>
-                        </div>
-                        <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 4 -->
-                <div class=\"task-card\" data-status=\"completed\" data-priority=\"low\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox completed\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Create user documentation</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Write comprehensive user guide and technical documentation for the dashboard features.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Completed: Nov 28, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-low\">Low</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #ef4444; color: white;\">RW</div>
-                            <div>
-                                <div class=\"assignee-name\">Robert Wilson</div>
-                                <div class=\"task-status status-completed\">Completed</div>
-                            </div>
-                        </div>
-                       <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 5 -->
-                <div class=\"task-card\" data-status=\"review\" data-priority=\"medium\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Responsive design testing</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Test dashboard responsiveness across different screen sizes and devices.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Due: Dec 12, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-medium\">Medium</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #00B7FF; color: white;\">SS</div>
-                            <div>
-                                <div class=\"assignee-name\">Sarah Smith</div>
-                                <div class=\"task-status status-review\">Review</div>
-                            </div>
-                        </div>
-                       <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Task Card 6 -->
-                <div class=\"task-card\" data-status=\"todo\" data-priority=\"high\">
-                    <div class=\"task-card-header\">
-                        <div class=\"task-card-checkbox\">
-                            <i class=\"bi bi-check\"></i>
-                        </div>
-                        <div class=\"task-card-title\">
-                            <h4>Performance optimization</h4>
-                            <div class=\"task-card-project\">
-                                <i class=\"bi bi-kanban\"></i>
-                                <a href=\"project-details.html\">Dashboard Redesign</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class=\"task-card-description\">
-                        Optimize loading times, implement code splitting, and reduce bundle size.
-                    </p>
-                    <div class=\"task-card-meta\">
-                        <div class=\"meta-item\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>Due: Dec 18, 2023</span>
-                        </div>
-                        <div class=\"meta-item\">
-                            <span class=\"task-priority priority-high\">High</span>
-                        </div>
-                    </div>
-                    <div class=\"task-card-footer\">
-                        <div class=\"task-card-assignee\">
-                            <div class=\"card-assignee-avatar\" style=\"background: #10b981; color: white;\">MB</div>
-                            <div>
-                                <div class=\"assignee-name\">Michael Brown</div>
-                                <div class=\"task-status status-todo\">To Do</div>
-                            </div>
-                        </div>
-                       <div class=\"task-card-actions\">
-                            <a href=\"task-create.html\" class=\"card-action-btn\" title=\"Edit\">
-                                <i class=\"bi bi-pencil\"></i>
-                            </a>
-                            <a href=\"task-details.html\" class=\"card-action-btn\" title=\"View\">
-                                <i class=\"bi bi-eye\"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-   </main>
+\t\t\t\t\t</tbody>
+\t\t\t\t</table>
+\t\t\t</div>
+\t\t</div>
 
-{% include 'component/footeradmin.html.twig' %}
+\t\t<!-- Tasks Grid View -->
+\t\t<div class=\"tasks-grid-view\" id=\"gridView\">
+\t\t\t<div
+\t\t\t\tclass=\"tasks-grid\" id=\"tasksGrid\">
+\t\t\t\t<!-- Task Card 1 -->
+\t\t\t\t{% for post in posts %}
+\t\t\t\t\t<div class=\"task-card\" data-status=\"in-progress\" data-priority=\"high\">
+\t\t\t\t\t\t<div class=\"task-card-header\">
+\t\t\t\t\t\t\t<div class=\"task-card-checkbox\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-check\"></i>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"task-card-title\">
+\t\t\t\t\t\t\t\t<h4>{{ post.title }}</h4>
+\t\t\t\t\t\t\t\t<div class=\"task-card-project\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-kanban\"></i>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">{{ post.user.fonctionScout }}</a>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t{% if post.postPictureName %}
+\t\t\t\t\t\t\t<img src=\"{{ asset('images/posts/' ~ post.postPictureName) }}\" alt=\"{{ post.title }}\" class=\"img-fluid\" style=\"width:100%; height:200px; object-fit:cover; border-radius:10px 10px 0 0;\">
+\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t<p class=\"task-card-description\">
+\t\t\t\t\t\t\t{{ post.content }}
+\t\t\t\t\t\t</p>
+
+\t\t\t\t\t\t<div class=\"task-card-meta\">
+\t\t\t\t\t\t\t<div class=\"meta-item\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-calendar\"></i>
+\t\t\t\t\t\t\t\t<span>{{ post.postedAt | date('d/m/Y') }}</span>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"meta-item\">
+\t\t\t\t\t\t\t\t<span class=\"task-priority priority-high\">High</span>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<div class=\"task-card-footer\">
+\t\t\t\t\t\t\t<div class=\"task-card-assignee\">
+
+\t\t\t\t\t\t\t\t<div class=\"card-assignee-avatar\">
+\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('images/profiles/' ~ post.user.profilePictureName) }}\" alt=\"Photo de profil de {{ post.user.username }}\" width=\"40\" height=\"40\" style=\"border-radius:50%; object-fit:cover;\">
+\t\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t\t<div>
+\t\t\t\t\t\t\t\t\t<div class=\"assignee-name\">
+\t\t\t\t\t\t\t\t\t\t{{ post.user.username | slice(0, 15) | upper }}
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"task-status status-in-progress\">
+\t\t\t\t\t\t\t\t\t\tIn Progress
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t\t<div class=\"task-card-actions\">
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn\" title=\"Edit\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-pencil\"></i>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn\" title=\"View\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+
+\t\t\t\t{% endfor %}
+\t\t\t</div>
+\t\t</div>
+\t</main>
+
+\t{% include 'component/footeradmin.html.twig' %}
 
 {% endblock %}
 ", "admin/post_admin/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\post_admin\\index.html.twig");
