@@ -15,18 +15,22 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 final class PostAdminController extends AbstractController
 {
-    // find all post
+    // afficher seulement les posts de l'utilisateur connecté
     #[Route('/admin/post/admin', name: 'app_admin_post_admin')]
     public function index(PostRepository $postRepository): Response
     {
-        //find all post
-        $posts = $postRepository->findAll();
+        $user = $this->getUser();
+
+        $posts = $postRepository->findBy([
+            'user' => $user
+        ]);
+
         return $this->render('admin/post_admin/index.html.twig', [
             'posts' => $posts
         ]);
     }
 
-    // new post admin create post
+    // créer un nouveau post
     #[Route('/admin/post/newpostadmin', name: 'app_admin_post_newpostadmin')]
     #[IsGranted('ROLE_ADMIN')]
     public function new(
@@ -36,7 +40,9 @@ final class PostAdminController extends AbstractController
 
         $post = new Post();
 
-        // Lier le formulaire à l'entité
+        // lier le post à l'utilisateur connecté
+        $post->setUser($this->getUser());
+
         $form = $this->createForm(PostFormType::class, $post);
 
         $form->handleRequest($request);
@@ -45,7 +51,6 @@ final class PostAdminController extends AbstractController
 
             $post->setPostedAt(new \DateTimeImmutable());
 
-            // récupérer le fichier
             $postPictureFile = $form->get('PostPictureFile')->getData();
 
             if ($postPictureFile) {
@@ -54,7 +59,9 @@ final class PostAdminController extends AbstractController
 
             $entityManager->persist($post);
             $entityManager->flush();
+
             $this->addFlash('success', 'Publication créée avec succès !');
+
             return $this->redirectToRoute('app_admin_post_admin');
         }
 
@@ -86,7 +93,4 @@ final class PostAdminController extends AbstractController
             'success' => true
         ]);
     }
-
-
 }
- 
