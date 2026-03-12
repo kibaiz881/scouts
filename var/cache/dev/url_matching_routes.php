@@ -59,9 +59,15 @@ return [
                             .'|category/([^/]++)(*:290)'
                         .')'
                     .')'
-                    .'|dmin/settingadmin/edit/([^/]++)(*:331)'
+                    .'|dmin/(?'
+                        .'|post/(?'
+                            .'|approve/([^/]++)(*:332)'
+                            .'|reject/([^/]++)(*:355)'
+                        .')'
+                        .'|settingadmin/edit/([^/]++)(*:390)'
+                    .')'
                 .')'
-                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:367)'
+                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:427)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -76,8 +82,10 @@ return [
         240 => [[['_route' => 'app_actualite', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\ActualiteController::index'], ['page', 'itemsPerPage'], null, null, false, true, null]],
         265 => [[['_route' => 'app_actualite_show', '_controller' => 'App\\Controller\\ActualiteController::show'], ['post'], null, null, false, true, null]],
         290 => [[['_route' => 'app_actualite_category', '_controller' => 'App\\Controller\\ActualiteController::category'], ['category'], null, null, false, true, null]],
-        331 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
-        367 => [
+        332 => [[['_route' => 'app_post_approve', '_controller' => 'App\\Controller\\admin\\PostAdminController::approve'], ['id'], ['POST' => 0], null, false, true, null]],
+        355 => [[['_route' => 'app_post_reject', '_controller' => 'App\\Controller\\admin\\PostAdminController::reject'], ['id'], ['POST' => 0], null, false, true, null]],
+        390 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
+        427 => [
             [['_route' => 'app_blog', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\BlogController::index'], ['page', 'itemsPerPage'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

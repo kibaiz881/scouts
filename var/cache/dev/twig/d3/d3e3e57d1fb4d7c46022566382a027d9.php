@@ -32,6 +32,7 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -296,9 +297,7 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
             if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postPictureName", [], "any", false, false, false, 159)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 160
                 yield "\t\t\t\t\t\t\t<img src=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/posts/" . CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postPictureName", [], "any", false, false, false, 160))), "html", null, true);
-                yield "\" alt=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 160), "html", null, true);
+                yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postPictureName", [], "any", false, false, false, 160)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/posts/" . CoreExtension::getAttribute($this->env, $this->source, $context["post"], "postPictureName", [], "any", false, false, false, 160))), "html", null, true)) : ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/posts/75hc.jpg"), "html", null, true)));
                 yield "\" class=\"img-fluid\" style=\"width:100%; height:200px; object-fit:cover; border-radius:10px 10px 0 0;\">
 \t\t\t\t\t\t";
             }
@@ -344,7 +343,36 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
             yield "
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t<div class=\"task-status status-in-progress\">
-\t\t\t\t\t\t\t\t\t\tIn Progress
+\t\t\t\t\t\t\t\t\t\t<span id=\"status-";
+            // line 189
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 189), "html", null, true);
+            yield "\" class=\"badge
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    ";
+            // line 190
+            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "isPublished", [], "any", false, false, false, 190)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                // line 191
+                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        bg-success
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    ";
+            } else {
+                // line 193
+                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        bg-warning
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    ";
+            }
+            // line 195
+            yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
+\t\t\t\t\t\t\t\t\t\t\t";
+            // line 196
+            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "isPublished", [], "any", false, false, false, 196)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                // line 197
+                yield "\t\t\t\t\t\t\t\t\t\t\t\tPublished
+\t\t\t\t\t\t\t\t\t\t\t";
+            } else {
+                // line 199
+                yield "\t\t\t\t\t\t\t\t\t\t\t\tPending
+\t\t\t\t\t\t\t\t\t\t\t";
+            }
+            // line 201
+            yield "\t\t\t\t\t\t\t\t\t\t</span>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
 
@@ -357,6 +385,20 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
 \t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn\" title=\"View\">
 \t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
 \t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn text-success\" onclick=\"approvePost(";
+            // line 214
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 214), "html", null, true);
+            yield ")\" title=\"Approve\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-check2-circle\"></i>
+\t\t\t\t\t\t\t\t</a>
+
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn text-danger\" onclick=\"rejectPost(";
+            // line 218
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 218), "html", null, true);
+            yield ")\" title=\"Reject\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-x-circle\"></i>
+\t\t\t\t\t\t\t\t</a>
+
 \t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t</div>
@@ -367,17 +409,104 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['post'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 208
+        // line 228
         yield "\t\t\t</div>
 \t\t</div>
 \t</main>
 
 \t";
-        // line 212
-        yield from $this->load("component/footeradmin.html.twig", 212)->unwrap()->yield($context);
-        // line 213
+        // line 232
+        yield from $this->load("component/footeradmin.html.twig", 232)->unwrap()->yield($context);
+        // line 233
         yield "
-";
+\t";
+        // line 234
+        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_javascripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 235
+        yield "\t\t <script>
+\t\t\t\t\t\t\t\t\tfunction approvePost(postId){
+\t\t\t\t\t\t
+\t\t\t\t\t\t    fetch(\"/admin/post/approve/\" + postId,{
+\t\t\t\t\t\t        method:\"POST\",
+\t\t\t\t\t\t        headers:{
+\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t        }
+\t\t\t\t\t\t    })
+\t\t\t\t\t\t    .then(res => res.json())
+\t\t\t\t\t\t    .then(data =>{
+\t\t\t\t\t\t
+\t\t\t\t\t\t        if(data.success){
+\t\t\t\t\t\t
+\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\t            badge.classList.remove(\"bg-warning\");
+\t\t\t\t\t\t            badge.classList.add(\"bg-success\");
+\t\t\t\t\t\t            badge.innerText = \"Published\";
+\t\t\t\t\t\t\t\t\t        Toastify({
+\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post approuvé avec succès\",
+\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#28a745\"
+\t\t\t\t\t\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t\t        }
+\t\t\t\t\t\t
+\t\t\t\t\t\t    });
+\t\t\t\t\t\t
+\t\t\t\t\t\t}
+\t\t\t\t\t\t
+\t\t\t\t\t\tfunction rejectPost(postId){
+\t\t\t\t\t\t
+\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
+\t\t\t\t\t\t        method:\"POST\",
+\t\t\t\t\t\t        headers:{
+\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t        }
+\t\t\t\t\t\t    })
+\t\t\t\t\t\t    .then(res => res.json())
+\t\t\t\t\t\t    .then(data =>{
+\t\t\t\t\t\t
+\t\t\t\t\t\t        if(data.success){
+\t\t\t\t\t\t
+\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
+\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
+\t\t\t\t\t\t            badge.innerText = \"Rejected\";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
+\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
+\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
+\t\t\t\t\t\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t\t        }
+\t\t\t\t\t\t
+\t\t\t\t\t\t    });
+\t\t\t\t\t\t
+\t\t\t\t\t\t}
+\t\t\t\t\t\t
+\t\t\t\t\t</script>
+\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -408,7 +537,7 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  379 => 213,  377 => 212,  371 => 208,  343 => 186,  333 => 181,  318 => 169,  309 => 163,  306 => 162,  298 => 160,  296 => 159,  289 => 155,  283 => 152,  274 => 145,  270 => 144,  257 => 133,  223 => 105,  219 => 104,  211 => 99,  205 => 96,  196 => 89,  192 => 88,  125 => 24,  109 => 10,  106 => 9,  104 => 8,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
+        return array (  447 => 235,  424 => 234,  421 => 233,  419 => 232,  413 => 228,  397 => 218,  390 => 214,  375 => 201,  371 => 199,  367 => 197,  365 => 196,  362 => 195,  358 => 193,  354 => 191,  352 => 190,  348 => 189,  342 => 186,  332 => 181,  317 => 169,  308 => 163,  305 => 162,  299 => 160,  297 => 159,  290 => 155,  284 => 152,  275 => 145,  271 => 144,  258 => 133,  224 => 105,  220 => 104,  212 => 99,  206 => 96,  197 => 89,  193 => 88,  126 => 24,  110 => 10,  107 => 9,  105 => 8,  102 => 7,  89 => 6,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -572,7 +701,7 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t{% if post.postPictureName %}
-\t\t\t\t\t\t\t<img src=\"{{ asset('images/posts/' ~ post.postPictureName) }}\" alt=\"{{ post.title }}\" class=\"img-fluid\" style=\"width:100%; height:200px; object-fit:cover; border-radius:10px 10px 0 0;\">
+\t\t\t\t\t\t\t<img src=\"{{ post.postPictureName ? asset('images/posts/' ~ post.postPictureName) : asset('images/posts/75hc.jpg') }}\" class=\"img-fluid\" style=\"width:100%; height:200px; object-fit:cover; border-radius:10px 10px 0 0;\">
 \t\t\t\t\t\t{% endif %}
 \t\t\t\t\t\t<p class=\"task-card-description\">
 \t\t\t\t\t\t\t{{ post.content }}
@@ -601,7 +730,19 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
 \t\t\t\t\t\t\t\t\t\t{{ post.user.username | slice(0, 15) | upper }}
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t<div class=\"task-status status-in-progress\">
-\t\t\t\t\t\t\t\t\t\tIn Progress
+\t\t\t\t\t\t\t\t\t\t<span id=\"status-{{ post.id }}\" class=\"badge
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    {% if post.isPublished %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        bg-success
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    {% else %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        bg-warning
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    {% endif %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
+\t\t\t\t\t\t\t\t\t\t\t{% if post.isPublished %}
+\t\t\t\t\t\t\t\t\t\t\t\tPublished
+\t\t\t\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\t\t\t\tPending
+\t\t\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t\t</span>
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t</div>
 
@@ -614,6 +755,14 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
 \t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn\" title=\"View\">
 \t\t\t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
 \t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn text-success\" onclick=\"approvePost({{ post.id }})\" title=\"Approve\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-check2-circle\"></i>
+\t\t\t\t\t\t\t\t</a>
+
+\t\t\t\t\t\t\t\t<a href=\"#\" class=\"card-action-btn text-danger\" onclick=\"rejectPost({{ post.id }})\" title=\"Reject\">
+\t\t\t\t\t\t\t\t\t<i class=\"bi bi-x-circle\"></i>
+\t\t\t\t\t\t\t\t</a>
+
 \t\t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t</div>
@@ -626,6 +775,70 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
 
 \t{% include 'component/footeradmin.html.twig' %}
 
+\t{% block javascripts %}
+\t\t <script>
+\t\t\t\t\t\t\t\t\tfunction approvePost(postId){
+\t\t\t\t\t\t
+\t\t\t\t\t\t    fetch(\"/admin/post/approve/\" + postId,{
+\t\t\t\t\t\t        method:\"POST\",
+\t\t\t\t\t\t        headers:{
+\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t        }
+\t\t\t\t\t\t    })
+\t\t\t\t\t\t    .then(res => res.json())
+\t\t\t\t\t\t    .then(data =>{
+\t\t\t\t\t\t
+\t\t\t\t\t\t        if(data.success){
+\t\t\t\t\t\t
+\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\t            badge.classList.remove(\"bg-warning\");
+\t\t\t\t\t\t            badge.classList.add(\"bg-success\");
+\t\t\t\t\t\t            badge.innerText = \"Published\";
+\t\t\t\t\t\t\t\t\t        Toastify({
+\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post approuvé avec succès\",
+\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#28a745\"
+\t\t\t\t\t\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t\t        }
+\t\t\t\t\t\t
+\t\t\t\t\t\t    });
+\t\t\t\t\t\t
+\t\t\t\t\t\t}
+\t\t\t\t\t\t
+\t\t\t\t\t\tfunction rejectPost(postId){
+\t\t\t\t\t\t
+\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
+\t\t\t\t\t\t        method:\"POST\",
+\t\t\t\t\t\t        headers:{
+\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t        }
+\t\t\t\t\t\t    })
+\t\t\t\t\t\t    .then(res => res.json())
+\t\t\t\t\t\t    .then(data =>{
+\t\t\t\t\t\t
+\t\t\t\t\t\t        if(data.success){
+\t\t\t\t\t\t
+\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
+\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
+\t\t\t\t\t\t            badge.innerText = \"Rejected\";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
+\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
+\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
+\t\t\t\t\t\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t\t        }
+\t\t\t\t\t\t
+\t\t\t\t\t\t    });
+\t\t\t\t\t\t
+\t\t\t\t\t\t}
+\t\t\t\t\t\t
+\t\t\t\t\t</script>
+\t{% endblock %}
 {% endblock %}
 ", "admin/post_admin/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\post_admin\\index.html.twig");
     }

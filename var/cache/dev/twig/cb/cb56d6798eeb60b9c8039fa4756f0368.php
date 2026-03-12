@@ -64,18 +64,18 @@ class __TwigTemplate_5b959e71024bc7e73a165aa3ca7dc2c7 extends Template
         ";
         // line 10
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 22
+        // line 25
         yield "    </head>
     <body>
         ";
-        // line 24
+        // line 27
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 25
+        // line 28
         yield "    </body>
     ";
-        // line 26
+        // line 29
         yield from $this->unwrap()->yieldBlock('script', $context, $blocks);
-        // line 36
+        // line 39
         yield "</html>
 ";
         
@@ -160,6 +160,9 @@ class __TwigTemplate_5b959e71024bc7e73a165aa3ca7dc2c7 extends Template
         // line 20
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./css/style.css"), "html", null, true);
         yield "\" rel=\"stylesheet\">
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css\">
+    <script src=\"https://cdn.jsdelivr.net/npm/toastify-js\"></script>
+
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -170,7 +173,7 @@ class __TwigTemplate_5b959e71024bc7e73a165aa3ca7dc2c7 extends Template
         yield from [];
     }
 
-    // line 24
+    // line 27
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -192,7 +195,7 @@ class __TwigTemplate_5b959e71024bc7e73a165aa3ca7dc2c7 extends Template
         yield from [];
     }
 
-    // line 26
+    // line 29
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -207,35 +210,35 @@ class __TwigTemplate_5b959e71024bc7e73a165aa3ca7dc2c7 extends Template
 
         yield " 
         <script  src=\"";
-        // line 27
+        // line 30
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./js/jquery-3.6.0.min.js"), "html", null, true);
         yield "\"></script>
         <script  src=\"";
-        // line 28
+        // line 31
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./js/bootstrap.bundle.min.js"), "html", null, true);
         yield "\"></script>
         <script  src=\"";
-        // line 29
+        // line 32
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./plugin/chart/chart.js"), "html", null, true);
         yield "\"></script>
         <script  src=\"";
-        // line 30
+        // line 33
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./plugin/select2/js/select2.min.js"), "html", null, true);
         yield "\"></script>
         <script  src=\"";
-        // line 31
+        // line 34
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./js/chart.js"), "html", null, true);
         yield "\"></script>
         <script  src=\"";
-        // line 32
+        // line 35
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./js/chat.js"), "html", null, true);
         yield "\"></script>
         <script  src=\"";
-        // line 33
+        // line 36
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./js/board.js"), "html", null, true);
         yield "\"></script>
         <script  src=\"";
-        // line 34
+        // line 37
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("./js/script.js"), "html", null, true);
         yield "\"></script>
     ";
@@ -261,7 +264,7 @@ class __TwigTemplate_5b959e71024bc7e73a165aa3ca7dc2c7 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  239 => 34,  235 => 33,  231 => 32,  227 => 31,  223 => 30,  219 => 29,  215 => 28,  211 => 27,  196 => 26,  174 => 24,  161 => 20,  157 => 19,  153 => 18,  149 => 17,  144 => 15,  140 => 14,  136 => 13,  132 => 12,  127 => 11,  114 => 10,  91 => 9,  79 => 36,  77 => 26,  74 => 25,  72 => 24,  68 => 22,  66 => 10,  62 => 9,  52 => 1,);
+        return array (  242 => 37,  238 => 36,  234 => 35,  230 => 34,  226 => 33,  222 => 32,  218 => 31,  214 => 30,  199 => 29,  177 => 27,  161 => 20,  157 => 19,  153 => 18,  149 => 17,  144 => 15,  140 => 14,  136 => 13,  132 => 12,  127 => 11,  114 => 10,  91 => 9,  79 => 39,  77 => 29,  74 => 28,  72 => 27,  68 => 25,  66 => 10,  62 => 9,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -286,6 +289,9 @@ class __TwigTemplate_5b959e71024bc7e73a165aa3ca7dc2c7 extends Template
     <link href=\"{{asset('./css/board.css')}}\" rel=\"stylesheet\">
     <link href=\"{{asset('./css/chat.css')}}\" rel=\"stylesheet\">
     <link href=\"{{asset('./css/style.css')}}\" rel=\"stylesheet\">
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css\">
+    <script src=\"https://cdn.jsdelivr.net/npm/toastify-js\"></script>
+
         {% endblock %}
     </head>
     <body>

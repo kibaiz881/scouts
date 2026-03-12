@@ -64,13 +64,15 @@
 						<!-- Blog Item -->
 						<div class="animate_top sg vk rm xm">
 							<div class="c rc i z-1 pg">
-								<img class="w-full" src="{{ asset('images/posts/' ~ post.postPictureName) }}" alt="Blog"/>
+
+								<img class="w-full" src="{{ post.postPictureName ? asset('images/posts/' ~ post.postPictureName) : asset('images/posts/75hc.jpg') }}" alt="Blog" style="height:220px; object-fit:cover; width:100%;"/>
 
 								<div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
 									<a href="{{ path('app_actualite_show', {'post': post.id}) }}" class="vc ek rg lk gh sl ml il gi hi">
 										Read More
 									</a>
 								</div>
+
 							</div>
 
 							<div class="yh">
@@ -123,7 +125,7 @@
 								{% for page in 1..noOfPages %}
 									<li>
 										<a class="c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an
-											                        {% if page == currentPage %} active {% endif %}" href="{{ path('app_actualite', {'page': page}) }}">
+																						                        {% if page == currentPage %} active {% endif %}" href="{{ path('app_actualite', {'page': page}) }}">
 											{{ page }}
 										</a>
 									</li>

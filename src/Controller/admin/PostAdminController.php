@@ -7,6 +7,7 @@ use App\Form\PostFormType;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -61,4 +62,31 @@ final class PostAdminController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    #[Route('/admin/post/approve/{id}', name: 'app_post_approve', methods: ['POST'])]
+    public function approve(Post $post, EntityManagerInterface $em): JsonResponse
+    {
+        $post->setIsPublished(true);
+
+        $em->flush();
+
+        return new JsonResponse([
+            'success' => true
+        ]);
+    }
+
+    #[Route('/admin/post/reject/{id}', name: 'app_post_reject', methods: ['POST'])]
+    public function reject(Post $post, EntityManagerInterface $em): JsonResponse
+    {
+        $post->setIsPublished(false);
+
+        $em->flush();
+
+        return new JsonResponse([
+            'success' => true
+        ]);
+    }
+
+
 }
+ 

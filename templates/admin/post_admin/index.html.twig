@@ -157,7 +157,7 @@
 							</div>
 						</div>
 						{% if post.postPictureName %}
-							<img src="{{ asset('images/posts/' ~ post.postPictureName) }}" alt="{{ post.title }}" class="img-fluid" style="width:100%; height:200px; object-fit:cover; border-radius:10px 10px 0 0;">
+							<img src="{{ post.postPictureName ? asset('images/posts/' ~ post.postPictureName) : asset('images/posts/75hc.jpg') }}" class="img-fluid" style="width:100%; height:200px; object-fit:cover; border-radius:10px 10px 0 0;">
 						{% endif %}
 						<p class="task-card-description">
 							{{ post.content }}
@@ -186,7 +186,19 @@
 										{{ post.user.username | slice(0, 15) | upper }}
 									</div>
 									<div class="task-status status-in-progress">
-										In Progress
+										<span id="status-{{ post.id }}" class="badge
+																						    {% if post.isPublished %}
+																						        bg-success
+																						    {% else %}
+																						        bg-warning
+																						    {% endif %}
+																								">
+											{% if post.isPublished %}
+												Published
+											{% else %}
+												Pending
+											{% endif %}
+										</span>
 									</div>
 								</div>
 
@@ -199,6 +211,14 @@
 								<a href="#" class="card-action-btn" title="View">
 									<i class="bi bi-eye"></i>
 								</a>
+								<a href="#" class="card-action-btn text-success" onclick="approvePost({{ post.id }})" title="Approve">
+									<i class="bi bi-check2-circle"></i>
+								</a>
+
+								<a href="#" class="card-action-btn text-danger" onclick="rejectPost({{ post.id }})" title="Reject">
+									<i class="bi bi-x-circle"></i>
+								</a>
+
 							</div>
 
 						</div>
@@ -211,4 +231,68 @@
 
 	{% include 'component/footeradmin.html.twig' %}
 
+	{% block javascripts %}
+		 <script>
+									function approvePost(postId){
+						
+						    fetch("/admin/post/approve/" + postId,{
+						        method:"POST",
+						        headers:{
+						            "X-Requested-With":"XMLHttpRequest"
+						        }
+						    })
+						    .then(res => res.json())
+						    .then(data =>{
+						
+						        if(data.success){
+						
+						            let badge = document.getElementById("status-"+postId);
+						            badge.classList.remove("bg-warning");
+						            badge.classList.add("bg-success");
+						            badge.innerText = "Published";
+									        Toastify({
+												text: "Post approuvé avec succès",
+												duration: 3000,
+												gravity: "top",
+												position: "right",
+												backgroundColor: "#28a745"
+											}).showToast();
+						        }
+						
+						    });
+						
+						}
+						
+						function rejectPost(postId){
+						
+						    fetch("/admin/post/reject/" + postId,{
+						        method:"POST",
+						        headers:{
+						            "X-Requested-With":"XMLHttpRequest"
+						        }
+						    })
+						    .then(res => res.json())
+						    .then(data =>{
+						
+						        if(data.success){
+						
+						            let badge = document.getElementById("status-"+postId);
+						            badge.classList.remove("bg-success");
+						            badge.classList.add("bg-danger");
+						            badge.innerText = "Rejected";
+																		        Toastify({
+												text: "Post rejeté avec succès",
+												duration: 3000,
+												gravity: "top",
+												position: "right",
+												backgroundColor: "#ff4a1d"
+											}).showToast();
+						        }
+						
+						    });
+						
+						}
+						
+					</script>
+	{% endblock %}
 {% endblock %}
