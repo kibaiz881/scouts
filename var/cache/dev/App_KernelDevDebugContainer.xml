@@ -542,6 +542,14 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\SettingadminController"/>
       </call>
     </service>
+    <service id="App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\UseradminController"/>
+      </call>
+    </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;Doctrine\Bundle\FixturesBundle\Fixture&quot; not found while loading &quot;App\DataFixtures\AppFixtures&quot;."/>
     </service>
@@ -556,6 +564,10 @@
     <service id="App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\EventListener\LogoutListener" class="App\EventListener\LogoutListener" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_listener" event="Symfony\Component\Security\Http\Event\LogoutEvent" method="onLogout"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
     <service id="App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
@@ -610,7 +622,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.abjvu8B"/>
+      <argument type="service" id=".service_locator.cBgD3vE"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -3190,6 +3202,14 @@
       <argument type="service" id=".virtual_request_stack" on-invalid="null"/>
       <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="null"/>
       <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="App\EventListener\LogoutListener"/>
+          <argument>onLogout</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service_closure" id="security.csrf.same_origin_token_manager"/>
@@ -3851,7 +3871,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.abjvu8B"/>
+      <argument type="service" id=".service_locator.cBgD3vE"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3939,6 +3959,7 @@
         <argument>App\Controller\UserController</argument>
         <argument>App\Controller\admin\PostAdminController</argument>
         <argument>App\Controller\admin\SettingadminController</argument>
+        <argument>App\Controller\admin\UseradminController</argument>
       </argument>
     </service>
     <service id="routing.loader.attribute.directory" class="Symfony\Component\Routing\Loader\AttributeDirectoryLoader">
@@ -8747,6 +8768,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\admin\SettingadminController.0.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\admin\UseradminController.0.App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Category.0.App\Entity\Category" class="App\Entity\Category" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Category" class="App\Entity\Category" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Post.0.App\Entity\Post" class="App\Entity\Post" autowire="true" abstract="true"/>
@@ -8907,6 +8932,14 @@
           <argument>postCheckCredentials</argument>
         </argument>
         <argument>256</argument>
+      </call>
+      <call method="addListener">
+        <argument>Symfony\Component\Security\Http\Event\LogoutEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="App\EventListener\LogoutListener"/>
+          <argument>onLogout</argument>
+        </argument>
+        <argument>0</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Security\Http\Event\CheckPassportEvent</argument>
@@ -9495,7 +9528,19 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.j3kKXma" method="withContext"/>
     </service>
-    <service id=".service_locator.abjvu8B" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.PtMLGj3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\UseradminController::index()"/>
+      <argument>App\Controller\admin\UseradminController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.PtMLGj3" method="withContext"/>
+    </service>
+    <service id=".service_locator.cBgD3vE" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9514,6 +9559,7 @@
         <argument key="App\Controller\admin\PostAdminController::reject" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::reject()"/>
         <argument key="App\Controller\admin\SettingadminController::index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
         <argument key="App\Controller\admin\SettingadminController::edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
+        <argument key="App\Controller\admin\UseradminController::index" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.1vYpZ1B.kernel::loadRoutes()"/>
         <argument key="App\Controller\ActualiteController:index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\ActualiteController::index()"/>
@@ -9528,6 +9574,7 @@
         <argument key="App\Controller\admin\PostAdminController:reject" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::reject()"/>
         <argument key="App\Controller\admin\SettingadminController:index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
         <argument key="App\Controller\admin\SettingadminController:edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
+        <argument key="App\Controller\admin\UseradminController:index" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()"/>
       </argument>
     </service>
     <service id=".service_locator.S9tnIXR" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -10233,6 +10280,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.TJNRSaV" method="withContext"/>
     </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\admin\UseradminController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\UseradminController"/>
+      <argument>App\Controller\admin\UseradminController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
     <service id=".service_locator.TJNRSaV.controller.helper" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="controller.helper"/>
       <argument>controller.helper</argument>
@@ -10459,6 +10512,7 @@
           <argument>App\Controller\UserController</argument>
           <argument>App\Controller\admin\PostAdminController</argument>
           <argument>App\Controller\admin\SettingadminController</argument>
+          <argument>App\Controller\admin\UseradminController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -12003,7 +12057,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.abjvu8B"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.cBgD3vE"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>
@@ -12070,6 +12124,7 @@
     <service id=".service_locator.J_QW._s" alias=".service_locator.EhRzrPc"/>
     <service id=".service_locator.GnylMfi" alias=".service_locator.4XYvBdG"/>
     <service id=".service_locator.rm_qkBw" alias=".service_locator.j3kKXma"/>
+    <service id=".service_locator.yZty4YD" alias=".service_locator.PtMLGj3"/>
     <service id=".service_locator.D6tJ4Px" alias=".service_locator.TJNRSaV"/>
     <service id=".service_locator.0ngK9uf" alias=".service_locator.MXLal1R"/>
   </services>

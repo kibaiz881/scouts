@@ -89,9 +89,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $fonctionScout = null;
 
-        
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Post::class)]
     private Collection $posts;
+
+    #[ORM\Column(type: 'boolean')]
+    private ?bool $isEnable = true;
 
     public function __construct()
     {
@@ -231,7 +233,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of adresse
-     */ 
+     */
     public function getAdresse()
     {
         return $this->adresse;
@@ -241,7 +243,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of adresse
      *
      * @return  self
-     */ 
+     */
     public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
@@ -251,7 +253,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of phone
-     */ 
+     */
     public function getPhone()
     {
         return $this->phone;
@@ -261,7 +263,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of phone
      *
      * @return  self
-     */ 
+     */
     public function setPhone($phone)
     {
         $this->phone = $phone;
@@ -271,7 +273,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of biography
-     */ 
+     */
     public function getBiography()
     {
         return $this->biography;
@@ -281,7 +283,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of biography
      *
      * @return  self
-     */ 
+     */
     public function setBiography($biography)
     {
         $this->biography = $biography;
@@ -291,7 +293,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of dateNaissance
-     */ 
+     */
     public function getDateNaissance()
     {
         return $this->dateNaissance;
@@ -301,7 +303,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of dateNaissance
      *
      * @return  self
-     */ 
+     */
     public function setDateNaissance($dateNaissance)
     {
         $this->dateNaissance = $dateNaissance;
@@ -311,7 +313,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of lieuNaissance
-     */ 
+     */
     public function getLieuNaissance()
     {
         return $this->lieuNaissance;
@@ -321,7 +323,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of lieuNaissance
      *
      * @return  self
-     */ 
+     */
     public function setLieuNaissance($lieuNaissance)
     {
         $this->lieuNaissance = $lieuNaissance;
@@ -331,7 +333,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of nationalite
-     */ 
+     */
     public function getNationalite()
     {
         return $this->nationalite;
@@ -341,7 +343,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of nationalite
      *
      * @return  self
-     */ 
+     */
     public function setNationalite($nationalite)
     {
         $this->nationalite = $nationalite;
@@ -351,7 +353,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of profession
-     */ 
+     */
     public function getProfession()
     {
         return $this->profession;
@@ -361,7 +363,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of profession
      *
      * @return  self
-     */ 
+     */
     public function setProfession($profession)
     {
         $this->profession = $profession;
@@ -371,7 +373,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of cin
-     */ 
+     */
     public function getCin()
     {
         return $this->cin;
@@ -381,7 +383,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of cin
      *
      * @return  self
-     */ 
+     */
     public function setCin($cin)
     {
         $this->cin = $cin;
@@ -391,7 +393,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of dateDelivrance
-     */ 
+     */
     public function getDateDelivrance()
     {
         return $this->dateDelivrance;
@@ -401,7 +403,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of dateDelivrance
      *
      * @return  self
-     */ 
+     */
     public function setDateDelivrance($dateDelivrance)
     {
         $this->dateDelivrance = $dateDelivrance;
@@ -411,7 +413,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of lieuDelivrance
-     */ 
+     */
     public function getLieuDelivrance()
     {
         return $this->lieuDelivrance;
@@ -421,7 +423,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of lieuDelivrance
      *
      * @return  self
-     */ 
+     */
     public function setLieuDelivrance($lieuDelivrance)
     {
         $this->lieuDelivrance = $lieuDelivrance;
@@ -431,7 +433,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of paysDelivrance
-     */ 
+     */
     public function getPaysDelivrance()
     {
         return $this->paysDelivrance;
@@ -441,7 +443,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of paysDelivrance
      *
      * @return  self
-     */ 
+     */
     public function setPaysDelivrance($paysDelivrance)
     {
         $this->paysDelivrance = $paysDelivrance;
@@ -451,7 +453,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of sexe
-     */ 
+     */
     public function getSexe()
     {
         return $this->sexe;
@@ -461,7 +463,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of sexe
      *
      * @return  self
-     */ 
+     */
     public function setSexe($sexe)
     {
         $this->sexe = $sexe;
@@ -471,7 +473,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of dateEntrescout
-     */ 
+     */
     public function getDateEntrescout()
     {
         return $this->dateEntrescout;
@@ -481,7 +483,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of dateEntrescout
      *
      * @return  self
-     */ 
+     */
     public function setDateEntrescout($dateEntrescout)
     {
         $this->dateEntrescout = $dateEntrescout;
@@ -491,7 +493,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * Get the value of fonctionScout
-     */ 
+     */
     public function getFonctionScout()
     {
         return $this->fonctionScout;
@@ -501,7 +503,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * Set the value of fonctionScout
      *
      * @return  self
-     */ 
+     */
     public function setFonctionScout($fonctionScout)
     {
         $this->fonctionScout = $fonctionScout;
@@ -509,7 +511,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-     /**
+    /**
      * @return Collection<int, Post>
      */
     public function getPosts(): Collection
@@ -523,6 +525,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->posts->add($post);
             $post->setUser($this);
         }
+        return $this;
+    }
+
+    public function isEnable(): ?bool
+    {
+        return $this->isEnable;
+    }
+
+    public function setIsEnable(bool $isEnable): static
+    {
+        $this->isEnable = $isEnable;
+
         return $this;
     }
 

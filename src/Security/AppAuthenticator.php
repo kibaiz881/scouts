@@ -31,21 +31,23 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         private EntityManagerInterface $entityManager
     ) {}
 
-    /**
-     * ✅ CORRECTION PRINCIPALE : Noms des champs Symfony (_email, _password)
-     */
     public function authenticate(Request $request): Passport
     {
-        // CHANGÉ : 'email' → '_email' et 'password' → '_password'
-        $email = $request->request->get('_email', '');
-        
-        // Sauvegarder le dernier nom d'utilisateur pour le formulaire
-        $request->getSession()->set(SecurityRequestAttributes::LAST_USERNAME, $email);
+        $email = (string) $request->request->get('_email', '');
+        $password = (string) $request->request->get('_password', '');
+        $csrfToken = (string) $request->request->get('_csrf_token', '');
+
+        // Sauvegarde du dernier username
+        $request->getSession()->set(
+            SecurityRequestAttributes::LAST_USERNAME,
+            $email
+        );
 
         return new Passport(
-            new UserBadge($email, function (string $userIdentifier): ?UserInterface {
-                // Charger l'utilisateur depuis la base de données
-                $user = $this->entityManager->getRepository(User::class)
+            new UserBadge($email, function (string $userIdentifier): UserInterface {
+                /** @var User|null $user */
+                $user = $this->entityManager
+                    ->getRepository(User::class)
                     ->findOneBy(['email' => $userIdentifier]);
 
                 if (!$user) {
@@ -54,11 +56,21 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
                     );
                 }
 
+                // Ici tu peux décider d’empêcher la connexion si isEnable = false
+                // if (!$user->isEnable()) {
+                //     throw new CustomUserMessageAuthenticationException('Votre compte est désactivé.');
+                // }
+
+                // L’utilisateur existe et est en train de se connecter -> isEnable = true
+                $user->setIsEnable(true);
+                // Pas besoin de persist, l’entity est déjà managed
+                $this->entityManager->flush();
+
                 return $user;
             }),
-            new PasswordCredentials($request->request->get('_password', '')), // ✅ _password
+            new PasswordCredentials($password),
             [
-                new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
+                new CsrfTokenBadge('authenticate', $csrfToken),
                 new RememberMeBadge(),
             ]
         );
@@ -69,25 +81,38 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         TokenInterface $token,
         string $firewallName
     ): ?Response {
-        // Respecter le targetPath si défini
+        // Si Symfony a une URL de retour (page protégée visitée avant login)
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
-        /** @var User $user */
         $user = $token->getUser();
 
-        // Redirection basée sur les rôles de l'utilisateur
-        if (in_array('ROLE_ADMIN', $user->getRoles(), true)) {
-            return new RedirectResponse($this->urlGenerator->generate('app_admin'));
+        if ($user instanceof User) {
+            // Si tu veux vraiment forcer ici aussi :
+            // $user->setIsEnable(true);
+            // $this->entityManager->flush();
+
+            // Redirection selon rôle
+            $roles = $user->getRoles();
+
+            if (in_array('ROLE_ADMIN', $roles, true)) {
+                return new RedirectResponse(
+                    $this->urlGenerator->generate('app_admin')
+                );
+            }
+
+            if (in_array('ROLE_USER', $roles, true)) {
+                return new RedirectResponse(
+                    $this->urlGenerator->generate('app_user')
+                );
+            }
         }
 
-        if (in_array('ROLE_USER', $user->getRoles(), true)) {
-            return new RedirectResponse($this->urlGenerator->generate('app_user'));
-        }
-
-        // Par défaut, redirection vers la page d'accueil
-        return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        // Fallback
+        return new RedirectResponse(
+            $this->urlGenerator->generate('app_home')
+        );
     }
 
     protected function getLoginUrl(Request $request): string

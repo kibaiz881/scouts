@@ -1,20 +1,129 @@
-{% extends 'base.html.twig' %}
+{% extends 'component/baseadmin.html.twig' %}
 
-{% block title %}Hello UseradminController!{% endblock %}
+
+{% block title %}
+	User List
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	{% include 'component/headeradmin.html.twig' %}
+	{% include 'component/sidebaradmin.html.twig' %}
+	<!-- ========== MAIN CONTENT ========== -->
+	<main
+		class="main" id="main" role="main">
+		<!-- Page Header -->
+		<div class="page-header">
+			<div class="page-title">
+				<h1>User Management</h1>
+				<p>Manage your User, roles, and permissions</p>
+			</div>
+			<div class="page-actions">
+				<a href="user-create.html" class="btn-primary">
+					<i class="bi bi-plus"></i>
+					New User
+				</a>
+			</div>
+		</div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/M_INFO/Music/scouts/src/Controller/UseradminController.php</code></li>
-        <li>Your template at <code>C:/Users/M_INFO/Music/scouts/templates/useradmin/index.html.twig</code></li>
-    </ul>
-</div>
+
+		<!-- Filters and Search -->
+		<div class="tasks-header mb-4">
+			<div class="filter-controls">
+				<button class="filter-btn active" data-filter="all">All Members</button>
+				<button class="filter-btn" data-filter="active">Active</button>
+			</div>
+			<div class="search-box">
+				<i class="bi bi-search"></i>
+				<input type="text" id="searchInput" placeholder="Search user...">
+			</div>
+		</div>
+
+		<!-- Team Members Grid -->
+		<div class="team-grid" id="teamGrid">
+            {# Example member card - repeat for each user #}
+            {% for user in userlist %}
+            <div class="member-card" data-department="management" data-status="online">
+
+                <div class="member-header">
+
+                    <div class="member-avatar">
+                        {% if user.profilePictureName %}
+                            <img 
+                                src="{{ asset('images/profiles/' ~ user.profilePictureName) }}" 
+                                alt="{{ user.username }}"
+                                class="avatar-img"
+                            >
+                        {% else %}
+                            {{ user.fonctionScout|slice(0, 1) }}
+                        {% endif %}
+                    </div>
+
+                    <div class="member-info">
+                        <div class="member-name">{{ user.username }}</div>
+                        <div class="member-role">{{ user.fonctionScout }}</div>
+
+                        <div class="member-contact">
+                            <i class="bi bi-envelope"></i>
+                            <span>{{ user.email }}</span>
+                        </div>
+
+                        <div class="member-contact">
+                            <i class="bi bi-calendar"></i>
+                            <span>{{ user.createdAt|date('M j, Y') }}</span>
+                        </div>
+                    </div>
+
+                    <div class="member-status status-online">
+                        <i class="bi bi-circle-fill"></i>
+                        Online
+                    </div>
+
+                </div>
+
+                <div class="member-actions">
+                    <a href="user-create.html" class="action-btn">
+                        <i class="bi bi-pencil"></i>
+                        Edit
+                    </a>
+
+                    <a href="user-details.html" class="action-btn">
+                        <i class="bi bi-eye"></i>
+                        View
+                    </a>
+                </div>
+
+            </div>
+            {% endfor %}
+
+		</div>
+
+		<!-- Pagination -->
+		<nav aria-label="Task pagination">
+			<ul class="pagination">
+				<li class="page-item">
+					<a class="page-link" href="#">
+						<i class="bi bi-chevron-left"></i>
+					</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link active" href="#">1</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">2</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">3</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">
+						<i class="bi bi-chevron-right"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</main>
+
+	{% include 'component/footeradmin.html.twig' %}
+
 {% endblock %}

@@ -127,7 +127,10 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"user.html\" role=\"menuitem\" title=\"User\">
+                <a href=\"";
+        // line 74
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_useradmin");
+        yield "\" role=\"menuitem\" title=\"User\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                     <circle cx=\"12\" cy=\"8\" r=\"4\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     <path d=\"M4 20c2-4 6-6 8-6s6 2 8 6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
@@ -282,7 +285,7 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  184 => 126,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
+        return array (  187 => 126,  132 => 74,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -360,7 +363,7 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"user.html\" role=\"menuitem\" title=\"User\">
+                <a href=\"{{path('app_admin_useradmin')}}\" role=\"menuitem\" title=\"User\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                     <circle cx=\"12\" cy=\"8\" r=\"4\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     <path d=\"M4 20c2-4 6-6 8-6s6 2 8 6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
