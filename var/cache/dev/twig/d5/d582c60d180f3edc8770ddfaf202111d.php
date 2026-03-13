@@ -117,7 +117,10 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
 \t\t\t\t<p>Manage your User, roles, and permissions</p>
 \t\t\t</div>
 \t\t\t<div class=\"page-actions\">
-\t\t\t\t<a href=\"user-create.html\" class=\"btn-primary\">
+\t\t\t\t<a href=\"";
+        // line 22
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_useradmin_newuser");
+        yield "\" class=\"btn-primary\">
 \t\t\t\t\t<i class=\"bi bi-plus\"></i>
 \t\t\t\t\tNew User
 \t\t\t\t</a>
@@ -204,10 +207,28 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
                         </div>
                     </div>
 
-                    <div class=\"member-status status-online\">
-                        <i class=\"bi bi-circle-fill\"></i>
-                        Online
-                    </div>
+\t\t\t\t\t<div class=\"member-status ";
+            // line 77
+            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["user"], "isEnable", [], "any", false, false, false, 77)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                yield "status-online";
+            } else {
+                yield "status-offline";
+            }
+            yield "\">
+\t\t\t\t\t\t<i class=\"bi bi-circle-fill\"></i>
+\t\t\t\t\t\t";
+            // line 79
+            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["user"], "isEnable", [], "any", false, false, false, 79)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                // line 80
+                yield "\t\t\t\t\t\t\tOnline
+\t\t\t\t\t\t";
+            } else {
+                // line 82
+                yield "\t\t\t\t\t\t\tOffline
+\t\t\t\t\t\t";
+            }
+            // line 84
+            yield "\t\t\t\t\t</div>
 
                 </div>
 
@@ -229,7 +250,7 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['user'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 98
+        // line 102
         yield "
 \t\t</div>
 
@@ -260,9 +281,9 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
 \t</main>
 
 \t";
-        // line 127
-        yield from $this->load("component/footeradmin.html.twig", 127)->unwrap()->yield($context);
-        // line 128
+        // line 131
+        yield from $this->load("component/footeradmin.html.twig", 131)->unwrap()->yield($context);
+        // line 132
         yield "
 ";
         
@@ -295,7 +316,7 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  266 => 128,  264 => 127,  233 => 98,  202 => 73,  194 => 68,  187 => 64,  183 => 63,  178 => 60,  172 => 58,  165 => 54,  161 => 53,  158 => 52,  156 => 51,  149 => 46,  144 => 45,  110 => 12,  107 => 11,  105 => 10,  102 => 9,  89 => 8,  77 => 5,  64 => 4,  41 => 1,);
+        return array (  287 => 132,  285 => 131,  254 => 102,  231 => 84,  227 => 82,  223 => 80,  221 => 79,  212 => 77,  205 => 73,  197 => 68,  190 => 64,  186 => 63,  181 => 60,  175 => 58,  168 => 54,  164 => 53,  161 => 52,  159 => 51,  152 => 46,  147 => 45,  122 => 22,  110 => 12,  107 => 11,  105 => 10,  102 => 9,  89 => 8,  77 => 5,  64 => 4,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -321,7 +342,7 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
 \t\t\t\t<p>Manage your User, roles, and permissions</p>
 \t\t\t</div>
 \t\t\t<div class=\"page-actions\">
-\t\t\t\t<a href=\"user-create.html\" class=\"btn-primary\">
+\t\t\t\t<a href=\"{{ path('app_admin_useradmin_newuser') }}\" class=\"btn-primary\">
 \t\t\t\t\t<i class=\"bi bi-plus\"></i>
 \t\t\t\t\tNew User
 \t\t\t\t</a>
@@ -376,10 +397,14 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
                         </div>
                     </div>
 
-                    <div class=\"member-status status-online\">
-                        <i class=\"bi bi-circle-fill\"></i>
-                        Online
-                    </div>
+\t\t\t\t\t<div class=\"member-status {% if user.isEnable %}status-online{% else %}status-offline{% endif %}\">
+\t\t\t\t\t\t<i class=\"bi bi-circle-fill\"></i>
+\t\t\t\t\t\t{% if user.isEnable %}
+\t\t\t\t\t\t\tOnline
+\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\tOffline
+\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t</div>
 
                 </div>
 

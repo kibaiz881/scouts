@@ -140,14 +140,14 @@ class __TwigTemplate_a7d925ced85aaa11499670e25ea8278f extends Template
 
 \t\t\t\t</div>
 
-\t\t\t";
+\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 34
         yield "
-\t\t</div>
+\t\t\t</div>
 \t\t<div class=\"page-header\">
 \t\t\t<div class=\"page-title\">
 \t\t\t\t<h1>User Profile</h1>
@@ -1168,9 +1168,9 @@ class __TwigTemplate_a7d925ced85aaa11499670e25ea8278f extends Template
 
 \t\t\t\t</div>
 
-\t\t\t{% endfor %}
+\t\t\t\t{% endfor %}
 
-\t\t</div>
+\t\t\t</div>
 \t\t<div class=\"page-header\">
 \t\t\t<div class=\"page-title\">
 \t\t\t\t<h1>User Profile</h1>

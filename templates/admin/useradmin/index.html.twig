@@ -19,7 +19,7 @@
 				<p>Manage your User, roles, and permissions</p>
 			</div>
 			<div class="page-actions">
-				<a href="user-create.html" class="btn-primary">
+				<a href="{{ path('app_admin_useradmin_newuser') }}" class="btn-primary">
 					<i class="bi bi-plus"></i>
 					New User
 				</a>
@@ -74,10 +74,14 @@
                         </div>
                     </div>
 
-                    <div class="member-status status-online">
-                        <i class="bi bi-circle-fill"></i>
-                        Online
-                    </div>
+					<div class="member-status {% if user.isEnable %}status-online{% else %}status-offline{% endif %}">
+						<i class="bi bi-circle-fill"></i>
+						{% if user.isEnable %}
+							Online
+						{% else %}
+							Offline
+						{% endif %}
+					</div>
 
                 </div>
 

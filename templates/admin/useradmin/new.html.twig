@@ -1,0 +1,63 @@
+{% extends 'component/baseadmin.html.twig' %}
+
+
+{% block title %}
+	Create New User
+{% endblock %}
+
+{% block body %}
+
+	{% include 'component/headeradmin.html.twig' %}
+	{% include 'component/sidebaradmin.html.twig' %}
+    <!-- ========== MAIN CONTENT ========== -->
+    <main
+        class="main" id="main" role="main">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="page-title">
+                <h1>Create New User</h1>
+                <p>Fill in the details to create a new user account</p>
+            </div>
+            <div class="page-actions">
+                <a href="{{ path('app_admin_useradmin') }}" class="btn-secondary">
+                    <i class="bi bi-arrow-left"></i>
+                    Back to User List
+                </a>
+            </div>
+        </div>
+
+        <!-- New User Form -->
+        <div class="card mb-4">
+            <div class="card-body">
+                {{ form_start(userform) }}
+                    <div class="form-group mb-3">
+                        {{ form_label(userform.username) }}
+                        {{ form_widget(userform.username, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(userform.username) }}
+                    </div>
+                    <div class="form-group mb-3">
+                        {{ form_label(userform.email) }}
+                        {{ form_widget(userform.email, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(userform.email) }}
+                    </div>
+                    <div class="form-group mb-3">
+                        {{ form_label(userform.plainPassword) }}
+                        {{ form_widget(userform.plainPassword, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(userform.plainPassword) }}   
+                    </div>
+                    <div class="form-group mb-3">
+                        {{ form_label(userform.profilePictureFile) }}
+                        {{ form_widget(userform.profilePictureFile, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(userform.profilePictureFile) }}
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <i class="bi bi-check"></i>
+                        Create User 
+                    </button>
+                {{ form_end(userform) }}
+            </div>
+        </div>
+    </main>
+    	{% include 'component/footeradmin.html.twig' %}
+{% endblock %}
