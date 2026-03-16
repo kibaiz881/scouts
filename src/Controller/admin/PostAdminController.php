@@ -17,6 +17,7 @@ final class PostAdminController extends AbstractController
 {
     // afficher seulement les posts de l'utilisateur connecté
     #[Route('/admin/post/admin', name: 'app_admin_post_admin')]
+    #[IsGranted('ROLE_ADMIN')]
     public function index(PostRepository $postRepository): Response
     {
         $user = $this->getUser();
@@ -71,6 +72,7 @@ final class PostAdminController extends AbstractController
     }
 
     #[Route('/admin/post/approve/{id}', name: 'app_post_approve', methods: ['POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function approve(Post $post, EntityManagerInterface $em): JsonResponse
     {
         $post->setIsPublished(true);
@@ -83,6 +85,7 @@ final class PostAdminController extends AbstractController
     }
 
     #[Route('/admin/post/reject/{id}', name: 'app_post_reject', methods: ['POST'])]
+    #[IsGranted('ROLE_ADMIN')]
     public function reject(Post $post, EntityManagerInterface $em): JsonResponse
     {
         $post->setIsPublished(false);

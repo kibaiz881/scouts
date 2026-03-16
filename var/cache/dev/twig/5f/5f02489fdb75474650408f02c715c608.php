@@ -190,20 +190,21 @@ class __TwigTemplate_d9a76d35cea49bbe3d9c352247db547f extends Template
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 51, $this->source); })()), "profilePictureFile", [], "any", false, false, false, 51), 'errors');
         yield "
                     </div>
+                    
                     <button type=\"submit\" class=\"btn-primary\">
                         <i class=\"bi bi-check\"></i>
                         Create User 
                     </button>
                 ";
-        // line 57
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 57, $this->source); })()), 'form_end');
+        // line 58
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 58, $this->source); })()), 'form_end');
         yield "
             </div>
         </div>
     </main>
     \t";
-        // line 61
-        yield from $this->load("component/footeradmin.html.twig", 61)->unwrap()->yield($context);
+        // line 62
+        yield from $this->load("component/footeradmin.html.twig", 62)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -234,7 +235,7 @@ class __TwigTemplate_d9a76d35cea49bbe3d9c352247db547f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  206 => 61,  199 => 57,  190 => 51,  186 => 50,  182 => 49,  176 => 46,  172 => 45,  168 => 44,  162 => 41,  158 => 40,  154 => 39,  148 => 36,  144 => 35,  140 => 34,  135 => 32,  122 => 22,  110 => 12,  107 => 11,  105 => 10,  102 => 9,  89 => 8,  77 => 5,  64 => 4,  41 => 1,);
+        return array (  207 => 62,  200 => 58,  190 => 51,  186 => 50,  182 => 49,  176 => 46,  172 => 45,  168 => 44,  162 => 41,  158 => 40,  154 => 39,  148 => 36,  144 => 35,  140 => 34,  135 => 32,  122 => 22,  110 => 12,  107 => 11,  105 => 10,  102 => 9,  89 => 8,  77 => 5,  64 => 4,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -291,6 +292,7 @@ class __TwigTemplate_d9a76d35cea49bbe3d9c352247db547f extends Template
                         {{ form_widget(userform.profilePictureFile, {'attr': {'class': 'form-control'}}) }}
                         {{ form_errors(userform.profilePictureFile) }}
                     </div>
+                    
                     <button type=\"submit\" class=\"btn-primary\">
                         <i class=\"bi bi-check\"></i>
                         Create User 

@@ -7315,6 +7315,12 @@
         <argument type="service" id=".security.request_matcher.SVK5D2B"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.mS74Jwd"/>
+        <argument type="collection">
           <argument>ROLE_USER</argument>
         </argument>
         <argument>null</argument>
@@ -7984,6 +7990,14 @@
     <service id=".security.request_matcher.SVK5D2B" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
       <argument type="collection">
         <argument type="service" id=".security.request_matcher.pqyCXG8"/>
+      </argument>
+    </service>
+    <service id=".security.request_matcher.omsR5jd" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/user</argument>
+    </service>
+    <service id=".security.request_matcher.mS74Jwd" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher.omsR5jd"/>
       </argument>
     </service>
     <service id=".security.request_matcher.l6nTaJG" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">

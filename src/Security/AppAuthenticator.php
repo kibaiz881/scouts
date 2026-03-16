@@ -75,45 +75,52 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             ]
         );
     }
-
     public function onAuthenticationSuccess(
         Request $request,
         TokenInterface $token,
         string $firewallName
     ): ?Response {
-        // Si Symfony a une URL de retour (page protégée visitée avant login)
-        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
-            return new RedirectResponse($targetPath);
-        }
 
         $user = $token->getUser();
 
-        if ($user instanceof User) {
-            // Si tu veux vraiment forcer ici aussi :
-            // $user->setIsEnable(true);
-            // $this->entityManager->flush();
-
-            // Redirection selon rôle
-            $roles = $user->getRoles();
-
-            if (in_array('ROLE_ADMIN', $roles, true)) {
-                return new RedirectResponse(
-                    $this->urlGenerator->generate('app_admin')
-                );
-            }
-
-            if (in_array('ROLE_USER', $roles, true)) {
-                return new RedirectResponse(
-                    $this->urlGenerator->generate('app_user')
-                );
-            }
+        if (!$user instanceof User) {
+            return new RedirectResponse(
+                $this->urlGenerator->generate('app_login')
+            );
         }
 
-        // Fallback
+        // Activation utilisateur
+        $user->setIsEnable(true);
+        $this->entityManager->flush();
+
+        $roles = $user->getRoles();
+
+        // ADMIN
+        if (in_array('ROLE_ADMIN', $roles, true)) {
+
+            if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
+                return new RedirectResponse($targetPath);
+            }
+
+            return new RedirectResponse(
+                $this->urlGenerator->generate('app_admin')
+            );
+        }
+
+        // USER
+        if (in_array('ROLE_USER', $roles, true)) {
+
+            return new RedirectResponse(
+                $this->urlGenerator->generate('app_user')
+            );
+        }
+
+        // fallback
         return new RedirectResponse(
             $this->urlGenerator->generate('app_home')
         );
     }
+
 
     protected function getLoginUrl(Request $request): string
     {
