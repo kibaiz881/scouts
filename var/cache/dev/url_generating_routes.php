@@ -40,6 +40,7 @@ return [
     'app_admin_settingadmin' => [[], ['_controller' => 'App\\Controller\\admin\\SettingadminController::index'], [], [['text', '/admin/settingadmin']], [], [], []],
     'admin_setting_list' => [[], ['_controller' => 'App\\Controller\\admin\\SettingadminController::list'], [], [['text', '/admin/settingadmin/list']], [], [], []],
     'admin_setting_edit' => [['id'], ['_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/settingadmin/edit']], [], [], []],
+    'app_admin_user_delete' => [['id'], ['_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/useradmin/delete']], [], [], []],
     'app_admin_useradmin' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::index'], [], [['text', '/admin/useradmin']], [], [], []],
     'app_admin_useradmin_newuser' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::new'], [], [['text', '/admin/useradmin/new']], [], [], []],
     'App\Controller\ActualiteController::index' => [['page', 'itemsPerPage'], ['page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\ActualiteController::index'], ['page' => '\\d+', 'itemsPerPage' => '\\d+'], [['variable', '/', '\\d+', 'itemsPerPage', true], ['variable', '/', '\\d+', 'page', true], ['text', '/actualite']], [], [], []],
@@ -64,7 +65,7 @@ return [
     'App\Controller\admin\SettingadminController::index' => [[], ['_controller' => 'App\\Controller\\admin\\SettingadminController::index'], [], [['text', '/admin/settingadmin']], [], [], []],
     'App\Controller\admin\SettingadminController::list' => [[], ['_controller' => 'App\\Controller\\admin\\SettingadminController::list'], [], [['text', '/admin/settingadmin/list']], [], [], []],
     'App\Controller\admin\SettingadminController::edit' => [['id'], ['_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/settingadmin/edit']], [], [], []],
-    'App\Controller\admin\SettingadminController::lists' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::index'], [], [['text', '/admin/useradmin']], [], [], []],
+    'App\Controller\admin\SettingadminController::delete' => [['id'], ['_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/useradmin/delete']], [], [], []],
     'App\Controller\admin\UseradminController::index' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::index'], [], [['text', '/admin/useradmin']], [], [], []],
     'App\Controller\admin\UseradminController::new' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::new'], [], [['text', '/admin/useradmin/new']], [], [], []],
 ];

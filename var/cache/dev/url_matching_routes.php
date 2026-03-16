@@ -67,9 +67,10 @@ return [
                             .'|reject/([^/]++)(*:355)'
                         .')'
                         .'|settingadmin/edit/([^/]++)(*:390)'
+                        .'|useradmin/delete/([^/]++)(*:423)'
                     .')'
                 .')'
-                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:427)'
+                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:460)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -87,7 +88,8 @@ return [
         332 => [[['_route' => 'app_post_approve', '_controller' => 'App\\Controller\\admin\\PostAdminController::approve'], ['id'], ['POST' => 0], null, false, true, null]],
         355 => [[['_route' => 'app_post_reject', '_controller' => 'App\\Controller\\admin\\PostAdminController::reject'], ['id'], ['POST' => 0], null, false, true, null]],
         390 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
-        427 => [
+        423 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        460 => [
             [['_route' => 'app_blog', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\BlogController::index'], ['page', 'itemsPerPage'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

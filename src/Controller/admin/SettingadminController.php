@@ -12,6 +12,8 @@ use App\Form\ProfileType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Filesystem\Filesystem;
 
 final class SettingadminController extends AbstractController
 {
@@ -68,15 +70,14 @@ final class SettingadminController extends AbstractController
     #[IsGranted('ROLE_ADMIN')]
     public function list(
         UserRepository $userRepository
-    ): Response
-    {
+    ): Response {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $userlist = $userRepository->findAll();
         return $this->render('admin/settingadmin/list.html.twig', [
             "userlist" => $userlist
         ]);
     }
-
+    //update user and display the form in the admin panel
     #[Route('/admin/settingadmin/edit/{id}', name: 'admin_setting_edit')]
     #[IsGranted('ROLE_ADMIN')]
     public function edit(
@@ -119,4 +120,31 @@ final class SettingadminController extends AbstractController
         ]);
     }
 
+    #[Route('/admin/useradmin/delete/{id}', name: 'app_admin_user_delete', methods: ['DELETE'])]
+    public function delete(User $user, EntityManagerInterface $em): JsonResponse
+    {
+        $filesystem = new Filesystem();
+
+        // chemin du dossier des images
+        $uploadDir = $this->getParameter('kernel.project_dir') . '/public/images/profiles/';
+
+        // supprimer le fichier si existe
+        if ($user->getProfilePictureName()) {
+
+            $filePath = $uploadDir . $user->getProfilePictureName();
+
+            if ($filesystem->exists($filePath)) {
+                $filesystem->remove($filePath);
+            }
+        }
+
+        // supprimer l'utilisateur
+        $em->remove($user);
+        $em->flush();
+
+        return $this->json([
+            'success' => true,
+            'message' => 'User deleted successfully'
+        ]);
+    }
 }

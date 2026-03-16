@@ -347,19 +347,19 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
             // line 189
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 189), "html", null, true);
             yield "\" class=\"badge
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    ";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             // line 190
             if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "isPublished", [], "any", false, false, false, 190)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 191
-                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        bg-success
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    ";
+                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-success
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             } else {
                 // line 193
-                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        bg-warning
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    ";
+                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-warning
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             }
             // line 195
-            yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
+            yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
 \t\t\t\t\t\t\t\t\t\t\t";
             // line 196
             if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "isPublished", [], "any", false, false, false, 196)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
@@ -445,67 +445,67 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
 
         // line 235
         yield "\t\t <script>
-\t\t\t\t\t\t\t\t\tfunction approvePost(postId){
-\t\t\t\t\t\t
-\t\t\t\t\t\t    fetch(\"/admin/post/approve/\" + postId,{
-\t\t\t\t\t\t        method:\"POST\",
-\t\t\t\t\t\t        headers:{
-\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
-\t\t\t\t\t\t        }
-\t\t\t\t\t\t    })
-\t\t\t\t\t\t    .then(res => res.json())
-\t\t\t\t\t\t    .then(data =>{
-\t\t\t\t\t\t
-\t\t\t\t\t\t        if(data.success){
-\t\t\t\t\t\t
-\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
-\t\t\t\t\t\t            badge.classList.remove(\"bg-warning\");
-\t\t\t\t\t\t            badge.classList.add(\"bg-success\");
-\t\t\t\t\t\t            badge.innerText = \"Published\";
-\t\t\t\t\t\t\t\t\t        Toastify({
-\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post approuvé avec succès\",
-\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
-\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
-\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
-\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#28a745\"
-\t\t\t\t\t\t\t\t\t\t\t}).showToast();
-\t\t\t\t\t\t        }
-\t\t\t\t\t\t
-\t\t\t\t\t\t    });
-\t\t\t\t\t\t
-\t\t\t\t\t\t}
-\t\t\t\t\t\t
-\t\t\t\t\t\tfunction rejectPost(postId){
-\t\t\t\t\t\t
-\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
-\t\t\t\t\t\t        method:\"POST\",
-\t\t\t\t\t\t        headers:{
-\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
-\t\t\t\t\t\t        }
-\t\t\t\t\t\t    })
-\t\t\t\t\t\t    .then(res => res.json())
-\t\t\t\t\t\t    .then(data =>{
-\t\t\t\t\t\t
-\t\t\t\t\t\t        if(data.success){
-\t\t\t\t\t\t
-\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
-\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
-\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
-\t\t\t\t\t\t            badge.innerText = \"Rejected\";
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
-\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
-\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
-\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
-\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
-\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
-\t\t\t\t\t\t\t\t\t\t\t}).showToast();
-\t\t\t\t\t\t        }
-\t\t\t\t\t\t
-\t\t\t\t\t\t    });
-\t\t\t\t\t\t
-\t\t\t\t\t\t}
-\t\t\t\t\t\t
-\t\t\t\t\t</script>
+\t\t\tfunction approvePost(postId){
+\t\t\t\t\t\t\t\t
+\t\t\t\tfetch(\"/admin/post/approve/\" + postId,{
+\t\t\t\t\tmethod:\"POST\",
+\t\t\t\t\theaders:{
+\t\t\t\t\t\"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t}
+\t\t\t })
+\t\t\t\t.then(res => res.json())
+\t\t\t\t.then(data =>{
+\t\t\t\t\t\t\t\t
+\t\t\t\tif(data.success){
+\t\t\t\t\t\t\t\t
+\t\t\t\tlet badge = document.getElementById(\"status-\"+postId);
+\t\t\t\tbadge.classList.remove(\"bg-warning\");
+\t\t\t\tbadge.classList.add(\"bg-success\");
+\t\t\t\tbadge.innerText = \"Published\";
+\t\t\tToastify({
+\t\t\t\ttext: \"Post approuvé avec succès\",
+\t\t\t\tduration: 3000,
+\t\t\t\tgravity: \"top\",
+\t\t\t\tposition: \"right\",
+\t\t\t\tbackgroundColor: \"#28a745\"
+\t\t\t\t}).showToast();
+\t\t\t}
+\t\t\t\t\t\t\t\t
+\t\t});
+\t\t\t\t\t\t\t\t
+\t}
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\tfunction rejectPost(postId){
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
+\t\t\t\t\t\t\t\t        method:\"POST\",
+\t\t\t\t\t\t\t\t        headers:{
+\t\t\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t    })
+\t\t\t\t\t\t\t\t    .then(res => res.json())
+\t\t\t\t\t\t\t\t    .then(data =>{
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t        if(data.success){
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
+\t\t\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
+\t\t\t\t\t\t\t\t            badge.innerText = \"Rejected\";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
+\t\t\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t</script>
 \t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -731,12 +731,12 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t<div class=\"task-status status-in-progress\">
 \t\t\t\t\t\t\t\t\t\t<span id=\"status-{{ post.id }}\" class=\"badge
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    {% if post.isPublished %}
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        bg-success
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    {% else %}
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        bg-warning
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t    {% endif %}
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% if post.isPublished %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-success
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-warning
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
 \t\t\t\t\t\t\t\t\t\t\t{% if post.isPublished %}
 \t\t\t\t\t\t\t\t\t\t\t\tPublished
 \t\t\t\t\t\t\t\t\t\t\t{% else %}
@@ -777,67 +777,67 @@ class __TwigTemplate_8055a5701e27a010232751a0ce48bcbc extends Template
 
 \t{% block javascripts %}
 \t\t <script>
-\t\t\t\t\t\t\t\t\tfunction approvePost(postId){
-\t\t\t\t\t\t
-\t\t\t\t\t\t    fetch(\"/admin/post/approve/\" + postId,{
-\t\t\t\t\t\t        method:\"POST\",
-\t\t\t\t\t\t        headers:{
-\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
-\t\t\t\t\t\t        }
-\t\t\t\t\t\t    })
-\t\t\t\t\t\t    .then(res => res.json())
-\t\t\t\t\t\t    .then(data =>{
-\t\t\t\t\t\t
-\t\t\t\t\t\t        if(data.success){
-\t\t\t\t\t\t
-\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
-\t\t\t\t\t\t            badge.classList.remove(\"bg-warning\");
-\t\t\t\t\t\t            badge.classList.add(\"bg-success\");
-\t\t\t\t\t\t            badge.innerText = \"Published\";
-\t\t\t\t\t\t\t\t\t        Toastify({
-\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post approuvé avec succès\",
-\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
-\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
-\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
-\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#28a745\"
-\t\t\t\t\t\t\t\t\t\t\t}).showToast();
-\t\t\t\t\t\t        }
-\t\t\t\t\t\t
-\t\t\t\t\t\t    });
-\t\t\t\t\t\t
-\t\t\t\t\t\t}
-\t\t\t\t\t\t
-\t\t\t\t\t\tfunction rejectPost(postId){
-\t\t\t\t\t\t
-\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
-\t\t\t\t\t\t        method:\"POST\",
-\t\t\t\t\t\t        headers:{
-\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
-\t\t\t\t\t\t        }
-\t\t\t\t\t\t    })
-\t\t\t\t\t\t    .then(res => res.json())
-\t\t\t\t\t\t    .then(data =>{
-\t\t\t\t\t\t
-\t\t\t\t\t\t        if(data.success){
-\t\t\t\t\t\t
-\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
-\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
-\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
-\t\t\t\t\t\t            badge.innerText = \"Rejected\";
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
-\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
-\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
-\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
-\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
-\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
-\t\t\t\t\t\t\t\t\t\t\t}).showToast();
-\t\t\t\t\t\t        }
-\t\t\t\t\t\t
-\t\t\t\t\t\t    });
-\t\t\t\t\t\t
-\t\t\t\t\t\t}
-\t\t\t\t\t\t
-\t\t\t\t\t</script>
+\t\t\tfunction approvePost(postId){
+\t\t\t\t\t\t\t\t
+\t\t\t\tfetch(\"/admin/post/approve/\" + postId,{
+\t\t\t\t\tmethod:\"POST\",
+\t\t\t\t\theaders:{
+\t\t\t\t\t\"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t}
+\t\t\t })
+\t\t\t\t.then(res => res.json())
+\t\t\t\t.then(data =>{
+\t\t\t\t\t\t\t\t
+\t\t\t\tif(data.success){
+\t\t\t\t\t\t\t\t
+\t\t\t\tlet badge = document.getElementById(\"status-\"+postId);
+\t\t\t\tbadge.classList.remove(\"bg-warning\");
+\t\t\t\tbadge.classList.add(\"bg-success\");
+\t\t\t\tbadge.innerText = \"Published\";
+\t\t\tToastify({
+\t\t\t\ttext: \"Post approuvé avec succès\",
+\t\t\t\tduration: 3000,
+\t\t\t\tgravity: \"top\",
+\t\t\t\tposition: \"right\",
+\t\t\t\tbackgroundColor: \"#28a745\"
+\t\t\t\t}).showToast();
+\t\t\t}
+\t\t\t\t\t\t\t\t
+\t\t});
+\t\t\t\t\t\t\t\t
+\t}
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\tfunction rejectPost(postId){
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
+\t\t\t\t\t\t\t\t        method:\"POST\",
+\t\t\t\t\t\t\t\t        headers:{
+\t\t\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t    })
+\t\t\t\t\t\t\t\t    .then(res => res.json())
+\t\t\t\t\t\t\t\t    .then(data =>{
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t        if(data.success){
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
+\t\t\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
+\t\t\t\t\t\t\t\t            badge.innerText = \"Rejected\";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
+\t\t\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t</script>
 \t{% endblock %}
 {% endblock %}
 ", "admin/post_admin/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\post_admin\\index.html.twig");
