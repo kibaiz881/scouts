@@ -235,17 +235,27 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
                     ";
             }
             // line 84
-            yield "                </div>
-
+            yield "
             </div>
-
+                </div>
+\t                    <div class=\"member-actions\">
+                        <a href=\"";
+            // line 88
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_setting_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 88)]), "html", null, true);
+            yield "\" class=\"action-btn\">
+                            <i class=\"bi bi-pencil\"></i> Edit
+                        </a>
+                        <a href=\"#\" class=\"action-btn\">
+                            <i class=\"bi bi-eye\"></i> View
+                        </a>
+                </div>
         </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['user'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 90
+        // line 97
         yield "
     </div>
 
@@ -277,14 +287,14 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
 </main>
 
 ";
-        // line 120
-        yield from $this->load("component/footeradmin.html.twig", 120)->unwrap()->yield($context);
-        // line 121
+        // line 127
+        yield from $this->load("component/footeradmin.html.twig", 127)->unwrap()->yield($context);
+        // line 128
         yield "
 ";
-        // line 122
+        // line 129
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 180
+        // line 187
         yield "
 ";
         
@@ -296,7 +306,7 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
         yield from [];
     }
 
-    // line 122
+    // line 129
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -309,7 +319,7 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 123
+        // line 130
         yield "<script>
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -397,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     public function getDebugInfo(): array
     {
-        return array (  313 => 123,  300 => 122,  288 => 180,  286 => 122,  283 => 121,  281 => 120,  249 => 90,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
+        return array (  323 => 130,  310 => 129,  298 => 187,  296 => 129,  293 => 128,  291 => 127,  259 => 97,  244 => 88,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -485,10 +495,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     {% else %}
                         Offline
                     {% endif %}
-                </div>
 
             </div>
-
+                </div>
+\t                    <div class=\"member-actions\">
+                        <a href=\"{{path('admin_setting_edit', {'id': user.id})}}\" class=\"action-btn\">
+                            <i class=\"bi bi-pencil\"></i> Edit
+                        </a>
+                        <a href=\"#\" class=\"action-btn\">
+                            <i class=\"bi bi-eye\"></i> View
+                        </a>
+                </div>
         </div>
         {% endfor %}
 

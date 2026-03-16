@@ -81,17 +81,17 @@
                     {% else %}
                         Offline
                     {% endif %}
+
+            </div>
                 </div>
 	                    <div class="member-actions">
-                        <a href="user-create.html" class="action-btn">
+                        <a href="{{path('admin_setting_edit', {'id': user.id})}}" class="action-btn">
                             <i class="bi bi-pencil"></i> Edit
                         </a>
-                        <a href="user-details.html" class="action-btn">
+                        <a href="#" class="action-btn">
                             <i class="bi bi-eye"></i> View
                         </a>
-                    </div>
-            </div>
-
+                </div>
         </div>
         {% endfor %}
 

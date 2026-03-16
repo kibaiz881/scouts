@@ -625,7 +625,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator._b3pUyf"/>
+      <argument type="service" id=".service_locator.Uj7onLO"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -3875,7 +3875,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator._b3pUyf"/>
+      <argument type="service" id=".service_locator.Uj7onLO"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -9555,6 +9555,12 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.PtMLGj3.App\Controller\admin\SettingadminController::lists()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\SettingadminController::lists()"/>
+      <argument>App\Controller\admin\SettingadminController::lists()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.PtMLGj3" method="withContext"/>
+    </service>
     <service id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\UseradminController::index()"/>
       <argument>App\Controller\admin\UseradminController::index()</argument>
@@ -9567,7 +9573,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4XYvBdG" method="withContext"/>
     </service>
-    <service id=".service_locator._b3pUyf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Uj7onLO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9586,6 +9592,7 @@
         <argument key="App\Controller\admin\PostAdminController::reject" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::reject()"/>
         <argument key="App\Controller\admin\SettingadminController::index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
         <argument key="App\Controller\admin\SettingadminController::edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
+        <argument key="App\Controller\admin\SettingadminController::lists" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\SettingadminController::lists()"/>
         <argument key="App\Controller\admin\UseradminController::index" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()"/>
         <argument key="App\Controller\admin\UseradminController::new" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\UseradminController::new()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9602,6 +9609,7 @@
         <argument key="App\Controller\admin\PostAdminController:reject" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::reject()"/>
         <argument key="App\Controller\admin\SettingadminController:index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
         <argument key="App\Controller\admin\SettingadminController:edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
+        <argument key="App\Controller\admin\SettingadminController:lists" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\SettingadminController::lists()"/>
         <argument key="App\Controller\admin\UseradminController:index" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()"/>
         <argument key="App\Controller\admin\UseradminController:new" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\UseradminController::new()"/>
       </argument>
@@ -12087,7 +12095,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator._b3pUyf"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Uj7onLO"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>

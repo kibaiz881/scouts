@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\User;
+use App\Repository\UserRepository;
 use App\Form\ProfileType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -65,10 +66,14 @@ final class SettingadminController extends AbstractController
 
     #[Route('/admin/settingadmin/list', name: 'admin_setting_list')]
     #[IsGranted('ROLE_ADMIN')]
-    public function list(): Response
+    public function list(
+        UserRepository $userRepository
+    ): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $userlist = $userRepository->findAll();
         return $this->render('admin/settingadmin/list.html.twig', [
-            'currentUser' => $this->getUser(),
+            "userlist" => $userlist
         ]);
     }
 
@@ -113,4 +118,5 @@ final class SettingadminController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
 }

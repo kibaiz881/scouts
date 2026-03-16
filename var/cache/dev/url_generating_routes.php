@@ -64,6 +64,7 @@ return [
     'App\Controller\admin\SettingadminController::index' => [[], ['_controller' => 'App\\Controller\\admin\\SettingadminController::index'], [], [['text', '/admin/settingadmin']], [], [], []],
     'App\Controller\admin\SettingadminController::list' => [[], ['_controller' => 'App\\Controller\\admin\\SettingadminController::list'], [], [['text', '/admin/settingadmin/list']], [], [], []],
     'App\Controller\admin\SettingadminController::edit' => [['id'], ['_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/settingadmin/edit']], [], [], []],
+    'App\Controller\admin\SettingadminController::lists' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::index'], [], [['text', '/admin/useradmin']], [], [], []],
     'App\Controller\admin\UseradminController::index' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::index'], [], [['text', '/admin/useradmin']], [], [], []],
     'App\Controller\admin\UseradminController::new' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::new'], [], [['text', '/admin/useradmin/new']], [], [], []],
 ];
