@@ -187,12 +187,12 @@
 									</div>
 									<div class="task-status status-in-progress">
 										<span id="status-{{ post.id }}" class="badge
-																						    {% if post.isPublished %}
-																						        bg-success
-																						    {% else %}
-																						        bg-warning
-																						    {% endif %}
-																								">
+											{% if post.isPublished %}
+												bg-success
+											{% else %}
+												bg-warning
+											{% endif %}
+										">
 											{% if post.isPublished %}
 												Published
 											{% else %}

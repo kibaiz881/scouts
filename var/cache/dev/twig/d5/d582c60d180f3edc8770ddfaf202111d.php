@@ -32,6 +32,7 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -60,7 +61,7 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
 
     }
 
-    // line 4
+    // line 3
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -73,8 +74,8 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        // line 5
-        yield "\tUser List
+        // line 4
+        yield "    User List
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -85,7 +86,7 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
         yield from [];
     }
 
-    // line 8
+    // line 7
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -98,116 +99,122 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 9
+        // line 8
         yield "
-\t";
+";
+        // line 9
+        yield from $this->load("component/headeradmin.html.twig", 9)->unwrap()->yield($context);
         // line 10
-        yield from $this->load("component/headeradmin.html.twig", 10)->unwrap()->yield($context);
+        yield from $this->load("component/sidebaradmin.html.twig", 10)->unwrap()->yield($context);
         // line 11
-        yield "\t";
-        yield from $this->load("component/sidebaradmin.html.twig", 11)->unwrap()->yield($context);
-        // line 12
-        yield "\t<!-- ========== MAIN CONTENT ========== -->
-\t<main
-\t\tclass=\"main\" id=\"main\" role=\"main\">
-\t\t<!-- Page Header -->
-\t\t<div class=\"page-header\">
-\t\t\t<div class=\"page-title\">
-\t\t\t\t<h1>User Management</h1>
-\t\t\t\t<p>Manage your User, roles, and permissions</p>
-\t\t\t</div>
-\t\t\t<div class=\"page-actions\">
-\t\t\t\t<a href=\"";
+        yield "
+<main class=\"main\" id=\"main\" role=\"main\">
+
+    <!-- Page Header -->
+    <div class=\"page-header\">
+        <div class=\"page-title\">
+            <h1>User Management</h1>
+            <p>Manage your User, roles, and permissions</p>
+        </div>
+
+        <div class=\"page-actions\">
+            <a href=\"";
         // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_useradmin_newuser");
         yield "\" class=\"btn-primary\">
-\t\t\t\t\t<i class=\"bi bi-plus\"></i>
-\t\t\t\t\tNew User
-\t\t\t\t</a>
-\t\t\t</div>
-\t\t</div>
+                <i class=\"bi bi-plus\"></i>
+                New User
+            </a>
+        </div>
+    </div>
 
+    <!-- Filters and Search -->
+    <div class=\"tasks-header mb-4\">
+        <div class=\"filter-controls\">
+            <button class=\"filter-btn active\" data-filter=\"all\">All Members</button>
+            <button class=\"filter-btn\" data-filter=\"active\">Active</button>
+            <button class=\"filter-btn\" data-filter=\"offline\">Offline</button>
+        </div>
 
-\t\t<!-- Filters and Search -->
-\t\t<div class=\"tasks-header mb-4\">
-\t\t\t<div class=\"filter-controls\">
-\t\t\t\t<button class=\"filter-btn active\" data-filter=\"all\">All Members</button>
-\t\t\t\t<button class=\"filter-btn\" data-filter=\"active\">Active</button>
-\t\t\t</div>
-\t\t\t<div class=\"search-box\">
-\t\t\t\t<i class=\"bi bi-search\"></i>
-\t\t\t\t<input type=\"text\" id=\"searchInput\" placeholder=\"Search user...\">
-\t\t\t</div>
-\t\t</div>
+        <div class=\"search-box\">
+            <i class=\"bi bi-search\"></i>
+            <input type=\"text\" id=\"searchInput\" placeholder=\"Search user...\">
+        </div>
+    </div>
 
-\t\t<!-- Team Members Grid -->
-\t\t<div class=\"team-grid\" id=\"teamGrid\">
-            ";
-        // line 45
-        yield "            ";
+    <!-- Team Members Grid -->
+    <div class=\"team-grid\" id=\"teamGrid\">
+
+        ";
+        // line 46
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 45, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 46, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 46
-            yield "            <div class=\"member-card\" data-department=\"management\" data-status=\"online\">
+            // line 47
+            yield "        <div class=\"member-card\"
+             data-status=\"";
+            // line 48
+            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["user"], "isEnable", [], "any", false, false, false, 48)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                yield "active";
+            } else {
+                yield "offline";
+            }
+            yield "\">
 
-                <div class=\"member-header\">
+            <div class=\"member-header\">
 
-                    <div class=\"member-avatar\">
-                        ";
-            // line 51
-            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["user"], "profilePictureName", [], "any", false, false, false, 51)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-                // line 52
-                yield "                            <img 
-                                src=\"";
-                // line 53
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, $context["user"], "profilePictureName", [], "any", false, false, false, 53))), "html", null, true);
-                yield "\" 
-                                alt=\"";
+                <div class=\"member-avatar\">
+                    ";
+            // line 53
+            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["user"], "profilePictureName", [], "any", false, false, false, 53)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 54
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 54), "html", null, true);
-                yield "\"
-                                class=\"avatar-img\"
-                            >
-                        ";
+                yield "                        <img src=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, $context["user"], "profilePictureName", [], "any", false, false, false, 54))), "html", null, true);
+                yield "\" 
+                             alt=\"";
+                // line 55
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 55), "html", null, true);
+                yield "\" 
+                             class=\"avatar-img\">
+                    ";
             } else {
                 // line 58
-                yield "                            ";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["user"], "fonctionScout", [], "any", false, false, false, 58), 0, 1), "html", null, true);
+                yield "                        ";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::slice($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 58), 0, 1), "html", null, true);
                 yield "
-                        ";
+                    ";
             }
             // line 60
-            yield "                    </div>
+            yield "                </div>
 
-                    <div class=\"member-info\">
-                        <div class=\"member-name\">";
+                <div class=\"member-info\">
+                    <div class=\"member-name\">";
             // line 63
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "username", [], "any", false, false, false, 63), "html", null, true);
             yield "</div>
-                        <div class=\"member-role\">";
+                    <div class=\"member-role\">";
             // line 64
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "fonctionScout", [], "any", false, false, false, 64), "html", null, true);
             yield "</div>
 
-                        <div class=\"member-contact\">
-                            <i class=\"bi bi-envelope\"></i>
-                            <span>";
+                    <div class=\"member-contact\">
+                        <i class=\"bi bi-envelope\"></i>
+                        <span>";
             // line 68
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 68), "html", null, true);
             yield "</span>
-                        </div>
+                    </div>
 
-                        <div class=\"member-contact\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>";
+                    <div class=\"member-contact\">
+                        <i class=\"bi bi-calendar\"></i>
+                        <span>";
             // line 73
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "createdAt", [], "any", false, false, false, 73), "M j, Y"), "html", null, true);
             yield "</span>
-                        </div>
                     </div>
+                </div>
 
-\t\t\t\t\t<div class=\"member-status ";
+                <div class=\"member-status ";
             // line 77
             if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["user"], "isEnable", [], "any", false, false, false, 77)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 yield "status-online";
@@ -215,76 +222,150 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
                 yield "status-offline";
             }
             yield "\">
-\t\t\t\t\t\t<i class=\"bi bi-circle-fill\"></i>
-\t\t\t\t\t\t";
+                    <i class=\"bi bi-circle-fill\"></i>
+                    ";
             // line 79
             if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["user"], "isEnable", [], "any", false, false, false, 79)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 80
-                yield "\t\t\t\t\t\t\tOnline
-\t\t\t\t\t\t";
+                yield "                        Online
+                    ";
             } else {
                 // line 82
-                yield "\t\t\t\t\t\t\tOffline
-\t\t\t\t\t\t";
+                yield "                        Offline
+                    ";
             }
             // line 84
-            yield "\t\t\t\t\t</div>
-
-                </div>
-
-                <div class=\"member-actions\">
-                    <a href=\"user-create.html\" class=\"action-btn\">
-                        <i class=\"bi bi-pencil\"></i>
-                        Edit
-                    </a>
-
-                    <a href=\"user-details.html\" class=\"action-btn\">
-                        <i class=\"bi bi-eye\"></i>
-                        View
-                    </a>
-                </div>
+            yield "                </div>
 
             </div>
-            ";
+
+        </div>
+        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['user'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 102
+        // line 90
         yield "
-\t\t</div>
+    </div>
 
-\t\t<!-- Pagination -->
-\t\t<nav aria-label=\"Task pagination\">
-\t\t\t<ul class=\"pagination\">
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link\" href=\"#\">
-\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
-\t\t\t\t\t</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link active\" href=\"#\">1</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link\" href=\"#\">2</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link\" href=\"#\">3</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link\" href=\"#\">
-\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
-\t\t\t\t\t</a>
-\t\t\t\t</li>
-\t\t\t</ul>
-\t\t</nav>
-\t</main>
+    <!-- Pagination -->
+    <nav aria-label=\"Task pagination\">
+        <ul class=\"pagination\">
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\"><i class=\"bi bi-chevron-left\"></i></a>
+            </li>
 
-\t";
-        // line 131
-        yield from $this->load("component/footeradmin.html.twig", 131)->unwrap()->yield($context);
-        // line 132
+            <li class=\"page-item\">
+                <a class=\"page-link active\" href=\"#\">1</a>
+            </li>
+
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\">2</a>
+            </li>
+
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\">3</a>
+            </li>
+
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\"><i class=\"bi bi-chevron-right\"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+</main>
+
+";
+        // line 120
+        yield from $this->load("component/footeradmin.html.twig", 120)->unwrap()->yield($context);
+        // line 121
         yield "
+";
+        // line 122
+        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
+        // line 180
+        yield "
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 122
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_javascripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 123
+        yield "<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('searchInput');
+    const memberCards = document.querySelectorAll('.member-card');
+
+    // FILTER
+    filterButtons.forEach(button => {
+
+        button.addEventListener('click', function () {
+
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+
+            memberCards.forEach(card => {
+
+                const status = card.dataset.status;
+
+                if (filter === 'all' || status === filter) {
+                    card.style.display = \"block\";
+                } else {
+                    card.style.display = \"none\";
+                }
+
+            });
+
+        });
+
+    });
+
+    // SEARCH
+    searchInput.addEventListener('input', function () {
+
+        const query = this.value.toLowerCase();
+
+        memberCards.forEach(card => {
+
+            const name = card.querySelector('.member-name').textContent.toLowerCase();
+
+            if (name.includes(query)) {
+                card.style.display = \"block\";
+            } else {
+                card.style.display = \"none\";
+            }
+
+        });
+
+    });
+
+});
+
+</script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -316,142 +397,190 @@ class __TwigTemplate_0bf32ee93ac783ddebf188b6e04f8132 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  287 => 132,  285 => 131,  254 => 102,  231 => 84,  227 => 82,  223 => 80,  221 => 79,  212 => 77,  205 => 73,  197 => 68,  190 => 64,  186 => 63,  181 => 60,  175 => 58,  168 => 54,  164 => 53,  161 => 52,  159 => 51,  152 => 46,  147 => 45,  122 => 22,  110 => 12,  107 => 11,  105 => 10,  102 => 9,  89 => 8,  77 => 5,  64 => 4,  41 => 1,);
+        return array (  313 => 123,  300 => 122,  288 => 180,  286 => 122,  283 => 121,  281 => 120,  249 => 90,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'component/baseadmin.html.twig' %}
 
-
 {% block title %}
-\tUser List
+    User List
 {% endblock %}
 
 {% block body %}
 
-\t{% include 'component/headeradmin.html.twig' %}
-\t{% include 'component/sidebaradmin.html.twig' %}
-\t<!-- ========== MAIN CONTENT ========== -->
-\t<main
-\t\tclass=\"main\" id=\"main\" role=\"main\">
-\t\t<!-- Page Header -->
-\t\t<div class=\"page-header\">
-\t\t\t<div class=\"page-title\">
-\t\t\t\t<h1>User Management</h1>
-\t\t\t\t<p>Manage your User, roles, and permissions</p>
-\t\t\t</div>
-\t\t\t<div class=\"page-actions\">
-\t\t\t\t<a href=\"{{ path('app_admin_useradmin_newuser') }}\" class=\"btn-primary\">
-\t\t\t\t\t<i class=\"bi bi-plus\"></i>
-\t\t\t\t\tNew User
-\t\t\t\t</a>
-\t\t\t</div>
-\t\t</div>
+{% include 'component/headeradmin.html.twig' %}
+{% include 'component/sidebaradmin.html.twig' %}
 
+<main class=\"main\" id=\"main\" role=\"main\">
 
-\t\t<!-- Filters and Search -->
-\t\t<div class=\"tasks-header mb-4\">
-\t\t\t<div class=\"filter-controls\">
-\t\t\t\t<button class=\"filter-btn active\" data-filter=\"all\">All Members</button>
-\t\t\t\t<button class=\"filter-btn\" data-filter=\"active\">Active</button>
-\t\t\t</div>
-\t\t\t<div class=\"search-box\">
-\t\t\t\t<i class=\"bi bi-search\"></i>
-\t\t\t\t<input type=\"text\" id=\"searchInput\" placeholder=\"Search user...\">
-\t\t\t</div>
-\t\t</div>
+    <!-- Page Header -->
+    <div class=\"page-header\">
+        <div class=\"page-title\">
+            <h1>User Management</h1>
+            <p>Manage your User, roles, and permissions</p>
+        </div>
 
-\t\t<!-- Team Members Grid -->
-\t\t<div class=\"team-grid\" id=\"teamGrid\">
-            {# Example member card - repeat for each user #}
-            {% for user in userlist %}
-            <div class=\"member-card\" data-department=\"management\" data-status=\"online\">
+        <div class=\"page-actions\">
+            <a href=\"{{ path('app_admin_useradmin_newuser') }}\" class=\"btn-primary\">
+                <i class=\"bi bi-plus\"></i>
+                New User
+            </a>
+        </div>
+    </div>
 
-                <div class=\"member-header\">
+    <!-- Filters and Search -->
+    <div class=\"tasks-header mb-4\">
+        <div class=\"filter-controls\">
+            <button class=\"filter-btn active\" data-filter=\"all\">All Members</button>
+            <button class=\"filter-btn\" data-filter=\"active\">Active</button>
+            <button class=\"filter-btn\" data-filter=\"offline\">Offline</button>
+        </div>
 
-                    <div class=\"member-avatar\">
-                        {% if user.profilePictureName %}
-                            <img 
-                                src=\"{{ asset('images/profiles/' ~ user.profilePictureName) }}\" 
-                                alt=\"{{ user.username }}\"
-                                class=\"avatar-img\"
-                            >
-                        {% else %}
-                            {{ user.fonctionScout|slice(0, 1) }}
-                        {% endif %}
-                    </div>
+        <div class=\"search-box\">
+            <i class=\"bi bi-search\"></i>
+            <input type=\"text\" id=\"searchInput\" placeholder=\"Search user...\">
+        </div>
+    </div>
 
-                    <div class=\"member-info\">
-                        <div class=\"member-name\">{{ user.username }}</div>
-                        <div class=\"member-role\">{{ user.fonctionScout }}</div>
+    <!-- Team Members Grid -->
+    <div class=\"team-grid\" id=\"teamGrid\">
 
-                        <div class=\"member-contact\">
-                            <i class=\"bi bi-envelope\"></i>
-                            <span>{{ user.email }}</span>
-                        </div>
+        {% for user in userlist %}
+        <div class=\"member-card\"
+             data-status=\"{% if user.isEnable %}active{% else %}offline{% endif %}\">
 
-                        <div class=\"member-contact\">
-                            <i class=\"bi bi-calendar\"></i>
-                            <span>{{ user.createdAt|date('M j, Y') }}</span>
-                        </div>
-                    </div>
+            <div class=\"member-header\">
 
-\t\t\t\t\t<div class=\"member-status {% if user.isEnable %}status-online{% else %}status-offline{% endif %}\">
-\t\t\t\t\t\t<i class=\"bi bi-circle-fill\"></i>
-\t\t\t\t\t\t{% if user.isEnable %}
-\t\t\t\t\t\t\tOnline
-\t\t\t\t\t\t{% else %}
-\t\t\t\t\t\t\tOffline
-\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t</div>
-
+                <div class=\"member-avatar\">
+                    {% if user.profilePictureName %}
+                        <img src=\"{{ asset('images/profiles/' ~ user.profilePictureName) }}\" 
+                             alt=\"{{ user.username }}\" 
+                             class=\"avatar-img\">
+                    {% else %}
+                        {{ user.username|slice(0,1) }}
+                    {% endif %}
                 </div>
 
-                <div class=\"member-actions\">
-                    <a href=\"user-create.html\" class=\"action-btn\">
-                        <i class=\"bi bi-pencil\"></i>
-                        Edit
-                    </a>
+                <div class=\"member-info\">
+                    <div class=\"member-name\">{{ user.username }}</div>
+                    <div class=\"member-role\">{{ user.fonctionScout }}</div>
 
-                    <a href=\"user-details.html\" class=\"action-btn\">
-                        <i class=\"bi bi-eye\"></i>
-                        View
-                    </a>
+                    <div class=\"member-contact\">
+                        <i class=\"bi bi-envelope\"></i>
+                        <span>{{ user.email }}</span>
+                    </div>
+
+                    <div class=\"member-contact\">
+                        <i class=\"bi bi-calendar\"></i>
+                        <span>{{ user.createdAt|date('M j, Y') }}</span>
+                    </div>
+                </div>
+
+                <div class=\"member-status {% if user.isEnable %}status-online{% else %}status-offline{% endif %}\">
+                    <i class=\"bi bi-circle-fill\"></i>
+                    {% if user.isEnable %}
+                        Online
+                    {% else %}
+                        Offline
+                    {% endif %}
                 </div>
 
             </div>
-            {% endfor %}
 
-\t\t</div>
+        </div>
+        {% endfor %}
 
-\t\t<!-- Pagination -->
-\t\t<nav aria-label=\"Task pagination\">
-\t\t\t<ul class=\"pagination\">
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link\" href=\"#\">
-\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
-\t\t\t\t\t</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link active\" href=\"#\">1</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link\" href=\"#\">2</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link\" href=\"#\">3</a>
-\t\t\t\t</li>
-\t\t\t\t<li class=\"page-item\">
-\t\t\t\t\t<a class=\"page-link\" href=\"#\">
-\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
-\t\t\t\t\t</a>
-\t\t\t\t</li>
-\t\t\t</ul>
-\t\t</nav>
-\t</main>
+    </div>
 
-\t{% include 'component/footeradmin.html.twig' %}
+    <!-- Pagination -->
+    <nav aria-label=\"Task pagination\">
+        <ul class=\"pagination\">
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\"><i class=\"bi bi-chevron-left\"></i></a>
+            </li>
+
+            <li class=\"page-item\">
+                <a class=\"page-link active\" href=\"#\">1</a>
+            </li>
+
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\">2</a>
+            </li>
+
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\">3</a>
+            </li>
+
+            <li class=\"page-item\">
+                <a class=\"page-link\" href=\"#\"><i class=\"bi bi-chevron-right\"></i></a>
+            </li>
+        </ul>
+    </nav>
+
+</main>
+
+{% include 'component/footeradmin.html.twig' %}
+
+{% block javascripts %}
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('searchInput');
+    const memberCards = document.querySelectorAll('.member-card');
+
+    // FILTER
+    filterButtons.forEach(button => {
+
+        button.addEventListener('click', function () {
+
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            const filter = this.dataset.filter;
+
+            memberCards.forEach(card => {
+
+                const status = card.dataset.status;
+
+                if (filter === 'all' || status === filter) {
+                    card.style.display = \"block\";
+                } else {
+                    card.style.display = \"none\";
+                }
+
+            });
+
+        });
+
+    });
+
+    // SEARCH
+    searchInput.addEventListener('input', function () {
+
+        const query = this.value.toLowerCase();
+
+        memberCards.forEach(card => {
+
+            const name = card.querySelector('.member-name').textContent.toLowerCase();
+
+            if (name.includes(query)) {
+                card.style.display = \"block\";
+            } else {
+                card.style.display = \"none\";
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+{% endblock %}
 
 {% endblock %}
 ", "admin/useradmin/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\useradmin\\index.html.twig");

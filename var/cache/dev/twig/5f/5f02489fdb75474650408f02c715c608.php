@@ -107,102 +107,102 @@ class __TwigTemplate_d9a76d35cea49bbe3d9c352247db547f extends Template
         yield "\t";
         yield from $this->load("component/sidebaradmin.html.twig", 11)->unwrap()->yield($context);
         // line 12
-        yield "    <!-- ========== MAIN CONTENT ========== -->
-    <main
-        class=\"main\" id=\"main\" role=\"main\">
-        <!-- Page Header -->
-        <div class=\"page-header\">
-            <div class=\"page-title\">
-                <h1>Create New User</h1>
-                <p>Fill in the details to create a new user account</p>
-            </div>
-            <div class=\"page-actions\">
-                <a href=\"";
+        yield "\t<!-- ========== MAIN CONTENT ========== -->
+\t<main
+\t\tclass=\"main\" id=\"main\" role=\"main\">
+\t\t<!-- Page Header -->
+\t\t<div class=\"page-header\">
+\t\t\t<div class=\"page-title\">
+\t\t\t\t<h1>Create New User</h1>
+\t\t\t\t<p>Fill in the details to create a new user account</p>
+\t\t\t</div>
+\t\t\t<div class=\"page-actions\">
+\t\t\t\t<a href=\"";
         // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_useradmin");
         yield "\" class=\"btn-secondary\">
-                    <i class=\"bi bi-arrow-left\"></i>
-                    Back to User List
-                </a>
-            </div>
-        </div>
+\t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
+\t\t\t\t\tBack to User List
+\t\t\t\t</a>
+\t\t\t</div>
+\t\t</div>
 
-        <!-- New User Form -->
-        <div class=\"card mb-4\">
-            <div class=\"card-body\">
-                ";
+\t\t<!-- New User Form -->
+\t\t<div class=\"card mb-4\">
+\t\t\t<div class=\"card-body\">
+\t\t\t\t";
         // line 32
         yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 32, $this->source); })()), 'form_start');
         yield "
-                    <div class=\"form-group mb-3\">
-                        ";
+\t\t\t\t<div class=\"form-group mb-3\">
+\t\t\t\t\t";
         // line 34
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 34, $this->source); })()), "username", [], "any", false, false, false, 34), 'label');
         yield "
-                        ";
+\t\t\t\t\t";
         // line 35
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 35, $this->source); })()), "username", [], "any", false, false, false, 35), 'widget', ["attr" => ["class" => "form-control"]]);
         yield "
-                        ";
+\t\t\t\t\t";
         // line 36
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 36, $this->source); })()), "username", [], "any", false, false, false, 36), 'errors');
         yield "
-                    </div>
-                    <div class=\"form-group mb-3\">
-                        ";
+\t\t\t\t</div>
+\t\t\t\t<div class=\"form-group mb-3\">
+\t\t\t\t\t";
         // line 39
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 39, $this->source); })()), "email", [], "any", false, false, false, 39), 'label');
         yield "
-                        ";
+\t\t\t\t\t";
         // line 40
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 40, $this->source); })()), "email", [], "any", false, false, false, 40), 'widget', ["attr" => ["class" => "form-control"]]);
         yield "
-                        ";
+\t\t\t\t\t";
         // line 41
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 41, $this->source); })()), "email", [], "any", false, false, false, 41), 'errors');
         yield "
-                    </div>
-                    <div class=\"form-group mb-3\">
-                        ";
+\t\t\t\t</div>
+\t\t\t\t<div class=\"form-group mb-3\">
+\t\t\t\t\t";
         // line 44
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 44, $this->source); })()), "plainPassword", [], "any", false, false, false, 44), 'label');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 44, $this->source); })()), "password", [], "any", false, false, false, 44), 'label');
         yield "
-                        ";
+\t\t\t\t\t";
         // line 45
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 45, $this->source); })()), "plainPassword", [], "any", false, false, false, 45), 'widget', ["attr" => ["class" => "form-control"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 45, $this->source); })()), "password", [], "any", false, false, false, 45), 'widget', ["attr" => ["class" => "form-control"]]);
         yield "
-                        ";
+\t\t\t\t\t";
         // line 46
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 46, $this->source); })()), "plainPassword", [], "any", false, false, false, 46), 'errors');
-        yield "   
-                    </div>
-                    <div class=\"form-group mb-3\">
-                        ";
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 46, $this->source); })()), "password", [], "any", false, false, false, 46), 'errors');
+        yield "
+\t\t\t\t</div>
+\t\t\t\t<div class=\"form-group mb-3\">
+\t\t\t\t\t";
         // line 49
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 49, $this->source); })()), "profilePictureFile", [], "any", false, false, false, 49), 'label');
         yield "
-                        ";
+\t\t\t\t\t";
         // line 50
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 50, $this->source); })()), "profilePictureFile", [], "any", false, false, false, 50), 'widget', ["attr" => ["class" => "form-control"]]);
         yield "
-                        ";
+\t\t\t\t\t";
         // line 51
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 51, $this->source); })()), "profilePictureFile", [], "any", false, false, false, 51), 'errors');
         yield "
-                    </div>
-                    
-                    <button type=\"submit\" class=\"btn-primary\">
-                        <i class=\"bi bi-check\"></i>
-                        Create User 
-                    </button>
-                ";
+\t\t\t\t</div>
+
+\t\t\t\t<button type=\"submit\" class=\"btn-primary\">
+\t\t\t\t\t<i class=\"bi bi-check\"></i>
+\t\t\t\t\tCreate User
+\t\t\t\t</button>
+\t\t\t\t";
         // line 58
         yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["userform"]) || array_key_exists("userform", $context) ? $context["userform"] : (function () { throw new RuntimeError('Variable "userform" does not exist.', 58, $this->source); })()), 'form_end');
         yield "
-            </div>
-        </div>
-    </main>
-    \t";
+\t\t\t</div>
+\t\t</div>
+\t</main>
+\t";
         // line 62
         yield from $this->load("component/footeradmin.html.twig", 62)->unwrap()->yield($context);
         
@@ -251,57 +251,57 @@ class __TwigTemplate_d9a76d35cea49bbe3d9c352247db547f extends Template
 
 \t{% include 'component/headeradmin.html.twig' %}
 \t{% include 'component/sidebaradmin.html.twig' %}
-    <!-- ========== MAIN CONTENT ========== -->
-    <main
-        class=\"main\" id=\"main\" role=\"main\">
-        <!-- Page Header -->
-        <div class=\"page-header\">
-            <div class=\"page-title\">
-                <h1>Create New User</h1>
-                <p>Fill in the details to create a new user account</p>
-            </div>
-            <div class=\"page-actions\">
-                <a href=\"{{ path('app_admin_useradmin') }}\" class=\"btn-secondary\">
-                    <i class=\"bi bi-arrow-left\"></i>
-                    Back to User List
-                </a>
-            </div>
-        </div>
+\t<!-- ========== MAIN CONTENT ========== -->
+\t<main
+\t\tclass=\"main\" id=\"main\" role=\"main\">
+\t\t<!-- Page Header -->
+\t\t<div class=\"page-header\">
+\t\t\t<div class=\"page-title\">
+\t\t\t\t<h1>Create New User</h1>
+\t\t\t\t<p>Fill in the details to create a new user account</p>
+\t\t\t</div>
+\t\t\t<div class=\"page-actions\">
+\t\t\t\t<a href=\"{{ path('app_admin_useradmin') }}\" class=\"btn-secondary\">
+\t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
+\t\t\t\t\tBack to User List
+\t\t\t\t</a>
+\t\t\t</div>
+\t\t</div>
 
-        <!-- New User Form -->
-        <div class=\"card mb-4\">
-            <div class=\"card-body\">
-                {{ form_start(userform) }}
-                    <div class=\"form-group mb-3\">
-                        {{ form_label(userform.username) }}
-                        {{ form_widget(userform.username, {'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(userform.username) }}
-                    </div>
-                    <div class=\"form-group mb-3\">
-                        {{ form_label(userform.email) }}
-                        {{ form_widget(userform.email, {'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(userform.email) }}
-                    </div>
-                    <div class=\"form-group mb-3\">
-                        {{ form_label(userform.plainPassword) }}
-                        {{ form_widget(userform.plainPassword, {'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(userform.plainPassword) }}   
-                    </div>
-                    <div class=\"form-group mb-3\">
-                        {{ form_label(userform.profilePictureFile) }}
-                        {{ form_widget(userform.profilePictureFile, {'attr': {'class': 'form-control'}}) }}
-                        {{ form_errors(userform.profilePictureFile) }}
-                    </div>
-                    
-                    <button type=\"submit\" class=\"btn-primary\">
-                        <i class=\"bi bi-check\"></i>
-                        Create User 
-                    </button>
-                {{ form_end(userform) }}
-            </div>
-        </div>
-    </main>
-    \t{% include 'component/footeradmin.html.twig' %}
+\t\t<!-- New User Form -->
+\t\t<div class=\"card mb-4\">
+\t\t\t<div class=\"card-body\">
+\t\t\t\t{{ form_start(userform) }}
+\t\t\t\t<div class=\"form-group mb-3\">
+\t\t\t\t\t{{ form_label(userform.username) }}
+\t\t\t\t\t{{ form_widget(userform.username, {'attr': {'class': 'form-control'}}) }}
+\t\t\t\t\t{{ form_errors(userform.username) }}
+\t\t\t\t</div>
+\t\t\t\t<div class=\"form-group mb-3\">
+\t\t\t\t\t{{ form_label(userform.email) }}
+\t\t\t\t\t{{ form_widget(userform.email, {'attr': {'class': 'form-control'}}) }}
+\t\t\t\t\t{{ form_errors(userform.email) }}
+\t\t\t\t</div>
+\t\t\t\t<div class=\"form-group mb-3\">
+\t\t\t\t\t{{ form_label(userform.password) }}
+\t\t\t\t\t{{ form_widget(userform.password, {'attr': {'class': 'form-control'}}) }}
+\t\t\t\t\t{{ form_errors(userform.password) }}
+\t\t\t\t</div>
+\t\t\t\t<div class=\"form-group mb-3\">
+\t\t\t\t\t{{ form_label(userform.profilePictureFile) }}
+\t\t\t\t\t{{ form_widget(userform.profilePictureFile, {'attr': {'class': 'form-control'}}) }}
+\t\t\t\t\t{{ form_errors(userform.profilePictureFile) }}
+\t\t\t\t</div>
+
+\t\t\t\t<button type=\"submit\" class=\"btn-primary\">
+\t\t\t\t\t<i class=\"bi bi-check\"></i>
+\t\t\t\t\tCreate User
+\t\t\t\t</button>
+\t\t\t\t{{ form_end(userform) }}
+\t\t\t</div>
+\t\t</div>
+\t</main>
+\t{% include 'component/footeradmin.html.twig' %}
 {% endblock %}
 ", "admin/useradmin/new.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\useradmin\\new.html.twig");
     }

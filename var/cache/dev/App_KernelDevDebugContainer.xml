@@ -569,6 +569,9 @@
       <tag name="kernel.event_listener" event="Symfony\Component\Security\Http\Event\LogoutEvent" method="onLogout"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
+    <service id="App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
     <service id="App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
@@ -1638,6 +1641,7 @@
         <argument>Vich\UploaderBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AddnewuserFormAdminType</argument>
         <argument>App\Form\PostFormType</argument>
         <argument>App\Form\ProfileType</argument>
         <argument>App\Form\RegistrationFormType</argument>
@@ -4494,7 +4498,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.EjdK.Fz"/>
+      <argument type="service" id=".service_locator.6NVlYuP"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4603,6 +4607,7 @@
       <argument type="service" id="form.server_params"/>
       <argument>%form.type_extension.csrf.field_attr%</argument>
       <argument type="collection">
+        <argument key="App\Form\AddnewuserFormAdminType">submit</argument>
         <argument key="App\Form\PostFormType">submit</argument>
         <argument key="App\Form\ProfileType">submit</argument>
         <argument key="App\Form\RegistrationFormType">submit</argument>
@@ -8792,6 +8797,8 @@
     <service id=".abstract.instanceof.App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProfileType" class="App\Form\ProfileType" autowire="true" abstract="true"/>
@@ -9782,9 +9789,10 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.EjdK.Fz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.6NVlYuP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AddnewuserFormAdminType" type="service_closure" id="App\Form\AddnewuserFormAdminType"/>
         <argument key="App\Form\PostFormType" type="service_closure" id="App\Form\PostFormType"/>
         <argument key="App\Form\ProfileType" type="service_closure" id="App\Form\ProfileType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
