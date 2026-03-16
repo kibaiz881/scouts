@@ -54,3 +54,6 @@ e63940,127.0.0.1,GET,http://127.0.0.1:8000/admin,1773644279,,200,request
 6bc5b5,127.0.0.1,GET,http://127.0.0.1:8000/admin/useradmin,1773644287,,200,request
 4f6c8f,127.0.0.1,GET,http://127.0.0.1:8000/admin/useradmin/new,1773644586,,200,request
 8fedb6,127.0.0.1,GET,http://127.0.0.1:8000/admin/useradmin,1773644708,,200,request
+9db636,127.0.0.1,GET,http://127.0.0.1:8000/logout,1773644891,,302,request
+85f860,127.0.0.1,GET,http://127.0.0.1:8000/,1773644891,,200,request
+cc0a89,127.0.0.1,GET,http://127.0.0.1:8000/admin/useradmin,1773644896,,200,request
