@@ -1,0 +1,134 @@
+{% extends 'component/baseadmin.html.twig' %}
+
+{% block title %}
+	Sampana - Admin
+{% endblock %}
+
+{% block body %}
+	{% include 'component/headeradmin.html.twig' %}
+	{% include 'component/sidebaradmin.html.twig' %}
+
+	<main
+		class="main" id="main" role="main">
+		<!-- Page Header -->
+		<div class="page-header">
+			<div class="page-title">
+				<h1>Team Management</h1>
+				<p>Manage your team members</p>
+			</div>
+			<div class="page-actions">
+				<a href="user-create.html" class="btn-primary" id="inviteMemberBtn">
+					<i class="bi bi-plus"></i>
+					New Member
+				</a>
+			</div>
+		</div>
+
+
+		<!-- Filters and Search -->
+		<div class="tasks-header mb-4">
+			<div class="filter-controls">
+				<button class="filter-btn active" data-filter="all">All Members</button>
+				<button class="filter-btn" data-filter="active">Active</button>
+				<button class="filter-btn" data-filter="design">Design</button>
+				<button class="filter-btn" data-filter="development">Development</button>
+				<button class="filter-btn" data-filter="management">Management</button>
+			</div>
+			<div class="search-box">
+				<i class="bi bi-search"></i>
+				<input type="text" id="searchInput" placeholder="Search tasks...">
+			</div>
+		</div>
+
+		<!-- Team Members Grid -->
+		<div class="team-grid" id="teamGrid">
+			<div class="member-card" data-department="development" data-status="online">
+				<div class="member-header">
+					<div class="member-avatar" style="background: #10b981;">
+						MB
+					</div>
+					<div class="member-info">
+						<div class="member-name">Michael Brown</div>
+						<div class="member-role">Frontend Developer</div>
+						<div class="member-contact">
+							<i class="bi bi-envelope"></i>
+							<span>michael.brown@template.com</span>
+						</div>
+						<div class="member-contact">
+							<i class="bi bi-calendar"></i>
+							<span>Joined Nov 22, 2023</span>
+						</div>
+					</div>
+					<div class="member-status status-online">
+						<i class="bi bi-circle-fill"></i>
+						Online
+					</div>
+				</div>
+
+				<div class="skills-container">
+					<span class="skill-tag">React</span>
+					<span class="skill-tag">TypeScript</span>
+					<span class="skill-tag">Next.js</span>
+					<span class="skill-tag">Tailwind</span>
+				</div>
+
+				<div class="metrics-grid">
+					<div class="metric-item">
+						<div class="metric-value">56</div>
+						<div class="metric-label">Tasks Done</div>
+					</div>
+					<div class="metric-item">
+						<div class="metric-value">6</div>
+						<div class="metric-label">Active Tasks</div>
+					</div>
+					<div class="metric-item">
+						<div class="metric-value">90%</div>
+						<div class="metric-label">Availability</div>
+					</div>
+				</div>
+
+				<div class="member-actions">
+					<button class="action-btn">
+						<i class="bi bi-person"></i>
+						Profile
+					</button>
+					<button class="action-btn">
+						<i class="bi bi-chat"></i>
+						Message
+					</button>
+					<button class="action-btn">
+						<i class="bi bi-plus-circle"></i>
+						Task
+					</button>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Pagination -->
+		<nav aria-label="Task pagination">
+			<ul class="pagination">
+				<li class="page-item">
+					<a class="page-link" href="#">
+						<i class="bi bi-chevron-left"></i>
+					</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link active" href="#">1</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">2</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">3</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="#">
+						<i class="bi bi-chevron-right"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</main>
+	{% include 'component/footeradmin.html.twig' %}
+{% endblock %}

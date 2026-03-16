@@ -140,13 +140,16 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"team.html\" role=\"menuitem\" title=\"Team\">
+                <a href=\"";
+        // line 84
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana");
+        yield "\" role=\"menuitem\" title=\"Team\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                         <circle cx=\"9\" cy=\"8\" r=\"3\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <circle cx=\"17\" cy=\"8\" r=\"3\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <path d=\"M2 20c1.5-3 4-5 7-5M22 20c-1.5-3-4-5-7-5\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     </svg>
-                    <span class=\"label\">Team</span>
+                    <span class=\"label\">Sampana</span>
                 </a>
             </li>
 
@@ -285,7 +288,7 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  187 => 126,  132 => 74,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
+        return array (  190 => 126,  145 => 84,  132 => 74,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -373,13 +376,13 @@ class __TwigTemplate_83ca56e7326f7702f6b033d0aa282031 extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"team.html\" role=\"menuitem\" title=\"Team\">
+                <a href=\"{{path('app_admin_sampana')}}\" role=\"menuitem\" title=\"Team\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                         <circle cx=\"9\" cy=\"8\" r=\"3\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <circle cx=\"17\" cy=\"8\" r=\"3\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <path d=\"M2 20c1.5-3 4-5 7-5M22 20c-1.5-3-4-5-7-5\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     </svg>
-                    <span class=\"label\">Team</span>
+                    <span class=\"label\">Sampana</span>
                 </a>
             </li>
 

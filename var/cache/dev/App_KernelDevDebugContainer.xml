@@ -534,6 +534,14 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\PostAdminController"/>
       </call>
     </service>
+    <service id="App\Controller\admin\SampanaController" class="App\Controller\admin\SampanaController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\SampanaController"/>
+      </call>
+    </service>
     <service id="App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.controller"/>
@@ -558,6 +566,10 @@
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
     <service id="App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
@@ -586,6 +598,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -3962,6 +3978,7 @@
         <argument>App\Controller\SecurityController</argument>
         <argument>App\Controller\UserController</argument>
         <argument>App\Controller\admin\PostAdminController</argument>
+        <argument>App\Controller\admin\SampanaController</argument>
         <argument>App\Controller\admin\SettingadminController</argument>
         <argument>App\Controller\admin\UseradminController</argument>
       </argument>
@@ -5926,7 +5943,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.uwrdGnF"/>
+      <argument type="service" id=".service_locator.8psXAmt"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -8783,6 +8800,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\admin\PostAdminController.0.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\SampanaController" class="App\Controller\admin\SampanaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\SampanaController" class="App\Controller\admin\SampanaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\admin\SampanaController.0.App\Controller\admin\SampanaController" class="App\Controller\admin\SampanaController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\admin\SampanaController" class="App\Controller\admin\SampanaController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\admin\SettingadminController.0.App\Controller\admin\SettingadminController" class="App\Controller\admin\SettingadminController" autowire="true" abstract="true"/>
@@ -8795,6 +8816,8 @@
     <service id=".abstract.instanceof.App\Entity\Category" class="App\Entity\Category" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Post.0.App\Entity\Post" class="App\Entity\Post" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Sampana.0.App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" abstract="true"/>
@@ -8809,6 +8832,8 @@
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Vich\UploaderBundle\Naming\NamerInterface.0.Vich\UploaderBundle\Naming\UniqidNamer" class="Vich\UploaderBundle\Naming\UniqidNamer" autowire="true" abstract="true"/>
@@ -9975,11 +10000,12 @@
         <argument key="vich_uploader.listener.upload.post_image" type="service_closure" id="vich_uploader.listener.upload.post_image"/>
       </argument>
     </service>
-    <service id=".service_locator.uwrdGnF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.8psXAmt" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
         <argument key="App\Repository\PostRepository" type="service_closure" id="App\Repository\PostRepository"/>
+        <argument key="App\Repository\SampanaRepository" type="service_closure" id="App\Repository\SampanaRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -10327,6 +10353,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.TJNRSaV" method="withContext"/>
     </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\admin\SampanaController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\SampanaController"/>
+      <argument>App\Controller\admin\SampanaController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
     <service id=".service_locator.TJNRSaV.App\Controller\admin\SettingadminController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\SettingadminController"/>
       <argument>App\Controller\admin\SettingadminController</argument>
@@ -10564,6 +10596,7 @@
           <argument>App\Controller\SecurityController</argument>
           <argument>App\Controller\UserController</argument>
           <argument>App\Controller\admin\PostAdminController</argument>
+          <argument>App\Controller\admin\SampanaController</argument>
           <argument>App\Controller\admin\SettingadminController</argument>
           <argument>App\Controller\admin\UseradminController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>

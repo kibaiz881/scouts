@@ -27,6 +27,9 @@ class Category
     #[ORM\OneToMany(targetEntity: Post::class, mappedBy: 'category')]
     private Collection $posts;
 
+    #[ORM\ManyToOne(inversedBy: 'categorySmp')]
+    private ?Sampana $Sampana = null;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -87,6 +90,18 @@ class Category
                 $post->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSampana(): ?Sampana
+    {
+        return $this->Sampana;
+    }
+
+    public function setSampana(?Sampana $Sampana): static
+    {
+        $this->Sampana = $Sampana;
 
         return $this;
     }

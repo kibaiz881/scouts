@@ -158,3 +158,14 @@ e182a7,127.0.0.1,DELETE,http://127.0.0.1:8000/admin/useradmin/delete/17,17736639
 1a8fc8,127.0.0.1,DELETE,http://127.0.0.1:8000/admin/useradmin/delete/11,1773663985,,200,request
 0cefe6,127.0.0.1,DELETE,http://127.0.0.1:8000/admin/useradmin/delete/16,1773665216,,200,request
 ff9a1b,127.0.0.1,GET,http://127.0.0.1:8000/admin/settingadmin,1773665527,,200,request
+7bb402,127.0.0.1,GET,http://127.0.0.1:8000/admin/post/admin,1773665838,,200,request
+38effa,127.0.0.1,GET,http://127.0.0.1:8000/admin/post/admin,1773666109,,200,request
+c7d524,127.0.0.1,GET,http://127.0.0.1:8000/admin/post/admin,1773666115,,200,request
+b8aaa7,127.0.0.1,GET,http://127.0.0.1:8000/admin/sampana,1773666117,,200,request
+96ee67,127.0.0.1,GET,http://127.0.0.1:8000/admin/sampana,1773666251,,200,request
+cb82bf,127.0.0.1,GET,http://127.0.0.1:8000/admin/sampana,1773666280,,200,request
+24c705,127.0.0.1,GET,http://127.0.0.1:8000/admin/sampana,1773666362,,200,request
+5cc273,127.0.0.1,GET,http://127.0.0.1:8000/admin/sampana,1773666465,,200,request
+bfe070,127.0.0.1,GET,http://127.0.0.1:8000/admin/user-create.html,1773666511,f267c3,404,request
+f267c3,127.0.0.1,GET,http://127.0.0.1:8000/admin/user-create.html,1773666512,,404,request
+da50fe,127.0.0.1,GET,http://127.0.0.1:8000/,1773667572,,200,request
