@@ -68,11 +68,18 @@ return [
                             .'|approve/([^/]++)(*:332)'
                             .'|reject/([^/]++)(*:355)'
                         .')'
-                        .'|settingadmin/edit/([^/]++)(*:390)'
-                        .'|useradmin/delete/([^/]++)(*:423)'
+                        .'|s(?'
+                            .'|ampana/(?'
+                                .'|([^/]++)(*:386)'
+                                .'|edit/([^/]++)(*:407)'
+                                .'|delete/([^/]++)(*:430)'
+                            .')'
+                            .'|ettingadmin/edit/([^/]++)(*:464)'
+                        .')'
+                        .'|useradmin/delete/([^/]++)(*:498)'
                     .')'
                 .')'
-                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:460)'
+                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:535)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -89,9 +96,12 @@ return [
         290 => [[['_route' => 'app_actualite_category', '_controller' => 'App\\Controller\\ActualiteController::category'], ['category'], null, null, false, true, null]],
         332 => [[['_route' => 'app_post_approve', '_controller' => 'App\\Controller\\admin\\PostAdminController::approve'], ['id'], ['POST' => 0], null, false, true, null]],
         355 => [[['_route' => 'app_post_reject', '_controller' => 'App\\Controller\\admin\\PostAdminController::reject'], ['id'], ['POST' => 0], null, false, true, null]],
-        390 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
-        423 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        460 => [
+        386 => [[['_route' => 'app_admin_sampana_view', '_controller' => 'App\\Controller\\admin\\SampanaController::view'], ['id'], null, null, false, true, null]],
+        407 => [[['_route' => 'app_admin_sampana_edit', '_controller' => 'App\\Controller\\admin\\SampanaController::edit'], ['id'], null, null, false, true, null]],
+        430 => [[['_route' => 'app_admin_sampana_delete', '_controller' => 'App\\Controller\\admin\\SampanaController::delete'], ['id'], null, null, false, true, null]],
+        464 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
+        498 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        535 => [
             [['_route' => 'app_blog', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\BlogController::index'], ['page', 'itemsPerPage'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

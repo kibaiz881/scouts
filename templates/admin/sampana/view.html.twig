@@ -1,0 +1,96 @@
+{% extends 'component/baseadmin.html.twig' %}
+
+{% block title %}
+	Sampana - Admin - View
+{% endblock %}
+
+{% block body %}
+	{% include 'component/headeradmin.html.twig' %}
+	{% include 'component/sidebaradmin.html.twig' %}
+
+	<main class="main" id="main" role="main">
+		<div class="page-header">
+			<div class="page-title">
+				<h1>View Team {{ sampana.nomSampana }} ({{ sampana.codeSampana }})</h1>
+				<p>View user profile sampana</p>
+			</div>
+			<div class="page-actions">
+				<a href="{{ path('app_admin_sampana') }}" class="btn-secondary">
+					<i class="bi bi-arrow-left"></i>
+					Back to team list
+				</a>
+			</div>
+		</div>
+		<div class="form-card">
+			<div class="form-header">
+				<h3 class="form-title">
+					<i class="bi bi-person"></i>
+					Basic Information
+				</h3>
+				<p class="form-subtitle">Consultation uniquement</p>
+			</div>
+
+			<!-- AVATAR -->
+			<div class="avatar-upload">
+				<div class="avatar-preview">
+					<img src="{{ asset('images/sampana/' ~ sampana.sampanaPictureName) }}" alt="Avatar">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Full Name</label>
+						<div class="form-control bg-light">
+							{{ sampana.nomSampana }}
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Adresse</label>
+						<div class="form-control bg-light">
+							{{ sampana.profileSampana }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Effectif</label>
+						<div class="form-control bg-light">
+							{{ sampana.EffectifSampana }}
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Date de création</label>
+						<div class="form-control bg-light">
+							{{ sampana.createdAt|date('Y-m-d') }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Description</label>
+						<div class="form-control bg-light" style="min-height: 80px;">
+							{{ sampana.description }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</main>
+
+	{% include 'component/footeradmin.html.twig' %}
+{% endblock %}

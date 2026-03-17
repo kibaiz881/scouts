@@ -138,6 +138,11 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
             'Monolog\\' => 8,
             'Metadata\\' => 9,
         ),
+        'K' => 
+        array (
+            'Knp\\Component\\' => 14,
+            'Knp\\Bundle\\PaginatorBundle\\' => 27,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -534,6 +539,14 @@ class ComposerStaticInit7246353e5bb23c8719402c051dcd5671
         'Metadata\\' => 
         array (
             0 => __DIR__ . '/..' . '/jms/metadata/src',
+        ),
+        'Knp\\Component\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component',
+        ),
+        'Knp\\Bundle\\PaginatorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src',
         ),
         'Egulias\\EmailValidator\\' => 
         array (
