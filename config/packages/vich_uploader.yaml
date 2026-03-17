@@ -2,11 +2,15 @@ vich_uploader:
     db_driver: orm
 
     mappings:
-        profile_image:
+         profile_image:
            uri_prefix: /images/profiles
            upload_destination: '%kernel.project_dir%/public/images/profiles'
            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer   
-        post_image:
+         post_image:
            uri_prefix: /images/posts
            upload_destination: '%kernel.project_dir%/public/images/posts'
            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+         sampana_image:
+            uri_prefix: /images/sampana
+            upload_destination: '%kernel.project_dir%/public/images/sampana'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* /admin/sampana/index.html.twig */
+/* admin/sampana/index.html.twig */
 class __TwigTemplate_f4d8827b324e6add34699a3b8d81d94c extends Template
 {
     private Source $source;
@@ -45,10 +45,10 @@ class __TwigTemplate_f4d8827b324e6add34699a3b8d81d94c extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/admin/sampana/index.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/sampana/index.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/admin/sampana/index.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/sampana/index.html.twig"));
 
         $this->parent = $this->load("component/baseadmin.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
@@ -115,7 +115,10 @@ class __TwigTemplate_f4d8827b324e6add34699a3b8d81d94c extends Template
 \t\t\t\t<p>Manage your team members</p>
 \t\t\t</div>
 \t\t\t<div class=\"page-actions\">
-\t\t\t\t<a href=\"user-create.html\" class=\"btn-primary\" id=\"inviteMemberBtn\">
+\t\t\t\t<a href=\"";
+        // line 20
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana_new");
+        yield "\" class=\"btn-primary\" id=\"inviteMemberBtn\">
 \t\t\t\t\t<i class=\"bi bi-plus\"></i>
 \t\t\t\t\tNew Member
 \t\t\t\t</a>
@@ -245,7 +248,7 @@ class __TwigTemplate_f4d8827b324e6add34699a3b8d81d94c extends Template
      */
     public function getTemplateName(): string
     {
-        return "/admin/sampana/index.html.twig";
+        return "admin/sampana/index.html.twig";
     }
 
     /**
@@ -261,7 +264,7 @@ class __TwigTemplate_f4d8827b324e6add34699a3b8d81d94c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  233 => 133,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  236 => 133,  120 => 20,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -285,7 +288,7 @@ class __TwigTemplate_f4d8827b324e6add34699a3b8d81d94c extends Template
 \t\t\t\t<p>Manage your team members</p>
 \t\t\t</div>
 \t\t\t<div class=\"page-actions\">
-\t\t\t\t<a href=\"user-create.html\" class=\"btn-primary\" id=\"inviteMemberBtn\">
+\t\t\t\t<a href=\"{{ path('app_admin_sampana_new') }}\" class=\"btn-primary\" id=\"inviteMemberBtn\">
 \t\t\t\t\t<i class=\"bi bi-plus\"></i>
 \t\t\t\t\tNew Member
 \t\t\t\t</a>
@@ -400,6 +403,6 @@ class __TwigTemplate_f4d8827b324e6add34699a3b8d81d94c extends Template
 \t</main>
 \t{% include 'component/footeradmin.html.twig' %}
 {% endblock %}
-", "/admin/sampana/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\sampana\\index.html.twig");
+", "admin/sampana/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\sampana\\index.html.twig");
     }
 }

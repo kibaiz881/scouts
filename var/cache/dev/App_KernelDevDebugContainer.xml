@@ -322,6 +322,24 @@
         <parameter key="namer_keep_extension">false</parameter>
         <parameter key="db_driver">orm</parameter>
       </parameter>
+      <parameter key="sampana_image" type="collection">
+        <parameter key="uri_prefix">/images/sampana</parameter>
+        <parameter key="upload_destination">C:\Users\M_INFO\Music\scouts/public/images/sampana</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\SmartUniqueNamer.sampana_image</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="erase_fields">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="namer_keep_extension">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
     </parameter>
     <parameter key="vich_uploader.use_flysystem_to_resolve_uri">false</parameter>
     <parameter key="data_collector.templates" type="collection">
@@ -593,6 +611,9 @@
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
+    <service id="App\Form\SampanaFormType" class="App\Form\SampanaFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
     <service id="App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -641,7 +662,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.hI.TbV9"/>
+      <argument type="service" id=".service_locator.Iw_WiDc"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -1661,6 +1682,7 @@
         <argument>App\Form\PostFormType</argument>
         <argument>App\Form\ProfileType</argument>
         <argument>App\Form\RegistrationFormType</argument>
+        <argument>App\Form\SampanaFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -3891,7 +3913,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.hI.TbV9"/>
+      <argument type="service" id=".service_locator.Iw_WiDc"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4515,7 +4537,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.6NVlYuP"/>
+      <argument type="service" id=".service_locator.XnivPdY"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4628,6 +4650,7 @@
         <argument key="App\Form\PostFormType">submit</argument>
         <argument key="App\Form\ProfileType">submit</argument>
         <argument key="App\Form\RegistrationFormType">submit</argument>
+        <argument key="App\Form\SampanaFormType">submit</argument>
       </argument>
     </service>
     <service id="validator.builder" class="Symfony\Component\Validator\ValidatorBuilder">
@@ -5734,7 +5757,7 @@
       </call>
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager">
-      <argument type="service" id=".service_locator.kj8iu.l"/>
+      <argument type="service" id=".service_locator.6ynf2Lm"/>
       <argument type="collection">
         <argument type="collection">
           <argument type="collection">
@@ -5747,6 +5770,12 @@
             <argument>preUpdate</argument>
           </argument>
           <argument>vich_uploader.listener.clean.post_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preUpdate</argument>
+          </argument>
+          <argument>vich_uploader.listener.clean.sampana_image</argument>
         </argument>
         <argument type="collection">
           <argument type="collection">
@@ -5849,6 +5878,30 @@
             <argument>preUpdate</argument>
           </argument>
           <argument>vich_uploader.listener.upload.post_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preRemove</argument>
+          </argument>
+          <argument>vich_uploader.listener.remove.sampana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>postFlush</argument>
+          </argument>
+          <argument>vich_uploader.listener.remove.sampana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>prePersist</argument>
+          </argument>
+          <argument>vich_uploader.listener.upload.sampana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preUpdate</argument>
+          </argument>
+          <argument>vich_uploader.listener.upload.sampana_image</argument>
         </argument>
       </argument>
     </service>
@@ -8325,6 +8378,9 @@
     <service id="Vich\UploaderBundle\Naming\SmartUniqueNamer.post_image" class="Vich\UploaderBundle\Naming\SmartUniqueNamer" autowire="true">
       <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
     </service>
+    <service id="Vich\UploaderBundle\Naming\SmartUniqueNamer.sampana_image" class="Vich\UploaderBundle\Naming\SmartUniqueNamer" autowire="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
     <service id="vich_uploader.adapter.mongodb" class="Vich\UploaderBundle\Adapter\ODM\MongoDB\MongoDBAdapter"/>
     <service id="vich_uploader.adapter.orm" class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter"/>
     <service id="vich_uploader.adapter.phpcr" class="Vich\UploaderBundle\Adapter\PHPCR\PHPCRAdapter"/>
@@ -8639,6 +8695,29 @@
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
     </service>
+    <service id="vich_uploader.listener.clean.sampana_image" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+      <tag name="doctrine.event_listener" event="preUpdate" priority="50"/>
+      <argument>sampana_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.sampana_image" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+      <tag name="doctrine.event_listener" event="preRemove" priority="0"/>
+      <tag name="doctrine.event_listener" event="postFlush" priority="0"/>
+      <argument>sampana_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.sampana_image" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+      <tag name="doctrine.event_listener" event="prePersist" priority="0"/>
+      <tag name="doctrine.event_listener" event="preUpdate" priority="0"/>
+      <argument>sampana_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
     <service id="symfonycasts.reset_password.fake_request_repository" class="SymfonyCasts\Bundle\ResetPassword\Persistence\Fake\FakeResetPasswordInternalRepository"/>
     <service id="symfonycasts.reset_password.cleaner" class="SymfonyCasts\Bundle\ResetPassword\Util\ResetPasswordCleaner">
       <argument type="service" id="symfonycasts.reset_password.fake_request_repository"/>
@@ -8828,6 +8907,8 @@
     <service id=".abstract.instanceof.App\Form\ProfileType" class="App\Form\ProfileType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SampanaFormType" class="App\Form\SampanaFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SampanaFormType" class="App\Form\SampanaFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
@@ -9548,6 +9629,31 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.EhRzrPc" method="withContext"/>
     </service>
+    <service id=".service_locator.Q5KSOfB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="sampanaRepository" type="service_closure" id="App\Repository\SampanaRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Q5KSOfB.App\Controller\admin\SampanaController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\SampanaController::index()"/>
+      <argument>App\Controller\admin\SampanaController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Q5KSOfB" method="withContext"/>
+    </service>
+    <service id=".service_locator.y6oGcsp" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="sampanaRepository" type="service_closure" id="App\Repository\SampanaRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.y6oGcsp.App\Controller\admin\SampanaController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\SampanaController::new()"/>
+      <argument>App\Controller\admin\SampanaController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.y6oGcsp" method="withContext"/>
+    </service>
     <service id=".service_locator.4XYvBdG" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -9611,7 +9717,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4XYvBdG" method="withContext"/>
     </service>
-    <service id=".service_locator.hI.TbV9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Iw_WiDc" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9628,6 +9734,8 @@
         <argument key="App\Controller\admin\PostAdminController::new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\PostAdminController::approve" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::approve()"/>
         <argument key="App\Controller\admin\PostAdminController::reject" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::reject()"/>
+        <argument key="App\Controller\admin\SampanaController::index" type="service_closure" id=".service_locator.Q5KSOfB.App\Controller\admin\SampanaController::index()"/>
+        <argument key="App\Controller\admin\SampanaController::new" type="service_closure" id=".service_locator.y6oGcsp.App\Controller\admin\SampanaController::new()"/>
         <argument key="App\Controller\admin\SettingadminController::index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
         <argument key="App\Controller\admin\SettingadminController::list" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\SettingadminController::list()"/>
         <argument key="App\Controller\admin\SettingadminController::edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
@@ -9646,6 +9754,8 @@
         <argument key="App\Controller\admin\PostAdminController:new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\PostAdminController:approve" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::approve()"/>
         <argument key="App\Controller\admin\PostAdminController:reject" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::reject()"/>
+        <argument key="App\Controller\admin\SampanaController:index" type="service_closure" id=".service_locator.Q5KSOfB.App\Controller\admin\SampanaController::index()"/>
+        <argument key="App\Controller\admin\SampanaController:new" type="service_closure" id=".service_locator.y6oGcsp.App\Controller\admin\SampanaController::new()"/>
         <argument key="App\Controller\admin\SettingadminController:index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
         <argument key="App\Controller\admin\SettingadminController:list" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\SettingadminController::list()"/>
         <argument key="App\Controller\admin\SettingadminController:edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
@@ -9837,13 +9947,14 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.6NVlYuP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.XnivPdY" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddnewuserFormAdminType" type="service_closure" id="App\Form\AddnewuserFormAdminType"/>
         <argument key="App\Form\PostFormType" type="service_closure" id="App\Form\PostFormType"/>
         <argument key="App\Form\ProfileType" type="service_closure" id="App\Form\ProfileType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
+        <argument key="App\Form\SampanaFormType" type="service_closure" id="App\Form\SampanaFormType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service_closure" id="form.type.file"/>
@@ -9982,11 +10093,12 @@
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
       <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
-    <service id=".service_locator.kj8iu.l" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.6ynf2Lm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="vich_uploader.listener.clean.profile_image" type="service_closure" id="vich_uploader.listener.clean.profile_image"/>
         <argument key="vich_uploader.listener.clean.post_image" type="service_closure" id="vich_uploader.listener.clean.post_image"/>
+        <argument key="vich_uploader.listener.clean.sampana_image" type="service_closure" id="vich_uploader.listener.clean.sampana_image"/>
         <argument key="doctrine.orm.messenger.doctrine_schema_listener" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_listener"/>
         <argument key="doctrine.orm.listeners.doctrine_dbal_cache_adapter_schema_listener" type="service_closure" id="doctrine.orm.listeners.doctrine_dbal_cache_adapter_schema_listener"/>
         <argument key="doctrine.orm.listeners.doctrine_token_provider_schema_listener" type="service_closure" id="doctrine.orm.listeners.doctrine_token_provider_schema_listener"/>
@@ -9998,6 +10110,8 @@
         <argument key="vich_uploader.listener.upload.profile_image" type="service_closure" id="vich_uploader.listener.upload.profile_image"/>
         <argument key="vich_uploader.listener.remove.post_image" type="service_closure" id="vich_uploader.listener.remove.post_image"/>
         <argument key="vich_uploader.listener.upload.post_image" type="service_closure" id="vich_uploader.listener.upload.post_image"/>
+        <argument key="vich_uploader.listener.remove.sampana_image" type="service_closure" id="vich_uploader.listener.remove.sampana_image"/>
+        <argument key="vich_uploader.listener.upload.sampana_image" type="service_closure" id="vich_uploader.listener.upload.sampana_image"/>
       </argument>
     </service>
     <service id=".service_locator.8psXAmt" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -12146,7 +12260,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.hI.TbV9"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Iw_WiDc"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>
@@ -12211,6 +12325,8 @@
     <service id=".service_locator.uBwBrvQ" alias=".service_locator.0MQaTBY"/>
     <service id=".service_locator.UOV1jy9" alias=".service_locator.3BoFVFw"/>
     <service id=".service_locator.J_QW._s" alias=".service_locator.EhRzrPc"/>
+    <service id=".service_locator.3sO5VCq" alias=".service_locator.Q5KSOfB"/>
+    <service id=".service_locator.s6WxXe." alias=".service_locator.y6oGcsp"/>
     <service id=".service_locator.GnylMfi" alias=".service_locator.4XYvBdG"/>
     <service id=".service_locator.yZty4YD" alias=".service_locator.PtMLGj3"/>
     <service id=".service_locator.rm_qkBw" alias=".service_locator.j3kKXma"/>

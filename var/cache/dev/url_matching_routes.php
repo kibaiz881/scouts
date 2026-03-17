@@ -29,6 +29,7 @@ return [
         '/admin/post/admin' => [[['_route' => 'app_admin_post_admin', '_controller' => 'App\\Controller\\admin\\PostAdminController::index'], null, null, null, false, false, null]],
         '/admin/post/newpostadmin' => [[['_route' => 'app_admin_post_newpostadmin', '_controller' => 'App\\Controller\\admin\\PostAdminController::new'], null, null, null, false, false, null]],
         '/admin/sampana' => [[['_route' => 'app_admin_sampana', '_controller' => 'App\\Controller\\admin\\SampanaController::index'], null, null, null, false, false, null]],
+        '/admin/sampana/new' => [[['_route' => 'app_admin_sampana_new', '_controller' => 'App\\Controller\\admin\\SampanaController::new'], null, null, null, false, false, null]],
         '/admin/settingadmin' => [[['_route' => 'app_admin_settingadmin', '_controller' => 'App\\Controller\\admin\\SettingadminController::index'], null, null, null, false, false, null]],
         '/admin/settingadmin/list' => [[['_route' => 'admin_setting_list', '_controller' => 'App\\Controller\\admin\\SettingadminController::list'], null, null, null, false, false, null]],
         '/admin/useradmin' => [[['_route' => 'app_admin_useradmin', '_controller' => 'App\\Controller\\admin\\UseradminController::index'], null, null, null, false, false, null]],
