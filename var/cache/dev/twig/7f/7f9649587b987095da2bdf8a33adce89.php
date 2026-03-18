@@ -245,7 +245,10 @@ class __TwigTemplate_3d1b89dfb1aa331a3a7183a936c9705d extends Template
             yield "\" class=\"action-btn\">
                             <i class=\"bi bi-pencil\"></i> Edit
                         </a>
-                        <a href=\"#\" class=\"action-btn\">
+                        <a href=\"";
+            // line 91
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_setting_view", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 91)]), "html", null, true);
+            yield "\" class=\"action-btn\">
                             <i class=\"bi bi-eye\"></i> View
                         </a>
                 </div>
@@ -407,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     public function getDebugInfo(): array
     {
-        return array (  323 => 130,  310 => 129,  298 => 187,  296 => 129,  293 => 128,  291 => 127,  259 => 97,  244 => 88,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
+        return array (  326 => 130,  313 => 129,  301 => 187,  299 => 129,  296 => 128,  294 => 127,  262 => 97,  250 => 91,  244 => 88,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -502,7 +505,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <a href=\"{{path('admin_setting_edit', {'id': user.id})}}\" class=\"action-btn\">
                             <i class=\"bi bi-pencil\"></i> Edit
                         </a>
-                        <a href=\"#\" class=\"action-btn\">
+                        <a href=\"{{path('admin_setting_view', {'id': user.id})}}\" class=\"action-btn\">
                             <i class=\"bi bi-eye\"></i> View
                         </a>
                 </div>

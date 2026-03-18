@@ -14,6 +14,8 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Filesystem\Filesystem;
+ use Knp\Component\Pager\PaginatorInterface;
+
 
 final class SettingadminController extends AbstractController
 {
@@ -66,17 +68,37 @@ final class SettingadminController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/settingadmin/list', name: 'admin_setting_list')]
-    #[IsGranted('ROLE_ADMIN')]
-    public function list(
-        UserRepository $userRepository
-    ): Response {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
-        $userlist = $userRepository->findAll();
-        return $this->render('admin/settingadmin/list.html.twig', [
-            "userlist" => $userlist
-        ]);
-    }
+
+
+#[Route('/admin/settingadmin/list', name: 'admin_setting_list')]
+#[IsGranted('ROLE_ADMIN')]
+public function list(
+    UserRepository $userRepository,
+    Request $request,
+    PaginatorInterface $paginator
+): Response {
+
+    $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+    // ❗ IMPORTANT : QueryBuilder (pas findAll)
+    $query = $userRepository->createQueryBuilder('u')
+        ->orderBy('u.id', 'DESC')
+        ->getQuery();
+
+    // Pagination
+    $userlist = $paginator->paginate(
+        $query,
+        $request->query->getInt('page', 1), // page actuelle
+        6 // nombre d'éléments par page
+    );
+
+    return $this->render('admin/settingadmin/list.html.twig', [
+        "userlist" => $userlist
+    ]);
+}
+
+
+
     //update user and display the form in the admin panel
     #[Route('/admin/settingadmin/edit/{id}', name: 'admin_setting_edit')]
     #[IsGranted('ROLE_ADMIN')]
@@ -145,6 +167,20 @@ final class SettingadminController extends AbstractController
         return $this->json([
             'success' => true,
             'message' => 'User deleted successfully'
+        ]);
+    }
+
+    //Voir les détails d'un utilisateur
+    #[Route('/admin/settingadmin/view/{id}', name: 'admin_setting_view')]
+    #[IsGranted('ROLE_ADMIN')]
+    public function view(int $id, EntityManagerInterface $em): Response
+    {
+        $user = $em->getRepository(User::class)->find($id); 
+        if (!$user) {
+            throw $this->createNotFoundException('Utilisateur introuvable.');
+        }
+        return $this->render('admin/settingadmin/view.html.twig', [
+            'user' => $user
         ]);
     }
 }

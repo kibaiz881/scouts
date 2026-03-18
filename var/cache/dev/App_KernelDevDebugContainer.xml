@@ -678,7 +678,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.9ozBf.T"/>
+      <argument type="service" id=".service_locator.AipF7L4"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -4015,7 +4015,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.9ozBf.T"/>
+      <argument type="service" id=".service_locator.AipF7L4"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -9867,17 +9867,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4XYvBdG" method="withContext"/>
     </service>
-    <service id=".service_locator.PtMLGj3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.c6de2iA" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
       </argument>
     </service>
-    <service id=".service_locator.PtMLGj3.App\Controller\admin\SettingadminController::list()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.c6de2iA.App\Controller\admin\SettingadminController::list()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\SettingadminController::list()"/>
       <argument>App\Controller\admin\SettingadminController::list()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.PtMLGj3" method="withContext"/>
+      <factory service=".service_locator.c6de2iA" method="withContext"/>
     </service>
     <service id=".service_locator.j3kKXma" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -9905,6 +9906,24 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.q.9q_tU" method="withContext"/>
     </service>
+    <service id=".service_locator.z0A7H.F" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.z0A7H.F.App\Controller\admin\SettingadminController::view()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\SettingadminController::view()"/>
+      <argument>App\Controller\admin\SettingadminController::view()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.z0A7H.F" method="withContext"/>
+    </service>
+    <service id=".service_locator.PtMLGj3" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\UseradminController::index()"/>
       <argument>App\Controller\admin\UseradminController::index()</argument>
@@ -9917,7 +9936,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4XYvBdG" method="withContext"/>
     </service>
-    <service id=".service_locator.9ozBf.T" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.AipF7L4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9940,9 +9959,10 @@
         <argument key="App\Controller\admin\SampanaController::edit" type="service_closure" id=".service_locator.xdoDj7N.App\Controller\admin\SampanaController::edit()"/>
         <argument key="App\Controller\admin\SampanaController::delete" type="service_closure" id=".service_locator.xdoDj7N.App\Controller\admin\SampanaController::delete()"/>
         <argument key="App\Controller\admin\SettingadminController::index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
-        <argument key="App\Controller\admin\SettingadminController::list" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\SettingadminController::list()"/>
+        <argument key="App\Controller\admin\SettingadminController::list" type="service_closure" id=".service_locator.c6de2iA.App\Controller\admin\SettingadminController::list()"/>
         <argument key="App\Controller\admin\SettingadminController::edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
         <argument key="App\Controller\admin\SettingadminController::delete" type="service_closure" id=".service_locator.q.9q_tU.App\Controller\admin\SettingadminController::delete()"/>
+        <argument key="App\Controller\admin\SettingadminController::view" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\admin\SettingadminController::view()"/>
         <argument key="App\Controller\admin\UseradminController::index" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()"/>
         <argument key="App\Controller\admin\UseradminController::new" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\UseradminController::new()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9963,9 +9983,10 @@
         <argument key="App\Controller\admin\SampanaController:edit" type="service_closure" id=".service_locator.xdoDj7N.App\Controller\admin\SampanaController::edit()"/>
         <argument key="App\Controller\admin\SampanaController:delete" type="service_closure" id=".service_locator.xdoDj7N.App\Controller\admin\SampanaController::delete()"/>
         <argument key="App\Controller\admin\SettingadminController:index" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\SettingadminController::index()"/>
-        <argument key="App\Controller\admin\SettingadminController:list" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\SettingadminController::list()"/>
+        <argument key="App\Controller\admin\SettingadminController:list" type="service_closure" id=".service_locator.c6de2iA.App\Controller\admin\SettingadminController::list()"/>
         <argument key="App\Controller\admin\SettingadminController:edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
         <argument key="App\Controller\admin\SettingadminController:delete" type="service_closure" id=".service_locator.q.9q_tU.App\Controller\admin\SettingadminController::delete()"/>
+        <argument key="App\Controller\admin\SettingadminController:view" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\admin\SettingadminController::view()"/>
         <argument key="App\Controller\admin\UseradminController:index" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()"/>
         <argument key="App\Controller\admin\UseradminController:new" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\UseradminController::new()"/>
       </argument>
@@ -12475,7 +12496,7 @@
     <service id="Knp\Component\Pager\ArgumentAccess\ArgumentAccessInterface" alias="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.9ozBf.T"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.AipF7L4"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>
@@ -12545,9 +12566,11 @@
     <service id=".service_locator.X_8imz6" alias=".service_locator._betyeT"/>
     <service id=".service_locator.oakDuK5" alias=".service_locator.xdoDj7N"/>
     <service id=".service_locator.GnylMfi" alias=".service_locator.4XYvBdG"/>
-    <service id=".service_locator.yZty4YD" alias=".service_locator.PtMLGj3"/>
+    <service id=".service_locator.BjsLIn2" alias=".service_locator.c6de2iA"/>
     <service id=".service_locator.rm_qkBw" alias=".service_locator.j3kKXma"/>
     <service id=".service_locator.HvVh9A1" alias=".service_locator.q.9q_tU"/>
+    <service id=".service_locator.0ekWYPZ" alias=".service_locator.z0A7H.F"/>
+    <service id=".service_locator.yZty4YD" alias=".service_locator.PtMLGj3"/>
     <service id=".service_locator.D6tJ4Px" alias=".service_locator.TJNRSaV"/>
     <service id=".service_locator.0ngK9uf" alias=".service_locator.MXLal1R"/>
   </services>

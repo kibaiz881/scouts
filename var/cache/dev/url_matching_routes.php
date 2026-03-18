@@ -74,12 +74,15 @@ return [
                                 .'|edit/([^/]++)(*:407)'
                                 .'|delete/([^/]++)(*:430)'
                             .')'
-                            .'|ettingadmin/edit/([^/]++)(*:464)'
+                            .'|ettingadmin/(?'
+                                .'|edit/([^/]++)(*:467)'
+                                .'|view/([^/]++)(*:488)'
+                            .')'
                         .')'
-                        .'|useradmin/delete/([^/]++)(*:498)'
+                        .'|useradmin/delete/([^/]++)(*:523)'
                     .')'
                 .')'
-                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:535)'
+                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:560)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -99,9 +102,10 @@ return [
         386 => [[['_route' => 'app_admin_sampana_view', '_controller' => 'App\\Controller\\admin\\SampanaController::view'], ['id'], null, null, false, true, null]],
         407 => [[['_route' => 'app_admin_sampana_edit', '_controller' => 'App\\Controller\\admin\\SampanaController::edit'], ['id'], null, null, false, true, null]],
         430 => [[['_route' => 'app_admin_sampana_delete', '_controller' => 'App\\Controller\\admin\\SampanaController::delete'], ['id'], null, null, false, true, null]],
-        464 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
-        498 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        535 => [
+        467 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
+        488 => [[['_route' => 'admin_setting_view', '_controller' => 'App\\Controller\\admin\\SettingadminController::view'], ['id'], null, null, false, true, null]],
+        523 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        560 => [
             [['_route' => 'app_blog', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\BlogController::index'], ['page', 'itemsPerPage'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
