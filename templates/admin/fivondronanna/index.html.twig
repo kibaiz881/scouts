@@ -48,23 +48,23 @@
 		<div class="team-grid" id="teamGrid">
 			{% for fivondronannas in fivondronannas %}
 				<div
-					class="member-card border border-3 {{ borders[fivondronannas.codeFivondronanna]|default('border-secondary') }}" data-department="development" data-status="online">
+					class="member-card border border-3 {{ borders[fivondronannas.codeFiv]|default('border-secondary') }}" data-department="development" data-status="online">
 
 					<!-- HEADER NORMAL (sans background) -->
 					<div class="member-header">
 
 						<div class="card-assignee-avatar">
-							<img src="{{ asset('images/sampana/' ~ fivondronannas.fivondronannaPictureName) }}" alt="{{ fivondronannas.nomFivondronanna }}" class="member-avatar" width="40" height="40" style="border-radius:50%; object-fit:cover;">
+							<img src="{{ asset('images/fivondronana/' ~ fivondronannas.fivondronanaPictureName) }}" alt="{{ fivondronannas.nomFiv }}" class="member-avatar" width="40" height="40" style="border-radius:50%; object-fit:cover;">
 						</div>
 
 						<div class="member-info">
-							<div class="member-name">{{ fivondronannas.nomFivondronanna }}</div>
-							<div class="member-role">{{ fivondronannas.profileFivondronanna }}</div>
+							<div class="member-name">{{ fivondronannas.nomFiv }}</div>
+							<div class="member-role">{{ fivondronannas.adresseFiv }}</div>
 
 							<div class="member-contact">
 								<i class="bi bi-key"></i>
 								<span>Code Fivondronanna:
-									{{ fivondronannas.codeFivondronanna }}</span>
+									{{ fivondronannas.codeFiv }}</span>
 							</div>
 
 							<div class="member-contact">
@@ -83,7 +83,7 @@
 					<!-- METRICS -->
 					<div class="metrics-grid">
 						<div class="metric-item">
-							<div class="metric-value">{{ fivondronannas.EffectifFivondronanna }}</div>
+							<div class="metric-value"></div>
 							<div class="metric-label">Effectif</div>
 						</div>
 						<div class="metric-item">

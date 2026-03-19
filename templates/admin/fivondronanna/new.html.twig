@@ -1,0 +1,98 @@
+{% extends 'component/baseadmin.html.twig' %}
+
+{% block title %}
+	Fivondronana - Admin - New
+{% endblock %}
+
+{% block body %}
+	{% include 'component/headeradmin.html.twig' %}
+	{% include 'component/sidebaradmin.html.twig' %}
+
+	<main class="main" id="main" role="main">
+
+		<!-- Page Header -->
+		<div class="page-header d-flex justify-content-between align-items-center mb-4">
+			<div>
+				<h1 class="h3 mb-1">Create New Fivondronana</h1>
+				<p class="text-muted mb-0">Fill in the details to create a new fivondronana</p>
+			</div>
+			<a href="{{ path('app_admin_fivondronanna') }}" class="btn btn-outline-secondary">
+				<i class="bi bi-arrow-left"></i> Back to List
+			</a>
+		</div>
+
+		<!-- Form Card -->
+		<div class="card shadow-sm">
+			<div class="card-body">
+
+				{{ form_start(form) }}
+
+				<div class="row">
+
+					<div class="col-md-6 mb-3">
+						{{ form_label(form.nomFiv) }}
+						{{ form_widget(form.nomFiv, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(form.nomFiv) }}
+					</div>
+
+					<div class="col-md-6 mb-3">
+						{{ form_label(form.adresseFiv) }}
+						{{ form_widget(form.adresseFiv, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(form.adresseFiv) }}
+					</div>
+
+					<div class="col-md-6 mb-3">
+						{{ form_label(form.paroiseFiv) }}
+						{{ form_widget(form.paroiseFiv, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(form.paroiseFiv) }}
+					</div>
+
+					<div class="col-md-6 mb-3">
+						{{ form_label(form.createdAt) }}
+						{{ form_widget(form.createdAt, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(form.createdAt) }}
+					</div>
+
+					<div class="col-12 mb-3">
+						{{ form_label(form.contactFiv) }}
+						{{ form_widget(form.contactFiv, {'attr': {'class': 'form-control', 'rows': 4}}) }}
+						{{ form_errors(form.contactFiv) }}
+					</div>
+
+					<div class="col-12 mb-3">
+						{{ form_label(form.fivondronanaPictureFile) }}
+						{{ form_widget(form.fivondronanaPictureFile, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(form.fivondronanaPictureFile) }}
+					</div>
+					<div class="col-12 mb-3">
+						{{ form_label(form.emailFiv) }}
+						{{ form_widget(form.emailFiv, {'attr': {'class': 'form-control'}}) }}
+						{{ form_errors(form.emailFiv) }}
+					</div>
+                    <div class="col-12 mb-3">
+						{{ form_label(form.historiqueFiv) }}
+						{{ form_widget(form.historiqueFiv, {'attr': {'class': 'form-control', 'rows': 4}}) }}
+						{{ form_errors(form.historiqueFiv) }}
+					</div>
+				</div>
+
+				<!-- Buttons aligned LEFT -->
+				<div class="d-flex gap-2 mt-3">
+					<button type="submit" class="btn btn-primary">
+						<i class="bi bi-check-circle"></i> Create
+					</button>
+
+					<a href="{{ path('app_admin_sampana') }}" class="btn btn-danger">
+						<i class="bi bi-x-circle"></i> Annuler
+					</a>
+				</div>
+
+				{{ form_end(form) }}
+
+			</div>
+		</div>
+
+	</main>
+
+	{% include 'component/footeradmin.html.twig' %}
+{% endblock %}

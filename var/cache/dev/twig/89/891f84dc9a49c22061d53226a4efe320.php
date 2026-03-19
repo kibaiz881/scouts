@@ -97,12 +97,15 @@ class __TwigTemplate_d1d660895d8671d37e8afa3c3e644bfb extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"task.html\" role=\"menuitem\" title=\"Tasks\">
+                <a href=\"";
+        // line 44
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_fivondronanna");
+        yield "\" role=\"menuitem\" title=\"Fivondronana\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                         <path d=\"M9 11l3 3L22 4\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <path d=\"M2 12h6M2 6h10M2 18h10\"  stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     </svg>
-                    <span class=\"label\">Tasks</span>
+                    <span class=\"label\">Fivondronana</span>
                 </a>
             </li>
 
@@ -288,7 +291,7 @@ class __TwigTemplate_d1d660895d8671d37e8afa3c3e644bfb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  190 => 126,  145 => 84,  132 => 74,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
+        return array (  193 => 126,  148 => 84,  135 => 74,  102 => 44,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -336,12 +339,12 @@ class __TwigTemplate_d1d660895d8671d37e8afa3c3e644bfb extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"task.html\" role=\"menuitem\" title=\"Tasks\">
+                <a href=\"{{path('app_admin_fivondronanna')}}\" role=\"menuitem\" title=\"Fivondronana\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                         <path d=\"M9 11l3 3L22 4\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <path d=\"M2 12h6M2 6h10M2 18h10\"  stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     </svg>
-                    <span class=\"label\">Tasks</span>
+                    <span class=\"label\">Fivondronana</span>
                 </a>
             </li>
 

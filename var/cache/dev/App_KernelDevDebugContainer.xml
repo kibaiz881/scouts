@@ -348,6 +348,24 @@
         <parameter key="namer_keep_extension">false</parameter>
         <parameter key="db_driver">orm</parameter>
       </parameter>
+      <parameter key="fivondronana_image" type="collection">
+        <parameter key="uri_prefix">/images/fivondronana</parameter>
+        <parameter key="upload_destination">C:\Users\M_INFO\Music\scouts/public/images/fivondronana</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\SmartUniqueNamer.fivondronana_image</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="erase_fields">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="namer_keep_extension">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
     </parameter>
     <parameter key="vich_uploader.use_flysystem_to_resolve_uri">false</parameter>
     <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
@@ -560,6 +578,14 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\UserController"/>
       </call>
     </service>
+    <service id="App\Controller\admin\FivondronannaController" class="App\Controller\admin\FivondronannaController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\FivondronannaController"/>
+      </call>
+    </service>
     <service id="App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.controller"/>
@@ -689,7 +715,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.7HaU3BS"/>
+      <argument type="service" id=".service_locator.4GKFNKo"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -4027,7 +4053,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.7HaU3BS"/>
+      <argument type="service" id=".service_locator.4GKFNKo"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4113,6 +4139,7 @@
         <argument>App\Controller\RegistrationController</argument>
         <argument>App\Controller\SecurityController</argument>
         <argument>App\Controller\UserController</argument>
+        <argument>App\Controller\admin\FivondronannaController</argument>
         <argument>App\Controller\admin\PostAdminController</argument>
         <argument>App\Controller\admin\SampanaController</argument>
         <argument>App\Controller\admin\SettingadminController</argument>
@@ -5872,7 +5899,7 @@
       </call>
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager">
-      <argument type="service" id=".service_locator.6ynf2Lm"/>
+      <argument type="service" id=".service_locator.E5UwCIU"/>
       <argument type="collection">
         <argument type="collection">
           <argument type="collection">
@@ -5891,6 +5918,12 @@
             <argument>preUpdate</argument>
           </argument>
           <argument>vich_uploader.listener.clean.sampana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preUpdate</argument>
+          </argument>
+          <argument>vich_uploader.listener.clean.fivondronana_image</argument>
         </argument>
         <argument type="collection">
           <argument type="collection">
@@ -6017,6 +6050,30 @@
             <argument>preUpdate</argument>
           </argument>
           <argument>vich_uploader.listener.upload.sampana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preRemove</argument>
+          </argument>
+          <argument>vich_uploader.listener.remove.fivondronana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>postFlush</argument>
+          </argument>
+          <argument>vich_uploader.listener.remove.fivondronana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>prePersist</argument>
+          </argument>
+          <argument>vich_uploader.listener.upload.fivondronana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preUpdate</argument>
+          </argument>
+          <argument>vich_uploader.listener.upload.fivondronana_image</argument>
         </argument>
       </argument>
     </service>
@@ -8507,6 +8564,9 @@
     <service id="Vich\UploaderBundle\Naming\SmartUniqueNamer.sampana_image" class="Vich\UploaderBundle\Naming\SmartUniqueNamer" autowire="true">
       <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
     </service>
+    <service id="Vich\UploaderBundle\Naming\SmartUniqueNamer.fivondronana_image" class="Vich\UploaderBundle\Naming\SmartUniqueNamer" autowire="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
     <service id="vich_uploader.adapter.mongodb" class="Vich\UploaderBundle\Adapter\ODM\MongoDB\MongoDBAdapter"/>
     <service id="vich_uploader.adapter.orm" class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter"/>
     <service id="vich_uploader.adapter.phpcr" class="Vich\UploaderBundle\Adapter\PHPCR\PHPCRAdapter"/>
@@ -8844,6 +8904,29 @@
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
     </service>
+    <service id="vich_uploader.listener.clean.fivondronana_image" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+      <tag name="doctrine.event_listener" event="preUpdate" priority="50"/>
+      <argument>fivondronana_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.fivondronana_image" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+      <tag name="doctrine.event_listener" event="preRemove" priority="0"/>
+      <tag name="doctrine.event_listener" event="postFlush" priority="0"/>
+      <argument>fivondronana_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.fivondronana_image" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+      <tag name="doctrine.event_listener" event="prePersist" priority="0"/>
+      <tag name="doctrine.event_listener" event="preUpdate" priority="0"/>
+      <argument>fivondronana_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
     <service id="symfonycasts.reset_password.fake_request_repository" class="SymfonyCasts\Bundle\ResetPassword\Persistence\Fake\FakeResetPasswordInternalRepository"/>
     <service id="symfonycasts.reset_password.cleaner" class="SymfonyCasts\Bundle\ResetPassword\Util\ResetPasswordCleaner">
       <argument type="service" id="symfonycasts.reset_password.fake_request_repository"/>
@@ -9057,6 +9140,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\UserController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\FivondronannaController" class="App\Controller\admin\FivondronannaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\FivondronannaController" class="App\Controller\admin\FivondronannaController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\admin\FivondronannaController.0.App\Controller\admin\FivondronannaController" class="App\Controller\admin\FivondronannaController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\admin\FivondronannaController" class="App\Controller\admin\FivondronannaController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\admin\PostAdminController.0.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" abstract="true"/>
@@ -9780,6 +9867,63 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0MQaTBY" method="withContext"/>
     </service>
+    <service id=".service_locator.umxKVur" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="fivondronanaRepository" type="service_closure" id="App\Repository\FivondronanaRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.umxKVur.App\Controller\admin\FivondronannaController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\FivondronannaController::index()"/>
+      <argument>App\Controller\admin\FivondronannaController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.umxKVur" method="withContext"/>
+    </service>
+    <service id=".service_locator.2zIQrtK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="fivondronanaRepository" type="service_closure" id="App\Repository\FivondronanaRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.2zIQrtK.App\Controller\admin\FivondronannaController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\FivondronannaController::new()"/>
+      <argument>App\Controller\admin\FivondronannaController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.2zIQrtK" method="withContext"/>
+    </service>
+    <service id=".service_locator.uf7tg7R" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="fivondronanna" type="service_closure" id=".errored..service_locator.uf7tg7R.App\Entity\Fivondronana"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\FivondronannaController::edit()"/>
+      <argument>App\Controller\admin\FivondronannaController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.uf7tg7R" method="withContext"/>
+    </service>
+    <service id=".service_locator.TvwUvss" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="fivondronanna" type="service_closure" id=".errored..service_locator.TvwUvss.App\Entity\Fivondronana"/>
+      </argument>
+    </service>
+    <service id=".service_locator.TvwUvss.App\Controller\admin\FivondronannaController::view()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\FivondronannaController::view()"/>
+      <argument>App\Controller\admin\FivondronannaController::view()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TvwUvss" method="withContext"/>
+    </service>
+    <service id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\FivondronannaController::delete()"/>
+      <argument>App\Controller\admin\FivondronannaController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.uf7tg7R" method="withContext"/>
+    </service>
     <service id=".service_locator.DiMdHbo" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -9957,7 +10101,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4XYvBdG" method="withContext"/>
     </service>
-    <service id=".service_locator.7HaU3BS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.4GKFNKo" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9970,6 +10114,11 @@
         <argument key="App\Controller\BlogController::index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\BlogController::index()"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.K8m4mRx.App\Controller\RegistrationController::register()"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
+        <argument key="App\Controller\admin\FivondronannaController::index" type="service_closure" id=".service_locator.umxKVur.App\Controller\admin\FivondronannaController::index()"/>
+        <argument key="App\Controller\admin\FivondronannaController::new" type="service_closure" id=".service_locator.2zIQrtK.App\Controller\admin\FivondronannaController::new()"/>
+        <argument key="App\Controller\admin\FivondronannaController::edit" type="service_closure" id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::edit()"/>
+        <argument key="App\Controller\admin\FivondronannaController::view" type="service_closure" id=".service_locator.TvwUvss.App\Controller\admin\FivondronannaController::view()"/>
+        <argument key="App\Controller\admin\FivondronannaController::delete" type="service_closure" id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::delete()"/>
         <argument key="App\Controller\admin\PostAdminController::index" type="service_closure" id=".service_locator.DiMdHbo.App\Controller\admin\PostAdminController::index()"/>
         <argument key="App\Controller\admin\PostAdminController::new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\PostAdminController::approve" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::approve()"/>
@@ -9994,6 +10143,11 @@
         <argument key="App\Controller\BlogController:index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\BlogController::index()"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.K8m4mRx.App\Controller\RegistrationController::register()"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
+        <argument key="App\Controller\admin\FivondronannaController:index" type="service_closure" id=".service_locator.umxKVur.App\Controller\admin\FivondronannaController::index()"/>
+        <argument key="App\Controller\admin\FivondronannaController:new" type="service_closure" id=".service_locator.2zIQrtK.App\Controller\admin\FivondronannaController::new()"/>
+        <argument key="App\Controller\admin\FivondronannaController:edit" type="service_closure" id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::edit()"/>
+        <argument key="App\Controller\admin\FivondronannaController:view" type="service_closure" id=".service_locator.TvwUvss.App\Controller\admin\FivondronannaController::view()"/>
+        <argument key="App\Controller\admin\FivondronannaController:delete" type="service_closure" id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::delete()"/>
         <argument key="App\Controller\admin\PostAdminController:index" type="service_closure" id=".service_locator.DiMdHbo.App\Controller\admin\PostAdminController::index()"/>
         <argument key="App\Controller\admin\PostAdminController:new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\PostAdminController:approve" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::approve()"/>
@@ -10342,12 +10496,13 @@
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
       <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
-    <service id=".service_locator.6ynf2Lm" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.E5UwCIU" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="vich_uploader.listener.clean.profile_image" type="service_closure" id="vich_uploader.listener.clean.profile_image"/>
         <argument key="vich_uploader.listener.clean.post_image" type="service_closure" id="vich_uploader.listener.clean.post_image"/>
         <argument key="vich_uploader.listener.clean.sampana_image" type="service_closure" id="vich_uploader.listener.clean.sampana_image"/>
+        <argument key="vich_uploader.listener.clean.fivondronana_image" type="service_closure" id="vich_uploader.listener.clean.fivondronana_image"/>
         <argument key="doctrine.orm.messenger.doctrine_schema_listener" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_listener"/>
         <argument key="doctrine.orm.listeners.doctrine_dbal_cache_adapter_schema_listener" type="service_closure" id="doctrine.orm.listeners.doctrine_dbal_cache_adapter_schema_listener"/>
         <argument key="doctrine.orm.listeners.doctrine_token_provider_schema_listener" type="service_closure" id="doctrine.orm.listeners.doctrine_token_provider_schema_listener"/>
@@ -10361,6 +10516,8 @@
         <argument key="vich_uploader.listener.upload.post_image" type="service_closure" id="vich_uploader.listener.upload.post_image"/>
         <argument key="vich_uploader.listener.remove.sampana_image" type="service_closure" id="vich_uploader.listener.remove.sampana_image"/>
         <argument key="vich_uploader.listener.upload.sampana_image" type="service_closure" id="vich_uploader.listener.upload.sampana_image"/>
+        <argument key="vich_uploader.listener.remove.fivondronana_image" type="service_closure" id="vich_uploader.listener.remove.fivondronana_image"/>
+        <argument key="vich_uploader.listener.upload.fivondronana_image" type="service_closure" id="vich_uploader.listener.upload.fivondronana_image"/>
       </argument>
     </service>
     <service id=".service_locator.mm7IBPy" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -10711,6 +10868,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.TJNRSaV" method="withContext"/>
     </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\admin\FivondronannaController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\FivondronannaController"/>
+      <argument>App\Controller\admin\FivondronannaController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
     <service id=".service_locator.TJNRSaV.App\Controller\admin\PostAdminController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\PostAdminController"/>
       <argument>App\Controller\admin\PostAdminController</argument>
@@ -10959,6 +11122,7 @@
           <argument>App\Controller\RegistrationController</argument>
           <argument>App\Controller\SecurityController</argument>
           <argument>App\Controller\UserController</argument>
+          <argument>App\Controller\admin\FivondronannaController</argument>
           <argument>App\Controller\admin\PostAdminController</argument>
           <argument>App\Controller\admin\SampanaController</argument>
           <argument>App\Controller\admin\SettingadminController</argument>
@@ -11204,6 +11368,12 @@
     </service>
     <service id=".errored..service_locator.3yATBZT.App\Entity\Category" class="App\Entity\Category">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.3yATBZT&quot;: it needs an instance of &quot;App\Entity\Category&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.uf7tg7R.App\Entity\Fivondronana" class="App\Entity\Fivondronana">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.uf7tg7R&quot;: it needs an instance of &quot;App\Entity\Fivondronana&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.TvwUvss.App\Entity\Fivondronana" class="App\Entity\Fivondronana">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.TvwUvss&quot;: it needs an instance of &quot;App\Entity\Fivondronana&quot; but this type has been excluded because it's a Doctrine entity."/>
     </service>
     <service id=".errored..service_locator.EhRzrPc.App\Entity\Post" class="App\Entity\Post">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.EhRzrPc&quot;: it needs an instance of &quot;App\Entity\Post&quot; but this type has been excluded because it's a Doctrine entity."/>
@@ -12519,7 +12689,7 @@
     <service id="Knp\Component\Pager\ArgumentAccess\ArgumentAccessInterface" alias="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.7HaU3BS"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.4GKFNKo"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>
@@ -12582,6 +12752,10 @@
     <service id=".service_locator.o8dn8wd" alias=".service_locator.3yATBZT"/>
     <service id=".service_locator.kidjPyb" alias=".service_locator.K8m4mRx"/>
     <service id=".service_locator.uBwBrvQ" alias=".service_locator.0MQaTBY"/>
+    <service id=".service_locator.3OwkeYi" alias=".service_locator.umxKVur"/>
+    <service id=".service_locator.89NaK1E" alias=".service_locator.2zIQrtK"/>
+    <service id=".service_locator.mU2qW6z" alias=".service_locator.uf7tg7R"/>
+    <service id=".service_locator.Pe4VTRF" alias=".service_locator.TvwUvss"/>
     <service id=".service_locator.Wqtu9AD" alias=".service_locator.DiMdHbo"/>
     <service id=".service_locator.UOV1jy9" alias=".service_locator.3BoFVFw"/>
     <service id=".service_locator.J_QW._s" alias=".service_locator.EhRzrPc"/>
