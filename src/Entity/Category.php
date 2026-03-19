@@ -6,6 +6,8 @@ use App\Repository\CategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Post;
+use App\Entity\Sampana;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 class Category
@@ -24,11 +26,13 @@ class Category
     /**
      * @var Collection<int, Post>
      */
-    #[ORM\OneToMany(targetEntity: Post::class, mappedBy: 'category')]
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Post::class, orphanRemoval: true)]
     private Collection $posts;
 
-    #[ORM\ManyToOne(inversedBy: 'categorySmp')]
-    private ?Sampana $Sampana = null;
+    // Relation ManyToOne vers Sampana (non nullable)
+    #[ORM\ManyToOne(targetEntity: Sampana::class, inversedBy: 'categorySmp')]
+    #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
+    private ?Sampana $sampana = null;
 
     public function __construct()
     {
@@ -48,7 +52,6 @@ class Category
     public function setName(string $name): static
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -60,7 +63,6 @@ class Category
     public function setIsEnable(bool $isEnable): static
     {
         $this->isEnable = $isEnable;
-
         return $this;
     }
 
@@ -85,7 +87,6 @@ class Category
     public function removePost(Post $post): static
     {
         if ($this->posts->removeElement($post)) {
-            // set the owning side to null (unless already changed)
             if ($post->getCategory() === $this) {
                 $post->setCategory(null);
             }
@@ -96,12 +97,17 @@ class Category
 
     public function getSampana(): ?Sampana
     {
-        return $this->Sampana;
+        return $this->sampana;
     }
 
-    public function setSampana(?Sampana $Sampana): static
+    public function setSampana(Sampana $sampana): static
     {
-        $this->Sampana = $Sampana;
+        $this->sampana = $sampana;
+
+        // Synchronisation inverse pour éviter les erreurs Doctrine
+        if (!$sampana->getCategorySmp()->contains($this)) {
+            $sampana->addCategorySmp($this);
+        }
 
         return $this;
     }

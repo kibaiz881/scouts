@@ -9,6 +9,8 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use App\Entity\Fivondronana;
+use App\Entity\Category;
 
 #[ORM\Entity(repositoryClass: SampanaRepository::class)]
 #[Vich\Uploadable]
@@ -26,12 +28,9 @@ class Sampana
     private ?string $nomSampana = null;
 
     #[ORM\Column]
-    private ?int $EffectifSampana = null;
+    private ?int $effectifSampana = null;
 
-    /**
-     * @var Collection<int, Category>
-     */
-    #[ORM\OneToMany(targetEntity: Category::class, mappedBy: 'Sampana')]
+    #[ORM\OneToMany(mappedBy: 'sampana', targetEntity: Category::class, orphanRemoval: true)]
     private Collection $categorySmp;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -40,14 +39,21 @@ class Sampana
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
     #[ORM\Column(length: 255)]
     private ?string $profileSampana = null;
 
     #[Vich\UploadableField(mapping: 'sampana_image', fileNameProperty: 'sampanaPictureName')]
     private ?File $sampanaPictureFile = null;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $sampanaPictureName = null;
+
+    #[ORM\ManyToOne(targetEntity: Fivondronana::class, inversedBy: 'sampanas')]
+    #[ORM\JoinColumn(nullable: false, onDelete: 'RESTRICT')]
+    private ?Fivondronana $fivondronana = null;
 
     public function __construct()
     {
@@ -67,7 +73,6 @@ class Sampana
     public function setCodeSampana(string $codeSampana): static
     {
         $this->codeSampana = $codeSampana;
-
         return $this;
     }
 
@@ -79,19 +84,17 @@ class Sampana
     public function setNomSampana(string $nomSampana): static
     {
         $this->nomSampana = $nomSampana;
-
         return $this;
     }
 
     public function getEffectifSampana(): ?int
     {
-        return $this->EffectifSampana;
+        return $this->effectifSampana;
     }
 
-    public function setEffectifSampana(int $EffectifSampana): static
+    public function setEffectifSampana(int $effectifSampana): static
     {
-        $this->EffectifSampana = $EffectifSampana;
-
+        $this->effectifSampana = $effectifSampana;
         return $this;
     }
 
@@ -103,25 +106,22 @@ class Sampana
         return $this->categorySmp;
     }
 
-    public function addCategorySmp(Category $categorySmp): static
+    public function addCategorySmp(Category $category): static
     {
-        if (!$this->categorySmp->contains($categorySmp)) {
-            $this->categorySmp->add($categorySmp);
-            $categorySmp->setSampana($this);
+        if (!$this->categorySmp->contains($category)) {
+            $this->categorySmp->add($category);
+            $category->setSampana($this);
         }
-
         return $this;
     }
 
-    public function removeCategorySmp(Category $categorySmp): static
+    public function removeCategorySmp(Category $category): static
     {
-        if ($this->categorySmp->removeElement($categorySmp)) {
-            // set the owning side to null (unless already changed)
-            if ($categorySmp->getSampana() === $this) {
-                $categorySmp->setSampana(null);
+        if ($this->categorySmp->removeElement($category)) {
+            if ($category->getSampana() === $this) {
+                $category->setSampana($this);
             }
         }
-
         return $this;
     }
 
@@ -133,7 +133,6 @@ class Sampana
     public function setDescription(string $description): static
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -145,7 +144,17 @@ class Sampana
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
+        return $this;
+    }
 
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): static
+    {
+        $this->updatedAt = $updatedAt;
         return $this;
     }
 
@@ -157,46 +166,46 @@ class Sampana
     public function setProfileSampana(string $profileSampana): static
     {
         $this->profileSampana = $profileSampana;
-
         return $this;
     }
 
-    /**
-     * Get the value of sampanaPictureFile
-     */ 
-    public function getSampanaPictureFile()
+    public function getSampanaPictureFile(): ?File
     {
         return $this->sampanaPictureFile;
     }
 
-    /**
-     * Set the value of sampanaPictureFile
-     *
-     * @return  self
-     */ 
-    public function setSampanaPictureFile($sampanaPictureFile)
+    public function setSampanaPictureFile(?File $file): void
     {
-        $this->sampanaPictureFile = $sampanaPictureFile;
+        $this->sampanaPictureFile = $file;
 
-        return $this;
+        if ($file) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
     }
 
-    /**
-     * Get the value of sampanaPictureName
-     */ 
-    public function getSampanaPictureName()
+    public function getSampanaPictureName(): ?string
     {
         return $this->sampanaPictureName;
     }
 
-    /**
-     * Set the value of sampanaPictureName
-     *
-     * @return  self
-     */ 
-    public function setSampanaPictureName($sampanaPictureName)
+    public function setSampanaPictureName(?string $name): void
     {
-        $this->sampanaPictureName = $sampanaPictureName;
+        $this->sampanaPictureName = $name;
+    }
+
+    public function getFivondronana(): ?Fivondronana
+    {
+        return $this->fivondronana;
+    }
+
+    public function setFivondronana(Fivondronana $fivondronana): static
+    {
+        $this->fivondronana = $fivondronana;
+
+        // Synchronisation inverse
+        if (!$fivondronana->getSampanas()->contains($this)) {
+            $fivondronana->addSampana($this);
+        }
 
         return $this;
     }

@@ -599,6 +599,10 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Entity\Fivondronana" class="App\Entity\Fivondronana" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
@@ -631,6 +635,10 @@
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
     <service id="App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\FivondronanaRepository" class="App\Repository\FivondronanaRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -6098,7 +6106,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.8psXAmt"/>
+      <argument type="service" id=".service_locator.mm7IBPy"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -9062,6 +9070,8 @@
     <service id=".abstract.instanceof.App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Category.0.App\Entity\Category" class="App\Entity\Category" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Category" class="App\Entity\Category" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Fivondronana.0.App\Entity\Fivondronana" class="App\Entity\Fivondronana" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Fivondronana" class="App\Entity\Fivondronana" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Post.0.App\Entity\Post" class="App\Entity\Post" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Sampana.0.App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" abstract="true"/>
@@ -9080,6 +9090,8 @@
     <service id=".abstract.instanceof.App\Form\SampanaFormType" class="App\Form\SampanaFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FivondronanaRepository" class="App\Repository\FivondronanaRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\FivondronanaRepository" class="App\Repository\FivondronanaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" abstract="true"/>
@@ -10343,10 +10355,11 @@
         <argument key="vich_uploader.listener.upload.sampana_image" type="service_closure" id="vich_uploader.listener.upload.sampana_image"/>
       </argument>
     </service>
-    <service id=".service_locator.8psXAmt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.mm7IBPy" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
+        <argument key="App\Repository\FivondronanaRepository" type="service_closure" id="App\Repository\FivondronanaRepository"/>
         <argument key="App\Repository\PostRepository" type="service_closure" id="App\Repository\PostRepository"/>
         <argument key="App\Repository\SampanaRepository" type="service_closure" id="App\Repository\SampanaRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
