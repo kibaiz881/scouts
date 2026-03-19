@@ -11,20 +11,34 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Doctrine\ORM\EntityManagerInterface;
-
+use Knp\Component\Pager\PaginatorInterface;
 final class SampanaController extends AbstractController
 {
-    #[Route('/admin/sampana', name: 'app_admin_sampana')]
-    #[IsGranted("ROLE_ADMIN")]
-    public function index(
-        SampanaRepository $sampanaRepository
-    ): Response {
-        // find all sampana
-        $sampanas = $sampanaRepository->findAll();
-        return $this->render('admin/sampana/index.html.twig', [
-            'sampanas' => $sampanas,
-        ]);
-    }
+
+//find and pagination page
+#[Route('/admin/sampana', name: 'app_admin_sampana')]
+#[IsGranted("ROLE_ADMIN")]
+public function index(
+    SampanaRepository $sampanaRepository,
+    PaginatorInterface $paginator,
+    Request $request,
+): Response {
+
+    $query = $sampanaRepository->createQueryBuilder('s')
+        ->orderBy('s.id', 'DESC')
+        ->getQuery();
+
+    $sampanas = $paginator->paginate(
+        $query,
+        $request->query->getInt('page', 1),
+        6
+    );
+
+    return $this->render('admin/sampana/index.html.twig', [
+        'sampanas' => $sampanas,
+    ]);
+}
+
 
     //add new sampana
     #[Route('/admin/sampana/new', name: 'app_admin_sampana_new')]

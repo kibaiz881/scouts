@@ -12,18 +12,31 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
-
+use Knp\Component\Pager\PaginatorInterface;
 final class UseradminController extends AbstractController
 {
     //find all users and display them in the admin panel
     #[Route('/admin/useradmin', name: 'app_admin_useradmin')]
     #[IsGranted('ROLE_ADMIN')]
     public function index(
-        UserRepository $userRepository
+        UserRepository $userRepository,
+        Request $request,
+        PaginatorInterface $paginator
     ): Response
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
-        $userlist = $userRepository->findAll();
+ $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+    // ❗ IMPORTANT : QueryBuilder (pas findAll)
+    $query = $userRepository->createQueryBuilder('u')
+        ->orderBy('u.id', 'DESC')
+        ->getQuery();
+
+    // Pagination
+    $userlist = $paginator->paginate(
+        $query,
+        $request->query->getInt('page', 1), // page actuelle
+        6 // nombre d'éléments par page
+    );
         return $this->render('admin/useradmin/index.html.twig', [
             "userlist" => $userlist
         ]);

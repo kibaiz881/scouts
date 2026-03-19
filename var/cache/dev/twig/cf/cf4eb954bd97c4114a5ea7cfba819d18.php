@@ -347,19 +347,19 @@ class __TwigTemplate_7268639705e836fe7b3973ba72e35139 extends Template
             // line 189
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 189), "html", null, true);
             yield "\" class=\"badge
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             // line 190
             if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "isPublished", [], "any", false, false, false, 190)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 191
-                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-success
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-success
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             } else {
                 // line 193
-                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-warning
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
+                yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-warning
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             }
             // line 195
-            yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
+            yield "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
 \t\t\t\t\t\t\t\t\t\t\t";
             // line 196
             if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["post"], "isPublished", [], "any", false, false, false, 196)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
@@ -412,15 +412,75 @@ class __TwigTemplate_7268639705e836fe7b3973ba72e35139 extends Template
         // line 228
         yield "\t\t\t</div>
 \t\t</div>
+\t\t<!-- Pagination -->
+\t\t<nav>
+\t\t\t<ul
+\t\t\t\tclass=\"pagination justify-content-center\">
+
+\t\t\t\t";
+        // line 236
+        yield "\t\t\t\t<li class=\"page-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 236, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 236) == 1)) ? ("disabled") : (""));
+        yield "\">
+\t\t\t\t\t<a class=\"page-link\" href=\"";
+        // line 237
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 237, $this->source); })()), "request", [], "any", false, false, false, 237), "attributes", [], "any", false, false, false, 237), "get", ["_route"], "method", false, false, false, 237), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 237, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 237) - 1)]), "html", null, true);
+        yield "\">
+\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
+
+\t\t\t\t";
+        // line 243
+        yield "\t\t\t\t";
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(range(1, CoreExtension::getAttribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 243, $this->source); })()), "pageCount", [], "any", false, false, false, 243)));
+        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
+            // line 244
+            yield "\t\t\t\t\t<li class=\"page-item ";
+            yield ((($context["page"] == CoreExtension::getAttribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 244, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 244))) ? ("active") : (""));
+            yield "\">
+\t\t\t\t\t\t<a class=\"page-link\" href=\"";
+            // line 245
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 245, $this->source); })()), "request", [], "any", false, false, false, 245), "attributes", [], "any", false, false, false, 245), "get", ["_route"], "method", false, false, false, 245), ["page" => $context["page"]]), "html", null, true);
+            yield "\">
+\t\t\t\t\t\t\t";
+            // line 246
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["page"], "html", null, true);
+            yield "
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['page'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 250
+        yield "
+\t\t\t\t";
+        // line 252
+        yield "\t\t\t\t<li class=\"page-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 252, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 252) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 252, $this->source); })()), "pageCount", [], "any", false, false, false, 252))) ? ("disabled") : (""));
+        yield "\">
+\t\t\t\t\t<a class=\"page-link\" href=\"";
+        // line 253
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 253, $this->source); })()), "request", [], "any", false, false, false, 253), "attributes", [], "any", false, false, false, 253), "get", ["_route"], "method", false, false, false, 253), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["pagination"]) || array_key_exists("pagination", $context) ? $context["pagination"] : (function () { throw new RuntimeError('Variable "pagination" does not exist.', 253, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 253) + 1)]), "html", null, true);
+        yield "\">
+\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
+
+\t\t\t</ul>
+\t\t</nav>
 \t</main>
 
 \t";
-        // line 232
-        yield from $this->load("component/footeradmin.html.twig", 232)->unwrap()->yield($context);
-        // line 233
+        // line 262
+        yield from $this->load("component/footeradmin.html.twig", 262)->unwrap()->yield($context);
+        // line 263
         yield "
 \t";
-        // line 234
+        // line 264
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -443,69 +503,69 @@ class __TwigTemplate_7268639705e836fe7b3973ba72e35139 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 235
+        // line 265
         yield "\t\t <script>
-\t\t\tfunction approvePost(postId){
-\t\t\t\t\t\t\t\t
-\t\t\t\tfetch(\"/admin/post/approve/\" + postId,{
-\t\t\t\t\tmethod:\"POST\",
-\t\t\t\t\theaders:{
-\t\t\t\t\t\"X-Requested-With\":\"XMLHttpRequest\"
-\t\t\t\t}
-\t\t\t })
-\t\t\t\t.then(res => res.json())
-\t\t\t\t.then(data =>{
-\t\t\t\t\t\t\t\t
-\t\t\t\tif(data.success){
-\t\t\t\t\t\t\t\t
-\t\t\t\tlet badge = document.getElementById(\"status-\"+postId);
-\t\t\t\tbadge.classList.remove(\"bg-warning\");
-\t\t\t\tbadge.classList.add(\"bg-success\");
-\t\t\t\tbadge.innerText = \"Published\";
-\t\t\tToastify({
-\t\t\t\ttext: \"Post approuvé avec succès\",
-\t\t\t\tduration: 3000,
-\t\t\t\tgravity: \"top\",
-\t\t\t\tposition: \"right\",
-\t\t\t\tbackgroundColor: \"#28a745\"
-\t\t\t\t}).showToast();
+\t\t\t\t\tfunction approvePost(postId){
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\tfetch(\"/admin/post/approve/\" + postId,{
+\t\t\t\t\t\t\tmethod:\"POST\",
+\t\t\t\t\t\t\theaders:{
+\t\t\t\t\t\t\t\"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t}
+\t\t\t\t\t })
+\t\t\t\t\t\t.then(res => res.json())
+\t\t\t\t\t\t.then(data =>{
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\tif(data.success){
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\tlet badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\tbadge.classList.remove(\"bg-warning\");
+\t\t\t\t\t\tbadge.classList.add(\"bg-success\");
+\t\t\t\t\t\tbadge.innerText = \"Published\";
+\t\t\t\t\tToastify({
+\t\t\t\t\t\ttext: \"Post approuvé avec succès\",
+\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\tbackgroundColor: \"#28a745\"
+\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t}
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t});
+\t\t\t\t\t\t\t\t\t\t
 \t\t\t}
-\t\t\t\t\t\t\t\t
-\t\t});
-\t\t\t\t\t\t\t\t
-\t}
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\tfunction rejectPost(postId){
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
-\t\t\t\t\t\t\t\t        method:\"POST\",
-\t\t\t\t\t\t\t\t        headers:{
-\t\t\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
-\t\t\t\t\t\t\t\t        }
-\t\t\t\t\t\t\t\t    })
-\t\t\t\t\t\t\t\t    .then(res => res.json())
-\t\t\t\t\t\t\t\t    .then(data =>{
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t        if(data.success){
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
-\t\t\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
-\t\t\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
-\t\t\t\t\t\t\t\t            badge.innerText = \"Rejected\";
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
-\t\t\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
-\t\t\t\t\t\t\t\t\t\t\t\t\t}).showToast();
-\t\t\t\t\t\t\t\t        }
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t    });
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</script>
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\tfunction rejectPost(postId){
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
+\t\t\t\t\t\t\t\t\t\t        method:\"POST\",
+\t\t\t\t\t\t\t\t\t\t        headers:{
+\t\t\t\t\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t\t\t    })
+\t\t\t\t\t\t\t\t\t\t    .then(res => res.json())
+\t\t\t\t\t\t\t\t\t\t    .then(data =>{
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t        if(data.success){
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
+\t\t\t\t\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
+\t\t\t\t\t\t\t\t\t\t            badge.innerText = \"Rejected\";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t</script>
 \t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -537,7 +597,7 @@ class __TwigTemplate_7268639705e836fe7b3973ba72e35139 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  447 => 235,  424 => 234,  421 => 233,  419 => 232,  413 => 228,  397 => 218,  390 => 214,  375 => 201,  371 => 199,  367 => 197,  365 => 196,  362 => 195,  358 => 193,  354 => 191,  352 => 190,  348 => 189,  342 => 186,  332 => 181,  317 => 169,  308 => 163,  305 => 162,  299 => 160,  297 => 159,  290 => 155,  284 => 152,  275 => 145,  271 => 144,  258 => 133,  224 => 105,  220 => 104,  212 => 99,  206 => 96,  197 => 89,  193 => 88,  126 => 24,  110 => 10,  107 => 9,  105 => 8,  102 => 7,  89 => 6,  65 => 3,  42 => 1,);
+        return array (  507 => 265,  484 => 264,  481 => 263,  479 => 262,  467 => 253,  462 => 252,  459 => 250,  449 => 246,  445 => 245,  440 => 244,  435 => 243,  427 => 237,  422 => 236,  413 => 228,  397 => 218,  390 => 214,  375 => 201,  371 => 199,  367 => 197,  365 => 196,  362 => 195,  358 => 193,  354 => 191,  352 => 190,  348 => 189,  342 => 186,  332 => 181,  317 => 169,  308 => 163,  305 => 162,  299 => 160,  297 => 159,  290 => 155,  284 => 152,  275 => 145,  271 => 144,  258 => 133,  224 => 105,  220 => 104,  212 => 99,  206 => 96,  197 => 89,  193 => 88,  126 => 24,  110 => 10,  107 => 9,  105 => 8,  102 => 7,  89 => 6,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -731,12 +791,12 @@ class __TwigTemplate_7268639705e836fe7b3973ba72e35139 extends Template
 \t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t<div class=\"task-status status-in-progress\">
 \t\t\t\t\t\t\t\t\t\t<span id=\"status-{{ post.id }}\" class=\"badge
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% if post.isPublished %}
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-success
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% else %}
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-warning
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% endif %}
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% if post.isPublished %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-success
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% else %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbg-warning
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{% endif %}
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\">
 \t\t\t\t\t\t\t\t\t\t\t{% if post.isPublished %}
 \t\t\t\t\t\t\t\t\t\t\t\tPublished
 \t\t\t\t\t\t\t\t\t\t\t{% else %}
@@ -771,73 +831,103 @@ class __TwigTemplate_7268639705e836fe7b3973ba72e35139 extends Template
 \t\t\t\t{% endfor %}
 \t\t\t</div>
 \t\t</div>
+\t\t<!-- Pagination -->
+\t\t<nav>
+\t\t\t<ul
+\t\t\t\tclass=\"pagination justify-content-center\">
+
+\t\t\t\t{# PREVIOUS #}
+\t\t\t\t<li class=\"page-item {{ pagination.currentPageNumber == 1 ? 'disabled' : '' }}\">
+\t\t\t\t\t<a class=\"page-link\" href=\"{{ path(app.request.attributes.get('_route'), { 'page': pagination.currentPageNumber - 1 }) }}\">
+\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
+
+\t\t\t\t{# PAGES #}
+\t\t\t\t{% for page in 1..pagination.pageCount %}
+\t\t\t\t\t<li class=\"page-item {{ page == pagination.currentPageNumber ? 'active' : '' }}\">
+\t\t\t\t\t\t<a class=\"page-link\" href=\"{{ path(app.request.attributes.get('_route'), {'page': page}) }}\">
+\t\t\t\t\t\t\t{{ page }}
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t{% endfor %}
+
+\t\t\t\t{# NEXT #}
+\t\t\t\t<li class=\"page-item {{ pagination.currentPageNumber == pagination.pageCount ? 'disabled' : '' }}\">
+\t\t\t\t\t<a class=\"page-link\" href=\"{{ path(app.request.attributes.get('_route'), { 'page': pagination.currentPageNumber + 1 }) }}\">
+\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
+
+\t\t\t</ul>
+\t\t</nav>
 \t</main>
 
 \t{% include 'component/footeradmin.html.twig' %}
 
 \t{% block javascripts %}
 \t\t <script>
-\t\t\tfunction approvePost(postId){
-\t\t\t\t\t\t\t\t
-\t\t\t\tfetch(\"/admin/post/approve/\" + postId,{
-\t\t\t\t\tmethod:\"POST\",
-\t\t\t\t\theaders:{
-\t\t\t\t\t\"X-Requested-With\":\"XMLHttpRequest\"
-\t\t\t\t}
-\t\t\t })
-\t\t\t\t.then(res => res.json())
-\t\t\t\t.then(data =>{
-\t\t\t\t\t\t\t\t
-\t\t\t\tif(data.success){
-\t\t\t\t\t\t\t\t
-\t\t\t\tlet badge = document.getElementById(\"status-\"+postId);
-\t\t\t\tbadge.classList.remove(\"bg-warning\");
-\t\t\t\tbadge.classList.add(\"bg-success\");
-\t\t\t\tbadge.innerText = \"Published\";
-\t\t\tToastify({
-\t\t\t\ttext: \"Post approuvé avec succès\",
-\t\t\t\tduration: 3000,
-\t\t\t\tgravity: \"top\",
-\t\t\t\tposition: \"right\",
-\t\t\t\tbackgroundColor: \"#28a745\"
-\t\t\t\t}).showToast();
+\t\t\t\t\tfunction approvePost(postId){
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\tfetch(\"/admin/post/approve/\" + postId,{
+\t\t\t\t\t\t\tmethod:\"POST\",
+\t\t\t\t\t\t\theaders:{
+\t\t\t\t\t\t\t\"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t}
+\t\t\t\t\t })
+\t\t\t\t\t\t.then(res => res.json())
+\t\t\t\t\t\t.then(data =>{
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\tif(data.success){
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\tlet badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\tbadge.classList.remove(\"bg-warning\");
+\t\t\t\t\t\tbadge.classList.add(\"bg-success\");
+\t\t\t\t\t\tbadge.innerText = \"Published\";
+\t\t\t\t\tToastify({
+\t\t\t\t\t\ttext: \"Post approuvé avec succès\",
+\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\tbackgroundColor: \"#28a745\"
+\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t}
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t});
+\t\t\t\t\t\t\t\t\t\t
 \t\t\t}
-\t\t\t\t\t\t\t\t
-\t\t});
-\t\t\t\t\t\t\t\t
-\t}
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\tfunction rejectPost(postId){
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
-\t\t\t\t\t\t\t\t        method:\"POST\",
-\t\t\t\t\t\t\t\t        headers:{
-\t\t\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
-\t\t\t\t\t\t\t\t        }
-\t\t\t\t\t\t\t\t    })
-\t\t\t\t\t\t\t\t    .then(res => res.json())
-\t\t\t\t\t\t\t\t    .then(data =>{
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t        if(data.success){
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
-\t\t\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
-\t\t\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
-\t\t\t\t\t\t\t\t            badge.innerText = \"Rejected\";
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
-\t\t\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
-\t\t\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
-\t\t\t\t\t\t\t\t\t\t\t\t\t}).showToast();
-\t\t\t\t\t\t\t\t        }
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t    });
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t\t}
-\t\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t</script>
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\tfunction rejectPost(postId){
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t    fetch(\"/admin/post/reject/\" + postId,{
+\t\t\t\t\t\t\t\t\t\t        method:\"POST\",
+\t\t\t\t\t\t\t\t\t\t        headers:{
+\t\t\t\t\t\t\t\t\t\t            \"X-Requested-With\":\"XMLHttpRequest\"
+\t\t\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t\t\t    })
+\t\t\t\t\t\t\t\t\t\t    .then(res => res.json())
+\t\t\t\t\t\t\t\t\t\t    .then(data =>{
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t        if(data.success){
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t            let badge = document.getElementById(\"status-\"+postId);
+\t\t\t\t\t\t\t\t\t\t            badge.classList.remove(\"bg-success\");
+\t\t\t\t\t\t\t\t\t\t            badge.classList.add(\"bg-danger\");
+\t\t\t\t\t\t\t\t\t\t            badge.innerText = \"Rejected\";
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t        Toastify({
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\ttext: \"Post rejeté avec succès\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tduration: 3000,
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tgravity: \"top\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tposition: \"right\",
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tbackgroundColor: \"#ff4a1d\"
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t}).showToast();
+\t\t\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t}
+\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t</script>
 \t{% endblock %}
 {% endblock %}
 ", "admin/post_admin/index.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\post_admin\\index.html.twig");

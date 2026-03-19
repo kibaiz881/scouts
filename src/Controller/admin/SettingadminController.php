@@ -14,7 +14,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Filesystem\Filesystem;
- use Knp\Component\Pager\PaginatorInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 
 final class SettingadminController extends AbstractController

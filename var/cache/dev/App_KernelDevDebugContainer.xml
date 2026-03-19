@@ -678,7 +678,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.AipF7L4"/>
+      <argument type="service" id=".service_locator.7HaU3BS"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -4015,7 +4015,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.AipF7L4"/>
+      <argument type="service" id=".service_locator.7HaU3BS"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -9761,11 +9761,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0MQaTBY" method="withContext"/>
     </service>
-    <service id=".service_locator._WkUlH_.App\Controller\admin\PostAdminController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.DiMdHbo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="postRepository" type="service_closure" id="App\Repository\PostRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.DiMdHbo.App\Controller\admin\PostAdminController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\PostAdminController::index()"/>
       <argument>App\Controller\admin\PostAdminController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator._WkUlH_" method="withContext"/>
+      <factory service=".service_locator.DiMdHbo" method="withContext"/>
     </service>
     <service id=".service_locator.3BoFVFw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -9798,17 +9805,18 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.EhRzrPc" method="withContext"/>
     </service>
-    <service id=".service_locator.Q5KSOfB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gx1d6qN" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="sampanaRepository" type="service_closure" id="App\Repository\SampanaRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
       </argument>
     </service>
-    <service id=".service_locator.Q5KSOfB.App\Controller\admin\SampanaController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gx1d6qN.App\Controller\admin\SampanaController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\SampanaController::index()"/>
       <argument>App\Controller\admin\SampanaController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.Q5KSOfB" method="withContext"/>
+      <factory service=".service_locator.gx1d6qN" method="withContext"/>
     </service>
     <service id=".service_locator.y6oGcsp" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -9918,17 +9926,11 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.z0A7H.F" method="withContext"/>
     </service>
-    <service id=".service_locator.PtMLGj3" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.c6de2iA.App\Controller\admin\UseradminController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\UseradminController::index()"/>
       <argument>App\Controller\admin\UseradminController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.PtMLGj3" method="withContext"/>
+      <factory service=".service_locator.c6de2iA" method="withContext"/>
     </service>
     <service id=".service_locator.4XYvBdG.App\Controller\admin\UseradminController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\UseradminController::new()"/>
@@ -9936,7 +9938,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4XYvBdG" method="withContext"/>
     </service>
-    <service id=".service_locator.AipF7L4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7HaU3BS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -9949,11 +9951,11 @@
         <argument key="App\Controller\BlogController::index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\BlogController::index()"/>
         <argument key="App\Controller\RegistrationController::register" type="service_closure" id=".service_locator.K8m4mRx.App\Controller\RegistrationController::register()"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
-        <argument key="App\Controller\admin\PostAdminController::index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\admin\PostAdminController::index()"/>
+        <argument key="App\Controller\admin\PostAdminController::index" type="service_closure" id=".service_locator.DiMdHbo.App\Controller\admin\PostAdminController::index()"/>
         <argument key="App\Controller\admin\PostAdminController::new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\PostAdminController::approve" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::approve()"/>
         <argument key="App\Controller\admin\PostAdminController::reject" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::reject()"/>
-        <argument key="App\Controller\admin\SampanaController::index" type="service_closure" id=".service_locator.Q5KSOfB.App\Controller\admin\SampanaController::index()"/>
+        <argument key="App\Controller\admin\SampanaController::index" type="service_closure" id=".service_locator.gx1d6qN.App\Controller\admin\SampanaController::index()"/>
         <argument key="App\Controller\admin\SampanaController::new" type="service_closure" id=".service_locator.y6oGcsp.App\Controller\admin\SampanaController::new()"/>
         <argument key="App\Controller\admin\SampanaController::view" type="service_closure" id=".service_locator._betyeT.App\Controller\admin\SampanaController::view()"/>
         <argument key="App\Controller\admin\SampanaController::edit" type="service_closure" id=".service_locator.xdoDj7N.App\Controller\admin\SampanaController::edit()"/>
@@ -9963,7 +9965,7 @@
         <argument key="App\Controller\admin\SettingadminController::edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
         <argument key="App\Controller\admin\SettingadminController::delete" type="service_closure" id=".service_locator.q.9q_tU.App\Controller\admin\SettingadminController::delete()"/>
         <argument key="App\Controller\admin\SettingadminController::view" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\admin\SettingadminController::view()"/>
-        <argument key="App\Controller\admin\UseradminController::index" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()"/>
+        <argument key="App\Controller\admin\UseradminController::index" type="service_closure" id=".service_locator.c6de2iA.App\Controller\admin\UseradminController::index()"/>
         <argument key="App\Controller\admin\UseradminController::new" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\UseradminController::new()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.1vYpZ1B.kernel::loadRoutes()"/>
@@ -9973,11 +9975,11 @@
         <argument key="App\Controller\BlogController:index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\BlogController::index()"/>
         <argument key="App\Controller\RegistrationController:register" type="service_closure" id=".service_locator.K8m4mRx.App\Controller\RegistrationController::register()"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.0MQaTBY.App\Controller\SecurityController::login()"/>
-        <argument key="App\Controller\admin\PostAdminController:index" type="service_closure" id=".service_locator._WkUlH_.App\Controller\admin\PostAdminController::index()"/>
+        <argument key="App\Controller\admin\PostAdminController:index" type="service_closure" id=".service_locator.DiMdHbo.App\Controller\admin\PostAdminController::index()"/>
         <argument key="App\Controller\admin\PostAdminController:new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\PostAdminController:approve" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::approve()"/>
         <argument key="App\Controller\admin\PostAdminController:reject" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::reject()"/>
-        <argument key="App\Controller\admin\SampanaController:index" type="service_closure" id=".service_locator.Q5KSOfB.App\Controller\admin\SampanaController::index()"/>
+        <argument key="App\Controller\admin\SampanaController:index" type="service_closure" id=".service_locator.gx1d6qN.App\Controller\admin\SampanaController::index()"/>
         <argument key="App\Controller\admin\SampanaController:new" type="service_closure" id=".service_locator.y6oGcsp.App\Controller\admin\SampanaController::new()"/>
         <argument key="App\Controller\admin\SampanaController:view" type="service_closure" id=".service_locator._betyeT.App\Controller\admin\SampanaController::view()"/>
         <argument key="App\Controller\admin\SampanaController:edit" type="service_closure" id=".service_locator.xdoDj7N.App\Controller\admin\SampanaController::edit()"/>
@@ -9987,7 +9989,7 @@
         <argument key="App\Controller\admin\SettingadminController:edit" type="service_closure" id=".service_locator.j3kKXma.App\Controller\admin\SettingadminController::edit()"/>
         <argument key="App\Controller\admin\SettingadminController:delete" type="service_closure" id=".service_locator.q.9q_tU.App\Controller\admin\SettingadminController::delete()"/>
         <argument key="App\Controller\admin\SettingadminController:view" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\admin\SettingadminController::view()"/>
-        <argument key="App\Controller\admin\UseradminController:index" type="service_closure" id=".service_locator.PtMLGj3.App\Controller\admin\UseradminController::index()"/>
+        <argument key="App\Controller\admin\UseradminController:index" type="service_closure" id=".service_locator.c6de2iA.App\Controller\admin\UseradminController::index()"/>
         <argument key="App\Controller\admin\UseradminController:new" type="service_closure" id=".service_locator.4XYvBdG.App\Controller\admin\UseradminController::new()"/>
       </argument>
     </service>
@@ -12496,7 +12498,7 @@
     <service id="Knp\Component\Pager\ArgumentAccess\ArgumentAccessInterface" alias="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.AipF7L4"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.7HaU3BS"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>
@@ -12559,9 +12561,10 @@
     <service id=".service_locator.o8dn8wd" alias=".service_locator.3yATBZT"/>
     <service id=".service_locator.kidjPyb" alias=".service_locator.K8m4mRx"/>
     <service id=".service_locator.uBwBrvQ" alias=".service_locator.0MQaTBY"/>
+    <service id=".service_locator.Wqtu9AD" alias=".service_locator.DiMdHbo"/>
     <service id=".service_locator.UOV1jy9" alias=".service_locator.3BoFVFw"/>
     <service id=".service_locator.J_QW._s" alias=".service_locator.EhRzrPc"/>
-    <service id=".service_locator.3sO5VCq" alias=".service_locator.Q5KSOfB"/>
+    <service id=".service_locator.IT._uvn" alias=".service_locator.gx1d6qN"/>
     <service id=".service_locator.s6WxXe." alias=".service_locator.y6oGcsp"/>
     <service id=".service_locator.X_8imz6" alias=".service_locator._betyeT"/>
     <service id=".service_locator.oakDuK5" alias=".service_locator.xdoDj7N"/>
@@ -12570,7 +12573,6 @@
     <service id=".service_locator.rm_qkBw" alias=".service_locator.j3kKXma"/>
     <service id=".service_locator.HvVh9A1" alias=".service_locator.q.9q_tU"/>
     <service id=".service_locator.0ekWYPZ" alias=".service_locator.z0A7H.F"/>
-    <service id=".service_locator.yZty4YD" alias=".service_locator.PtMLGj3"/>
     <service id=".service_locator.D6tJ4Px" alias=".service_locator.TJNRSaV"/>
     <service id=".service_locator.0ngK9uf" alias=".service_locator.MXLal1R"/>
   </services>

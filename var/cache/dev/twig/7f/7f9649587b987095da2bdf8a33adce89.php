@@ -262,42 +262,109 @@ class __TwigTemplate_3d1b89dfb1aa331a3a7183a936c9705d extends Template
         yield "
     </div>
 
-    <!-- Pagination -->
-    <nav aria-label=\"Task pagination\">
-        <ul class=\"pagination\">
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\"><i class=\"bi bi-chevron-left\"></i></a>
-            </li>
+\t\t<!-- Pagination -->
+\t\t<nav>
+\t\t\t<ul class=\"pagination justify-content-center\">
 
-            <li class=\"page-item\">
-                <a class=\"page-link active\" href=\"#\">1</a>
-            </li>
-
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\">2</a>
-            </li>
-
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\">3</a>
-            </li>
-
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\"><i class=\"bi bi-chevron-right\"></i></a>
-            </li>
-        </ul>
-    </nav>
+\t\t\t\t";
+        // line 105
+        yield "\t\t\t\t";
+        if ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 105, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 105) > 1)) {
+            // line 106
+            yield "\t\t\t\t\t<li class=\"page-item\">
+\t\t\t\t\t\t<a class=\"page-link\"
+\t\t\t\t\t\thref=\"";
+            // line 108
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 108, $this->source); })()), "request", [], "any", false, false, false, 108), "attributes", [], "any", false, false, false, 108), "get", ["_route"], "method", false, false, false, 108), ["page" => (CoreExtension::getAttribute($this->env, $this->source,             // line 109
+(isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 109, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 109) - 1)]), "html", null, true);
+            // line 110
+            yield "\">
+\t\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t";
+        } else {
+            // line 115
+            yield "\t\t\t\t\t<li class=\"page-item disabled\">
+\t\t\t\t\t\t<span class=\"page-link\">
+\t\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t</li>
+\t\t\t\t";
+        }
+        // line 121
+        yield "
+\t\t\t\t";
+        // line 123
+        yield "\t\t\t\t";
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(range(1, CoreExtension::getAttribute($this->env, $this->source, (isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 123, $this->source); })()), "pageCount", [], "any", false, false, false, 123)));
+        foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
+            // line 124
+            yield "\t\t\t\t\t<li class=\"page-item\">
+\t\t\t\t\t\t<a class=\"page-link ";
+            // line 125
+            yield ((($context["page"] == CoreExtension::getAttribute($this->env, $this->source, (isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 125, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 125))) ? ("active") : (""));
+            yield "\"
+\t\t\t\t\t\thref=\"";
+            // line 126
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 126, $this->source); })()), "request", [], "any", false, false, false, 126), "attributes", [], "any", false, false, false, 126), "get", ["_route"], "method", false, false, false, 126), ["page" => $context["page"]]), "html", null, true);
+            yield "\">
+\t\t\t\t\t\t\t";
+            // line 127
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["page"], "html", null, true);
+            yield "
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['page'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 131
+        yield "
+\t\t\t\t";
+        // line 133
+        yield "\t\t\t\t";
+        if ((CoreExtension::getAttribute($this->env, $this->source, (isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 133, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 133) < CoreExtension::getAttribute($this->env, $this->source, (isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 133, $this->source); })()), "pageCount", [], "any", false, false, false, 133))) {
+            // line 134
+            yield "\t\t\t\t\t<li class=\"page-item\">
+\t\t\t\t\t\t<a class=\"page-link\"
+\t\t\t\t\t\thref=\"";
+            // line 136
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 136, $this->source); })()), "request", [], "any", false, false, false, 136), "attributes", [], "any", false, false, false, 136), "get", ["_route"], "method", false, false, false, 136), ["page" => (CoreExtension::getAttribute($this->env, $this->source,             // line 137
+(isset($context["userlist"]) || array_key_exists("userlist", $context) ? $context["userlist"] : (function () { throw new RuntimeError('Variable "userlist" does not exist.', 137, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 137) + 1)]), "html", null, true);
+            // line 138
+            yield "\">
+\t\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t";
+        } else {
+            // line 143
+            yield "\t\t\t\t\t<li class=\"page-item disabled\">
+\t\t\t\t\t\t<span class=\"page-link\">
+\t\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t</li>
+\t\t\t\t";
+        }
+        // line 149
+        yield "
+\t\t\t</ul>
+\t\t</nav>
 
 </main>
 
 ";
-        // line 127
-        yield from $this->load("component/footeradmin.html.twig", 127)->unwrap()->yield($context);
-        // line 128
+        // line 155
+        yield from $this->load("component/footeradmin.html.twig", 155)->unwrap()->yield($context);
+        // line 156
         yield "
 ";
-        // line 129
+        // line 157
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 187
+        // line 215
         yield "
 ";
         
@@ -309,7 +376,7 @@ class __TwigTemplate_3d1b89dfb1aa331a3a7183a936c9705d extends Template
         yield from [];
     }
 
-    // line 129
+    // line 157
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -322,7 +389,7 @@ class __TwigTemplate_3d1b89dfb1aa331a3a7183a936c9705d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 130
+        // line 158
         yield "<script>
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -410,7 +477,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     public function getDebugInfo(): array
     {
-        return array (  326 => 130,  313 => 129,  301 => 187,  299 => 129,  296 => 128,  294 => 127,  262 => 97,  250 => 91,  244 => 88,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
+        return array (  393 => 158,  380 => 157,  368 => 215,  366 => 157,  363 => 156,  361 => 155,  353 => 149,  345 => 143,  338 => 138,  336 => 137,  335 => 136,  331 => 134,  328 => 133,  325 => 131,  315 => 127,  311 => 126,  307 => 125,  304 => 124,  299 => 123,  296 => 121,  288 => 115,  281 => 110,  279 => 109,  278 => 108,  274 => 106,  271 => 105,  262 => 97,  250 => 91,  244 => 88,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -514,30 +581,58 @@ document.addEventListener('DOMContentLoaded', function () {
 
     </div>
 
-    <!-- Pagination -->
-    <nav aria-label=\"Task pagination\">
-        <ul class=\"pagination\">
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\"><i class=\"bi bi-chevron-left\"></i></a>
-            </li>
+\t\t<!-- Pagination -->
+\t\t<nav>
+\t\t\t<ul class=\"pagination justify-content-center\">
 
-            <li class=\"page-item\">
-                <a class=\"page-link active\" href=\"#\">1</a>
-            </li>
+\t\t\t\t{# PREVIOUS #}
+\t\t\t\t{% if userlist.currentPageNumber > 1 %}
+\t\t\t\t\t<li class=\"page-item\">
+\t\t\t\t\t\t<a class=\"page-link\"
+\t\t\t\t\t\thref=\"{{ path(app.request.attributes.get('_route'), {
+\t\t\t\t\t\t\t'page': userlist.currentPageNumber - 1
+\t\t\t\t\t\t}) }}\">
+\t\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t{% else %}
+\t\t\t\t\t<li class=\"page-item disabled\">
+\t\t\t\t\t\t<span class=\"page-link\">
+\t\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t</li>
+\t\t\t\t{% endif %}
 
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\">2</a>
-            </li>
+\t\t\t\t{# PAGES #}
+\t\t\t\t{% for page in 1..userlist.pageCount %}
+\t\t\t\t\t<li class=\"page-item\">
+\t\t\t\t\t\t<a class=\"page-link {{ page == userlist.currentPageNumber ? 'active' : '' }}\"
+\t\t\t\t\t\thref=\"{{ path(app.request.attributes.get('_route'), {'page': page}) }}\">
+\t\t\t\t\t\t\t{{ page }}
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t{% endfor %}
 
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\">3</a>
-            </li>
+\t\t\t\t{# NEXT #}
+\t\t\t\t{% if userlist.currentPageNumber < userlist.pageCount %}
+\t\t\t\t\t<li class=\"page-item\">
+\t\t\t\t\t\t<a class=\"page-link\"
+\t\t\t\t\t\thref=\"{{ path(app.request.attributes.get('_route'), {
+\t\t\t\t\t\t\t'page': userlist.currentPageNumber + 1
+\t\t\t\t\t\t}) }}\">
+\t\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t{% else %}
+\t\t\t\t\t<li class=\"page-item disabled\">
+\t\t\t\t\t\t<span class=\"page-link\">
+\t\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t</li>
+\t\t\t\t{% endif %}
 
-            <li class=\"page-item\">
-                <a class=\"page-link\" href=\"#\"><i class=\"bi bi-chevron-right\"></i></a>
-            </li>
-        </ul>
-    </nav>
+\t\t\t</ul>
+\t\t</nav>
 
 </main>
 

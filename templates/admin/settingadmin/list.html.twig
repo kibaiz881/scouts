@@ -98,57 +98,57 @@
 		</div>
 
 		<!-- Pagination -->
-<nav>
-    <ul class="pagination justify-content-center">
+		<nav>
+			<ul class="pagination justify-content-center">
 
-        {# PREVIOUS #}
-        {% if userlist.currentPageNumber > 1 %}
-            <li class="page-item">
-                <a class="page-link"
-                   href="{{ path(app.request.attributes.get('_route'), {
-                       'page': userlist.currentPageNumber - 1
-                   }) }}">
-                    <i class="bi bi-chevron-left"></i>
-                </a>
-            </li>
-        {% else %}
-            <li class="page-item disabled">
-                <span class="page-link">
-                    <i class="bi bi-chevron-left"></i>
-                </span>
-            </li>
-        {% endif %}
+				{# PREVIOUS #}
+				{% if userlist.currentPageNumber > 1 %}
+					<li class="page-item">
+						<a class="page-link"
+						href="{{ path(app.request.attributes.get('_route'), {
+							'page': userlist.currentPageNumber - 1
+						}) }}">
+							<i class="bi bi-chevron-left"></i>
+						</a>
+					</li>
+				{% else %}
+					<li class="page-item disabled">
+						<span class="page-link">
+							<i class="bi bi-chevron-left"></i>
+						</span>
+					</li>
+				{% endif %}
 
-        {# PAGES #}
-        {% for page in 1..userlist.pageCount %}
-            <li class="page-item">
-                <a class="page-link {{ page == userlist.currentPageNumber ? 'active' : '' }}"
-                   href="{{ path(app.request.attributes.get('_route'), {'page': page}) }}">
-                    {{ page }}
-                </a>
-            </li>
-        {% endfor %}
+				{# PAGES #}
+				{% for page in 1..userlist.pageCount %}
+					<li class="page-item">
+						<a class="page-link {{ page == userlist.currentPageNumber ? 'active' : '' }}"
+						href="{{ path(app.request.attributes.get('_route'), {'page': page}) }}">
+							{{ page }}
+						</a>
+					</li>
+				{% endfor %}
 
-        {# NEXT #}
-        {% if userlist.currentPageNumber < userlist.pageCount %}
-            <li class="page-item">
-                <a class="page-link"
-                   href="{{ path(app.request.attributes.get('_route'), {
-                       'page': userlist.currentPageNumber + 1
-                   }) }}">
-                    <i class="bi bi-chevron-right"></i>
-                </a>
-            </li>
-        {% else %}
-            <li class="page-item disabled">
-                <span class="page-link">
-                    <i class="bi bi-chevron-right"></i>
-                </span>
-            </li>
-        {% endif %}
+				{# NEXT #}
+				{% if userlist.currentPageNumber < userlist.pageCount %}
+					<li class="page-item">
+						<a class="page-link"
+						href="{{ path(app.request.attributes.get('_route'), {
+							'page': userlist.currentPageNumber + 1
+						}) }}">
+							<i class="bi bi-chevron-right"></i>
+						</a>
+					</li>
+				{% else %}
+					<li class="page-item disabled">
+						<span class="page-link">
+							<i class="bi bi-chevron-right"></i>
+						</span>
+					</li>
+				{% endif %}
 
-    </ul>
-</nav>
+			</ul>
+		</nav>
 
 
 

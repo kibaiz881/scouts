@@ -97,30 +97,58 @@
 
     </div>
 
-    <!-- Pagination -->
-    <nav aria-label="Task pagination">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a>
-            </li>
+		<!-- Pagination -->
+		<nav>
+			<ul class="pagination justify-content-center">
 
-            <li class="page-item">
-                <a class="page-link active" href="#">1</a>
-            </li>
+				{# PREVIOUS #}
+				{% if userlist.currentPageNumber > 1 %}
+					<li class="page-item">
+						<a class="page-link"
+						href="{{ path(app.request.attributes.get('_route'), {
+							'page': userlist.currentPageNumber - 1
+						}) }}">
+							<i class="bi bi-chevron-left"></i>
+						</a>
+					</li>
+				{% else %}
+					<li class="page-item disabled">
+						<span class="page-link">
+							<i class="bi bi-chevron-left"></i>
+						</span>
+					</li>
+				{% endif %}
 
-            <li class="page-item">
-                <a class="page-link" href="#">2</a>
-            </li>
+				{# PAGES #}
+				{% for page in 1..userlist.pageCount %}
+					<li class="page-item">
+						<a class="page-link {{ page == userlist.currentPageNumber ? 'active' : '' }}"
+						href="{{ path(app.request.attributes.get('_route'), {'page': page}) }}">
+							{{ page }}
+						</a>
+					</li>
+				{% endfor %}
 
-            <li class="page-item">
-                <a class="page-link" href="#">3</a>
-            </li>
+				{# NEXT #}
+				{% if userlist.currentPageNumber < userlist.pageCount %}
+					<li class="page-item">
+						<a class="page-link"
+						href="{{ path(app.request.attributes.get('_route'), {
+							'page': userlist.currentPageNumber + 1
+						}) }}">
+							<i class="bi bi-chevron-right"></i>
+						</a>
+					</li>
+				{% else %}
+					<li class="page-item disabled">
+						<span class="page-link">
+							<i class="bi bi-chevron-right"></i>
+						</span>
+					</li>
+				{% endif %}
 
-            <li class="page-item">
-                <a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
-            </li>
-        </ul>
-    </nav>
+			</ul>
+		</nav>
 
 </main>
 

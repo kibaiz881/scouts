@@ -12,22 +12,40 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
-
+use Knp\Component\Pager\PaginatorInterface;
 final class PostAdminController extends AbstractController
 {
     // afficher seulement les posts de l'utilisateur connecté
     #[Route('/admin/post/admin', name: 'app_admin_post_admin')]
     #[IsGranted('ROLE_ADMIN')]
-    public function index(PostRepository $postRepository): Response
-    {
-        $user = $this->getUser();
+    public function index(
+        PostRepository $postRepository,
+        Request $request,
+        PaginatorInterface $paginator
+    ): Response    {
+         $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
+         $user = $this->getUser();  
 
         $posts = $postRepository->findBy([
             'user' => $user
         ]);
 
+        $query = $postRepository->createQueryBuilder('p')
+            ->where('p.user = :user')
+            ->setParameter('user', $user)
+            ->orderBy('p.postedAt', 'DESC')
+            ->getQuery();
+
+        $pagination = $paginator->paginate(
+            $query,
+            $request->query->getInt('page', 1),
+            6
+        );
+
         return $this->render('admin/post_admin/index.html.twig', [
-            'posts' => $posts
+            'posts' => $posts,
+            'pagination' => $pagination
         ]);
     }
 
