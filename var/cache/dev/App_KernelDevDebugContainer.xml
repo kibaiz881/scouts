@@ -622,6 +622,9 @@
     <service id="App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
+    <service id="App\Form\FivondronanaFormType" class="App\Form\FivondronanaFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
     <service id="App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
@@ -1705,6 +1708,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AddnewuserFormAdminType</argument>
+        <argument>App\Form\FivondronanaFormType</argument>
         <argument>App\Form\PostFormType</argument>
         <argument>App\Form\ProfileType</argument>
         <argument>App\Form\RegistrationFormType</argument>
@@ -4647,7 +4651,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.XnivPdY"/>
+      <argument type="service" id=".service_locator.3DIabDZ"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4757,6 +4761,7 @@
       <argument>%form.type_extension.csrf.field_attr%</argument>
       <argument type="collection">
         <argument key="App\Form\AddnewuserFormAdminType">submit</argument>
+        <argument key="App\Form\FivondronanaFormType">submit</argument>
         <argument key="App\Form\PostFormType">submit</argument>
         <argument key="App\Form\ProfileType">submit</argument>
         <argument key="App\Form\RegistrationFormType">submit</argument>
@@ -9080,6 +9085,8 @@
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FivondronanaFormType" class="App\Form\FivondronanaFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\FivondronanaFormType" class="App\Form\FivondronanaFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProfileType" class="App\Form\ProfileType" autowire="true" abstract="true"/>
@@ -10188,10 +10195,11 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.XnivPdY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.3DIabDZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddnewuserFormAdminType" type="service_closure" id="App\Form\AddnewuserFormAdminType"/>
+        <argument key="App\Form\FivondronanaFormType" type="service_closure" id="App\Form\FivondronanaFormType"/>
         <argument key="App\Form\PostFormType" type="service_closure" id="App\Form\PostFormType"/>
         <argument key="App\Form\ProfileType" type="service_closure" id="App\Form\ProfileType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>

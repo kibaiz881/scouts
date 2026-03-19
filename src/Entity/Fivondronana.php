@@ -7,8 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: FivondronanaRepository::class)]
+#[Vich\Uploadable]
 class Fivondronana
 {
     #[ORM\Id]
@@ -43,6 +46,14 @@ class Fivondronana
     // Relation OneToMany vers Sampana
     #[ORM\OneToMany(mappedBy: 'fivondronana', targetEntity: Sampana::class, orphanRemoval: true)]
     private Collection $sampanas;
+
+
+
+    #[Vich\UploadableField(mapping: 'fivondronana_image', fileNameProperty: 'fivondronanaPictureName')]
+    private ?File $fivondronanaPictureFile = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $fivondronanaPictureName = null;
 
     public function __construct()
     {
@@ -165,6 +176,46 @@ class Fivondronana
         if ($this->sampanas->removeElement($sampana)) {
             // ⚠️ Ne pas mettre à null si la relation est non nullable
         }
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fivondronanaPictureFile
+     */ 
+    public function getFivondronanaPictureFile()
+    {
+        return $this->fivondronanaPictureFile;
+    }
+
+    /**
+     * Set the value of fivondronanaPictureFile
+     *
+     * @return  self
+     */ 
+    public function setFivondronanaPictureFile($fivondronanaPictureFile)
+    {
+        $this->fivondronanaPictureFile = $fivondronanaPictureFile;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fivondronanaPictureName
+     */ 
+    public function getFivondronanaPictureName()
+    {
+        return $this->fivondronanaPictureName;
+    }
+
+    /**
+     * Set the value of fivondronanaPictureName
+     *
+     * @return  self
+     */ 
+    public function setFivondronanaPictureName($fivondronanaPictureName)
+    {
+        $this->fivondronanaPictureName = $fivondronanaPictureName;
 
         return $this;
     }

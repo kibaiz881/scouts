@@ -258,77 +258,73 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 119
         yield "\t\t</div>
-<nav>
-    <ul class=\"pagination justify-content-center\">
 
-        ";
-        // line 124
-        yield "        <li class=\"page-item ";
-        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 124, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 124) == 1)) ? ("disabled") : (""));
+\t\t<!-- Pagination -->
+\t\t<nav>
+\t\t\t<ul
+\t\t\t\tclass=\"pagination justify-content-center\">
+
+\t\t\t\t";
+        // line 127
+        yield "\t\t\t\t<li class=\"page-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 127, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 127) == 1)) ? ("disabled") : (""));
         yield "\">
-            <a class=\"page-link\"
-               href=\"";
-        // line 126
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 126, $this->source); })()), "request", [], "any", false, false, false, 126), "attributes", [], "any", false, false, false, 126), "get", ["_route"], "method", false, false, false, 126), ["page" => (CoreExtension::getAttribute($this->env, $this->source,         // line 127
-(isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 127, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 127) - 1)]), "html", null, true);
+\t\t\t\t\t<a class=\"page-link\" href=\"";
         // line 128
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 128, $this->source); })()), "request", [], "any", false, false, false, 128), "attributes", [], "any", false, false, false, 128), "get", ["_route"], "method", false, false, false, 128), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 128, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 128) - 1)]), "html", null, true);
         yield "\">
-                <i class=\"bi bi-chevron-left\"></i>
-            </a>
-        </li>
+\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
 
-        ";
+\t\t\t\t";
         // line 134
-        yield "        ";
+        yield "\t\t\t\t";
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(range(1, CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 134, $this->source); })()), "pageCount", [], "any", false, false, false, 134)));
         foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
             // line 135
-            yield "            <li class=\"page-item ";
+            yield "\t\t\t\t\t<li class=\"page-item ";
             yield ((($context["page"] == CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 135, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 135))) ? ("active") : (""));
             yield "\">
-                <a class=\"page-link\"
-                   href=\"";
-            // line 137
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 137, $this->source); })()), "request", [], "any", false, false, false, 137), "attributes", [], "any", false, false, false, 137), "get", ["_route"], "method", false, false, false, 137), ["page" => $context["page"]]), "html", null, true);
+\t\t\t\t\t\t<a class=\"page-link\" href=\"";
+            // line 136
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 136, $this->source); })()), "request", [], "any", false, false, false, 136), "attributes", [], "any", false, false, false, 136), "get", ["_route"], "method", false, false, false, 136), ["page" => $context["page"]]), "html", null, true);
             yield "\">
-                    ";
-            // line 138
+\t\t\t\t\t\t\t";
+            // line 137
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["page"], "html", null, true);
             yield "
-                </a>
-            </li>
-        ";
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['page'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 142
+        // line 141
         yield "
-        ";
+\t\t\t\t";
+        // line 143
+        yield "\t\t\t\t<li class=\"page-item ";
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 143, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 143) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 143, $this->source); })()), "pageCount", [], "any", false, false, false, 143))) ? ("disabled") : (""));
+        yield "\">
+\t\t\t\t\t<a class=\"page-link\" href=\"";
         // line 144
-        yield "        <li class=\"page-item ";
-        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 144, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 144) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 144, $this->source); })()), "pageCount", [], "any", false, false, false, 144))) ? ("disabled") : (""));
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 144, $this->source); })()), "request", [], "any", false, false, false, 144), "attributes", [], "any", false, false, false, 144), "get", ["_route"], "method", false, false, false, 144), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 144, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 144) + 1)]), "html", null, true);
         yield "\">
-            <a class=\"page-link\"
-               href=\"";
-        // line 146
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 146, $this->source); })()), "request", [], "any", false, false, false, 146), "attributes", [], "any", false, false, false, 146), "get", ["_route"], "method", false, false, false, 146), ["page" => (CoreExtension::getAttribute($this->env, $this->source,         // line 147
-(isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 147, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 147) + 1)]), "html", null, true);
-        // line 148
-        yield "\">
-                <i class=\"bi bi-chevron-right\"></i>
-            </a>
-        </li>
+\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
 
-    </ul>
-</nav>
+\t\t\t</ul>
+\t\t</nav>
 
 
 \t</main>
 \t";
-        // line 158
-        yield from $this->load("component/footeradmin.html.twig", 158)->unwrap()->yield($context);
+        // line 154
+        yield from $this->load("component/footeradmin.html.twig", 154)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -359,7 +355,7 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  331 => 158,  319 => 148,  317 => 147,  316 => 146,  310 => 144,  307 => 142,  297 => 138,  293 => 137,  287 => 135,  282 => 134,  275 => 128,  273 => 127,  272 => 126,  266 => 124,  260 => 119,  246 => 111,  238 => 106,  230 => 101,  212 => 86,  196 => 73,  187 => 67,  179 => 62,  175 => 61,  166 => 57,  157 => 51,  154 => 50,  150 => 49,  146 => 47,  144 => 41,  120 => 20,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  327 => 154,  314 => 144,  309 => 143,  306 => 141,  296 => 137,  292 => 136,  287 => 135,  282 => 134,  274 => 128,  269 => 127,  260 => 119,  246 => 111,  238 => 106,  230 => 101,  212 => 86,  196 => 73,  187 => 67,  179 => 62,  175 => 61,  166 => 57,  157 => 51,  154 => 50,  150 => 49,  146 => 47,  144 => 41,  120 => 20,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -483,41 +479,37 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
 \t\t\t\t</div>
 \t\t\t{% endfor %}
 \t\t</div>
-<nav>
-    <ul class=\"pagination justify-content-center\">
 
-        {# PREVIOUS #}
-        <li class=\"page-item {{ sampanas.currentPageNumber == 1 ? 'disabled' : '' }}\">
-            <a class=\"page-link\"
-               href=\"{{ path(app.request.attributes.get('_route'), {
-                   'page': sampanas.currentPageNumber - 1
-               }) }}\">
-                <i class=\"bi bi-chevron-left\"></i>
-            </a>
-        </li>
+\t\t<!-- Pagination -->
+\t\t<nav>
+\t\t\t<ul
+\t\t\t\tclass=\"pagination justify-content-center\">
 
-        {# PAGES #}
-        {% for page in 1..sampanas.pageCount %}
-            <li class=\"page-item {{ page == sampanas.currentPageNumber ? 'active' : '' }}\">
-                <a class=\"page-link\"
-                   href=\"{{ path(app.request.attributes.get('_route'), {'page': page}) }}\">
-                    {{ page }}
-                </a>
-            </li>
-        {% endfor %}
+\t\t\t\t{# PREVIOUS #}
+\t\t\t\t<li class=\"page-item {{ sampanas.currentPageNumber == 1 ? 'disabled' : '' }}\">
+\t\t\t\t\t<a class=\"page-link\" href=\"{{ path(app.request.attributes.get('_route'), { 'page': sampanas.currentPageNumber - 1 }) }}\">
+\t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
 
-        {# NEXT #}
-        <li class=\"page-item {{ sampanas.currentPageNumber == sampanas.pageCount ? 'disabled' : '' }}\">
-            <a class=\"page-link\"
-               href=\"{{ path(app.request.attributes.get('_route'), {
-                   'page': sampanas.currentPageNumber + 1
-               }) }}\">
-                <i class=\"bi bi-chevron-right\"></i>
-            </a>
-        </li>
+\t\t\t\t{# PAGES #}
+\t\t\t\t{% for page in 1..sampanas.pageCount %}
+\t\t\t\t\t<li class=\"page-item {{ page == sampanas.currentPageNumber ? 'active' : '' }}\">
+\t\t\t\t\t\t<a class=\"page-link\" href=\"{{ path(app.request.attributes.get('_route'), {'page': page}) }}\">
+\t\t\t\t\t\t\t{{ page }}
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t{% endfor %}
 
-    </ul>
-</nav>
+\t\t\t\t{# NEXT #}
+\t\t\t\t<li class=\"page-item {{ sampanas.currentPageNumber == sampanas.pageCount ? 'disabled' : '' }}\">
+\t\t\t\t\t<a class=\"page-link\" href=\"{{ path(app.request.attributes.get('_route'), { 'page': sampanas.currentPageNumber + 1 }) }}\">
+\t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
+
+\t\t\t</ul>
+\t\t</nav>
 
 
 \t</main>
