@@ -366,6 +366,24 @@
         <parameter key="namer_keep_extension">false</parameter>
         <parameter key="db_driver">orm</parameter>
       </parameter>
+      <parameter key="mpiandrakitra_image" type="collection">
+        <parameter key="uri_prefix">/images/mpiandrakitra</parameter>
+        <parameter key="upload_destination">C:\Users\M_INFO\Music\scouts/public/images/mpiandrakitra</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\SmartUniqueNamer.mpiandrakitra_image</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="erase_fields">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="namer_keep_extension">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
     </parameter>
     <parameter key="vich_uploader.use_flysystem_to_resolve_uri">false</parameter>
     <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/sliding.html.twig</parameter>
@@ -629,6 +647,10 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Entity\Mpiandrakitra" class="App\Entity\Mpiandrakitra" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
@@ -668,6 +690,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\FivondronanaRepository" class="App\Repository\FivondronanaRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\MpiandrakitraRepository" class="App\Repository\MpiandrakitraRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -5899,7 +5925,7 @@
       </call>
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager">
-      <argument type="service" id=".service_locator.E5UwCIU"/>
+      <argument type="service" id=".service_locator.IvWEi.t"/>
       <argument type="collection">
         <argument type="collection">
           <argument type="collection">
@@ -5924,6 +5950,12 @@
             <argument>preUpdate</argument>
           </argument>
           <argument>vich_uploader.listener.clean.fivondronana_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preUpdate</argument>
+          </argument>
+          <argument>vich_uploader.listener.clean.mpiandrakitra_image</argument>
         </argument>
         <argument type="collection">
           <argument type="collection">
@@ -6075,6 +6107,30 @@
           </argument>
           <argument>vich_uploader.listener.upload.fivondronana_image</argument>
         </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preRemove</argument>
+          </argument>
+          <argument>vich_uploader.listener.remove.mpiandrakitra_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>postFlush</argument>
+          </argument>
+          <argument>vich_uploader.listener.remove.mpiandrakitra_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>prePersist</argument>
+          </argument>
+          <argument>vich_uploader.listener.upload.mpiandrakitra_image</argument>
+        </argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument>preUpdate</argument>
+          </argument>
+          <argument>vich_uploader.listener.upload.mpiandrakitra_image</argument>
+        </argument>
       </argument>
     </service>
     <service id="doctrine.dbal.default_connection" class="Doctrine\DBAL\Connection" public="true">
@@ -6168,7 +6224,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.mm7IBPy"/>
+      <argument type="service" id=".service_locator.eCA7L3i"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -8567,6 +8623,9 @@
     <service id="Vich\UploaderBundle\Naming\SmartUniqueNamer.fivondronana_image" class="Vich\UploaderBundle\Naming\SmartUniqueNamer" autowire="true">
       <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
     </service>
+    <service id="Vich\UploaderBundle\Naming\SmartUniqueNamer.mpiandrakitra_image" class="Vich\UploaderBundle\Naming\SmartUniqueNamer" autowire="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
     <service id="vich_uploader.adapter.mongodb" class="Vich\UploaderBundle\Adapter\ODM\MongoDB\MongoDBAdapter"/>
     <service id="vich_uploader.adapter.orm" class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter"/>
     <service id="vich_uploader.adapter.phpcr" class="Vich\UploaderBundle\Adapter\PHPCR\PHPCRAdapter"/>
@@ -8927,6 +8986,29 @@
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
     </service>
+    <service id="vich_uploader.listener.clean.mpiandrakitra_image" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+      <tag name="doctrine.event_listener" event="preUpdate" priority="50"/>
+      <argument>mpiandrakitra_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.mpiandrakitra_image" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+      <tag name="doctrine.event_listener" event="preRemove" priority="0"/>
+      <tag name="doctrine.event_listener" event="postFlush" priority="0"/>
+      <argument>mpiandrakitra_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.mpiandrakitra_image" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+      <tag name="doctrine.event_listener" event="prePersist" priority="0"/>
+      <tag name="doctrine.event_listener" event="preUpdate" priority="0"/>
+      <argument>mpiandrakitra_image</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
     <service id="symfonycasts.reset_password.fake_request_repository" class="SymfonyCasts\Bundle\ResetPassword\Persistence\Fake\FakeResetPasswordInternalRepository"/>
     <service id="symfonycasts.reset_password.cleaner" class="SymfonyCasts\Bundle\ResetPassword\Util\ResetPasswordCleaner">
       <argument type="service" id="symfonycasts.reset_password.fake_request_repository"/>
@@ -9164,6 +9246,8 @@
     <service id=".abstract.instanceof.App\Entity\Category" class="App\Entity\Category" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Fivondronana.0.App\Entity\Fivondronana" class="App\Entity\Fivondronana" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Fivondronana" class="App\Entity\Fivondronana" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Mpiandrakitra.0.App\Entity\Mpiandrakitra" class="App\Entity\Mpiandrakitra" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Mpiandrakitra" class="App\Entity\Mpiandrakitra" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Post.0.App\Entity\Post" class="App\Entity\Post" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Sampana.0.App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" abstract="true"/>
@@ -9186,6 +9270,8 @@
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FivondronanaRepository" class="App\Repository\FivondronanaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\FivondronanaRepository" class="App\Repository\FivondronanaRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MpiandrakitraRepository" class="App\Repository\MpiandrakitraRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MpiandrakitraRepository" class="App\Repository\MpiandrakitraRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" abstract="true"/>
@@ -10496,13 +10582,14 @@
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
       <argument type="service" id="profiler.is_disabled_state_checker" on-invalid="ignore"/>
     </service>
-    <service id=".service_locator.E5UwCIU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.IvWEi.t" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="vich_uploader.listener.clean.profile_image" type="service_closure" id="vich_uploader.listener.clean.profile_image"/>
         <argument key="vich_uploader.listener.clean.post_image" type="service_closure" id="vich_uploader.listener.clean.post_image"/>
         <argument key="vich_uploader.listener.clean.sampana_image" type="service_closure" id="vich_uploader.listener.clean.sampana_image"/>
         <argument key="vich_uploader.listener.clean.fivondronana_image" type="service_closure" id="vich_uploader.listener.clean.fivondronana_image"/>
+        <argument key="vich_uploader.listener.clean.mpiandrakitra_image" type="service_closure" id="vich_uploader.listener.clean.mpiandrakitra_image"/>
         <argument key="doctrine.orm.messenger.doctrine_schema_listener" type="service_closure" id="doctrine.orm.messenger.doctrine_schema_listener"/>
         <argument key="doctrine.orm.listeners.doctrine_dbal_cache_adapter_schema_listener" type="service_closure" id="doctrine.orm.listeners.doctrine_dbal_cache_adapter_schema_listener"/>
         <argument key="doctrine.orm.listeners.doctrine_token_provider_schema_listener" type="service_closure" id="doctrine.orm.listeners.doctrine_token_provider_schema_listener"/>
@@ -10518,13 +10605,16 @@
         <argument key="vich_uploader.listener.upload.sampana_image" type="service_closure" id="vich_uploader.listener.upload.sampana_image"/>
         <argument key="vich_uploader.listener.remove.fivondronana_image" type="service_closure" id="vich_uploader.listener.remove.fivondronana_image"/>
         <argument key="vich_uploader.listener.upload.fivondronana_image" type="service_closure" id="vich_uploader.listener.upload.fivondronana_image"/>
+        <argument key="vich_uploader.listener.remove.mpiandrakitra_image" type="service_closure" id="vich_uploader.listener.remove.mpiandrakitra_image"/>
+        <argument key="vich_uploader.listener.upload.mpiandrakitra_image" type="service_closure" id="vich_uploader.listener.upload.mpiandrakitra_image"/>
       </argument>
     </service>
-    <service id=".service_locator.mm7IBPy" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.eCA7L3i" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
         <argument key="App\Repository\FivondronanaRepository" type="service_closure" id="App\Repository\FivondronanaRepository"/>
+        <argument key="App\Repository\MpiandrakitraRepository" type="service_closure" id="App\Repository\MpiandrakitraRepository"/>
         <argument key="App\Repository\PostRepository" type="service_closure" id="App\Repository\PostRepository"/>
         <argument key="App\Repository\SampanaRepository" type="service_closure" id="App\Repository\SampanaRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>

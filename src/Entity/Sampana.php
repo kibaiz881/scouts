@@ -55,9 +55,16 @@ class Sampana
     #[ORM\JoinColumn(nullable: false, onDelete: 'RESTRICT')]
     private ?Fivondronana $fivondronana = null;
 
+    /**
+     * @var Collection<int, Mpiandrakitra>
+     */
+    #[ORM\OneToMany(targetEntity: Mpiandrakitra::class, mappedBy: 'Sampana')]
+    private Collection $mpiandrakitras;
+
     public function __construct()
     {
         $this->categorySmp = new ArrayCollection();
+        $this->mpiandrakitras = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -205,6 +212,36 @@ class Sampana
         // Synchronisation inverse
         if (!$fivondronana->getSampanas()->contains($this)) {
             $fivondronana->addSampana($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Mpiandrakitra>
+     */
+    public function getMpiandrakitras(): Collection
+    {
+        return $this->mpiandrakitras;
+    }
+
+    public function addMpiandrakitra(Mpiandrakitra $mpiandrakitra): static
+    {
+        if (!$this->mpiandrakitras->contains($mpiandrakitra)) {
+            $this->mpiandrakitras->add($mpiandrakitra);
+            $mpiandrakitra->setSampana($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMpiandrakitra(Mpiandrakitra $mpiandrakitra): static
+    {
+        if ($this->mpiandrakitras->removeElement($mpiandrakitra)) {
+            // set the owning side to null (unless already changed)
+            if ($mpiandrakitra->getSampana() === $this) {
+                $mpiandrakitra->setSampana(null);
+            }
         }
 
         return $this;

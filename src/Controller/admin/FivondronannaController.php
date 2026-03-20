@@ -98,7 +98,7 @@ final class FivondronannaController extends AbstractController
     ): Response    {
         $form = $this->createForm(FivondronanaFormType::class);
         return $this->render('/admin/fivondronanna/view.html.twig', [
-            'fivondronanna' => $fivondronanna,
+            'fivondronannas' => $fivondronanna,
             'form' => $form->createView(),
         ]);
     }

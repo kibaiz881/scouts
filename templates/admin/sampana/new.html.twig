@@ -58,7 +58,11 @@
 						{{ form_widget(form.description, {'attr': {'class': 'form-control', 'rows': 4}}) }}
 						{{ form_errors(form.description) }}
 					</div>
-
+					<div class="col-12 mb-3">
+						{{form_label(form.fivondronana)}}
+						{{ form_widget(form.fivondronana ,  {'attr': {'class': 'form-control', 'rows': 4}})}}
+						{{ form_errors(form.fivondronana) }}
+					</div>
 					<div class="col-12 mb-3">
 						{{ form_label(form.sampanaPictureFile) }}
 						{{ form_widget(form.sampanaPictureFile, {'attr': {'class': 'form-control'}}) }}

@@ -18,3 +18,7 @@ vich_uploader:
             uri_prefix: /images/fivondronana
             upload_destination: '%kernel.project_dir%/public/images/fivondronana'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        mpiandrakitra_image:
+            uri_prefix: /images/mpiandrakitra
+            upload_destination: '%kernel.project_dir%/public/images/mpiandrakitra'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

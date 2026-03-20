@@ -207,19 +207,32 @@ class __TwigTemplate_35481a6e3b4ccbcfa7f9d06e24b6888b extends Template
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 59, $this->source); })()), "description", [], "any", false, false, false, 59), 'errors');
         yield "
 \t\t\t\t\t</div>
-
 \t\t\t\t\t<div class=\"col-12 mb-3\">
 \t\t\t\t\t\t";
+        // line 62
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 62, $this->source); })()), "fivondronana", [], "any", false, false, false, 62), 'label');
+        yield "
+\t\t\t\t\t\t";
         // line 63
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 63, $this->source); })()), "sampanaPictureFile", [], "any", false, false, false, 63), 'label');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 63, $this->source); })()), "fivondronana", [], "any", false, false, false, 63), 'widget', ["attr" => ["class" => "form-control", "rows" => 4]]);
         yield "
 \t\t\t\t\t\t";
         // line 64
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 64, $this->source); })()), "sampanaPictureFile", [], "any", false, false, false, 64), 'widget', ["attr" => ["class" => "form-control"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 64, $this->source); })()), "fivondronana", [], "any", false, false, false, 64), 'errors');
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t\t<div class=\"col-12 mb-3\">
+\t\t\t\t\t\t";
+        // line 67
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 67, $this->source); })()), "sampanaPictureFile", [], "any", false, false, false, 67), 'label');
         yield "
 \t\t\t\t\t\t";
-        // line 65
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 65, $this->source); })()), "sampanaPictureFile", [], "any", false, false, false, 65), 'errors');
+        // line 68
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 68, $this->source); })()), "sampanaPictureFile", [], "any", false, false, false, 68), 'widget', ["attr" => ["class" => "form-control"]]);
+        yield "
+\t\t\t\t\t\t";
+        // line 69
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 69, $this->source); })()), "sampanaPictureFile", [], "any", false, false, false, 69), 'errors');
         yield "
 \t\t\t\t\t</div>
 
@@ -232,7 +245,7 @@ class __TwigTemplate_35481a6e3b4ccbcfa7f9d06e24b6888b extends Template
 \t\t\t\t\t</button>
 
 \t\t\t\t\t<a href=\"";
-        // line 76
+        // line 80
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana");
         yield "\" class=\"btn btn-danger\">
 \t\t\t\t\t\t<i class=\"bi bi-x-circle\"></i> Annuler
@@ -240,8 +253,8 @@ class __TwigTemplate_35481a6e3b4ccbcfa7f9d06e24b6888b extends Template
 \t\t\t\t</div>
 
 \t\t\t\t";
-        // line 81
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 81, $this->source); })()), 'form_end');
+        // line 85
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 85, $this->source); })()), 'form_end');
         yield "
 
 \t\t\t</div>
@@ -250,8 +263,8 @@ class __TwigTemplate_35481a6e3b4ccbcfa7f9d06e24b6888b extends Template
 \t</main>
 
 \t";
-        // line 88
-        yield from $this->load("component/footeradmin.html.twig", 88)->unwrap()->yield($context);
+        // line 92
+        yield from $this->load("component/footeradmin.html.twig", 92)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -282,7 +295,7 @@ class __TwigTemplate_35481a6e3b4ccbcfa7f9d06e24b6888b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  254 => 88,  244 => 81,  236 => 76,  222 => 65,  218 => 64,  214 => 63,  207 => 59,  203 => 58,  199 => 57,  192 => 53,  188 => 52,  184 => 51,  177 => 47,  173 => 46,  169 => 45,  162 => 41,  158 => 40,  154 => 39,  147 => 35,  143 => 34,  139 => 33,  131 => 28,  119 => 19,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  267 => 92,  257 => 85,  249 => 80,  235 => 69,  231 => 68,  227 => 67,  221 => 64,  217 => 63,  213 => 62,  207 => 59,  203 => 58,  199 => 57,  192 => 53,  188 => 52,  184 => 51,  177 => 47,  173 => 46,  169 => 45,  162 => 41,  158 => 40,  154 => 39,  147 => 35,  143 => 34,  139 => 33,  131 => 28,  119 => 19,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -347,7 +360,11 @@ class __TwigTemplate_35481a6e3b4ccbcfa7f9d06e24b6888b extends Template
 \t\t\t\t\t\t{{ form_widget(form.description, {'attr': {'class': 'form-control', 'rows': 4}}) }}
 \t\t\t\t\t\t{{ form_errors(form.description) }}
 \t\t\t\t\t</div>
-
+\t\t\t\t\t<div class=\"col-12 mb-3\">
+\t\t\t\t\t\t{{form_label(form.fivondronana)}}
+\t\t\t\t\t\t{{ form_widget(form.fivondronana ,  {'attr': {'class': 'form-control', 'rows': 4}})}}
+\t\t\t\t\t\t{{ form_errors(form.fivondronana) }}
+\t\t\t\t\t</div>
 \t\t\t\t\t<div class=\"col-12 mb-3\">
 \t\t\t\t\t\t{{ form_label(form.sampanaPictureFile) }}
 \t\t\t\t\t\t{{ form_widget(form.sampanaPictureFile, {'attr': {'class': 'form-control'}}) }}

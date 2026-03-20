@@ -196,6 +196,14 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "createdAt", [], "any", false, false, false, 73), "F,Y-m-d"), "html", null, true);
             yield "</span>
 \t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"member-contact\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-house\"></i>
+\t\t\t\t\t\t\t\t<span>Nom Fivondronana:
+\t\t\t\t\t\t\t\t\t";
+            // line 78
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "fivondronana", [], "any", false, false, false, 78), "nomFiv", [], "any", false, false, false, 78), "html", null, true);
+            yield "</span>
+\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 
 \t\t\t\t\t\t<div class=\"member-status status-online\">
@@ -208,8 +216,8 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
 \t\t\t\t\t<div class=\"metrics-grid\">
 \t\t\t\t\t\t<div class=\"metric-item\">
 \t\t\t\t\t\t\t<div class=\"metric-value\">";
-            // line 86
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "EffectifSampana", [], "any", false, false, false, 86), "html", null, true);
+            // line 91
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "EffectifSampana", [], "any", false, false, false, 91), "html", null, true);
             yield "</div>
 \t\t\t\t\t\t\t<div class=\"metric-label\">Effectif</div>
 \t\t\t\t\t\t</div>
@@ -226,24 +234,24 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
 \t\t\t\t\t<!-- ACTIONS -->
 \t\t\t\t\t<div class=\"member-actions\">
 \t\t\t\t\t\t<a href=\"";
-            // line 101
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "id", [], "any", false, false, false, 101)]), "html", null, true);
+            // line 106
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "id", [], "any", false, false, false, 106)]), "html", null, true);
             yield "\" class=\"action-btn\">
 \t\t\t\t\t\t\t<i class=\"bi bi-pencil\"></i>
 \t\t\t\t\t\t\tedit
 \t\t\t\t\t\t</a>
 
 \t\t\t\t\t\t<a href=\"";
-            // line 106
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana_view", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "id", [], "any", false, false, false, 106)]), "html", null, true);
+            // line 111
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana_view", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "id", [], "any", false, false, false, 111)]), "html", null, true);
             yield "\" class=\"action-btn\">
 \t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
 \t\t\t\t\t\t\tView
 \t\t\t\t\t\t</a>
 
 \t\t\t\t\t\t<a href=\"";
-            // line 111
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "id", [], "any", false, false, false, 111)]), "html", null, true);
+            // line 116
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_sampana_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "id", [], "any", false, false, false, 116)]), "html", null, true);
             yield "\" class=\"action-btn\" onclick=\"return confirm('Are you sure you want to delete this sampana?')\">
 \t\t\t\t\t\t\t<i class=\"bi bi-trash\"></i>
 \t\t\t\t\t\t\tdelete
@@ -256,7 +264,7 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['sampanas'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 119
+        // line 124
         yield "\t\t</div>
 
 \t\t<!-- Pagination -->
@@ -265,34 +273,34 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
 \t\t\t\tclass=\"pagination justify-content-center\">
 
 \t\t\t\t";
-        // line 127
+        // line 132
         yield "\t\t\t\t<li class=\"page-item ";
-        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 127, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 127) == 1)) ? ("disabled") : (""));
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 132, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 132) == 1)) ? ("disabled") : (""));
         yield "\">
 \t\t\t\t\t<a class=\"page-link\" href=\"";
-        // line 128
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 128, $this->source); })()), "request", [], "any", false, false, false, 128), "attributes", [], "any", false, false, false, 128), "get", ["_route"], "method", false, false, false, 128), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 128, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 128) - 1)]), "html", null, true);
+        // line 133
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 133, $this->source); })()), "request", [], "any", false, false, false, 133), "attributes", [], "any", false, false, false, 133), "get", ["_route"], "method", false, false, false, 133), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 133, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 133) - 1)]), "html", null, true);
         yield "\">
 \t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
 \t\t\t\t\t</a>
 \t\t\t\t</li>
 
 \t\t\t\t";
-        // line 134
+        // line 139
         yield "\t\t\t\t";
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(range(1, CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 134, $this->source); })()), "pageCount", [], "any", false, false, false, 134)));
+        $context['_seq'] = CoreExtension::ensureTraversable(range(1, CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 139, $this->source); })()), "pageCount", [], "any", false, false, false, 139)));
         foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-            // line 135
+            // line 140
             yield "\t\t\t\t\t<li class=\"page-item ";
-            yield ((($context["page"] == CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 135, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 135))) ? ("active") : (""));
+            yield ((($context["page"] == CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 140, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 140))) ? ("active") : (""));
             yield "\">
 \t\t\t\t\t\t<a class=\"page-link\" href=\"";
-            // line 136
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 136, $this->source); })()), "request", [], "any", false, false, false, 136), "attributes", [], "any", false, false, false, 136), "get", ["_route"], "method", false, false, false, 136), ["page" => $context["page"]]), "html", null, true);
+            // line 141
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 141, $this->source); })()), "request", [], "any", false, false, false, 141), "attributes", [], "any", false, false, false, 141), "get", ["_route"], "method", false, false, false, 141), ["page" => $context["page"]]), "html", null, true);
             yield "\">
 \t\t\t\t\t\t\t";
-            // line 137
+            // line 142
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["page"], "html", null, true);
             yield "
 \t\t\t\t\t\t</a>
@@ -302,16 +310,16 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['page'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 141
+        // line 146
         yield "
 \t\t\t\t";
-        // line 143
+        // line 148
         yield "\t\t\t\t<li class=\"page-item ";
-        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 143, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 143) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 143, $this->source); })()), "pageCount", [], "any", false, false, false, 143))) ? ("disabled") : (""));
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 148, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 148) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 148, $this->source); })()), "pageCount", [], "any", false, false, false, 148))) ? ("disabled") : (""));
         yield "\">
 \t\t\t\t\t<a class=\"page-link\" href=\"";
-        // line 144
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 144, $this->source); })()), "request", [], "any", false, false, false, 144), "attributes", [], "any", false, false, false, 144), "get", ["_route"], "method", false, false, false, 144), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 144, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 144) + 1)]), "html", null, true);
+        // line 149
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 149, $this->source); })()), "request", [], "any", false, false, false, 149), "attributes", [], "any", false, false, false, 149), "get", ["_route"], "method", false, false, false, 149), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["sampanas"]) || array_key_exists("sampanas", $context) ? $context["sampanas"] : (function () { throw new RuntimeError('Variable "sampanas" does not exist.', 149, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 149) + 1)]), "html", null, true);
         yield "\">
 \t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
 \t\t\t\t\t</a>
@@ -323,8 +331,8 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
 
 \t</main>
 \t";
-        // line 154
-        yield from $this->load("component/footeradmin.html.twig", 154)->unwrap()->yield($context);
+        // line 159
+        yield from $this->load("component/footeradmin.html.twig", 159)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -355,7 +363,7 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  327 => 154,  314 => 144,  309 => 143,  306 => 141,  296 => 137,  292 => 136,  287 => 135,  282 => 134,  274 => 128,  269 => 127,  260 => 119,  246 => 111,  238 => 106,  230 => 101,  212 => 86,  196 => 73,  187 => 67,  179 => 62,  175 => 61,  166 => 57,  157 => 51,  154 => 50,  150 => 49,  146 => 47,  144 => 41,  120 => 20,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  335 => 159,  322 => 149,  317 => 148,  314 => 146,  304 => 142,  300 => 141,  295 => 140,  290 => 139,  282 => 133,  277 => 132,  268 => 124,  254 => 116,  246 => 111,  238 => 106,  220 => 91,  204 => 78,  196 => 73,  187 => 67,  179 => 62,  175 => 61,  166 => 57,  157 => 51,  154 => 50,  150 => 49,  146 => 47,  144 => 41,  120 => 20,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -433,6 +441,11 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
 \t\t\t\t\t\t\t\t<i class=\"bi bi-calendar\"></i>
 \t\t\t\t\t\t\t\t<span>Date de Création:
 \t\t\t\t\t\t\t\t\t{{ sampanas.createdAt|date('F,Y-m-d') }}</span>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"member-contact\">
+\t\t\t\t\t\t\t\t<i class=\"bi bi-house\"></i>
+\t\t\t\t\t\t\t\t<span>Nom Fivondronana:
+\t\t\t\t\t\t\t\t\t{{ sampanas.fivondronana.nomFiv }}</span>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 

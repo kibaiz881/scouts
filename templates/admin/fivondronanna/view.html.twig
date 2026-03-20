@@ -1,0 +1,114 @@
+{% extends 'component/baseadmin.html.twig' %}
+
+{% block title %}
+	Fivondronana - Admin - View
+{% endblock %}
+
+{% block body %}
+	{% include 'component/headeradmin.html.twig' %}
+	{% include 'component/sidebaradmin.html.twig' %}
+
+	<main class="main" id="main" role="main">
+		<div class="page-header">
+			<div class="page-title">
+				<h1>View Team {{ fivondronannas.nomFiv }} ({{ fivondronannas.codeFiv }})</h1>
+				<p>View user profile fivondronana</p>
+			</div>
+			<div class="page-actions">
+				<a href="{{ path('app_admin_fivondronanna') }}" class="btn-secondary">
+					<i class="bi bi-arrow-left"></i>
+					Back to Fivondronana list
+				</a>
+			</div>
+		</div>
+		<div class="form-card">
+			<div class="form-header">
+				<h3 class="form-title">
+					<i class="bi bi-person"></i>
+					Basic Information
+				</h3>
+				<p class="form-subtitle">Consultation uniquement</p>
+			</div>
+
+			<!-- AVATAR -->
+			<div class="avatar-upload">
+				<div class="avatar-preview">
+					<img src="{{ asset('images/fivondronana/' ~ fivondronannas.fivondronanaPictureName) }}" alt="Avatar">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Nom Fivondronana</label>
+						<div class="form-control bg-light">
+							{{ fivondronannas.nomFiv }}
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Adresse</label>
+						<div class="form-control bg-light">
+							{{ fivondronannas.adresseFiv }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Contact</label>
+						<div class="form-control bg-light">
+							{{ fivondronannas.contactFiv }}
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Adresse Email</label>
+						<div class="form-control bg-light">
+							{{ fivondronannas.emailFiv }}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Date création</label>
+						<div class="form-control bg-light">
+							{{ fivondronannas.createdAt|date('Y-m-d') }}
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Paroisse</label>
+						<div class="form-control bg-light">
+							{{ fivondronannas.paroiseFiv }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Historique</label>
+						<div class="form-control bg-light" style="min-height: 80px;">
+							{{ fivondronannas.historiqueFiv }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</main>
+
+	{% include 'component/footeradmin.html.twig' %}
+{% endblock %}

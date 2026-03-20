@@ -157,12 +157,9 @@ class __TwigTemplate_1f1a6793b0ea08de99273c9f54d4e457 extends Template
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin");
         yield "\" :class=\"{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }\"
             class=\"ek pk xl\">Sign In</a>
-          <a href=\"";
-        // line 77
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-        yield "\" :class=\"{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }\"
-            class=\"lk gh dk rg tc wf xf _l gi hi\">Sign Up</a>
-        </div>
+          ";
+        // line 79
+        yield "        </div>
       </div>
     </div>
   </header>
@@ -199,7 +196,7 @@ class __TwigTemplate_1f1a6793b0ea08de99273c9f54d4e457 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  162 => 77,  157 => 75,  150 => 71,  127 => 51,  123 => 50,  119 => 49,  115 => 48,  111 => 47,  93 => 32,  89 => 31,  63 => 8,  59 => 7,  55 => 6,  48 => 1,);
+        return array (  162 => 79,  157 => 75,  150 => 71,  127 => 51,  123 => 50,  119 => 49,  115 => 48,  111 => 47,  93 => 32,  89 => 31,  63 => 8,  59 => 7,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -280,8 +277,8 @@ class __TwigTemplate_1f1a6793b0ea08de99273c9f54d4e457 extends Template
 
           <a href=\"{{path('app_admin')}}\" :class=\"{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }\"
             class=\"ek pk xl\">Sign In</a>
-          <a href=\"{{path('app_register')}}\" :class=\"{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }\"
-            class=\"lk gh dk rg tc wf xf _l gi hi\">Sign Up</a>
+          {# <a href=\"{{path('app_register')}}\" :class=\"{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }\"
+            class=\"lk gh dk rg tc wf xf _l gi hi\">Sign Up</a> #}
         </div>
       </div>
     </div>

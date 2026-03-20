@@ -5,6 +5,8 @@ namespace App\Form;
 use App\Entity\Sampana;
 use Dom\Text;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Fivondronana;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -45,6 +47,12 @@ class SampanaFormType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Entrez le profil de la Sampana',
                 ],
+            ])
+            ->add('fivondronana', EntityType::class, [
+                'class' => Fivondronana::class,
+                'choice_label' => 'nomFiv',
+                'placeholder' => 'Sélectionnez le Fivondronana',
+                'label' => 'Fivondronana',
             ])
             ->add('sampanaPictureFile', VichFileType::class, [
                 'label' => 'Photo de la Sampana',
