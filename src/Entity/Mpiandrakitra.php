@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\MpiandrakitraRepository;
+use BcMath\Number;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Attribute as Vich;
@@ -71,11 +72,34 @@ class Mpiandrakitra
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $paysDelivranceMp = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
     private ?\DateTimeInterface $dateEntrescout = null;
 
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
+    private ?\DateTime $veliranoDateMp = null;
+
+    #[ORM\Column(length: 50)]
+    private ?string $fonctionscoutMp = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $situationMatriMp = null;
+
+        #[ORM\Column(type: 'integer', nullable: true)]
+        private ?int $nombreEnfantMp = null;
+
+    #[ORM\Column(length: 100)]
+    private ?string $lieuVeliranoMp = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $TompokompanompoanaMp = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $religionMp = null;
+
+    
 
     // ================= GETTERS & SETTERS =================
 
@@ -296,6 +320,90 @@ class Mpiandrakitra
     public function setDateEntrescout(?\DateTimeInterface $date): static
     {
         $this->dateEntrescout = $date;
+        return $this;
+    }
+
+    public function getVeliranoDateMp(): ?\DateTime
+    {
+        return $this->veliranoDateMp;
+    }
+
+    public function setVeliranoDateMp(\DateTime $veliranoDateMp): static
+    {
+        $this->veliranoDateMp = $veliranoDateMp;
+
+        return $this;
+    }
+
+    public function getFonctionscoutMp(): ?string
+    {
+        return $this->fonctionscoutMp;
+    }
+
+    public function setFonctionscoutMp(string $fonctionscoutMp): static
+    {
+        $this->fonctionscoutMp = $fonctionscoutMp;
+
+        return $this;
+    }
+
+    public function getSituationMatriMp(): ?string
+    {
+        return $this->situationMatriMp;
+    }
+
+    public function setSituationMatriMp(string $situationMatriMp): static
+    {
+        $this->situationMatriMp = $situationMatriMp;
+
+        return $this;
+    }
+
+    public function getNombreEnfantMp(): ?int
+    {
+        return $this->nombreEnfantMp;
+    }
+
+    public function setNombreEnfantMp(int $NombreEnfantMp): static
+    {
+        $this->nombreEnfantMp = $NombreEnfantMp;
+
+        return $this;
+    }
+
+    public function getLieuVeliranoMp(): ?string
+    {
+        return $this->lieuVeliranoMp;
+    }
+
+    public function setLieuVeliranoMp(string $lieuVeliranoMp): static
+    {
+        $this->lieuVeliranoMp = $lieuVeliranoMp;
+
+        return $this;
+    }
+
+    public function getTompokompanompoanaMp(): ?string
+    {
+        return $this->TompokompanompoanaMp;
+    }
+
+    public function setTompokompanompoanaMp(string $TompokompanompoanaMp): static
+    {
+        $this->TompokompanompoanaMp = $TompokompanompoanaMp;
+
+        return $this;
+    }
+
+    public function getReligionMp(): ?string
+    {
+        return $this->religionMp;
+    }
+
+    public function setReligionMp(string $religionMp): static
+    {
+        $this->religionMp = $religionMp;
+
         return $this;
     }
 }
