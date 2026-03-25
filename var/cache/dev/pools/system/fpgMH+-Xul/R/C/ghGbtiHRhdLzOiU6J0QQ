@@ -1,3 +1,0 @@
-<?php //ff38e705388eb16498afdf6d6d163ae5
-
-return [PHP_INT_MAX, 'plugin/select2/js/select2.min.js'];

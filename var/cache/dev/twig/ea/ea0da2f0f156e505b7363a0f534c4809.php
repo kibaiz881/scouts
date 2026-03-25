@@ -481,7 +481,7 @@ class __TwigTemplate_cbfa0358f5f5ed65e2d6fed7ec6a7154 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
 
         // line 408
-        yield "\t\t <script>
+        yield "\t<script>
 \t\tdocument.addEventListener('DOMContentLoaded', function() {
 \t\t    const cinInput = document.querySelector('.cin-input');
 \t\t
@@ -539,7 +539,6 @@ class __TwigTemplate_cbfa0358f5f5ed65e2d6fed7ec6a7154 extends Template
 \t\t    // Exemple d'utilisation
 \t\t    console.log('CIN brute:', window.getCinValue());
 \t\t});
-\t\t
 \t</script>
 \t";
         
@@ -984,7 +983,7 @@ class __TwigTemplate_cbfa0358f5f5ed65e2d6fed7ec6a7154 extends Template
 \t{% include 'component/footeradmin.html.twig' %}
 
 \t{% block javascript %}
-\t\t <script>
+\t<script>
 \t\tdocument.addEventListener('DOMContentLoaded', function() {
 \t\t    const cinInput = document.querySelector('.cin-input');
 \t\t
@@ -1042,7 +1041,6 @@ class __TwigTemplate_cbfa0358f5f5ed65e2d6fed7ec6a7154 extends Template
 \t\t    // Exemple d'utilisation
 \t\t    console.log('CIN brute:', window.getCinValue());
 \t\t});
-\t\t
 \t</script>
 \t{% endblock %}
 {% endblock %}

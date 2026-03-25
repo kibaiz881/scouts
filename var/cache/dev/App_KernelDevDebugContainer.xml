@@ -540,14 +540,6 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\LVTController"/>
       </call>
     </service>
-    <service id="App\Controller\MPController" class="App\Controller\MPController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="routing.controller"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\MPController"/>
-      </call>
-    </service>
     <service id="App\Controller\MPDLController" class="App\Controller\MPDLController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.controller"/>
@@ -602,6 +594,22 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\FivondronannaController"/>
+      </call>
+    </service>
+    <service id="App\Controller\admin\MPController" class="App\Controller\admin\MPController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\MPController"/>
+      </call>
+    </service>
+    <service id="App\Controller\admin\MpiandrakitraController" class="App\Controller\admin\MpiandrakitraController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\admin\MpiandrakitraController"/>
       </call>
     </service>
     <service id="App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" public="true" autowire="true" autoconfigure="true">
@@ -673,6 +681,9 @@
     <service id="App\Form\FivondronanaFormType" class="App\Form\FivondronanaFormType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
+    <service id="App\Form\MpiandrakitraFormType" class="App\Form\MpiandrakitraFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
+    </service>
     <service id="App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
@@ -741,7 +752,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.4GKFNKo"/>
+      <argument type="service" id=".service_locator.edmJHbe"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -1761,6 +1772,7 @@
       <argument type="collection">
         <argument>App\Form\AddnewuserFormAdminType</argument>
         <argument>App\Form\FivondronanaFormType</argument>
+        <argument>App\Form\MpiandrakitraFormType</argument>
         <argument>App\Form\PostFormType</argument>
         <argument>App\Form\ProfileType</argument>
         <argument>App\Form\RegistrationFormType</argument>
@@ -4079,7 +4091,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.4GKFNKo"/>
+      <argument type="service" id=".service_locator.edmJHbe"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4158,7 +4170,6 @@
         <argument>App\Controller\BlogController</argument>
         <argument>App\Controller\HomeController</argument>
         <argument>App\Controller\LVTController</argument>
-        <argument>App\Controller\MPController</argument>
         <argument>App\Controller\MPDLController</argument>
         <argument>App\Controller\MPJController</argument>
         <argument>App\Controller\MPKController</argument>
@@ -4166,6 +4177,8 @@
         <argument>App\Controller\SecurityController</argument>
         <argument>App\Controller\UserController</argument>
         <argument>App\Controller\admin\FivondronannaController</argument>
+        <argument>App\Controller\admin\MPController</argument>
+        <argument>App\Controller\admin\MpiandrakitraController</argument>
         <argument>App\Controller\admin\PostAdminController</argument>
         <argument>App\Controller\admin\SampanaController</argument>
         <argument>App\Controller\admin\SettingadminController</argument>
@@ -4704,7 +4717,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.3DIabDZ"/>
+      <argument type="service" id=".service_locator.IqwLXu0"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4815,6 +4828,7 @@
       <argument type="collection">
         <argument key="App\Form\AddnewuserFormAdminType">submit</argument>
         <argument key="App\Form\FivondronanaFormType">submit</argument>
+        <argument key="App\Form\MpiandrakitraFormType">submit</argument>
         <argument key="App\Form\PostFormType">submit</argument>
         <argument key="App\Form\ProfileType">submit</argument>
         <argument key="App\Form\RegistrationFormType">submit</argument>
@@ -9194,10 +9208,6 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\LVTController" class="App\Controller\LVTController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\LVTController.0.App\Controller\LVTController" class="App\Controller\LVTController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\LVTController" class="App\Controller\LVTController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MPController" class="App\Controller\MPController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MPController" class="App\Controller\MPController" autowire="true" abstract="true"/>
-    <service id=".instanceof.App\Controller\MPController.0.App\Controller\MPController" class="App\Controller\MPController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\MPController" class="App\Controller\MPController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MPDLController" class="App\Controller\MPDLController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MPDLController" class="App\Controller\MPDLController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\MPDLController.0.App\Controller\MPDLController" class="App\Controller\MPDLController" autowire="true" abstract="true"/>
@@ -9226,6 +9236,14 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\FivondronannaController" class="App\Controller\admin\FivondronannaController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\admin\FivondronannaController.0.App\Controller\admin\FivondronannaController" class="App\Controller\admin\FivondronannaController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\admin\FivondronannaController" class="App\Controller\admin\FivondronannaController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\MPController" class="App\Controller\admin\MPController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\MPController" class="App\Controller\admin\MPController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\admin\MPController.0.App\Controller\admin\MPController" class="App\Controller\admin\MPController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\admin\MPController" class="App\Controller\admin\MPController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\MpiandrakitraController" class="App\Controller\admin\MpiandrakitraController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\MpiandrakitraController" class="App\Controller\admin\MpiandrakitraController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\admin\MpiandrakitraController.0.App\Controller\admin\MpiandrakitraController" class="App\Controller\admin\MpiandrakitraController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\admin\MpiandrakitraController" class="App\Controller\admin\MpiandrakitraController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\admin\PostAdminController.0.App\Controller\admin\PostAdminController" class="App\Controller\admin\PostAdminController" autowire="true" abstract="true"/>
@@ -9258,6 +9276,8 @@
     <service id=".abstract.instanceof.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FivondronanaFormType" class="App\Form\FivondronanaFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FivondronanaFormType" class="App\Form\FivondronanaFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MpiandrakitraFormType" class="App\Form\MpiandrakitraFormType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\MpiandrakitraFormType" class="App\Form\MpiandrakitraFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PostFormType" class="App\Form\PostFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProfileType" class="App\Form\ProfileType" autowire="true" abstract="true"/>
@@ -10010,6 +10030,63 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.uf7tg7R" method="withContext"/>
     </service>
+    <service id=".service_locator.pipiuQ7" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mpiandritraRepository" type="service_closure" id="App\Repository\MpiandrakitraRepository"/>
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+      </argument>
+    </service>
+    <service id=".service_locator.pipiuQ7.App\Controller\admin\MpiandrakitraController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\MpiandrakitraController::index()"/>
+      <argument>App\Controller\admin\MpiandrakitraController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.pipiuQ7" method="withContext"/>
+    </service>
+    <service id=".service_locator.JU4Tq0C" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="mpiandrakitraRepository" type="service_closure" id="App\Repository\MpiandrakitraRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.JU4Tq0C.App\Controller\admin\MpiandrakitraController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\MpiandrakitraController::new()"/>
+      <argument>App\Controller\admin\MpiandrakitraController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.JU4Tq0C" method="withContext"/>
+    </service>
+    <service id=".service_locator.RP3w4br" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mpiandrakitra" type="service_closure" id=".errored..service_locator.RP3w4br.App\Entity\Mpiandrakitra"/>
+      </argument>
+    </service>
+    <service id=".service_locator.RP3w4br.App\Controller\admin\MpiandrakitraController::view()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\MpiandrakitraController::view()"/>
+      <argument>App\Controller\admin\MpiandrakitraController::view()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.RP3w4br" method="withContext"/>
+    </service>
+    <service id=".service_locator.GhopRuh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mpiandrakitra" type="service_closure" id=".errored..service_locator.GhopRuh.App\Entity\Mpiandrakitra"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.GhopRuh.App\Controller\admin\MpiandrakitraController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\MpiandrakitraController::edit()"/>
+      <argument>App\Controller\admin\MpiandrakitraController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GhopRuh" method="withContext"/>
+    </service>
+    <service id=".service_locator.GhopRuh.App\Controller\admin\MpiandrakitraController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\MpiandrakitraController::delete()"/>
+      <argument>App\Controller\admin\MpiandrakitraController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GhopRuh" method="withContext"/>
+    </service>
     <service id=".service_locator.DiMdHbo" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -10187,7 +10264,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4XYvBdG" method="withContext"/>
     </service>
-    <service id=".service_locator.4GKFNKo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.edmJHbe" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -10205,6 +10282,11 @@
         <argument key="App\Controller\admin\FivondronannaController::edit" type="service_closure" id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::edit()"/>
         <argument key="App\Controller\admin\FivondronannaController::view" type="service_closure" id=".service_locator.TvwUvss.App\Controller\admin\FivondronannaController::view()"/>
         <argument key="App\Controller\admin\FivondronannaController::delete" type="service_closure" id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::delete()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController::index" type="service_closure" id=".service_locator.pipiuQ7.App\Controller\admin\MpiandrakitraController::index()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController::new" type="service_closure" id=".service_locator.JU4Tq0C.App\Controller\admin\MpiandrakitraController::new()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController::view" type="service_closure" id=".service_locator.RP3w4br.App\Controller\admin\MpiandrakitraController::view()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController::edit" type="service_closure" id=".service_locator.GhopRuh.App\Controller\admin\MpiandrakitraController::edit()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController::delete" type="service_closure" id=".service_locator.GhopRuh.App\Controller\admin\MpiandrakitraController::delete()"/>
         <argument key="App\Controller\admin\PostAdminController::index" type="service_closure" id=".service_locator.DiMdHbo.App\Controller\admin\PostAdminController::index()"/>
         <argument key="App\Controller\admin\PostAdminController::new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\PostAdminController::approve" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::approve()"/>
@@ -10234,6 +10316,11 @@
         <argument key="App\Controller\admin\FivondronannaController:edit" type="service_closure" id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::edit()"/>
         <argument key="App\Controller\admin\FivondronannaController:view" type="service_closure" id=".service_locator.TvwUvss.App\Controller\admin\FivondronannaController::view()"/>
         <argument key="App\Controller\admin\FivondronannaController:delete" type="service_closure" id=".service_locator.uf7tg7R.App\Controller\admin\FivondronannaController::delete()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController:index" type="service_closure" id=".service_locator.pipiuQ7.App\Controller\admin\MpiandrakitraController::index()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController:new" type="service_closure" id=".service_locator.JU4Tq0C.App\Controller\admin\MpiandrakitraController::new()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController:view" type="service_closure" id=".service_locator.RP3w4br.App\Controller\admin\MpiandrakitraController::view()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController:edit" type="service_closure" id=".service_locator.GhopRuh.App\Controller\admin\MpiandrakitraController::edit()"/>
+        <argument key="App\Controller\admin\MpiandrakitraController:delete" type="service_closure" id=".service_locator.GhopRuh.App\Controller\admin\MpiandrakitraController::delete()"/>
         <argument key="App\Controller\admin\PostAdminController:index" type="service_closure" id=".service_locator.DiMdHbo.App\Controller\admin\PostAdminController::index()"/>
         <argument key="App\Controller\admin\PostAdminController:new" type="service_closure" id=".service_locator.3BoFVFw.App\Controller\admin\PostAdminController::new()"/>
         <argument key="App\Controller\admin\PostAdminController:approve" type="service_closure" id=".service_locator.EhRzrPc.App\Controller\admin\PostAdminController::approve()"/>
@@ -10435,11 +10522,12 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.3DIabDZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.IqwLXu0" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddnewuserFormAdminType" type="service_closure" id="App\Form\AddnewuserFormAdminType"/>
         <argument key="App\Form\FivondronanaFormType" type="service_closure" id="App\Form\FivondronanaFormType"/>
+        <argument key="App\Form\MpiandrakitraFormType" type="service_closure" id="App\Form\MpiandrakitraFormType"/>
         <argument key="App\Form\PostFormType" type="service_closure" id="App\Form\PostFormType"/>
         <argument key="App\Form\ProfileType" type="service_closure" id="App\Form\ProfileType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
@@ -10916,12 +11004,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.TJNRSaV" method="withContext"/>
     </service>
-    <service id=".service_locator.TJNRSaV.App\Controller\MPController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\MPController"/>
-      <argument>App\Controller\MPController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.TJNRSaV" method="withContext"/>
-    </service>
     <service id=".service_locator.TJNRSaV.App\Controller\MPDLController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\MPDLController"/>
       <argument>App\Controller\MPDLController</argument>
@@ -10961,6 +11043,18 @@
     <service id=".service_locator.TJNRSaV.App\Controller\admin\FivondronannaController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\admin\FivondronannaController"/>
       <argument>App\Controller\admin\FivondronannaController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\admin\MPController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\MPController"/>
+      <argument>App\Controller\admin\MPController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\admin\MpiandrakitraController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\admin\MpiandrakitraController"/>
+      <argument>App\Controller\admin\MpiandrakitraController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.TJNRSaV" method="withContext"/>
     </service>
@@ -11205,7 +11299,6 @@
           <argument>App\Controller\BlogController</argument>
           <argument>App\Controller\HomeController</argument>
           <argument>App\Controller\LVTController</argument>
-          <argument>App\Controller\MPController</argument>
           <argument>App\Controller\MPDLController</argument>
           <argument>App\Controller\MPJController</argument>
           <argument>App\Controller\MPKController</argument>
@@ -11213,6 +11306,8 @@
           <argument>App\Controller\SecurityController</argument>
           <argument>App\Controller\UserController</argument>
           <argument>App\Controller\admin\FivondronannaController</argument>
+          <argument>App\Controller\admin\MPController</argument>
+          <argument>App\Controller\admin\MpiandrakitraController</argument>
           <argument>App\Controller\admin\PostAdminController</argument>
           <argument>App\Controller\admin\SampanaController</argument>
           <argument>App\Controller\admin\SettingadminController</argument>
@@ -11464,6 +11559,12 @@
     </service>
     <service id=".errored..service_locator.TvwUvss.App\Entity\Fivondronana" class="App\Entity\Fivondronana">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.TvwUvss&quot;: it needs an instance of &quot;App\Entity\Fivondronana&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.RP3w4br.App\Entity\Mpiandrakitra" class="App\Entity\Mpiandrakitra">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.RP3w4br&quot;: it needs an instance of &quot;App\Entity\Mpiandrakitra&quot; but this type has been excluded because it's a Doctrine entity."/>
+    </service>
+    <service id=".errored..service_locator.GhopRuh.App\Entity\Mpiandrakitra" class="App\Entity\Mpiandrakitra">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.GhopRuh&quot;: it needs an instance of &quot;App\Entity\Mpiandrakitra&quot; but this type has been excluded because it's a Doctrine entity."/>
     </service>
     <service id=".errored..service_locator.EhRzrPc.App\Entity\Post" class="App\Entity\Post">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.EhRzrPc&quot;: it needs an instance of &quot;App\Entity\Post&quot; but this type has been excluded because it's a Doctrine entity."/>
@@ -12779,7 +12880,7 @@
     <service id="Knp\Component\Pager\ArgumentAccess\ArgumentAccessInterface" alias="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.4GKFNKo"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.edmJHbe"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request.logger" alias="monolog.logger.request"/>
@@ -12846,6 +12947,10 @@
     <service id=".service_locator.89NaK1E" alias=".service_locator.2zIQrtK"/>
     <service id=".service_locator.mU2qW6z" alias=".service_locator.uf7tg7R"/>
     <service id=".service_locator.Pe4VTRF" alias=".service_locator.TvwUvss"/>
+    <service id=".service_locator.ufV9hF6" alias=".service_locator.pipiuQ7"/>
+    <service id=".service_locator.kH3k.Mp" alias=".service_locator.JU4Tq0C"/>
+    <service id=".service_locator.4GL9CsP" alias=".service_locator.RP3w4br"/>
+    <service id=".service_locator.O9.0n2z" alias=".service_locator.GhopRuh"/>
     <service id=".service_locator.Wqtu9AD" alias=".service_locator.DiMdHbo"/>
     <service id=".service_locator.UOV1jy9" alias=".service_locator.3BoFVFw"/>
     <service id=".service_locator.J_QW._s" alias=".service_locator.EhRzrPc"/>

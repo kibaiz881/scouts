@@ -157,14 +157,17 @@ class __TwigTemplate_d1d660895d8671d37e8afa3c3e644bfb extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"department.html\" role=\"menuitem\" title=\"Department\">
+                <a href=\"";
+        // line 95
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_mpiandrakitra");
+        yield "\" role=\"menuitem\" title=\"Department\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                         <rect x=\"3\" y=\"3\" width=\"6\" height=\"6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <rect x=\"15\" y=\"3\" width=\"6\" height=\"6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <rect x=\"9\" y=\"15\" width=\"6\" height=\"6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <path d=\"M6 9v6h12V9\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     </svg>
-                    <span class=\"label\">Department</span>
+                    <span class=\"label\">Mpiandrakitra</span>
                 </a>
             </li>
             <li class=\"menu-item\" role=\"none\">
@@ -291,7 +294,7 @@ class __TwigTemplate_d1d660895d8671d37e8afa3c3e644bfb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  193 => 126,  148 => 84,  135 => 74,  102 => 44,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
+        return array (  196 => 126,  162 => 95,  148 => 84,  135 => 74,  102 => 44,  88 => 33,  77 => 25,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -390,14 +393,14 @@ class __TwigTemplate_d1d660895d8671d37e8afa3c3e644bfb extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"department.html\" role=\"menuitem\" title=\"Department\">
+                <a href=\"{{path('app_admin_mpiandrakitra')}}\" role=\"menuitem\" title=\"Department\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                         <rect x=\"3\" y=\"3\" width=\"6\" height=\"6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <rect x=\"15\" y=\"3\" width=\"6\" height=\"6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <rect x=\"9\" y=\"15\" width=\"6\" height=\"6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                         <path d=\"M6 9v6h12V9\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     </svg>
-                    <span class=\"label\">Department</span>
+                    <span class=\"label\">Mpiandrakitra</span>
                 </a>
             </li>
             <li class=\"menu-item\" role=\"none\">

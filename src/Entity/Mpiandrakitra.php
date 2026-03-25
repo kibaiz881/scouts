@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\MpiandrakitraRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Vich\UploaderBundle\Mapping\Attribute as Vich;
 use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: MpiandrakitraRepository::class)]
@@ -41,11 +41,8 @@ class Mpiandrakitra
     #[ORM\Column(length: 255)]
     private ?string $lieuCinMp = null;
 
-    #[ORM\Column(length: 2)]
-    private ?string $ageMp = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $dateNaissMp = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $dateNaissMp = null;
 
     #[ORM\Column(length: 255)]
     private ?string $lieuNaissMp = null;
@@ -53,15 +50,32 @@ class Mpiandrakitra
     #[ORM\ManyToOne(inversedBy: 'mpiandrakitras')]
     private ?Sampana $sampana = null;
 
-    // VICH UPLOAD
     #[Vich\UploadableField(mapping: 'mpiandrakitra_image', fileNameProperty: 'mpiandrakitraPictureName')]
     private ?File $mpiandrakitraPictureFile = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $mpiandrakitraPictureName = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeInterface $updatedAt = null;
+    // #[ORM\Column(nullable: true)]
+    // private ?\DateTimeInterface $updatedAt = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $professionMp = null;
+
+    #[ORM\Column(length: 10, nullable: true)]
+    private ?string $sexe = null;
+
+    #[ORM\Column(length: 25, nullable: true)]
+    private ?string $nationalite = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $paysDelivranceMp = null;
+
+    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $dateEntrescout = null;
+
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
 
     // ================= GETTERS & SETTERS =================
 
@@ -141,9 +155,9 @@ class Mpiandrakitra
         return $this->dateDelivraceCINMp;
     }
 
-    public function setDateDelivraceCINMp(\DateTimeInterface $dateDelivraceCINMp): static
+    public function setDateDelivraceCINMp(?\DateTimeInterface $date): static
     {
-        $this->dateDelivraceCINMp = $dateDelivraceCINMp;
+        $this->dateDelivraceCINMp = $date;
         return $this;
     }
 
@@ -158,25 +172,14 @@ class Mpiandrakitra
         return $this;
     }
 
-    public function getAgeMp(): ?string
-    {
-        return $this->ageMp;
-    }
-
-    public function setAgeMp(string $ageMp): static
-    {
-        $this->ageMp = $ageMp;
-        return $this;
-    }
-
-    public function getDateNaissMp(): ?string
+    public function getDateNaissMp(): ?\DateTimeInterface
     {
         return $this->dateNaissMp;
     }
 
-    public function setDateNaissMp(string $dateNaissMp): static
+    public function setDateNaissMp(?\DateTimeInterface $date): static
     {
-        $this->dateNaissMp = $dateNaissMp;
+        $this->dateNaissMp = $date;
         return $this;
     }
 
@@ -202,14 +205,15 @@ class Mpiandrakitra
         return $this;
     }
 
-    // ================= VICH METHODS =================
+    // ================= VICH =================
 
     public function setMpiandrakitraPictureFile(?File $file = null): void
     {
         $this->mpiandrakitraPictureFile = $file;
 
         if ($file !== null) {
-            $this->updatedAt = new \DateTime();
+            // 🔥 obligatoire pour déclencher l'upload
+            $this->updatedAt = new \DateTimeImmutable();
         }
     }
 
@@ -236,5 +240,62 @@ class Mpiandrakitra
     public function setUpdatedAt(?\DateTimeInterface $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    // ================= AUTRES =================
+
+    public function getProfessionMp(): ?string
+    {
+        return $this->professionMp;
+    }
+
+    public function setProfessionMp(?string $professionMp): static
+    {
+        $this->professionMp = $professionMp;
+        return $this;
+    }
+
+    public function getSexe(): ?string
+    {
+        return $this->sexe;
+    }
+
+    public function setSexe(?string $sexe): static
+    {
+        $this->sexe = $sexe;
+        return $this;
+    }
+
+    public function getNationalite(): ?string
+    {
+        return $this->nationalite;
+    }
+
+    public function setNationalite(?string $nationalite): static
+    {
+        $this->nationalite = $nationalite;
+        return $this;
+    }
+
+    public function getPaysDelivranceMp(): ?string
+    {
+        return $this->paysDelivranceMp;
+    }
+
+    public function setPaysDelivranceMp(?string $pays): static
+    {
+        $this->paysDelivranceMp = $pays;
+        return $this;
+    }
+
+    public function getDateEntrescout(): ?\DateTimeInterface
+    {
+        return $this->dateEntrescout;
+    }
+
+    public function setDateEntrescout(?\DateTimeInterface $date): static
+    {
+        $this->dateEntrescout = $date;
+        return $this;
     }
 }

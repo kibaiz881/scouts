@@ -196,7 +196,7 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["sampanas"], "createdAt", [], "any", false, false, false, 73), "F,Y-m-d"), "html", null, true);
             yield "</span>
 \t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"member-contact\">
+\t\t\t\t\t\t\t<div class=\"member-contact\">
 \t\t\t\t\t\t\t\t<i class=\"bi bi-house\"></i>
 \t\t\t\t\t\t\t\t<span>Nom Fivondronana:
 \t\t\t\t\t\t\t\t\t";
@@ -442,7 +442,7 @@ class __TwigTemplate_e4782a59ab976d4b398f7ae140e0cb4f extends Template
 \t\t\t\t\t\t\t\t<span>Date de Création:
 \t\t\t\t\t\t\t\t\t{{ sampanas.createdAt|date('F,Y-m-d') }}</span>
 \t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"member-contact\">
+\t\t\t\t\t\t\t<div class=\"member-contact\">
 \t\t\t\t\t\t\t\t<i class=\"bi bi-house\"></i>
 \t\t\t\t\t\t\t\t<span>Nom Fivondronana:
 \t\t\t\t\t\t\t\t\t{{ sampanas.fivondronana.nomFiv }}</span>

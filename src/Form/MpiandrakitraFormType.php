@@ -7,55 +7,72 @@ use App\Entity\Sampana;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Regex;
-
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 class MpiandrakitraFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             // ->add('codeMp')
-            ->add('nomMp', null,[
-                'label'=>'Nom complet mpiandrakitra',
+            ->add('nomMp', null, [
+                'required'=> true,
+                'label' => 'Nom complète',
                 'attr' => [
-                    'placeholder' => 'Entrez le nom mpiandriankitra'
+                    'placeholder' => 'Entrez le nom complète'
                 ]
             ])
             ->add('adresseMp', null, [
-                'label'=>'Adresse exacte',
+                'required' => true,
+                'label' => 'Adresse',
                 'attr' => [
-                    'placeholder' => 'Adresse exacte'
-                ]
+                    'placeholder' => 'Adresse',
+                ],
             ])
-            ->add('contactMp', null,  [
-                'label' => 'Numéro Téléphone',
+            ->add('contactMp', null, [
+                'required' => true,
+                'label' => 'Numéro de téléphone',
                 'attr' => [
-                    'placeholder' => 'Numéro téléphone'
-                ], 
-
+                    'placeholder' => 'Numéro de téléphone',
+                ],
+                'constraints' => [
+                    new NotBlank(
+                        message: 'Please enter a phone number',
+                    ),
+                    new Length(
+                        min: 10,
+                        minMessage: 'Your phone number should be at least {{ limit }} characters',
+                        max: 15,
+                        maxMessage: 'Your phone number should not exceed {{ limit }} characters',
+                    ),
+                ],
             ])
             ->add('emailMp', null, [
-                'required' => false,
-                'label' => 'Adresse email',
+                'required' => true,
+                'label' => 'Email',
                 'attr' => [
-                    'placeholder' => 'Adresse email valide'
+                    'placeholder' => 'Email',
                 ],
-                'contraints' => [
+                'constraints' => [
+                    new NotBlank(
+                        message: 'Please enter an email address',
+                    ),
                     new Length(
                         max: 180,
-                        maxMessage: 'Your email shoud not exceed {{limit}} characters'
-                    )
-                ]
+                        maxMessage: 'Your email should not exceed {{ limit }} characters',
+                    ),
+                ],
             ])
             ->add('cinMp', null, [
                 'required' => false,
-                'label' => 'C.I.N',
+                'label' => 'CIN',
                 'attr' => [
-                    'placeholder' => 'Carte d\'Identité Nationale',
+                    'placeholder' => 'CIN',
                 ],
                 'constraints' => [
                     new NotBlank(
@@ -71,12 +88,9 @@ class MpiandrakitraFormType extends AbstractType
                     ),
                 ],
             ])
-            ->add('dateDelivraceCINMp' , null, [
+            ->add('dateDelivraceCINMp', DateType::class, [
                 'required' => false,
-                'label' => 'Date de délivrance',
-                'attr' => [
-                    'placeholder' => 'Date de délivrance',
-                ],
+                'widget' => 'single_text',  
             ])
             ->add('lieuCinMp', null, [
                 'required' => false,
@@ -85,21 +99,43 @@ class MpiandrakitraFormType extends AbstractType
                     'placeholder' => 'Lieu de délivrance',
                 ],
             ])
-            ->add('ageMp', null, [
-                'label' => 'Age de mpiandraikitra'
-            ])
-            ->add('dateNaissMp', null, [
+            ->add('nationalite', null, [
                 'required' => true,
-                'label' => 'Date de naissance',
+                'label' => 'Nationalité',
                 'attr' => [
-                    'placeholder' => 'Date de naissance',
-                ]
-                ])
+                    'placeholder' => 'Nationalité',
+                ],
+            ])
+            ->add('professionMp', null, [
+                'required' => false,
+                'label' => 'Profession',
+                'attr' => [
+                    'placeholder' => 'Profession',
+                ],
+            ])
+            ->add('sexe', ChoiceType::class, [
+                'choices' => [
+                    'Masculin' => 'M',
+                    'Féminin' => 'F',
+                    'Autre' => 'O',
+                ],
+            ])
+            ->add('dateNaissMp', DateType::class, [
+                'widget' => 'single_text',
+                'required' => true
+            ])
             ->add('lieuNaissMp', null, [
                 'required' => true,
                 'label' => 'Lieu de naissance',
                 'attr' => [
                     'placeholder' => 'Lieu de naissance',
+                ],
+            ])
+            ->add('paysDelivranceMp', null, [
+                'required' => false,
+                'label' => 'Pays de délivrance',
+                'attr' => [
+                    'placeholder' => 'Pays de délivrance',
                 ],
             ])
             ->add('mpiandrakitraPictureFile', VichImageType::class, [
@@ -115,6 +151,13 @@ class MpiandrakitraFormType extends AbstractType
             ->add('sampana', EntityType::class, [
                 'class' => Sampana::class,
                 'choice_label' => 'nomSampana',
+            ])
+            ->add('dateEntrescout', null, [
+                'required' => false,
+                'label' => 'Date d\'entrée au scout',
+                'attr' => [
+                    'placeholder' => 'Date d\'entrée au scout',
+                ],
             ])
         ;
     }

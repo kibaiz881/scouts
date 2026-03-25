@@ -18,7 +18,6 @@ return [
         '/admin' => [[['_route' => 'app_admin', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/l/v/t' => [[['_route' => 'app_l_v_t', '_controller' => 'App\\Controller\\LVTController::index'], null, null, null, false, false, null]],
-        '/m/p' => [[['_route' => 'app_m_p', '_controller' => 'App\\Controller\\MPController::index'], null, null, null, false, false, null]],
         '/m/p/d/l' => [[['_route' => 'app_m_p_d_l', '_controller' => 'App\\Controller\\MPDLController::index'], null, null, null, false, false, null]],
         '/m/p/j' => [[['_route' => 'app_m_p_j', '_controller' => 'App\\Controller\\MPJController::index'], null, null, null, false, false, null]],
         '/m/p/k' => [[['_route' => 'app_m_p_k', '_controller' => 'App\\Controller\\MPKController::index'], null, null, null, false, false, null]],
@@ -28,6 +27,9 @@ return [
         '/user' => [[['_route' => 'app_user', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null]],
         '/admin/fivondronanna' => [[['_route' => 'app_admin_fivondronanna', '_controller' => 'App\\Controller\\admin\\FivondronannaController::index'], null, null, null, false, false, null]],
         '/admin/fivondronanna/new' => [[['_route' => 'app_admin_fivondronanna_new', '_controller' => 'App\\Controller\\admin\\FivondronannaController::new'], null, null, null, false, false, null]],
+        '/m/p' => [[['_route' => 'app_m_p', '_controller' => 'App\\Controller\\admin\\MPController::mp'], null, null, null, false, false, null]],
+        '/admin/mpiandrakitra' => [[['_route' => 'app_admin_mpiandrakitra', '_controller' => 'App\\Controller\\admin\\MpiandrakitraController::index'], null, null, null, false, false, null]],
+        '/admin/mpiandrakitra/new' => [[['_route' => 'app_admin_mpiandrakitra_new', '_controller' => 'App\\Controller\\admin\\MpiandrakitraController::new'], null, null, null, false, false, null]],
         '/admin/post/admin' => [[['_route' => 'app_admin_post_admin', '_controller' => 'App\\Controller\\admin\\PostAdminController::index'], null, null, null, false, false, null]],
         '/admin/post/newpostadmin' => [[['_route' => 'app_admin_post_newpostadmin', '_controller' => 'App\\Controller\\admin\\PostAdminController::new'], null, null, null, false, false, null]],
         '/admin/sampana' => [[['_route' => 'app_admin_sampana', '_controller' => 'App\\Controller\\admin\\SampanaController::index'], null, null, null, false, false, null]],
@@ -71,25 +73,30 @@ return [
                             .'|([^/]++)(*:354)'
                             .'|delete/([^/]++)(*:377)'
                         .')'
+                        .'|mpiandrakitra/(?'
+                            .'|view/([^/]++)(*:416)'
+                            .'|edit/([^/]++)(*:437)'
+                            .'|delete/([^/]++)(*:460)'
+                        .')'
                         .'|post/(?'
-                            .'|approve/([^/]++)(*:410)'
-                            .'|reject/([^/]++)(*:433)'
+                            .'|approve/([^/]++)(*:493)'
+                            .'|reject/([^/]++)(*:516)'
                         .')'
                         .'|s(?'
                             .'|ampana/(?'
-                                .'|([^/]++)(*:464)'
-                                .'|edit/([^/]++)(*:485)'
-                                .'|delete/([^/]++)(*:508)'
+                                .'|([^/]++)(*:547)'
+                                .'|edit/([^/]++)(*:568)'
+                                .'|delete/([^/]++)(*:591)'
                             .')'
                             .'|ettingadmin/(?'
-                                .'|edit/([^/]++)(*:545)'
-                                .'|view/([^/]++)(*:566)'
+                                .'|edit/([^/]++)(*:628)'
+                                .'|view/([^/]++)(*:649)'
                             .')'
                         .')'
-                        .'|useradmin/delete/([^/]++)(*:601)'
+                        .'|useradmin/delete/([^/]++)(*:684)'
                     .')'
                 .')'
-                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:638)'
+                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:721)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -107,15 +114,18 @@ return [
         338 => [[['_route' => 'app_admin_fivondronanna_edit', '_controller' => 'App\\Controller\\admin\\FivondronannaController::edit'], ['id'], null, null, false, true, null]],
         354 => [[['_route' => 'app_admin_fivondronanna_view', '_controller' => 'App\\Controller\\admin\\FivondronannaController::view'], ['id'], null, null, false, true, null]],
         377 => [[['_route' => 'app_admin_fivondronanna_delete', '_controller' => 'App\\Controller\\admin\\FivondronannaController::delete'], ['id'], null, null, false, true, null]],
-        410 => [[['_route' => 'app_post_approve', '_controller' => 'App\\Controller\\admin\\PostAdminController::approve'], ['id'], ['POST' => 0], null, false, true, null]],
-        433 => [[['_route' => 'app_post_reject', '_controller' => 'App\\Controller\\admin\\PostAdminController::reject'], ['id'], ['POST' => 0], null, false, true, null]],
-        464 => [[['_route' => 'app_admin_sampana_view', '_controller' => 'App\\Controller\\admin\\SampanaController::view'], ['id'], null, null, false, true, null]],
-        485 => [[['_route' => 'app_admin_sampana_edit', '_controller' => 'App\\Controller\\admin\\SampanaController::edit'], ['id'], null, null, false, true, null]],
-        508 => [[['_route' => 'app_admin_sampana_delete', '_controller' => 'App\\Controller\\admin\\SampanaController::delete'], ['id'], null, null, false, true, null]],
-        545 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
-        566 => [[['_route' => 'admin_setting_view', '_controller' => 'App\\Controller\\admin\\SettingadminController::view'], ['id'], null, null, false, true, null]],
-        601 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        638 => [
+        416 => [[['_route' => 'app_admin_mpiandrakitra_view', '_controller' => 'App\\Controller\\admin\\MpiandrakitraController::view'], ['id'], null, null, false, true, null]],
+        437 => [[['_route' => 'app_admin_mpiandrakitra_edit', '_controller' => 'App\\Controller\\admin\\MpiandrakitraController::edit'], ['id'], null, null, false, true, null]],
+        460 => [[['_route' => 'app_admin_mpiandrakitra_delete', '_controller' => 'App\\Controller\\admin\\MpiandrakitraController::delete'], ['id'], null, null, false, true, null]],
+        493 => [[['_route' => 'app_post_approve', '_controller' => 'App\\Controller\\admin\\PostAdminController::approve'], ['id'], ['POST' => 0], null, false, true, null]],
+        516 => [[['_route' => 'app_post_reject', '_controller' => 'App\\Controller\\admin\\PostAdminController::reject'], ['id'], ['POST' => 0], null, false, true, null]],
+        547 => [[['_route' => 'app_admin_sampana_view', '_controller' => 'App\\Controller\\admin\\SampanaController::view'], ['id'], null, null, false, true, null]],
+        568 => [[['_route' => 'app_admin_sampana_edit', '_controller' => 'App\\Controller\\admin\\SampanaController::edit'], ['id'], null, null, false, true, null]],
+        591 => [[['_route' => 'app_admin_sampana_delete', '_controller' => 'App\\Controller\\admin\\SampanaController::delete'], ['id'], null, null, false, true, null]],
+        628 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
+        649 => [[['_route' => 'admin_setting_view', '_controller' => 'App\\Controller\\admin\\SettingadminController::view'], ['id'], null, null, false, true, null]],
+        684 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        721 => [
             [['_route' => 'app_blog', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\BlogController::index'], ['page', 'itemsPerPage'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

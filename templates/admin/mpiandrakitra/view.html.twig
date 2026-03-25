@@ -1,0 +1,96 @@
+{% extends 'component/baseadmin.html.twig' %}
+
+{% block title %}
+	Mpiandrakitra - Admin - View
+{% endblock %}
+
+{% block body %}
+	{% include 'component/headeradmin.html.twig' %}
+	{% include 'component/sidebaradmin.html.twig' %}
+
+	<main class="main" id="main" role="main">
+		<div class="page-header">
+			<div class="page-title">
+				<h1>View Mpiandrakitra {{ mpiandrakitra.nomMp }} ({{ mpiandrakitra.codeMp }})</h1>
+				<p>View Mp profile </p>
+			</div>
+			<div class="page-actions">
+				<a href="{{ path('app_admin_mpiandrakitra') }}" class="btn-secondary">
+					<i class="bi bi-arrow-left"></i>
+					Back to mp list
+				</a>
+			</div>
+		</div>
+		<div class="form-card">
+			<div class="form-header">
+				<h3 class="form-title">
+					<i class="bi bi-person"></i>
+					Basic Information
+				</h3>
+				<p class="form-subtitle">Consultation uniquement</p>
+			</div>
+
+			<!-- AVATAR -->
+			<div class="avatar-upload">
+				<div class="avatar-preview">
+					<img src="{{ asset('images/mpiandrakitra/' ~ mpiandrakitra.mpiandrakitraPictureName) }}" alt="Avatar">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Full Name</label>
+						<div class="form-control bg-light">
+							{{ mpiandrakitra.nomMp }}
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Adresse</label>
+						<div class="form-control bg-light">
+							{{ mpiandrakitra.adresseMp }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Email</label>
+						<div class="form-control bg-light">
+							{{ mpiandrakitra.emailMp }}
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">Date d'entre scout</label>
+						<div class="form-control bg-light">
+							{{ mpiandrakitra.dateEntrescout|date('d-m-y') }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label">sexe</label>
+						<div class="form-control bg-light" style="min-height: 80px;">
+							{{ mpiandrakitra.sexe }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</main>
+
+	{% include 'component/footeradmin.html.twig' %}
+{% endblock %}
