@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\MpiandrakitraRepository;
-use BcMath\Number;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Attribute as Vich;
@@ -42,8 +41,9 @@ class Mpiandrakitra
     #[ORM\Column(length: 255)]
     private ?string $lieuCinMp = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $dateNaissMp = null;
+    // ✅ Immutable conseillé
+    #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]
+    private ?\DateTimeImmutable $dateNaissMp = null;
 
     #[ORM\Column(length: 255)]
     private ?string $lieuNaissMp = null;
@@ -51,14 +51,18 @@ class Mpiandrakitra
     #[ORM\ManyToOne(inversedBy: 'mpiandrakitras')]
     private ?Sampana $sampana = null;
 
+    // ================= VICH =================
+
     #[Vich\UploadableField(mapping: 'mpiandrakitra_image', fileNameProperty: 'mpiandrakitraPictureName')]
     private ?File $mpiandrakitraPictureFile = null;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $mpiandrakitraPictureName = null;
 
-    // #[ORM\Column(nullable: true)]
-    // private ?\DateTimeInterface $updatedAt = null;
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
+    private ?\DateTimeImmutable $updatedAt = null;
+
+    // ================= AUTRES =================
 
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $professionMp = null;
@@ -73,13 +77,10 @@ class Mpiandrakitra
     private ?string $paysDelivranceMp = null;
 
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
-    private ?\DateTimeInterface $dateEntrescout = null;
+    private ?\DateTimeImmutable $dateEntrescout = null;
 
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
-    private ?\DateTimeImmutable $updatedAt = null;
-
-    #[ORM\Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
-    private ?\DateTime $veliranoDateMp = null;
+    private ?\DateTimeImmutable $veliranoDateMp = null;
 
     #[ORM\Column(length: 50)]
     private ?string $fonctionscoutMp = null;
@@ -87,8 +88,8 @@ class Mpiandrakitra
     #[ORM\Column(length: 255)]
     private ?string $situationMatriMp = null;
 
-        #[ORM\Column(type: 'integer', nullable: true)]
-        private ?int $nombreEnfantMp = null;
+    #[ORM\Column(type: Types::INTEGER, nullable: true)]
+    private ?int $nombreEnfantMp = null;
 
     #[ORM\Column(length: 100)]
     private ?string $lieuVeliranoMp = null;
@@ -99,7 +100,16 @@ class Mpiandrakitra
     #[ORM\Column(length: 255)]
     private ?string $religionMp = null;
 
-    
+    #[ORM\Column(length: 255)]
+    private ?string $lieudetravail = null;
+
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+    }
 
     // ================= GETTERS & SETTERS =================
 
@@ -112,7 +122,6 @@ class Mpiandrakitra
     {
         return $this->codeMp;
     }
-
     public function setCodeMp(string $codeMp): static
     {
         $this->codeMp = $codeMp;
@@ -123,7 +132,6 @@ class Mpiandrakitra
     {
         return $this->nomMp;
     }
-
     public function setNomMp(string $nomMp): static
     {
         $this->nomMp = $nomMp;
@@ -134,7 +142,6 @@ class Mpiandrakitra
     {
         return $this->adresseMp;
     }
-
     public function setAdresseMp(string $adresseMp): static
     {
         $this->adresseMp = $adresseMp;
@@ -145,7 +152,6 @@ class Mpiandrakitra
     {
         return $this->contactMp;
     }
-
     public function setContactMp(string $contactMp): static
     {
         $this->contactMp = $contactMp;
@@ -156,7 +162,6 @@ class Mpiandrakitra
     {
         return $this->emailMp;
     }
-
     public function setEmailMp(string $emailMp): static
     {
         $this->emailMp = $emailMp;
@@ -167,7 +172,6 @@ class Mpiandrakitra
     {
         return $this->cinMp;
     }
-
     public function setCinMp(string $cinMp): static
     {
         $this->cinMp = $cinMp;
@@ -178,7 +182,6 @@ class Mpiandrakitra
     {
         return $this->dateDelivraceCINMp;
     }
-
     public function setDateDelivraceCINMp(?\DateTimeInterface $date): static
     {
         $this->dateDelivraceCINMp = $date;
@@ -189,19 +192,17 @@ class Mpiandrakitra
     {
         return $this->lieuCinMp;
     }
-
     public function setLieuCinMp(string $lieuCinMp): static
     {
         $this->lieuCinMp = $lieuCinMp;
         return $this;
     }
 
-    public function getDateNaissMp(): ?\DateTimeInterface
+    public function getDateNaissMp(): ?\DateTimeImmutable
     {
         return $this->dateNaissMp;
     }
-
-    public function setDateNaissMp(?\DateTimeInterface $date): static
+    public function setDateNaissMp(?\DateTimeImmutable $date): static
     {
         $this->dateNaissMp = $date;
         return $this;
@@ -211,7 +212,6 @@ class Mpiandrakitra
     {
         return $this->lieuNaissMp;
     }
-
     public function setLieuNaissMp(string $lieuNaissMp): static
     {
         $this->lieuNaissMp = $lieuNaissMp;
@@ -222,7 +222,6 @@ class Mpiandrakitra
     {
         return $this->sampana;
     }
-
     public function setSampana(?Sampana $sampana): static
     {
         $this->sampana = $sampana;
@@ -236,7 +235,6 @@ class Mpiandrakitra
         $this->mpiandrakitraPictureFile = $file;
 
         if ($file !== null) {
-            // 🔥 obligatoire pour déclencher l'upload
             $this->updatedAt = new \DateTimeImmutable();
         }
     }
@@ -256,12 +254,11 @@ class Mpiandrakitra
         return $this->mpiandrakitraPictureName;
     }
 
-    public function getUpdatedAt(): ?\DateTimeInterface
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
-
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): void
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
@@ -272,7 +269,6 @@ class Mpiandrakitra
     {
         return $this->professionMp;
     }
-
     public function setProfessionMp(?string $professionMp): static
     {
         $this->professionMp = $professionMp;
@@ -283,7 +279,6 @@ class Mpiandrakitra
     {
         return $this->sexe;
     }
-
     public function setSexe(?string $sexe): static
     {
         $this->sexe = $sexe;
@@ -294,7 +289,6 @@ class Mpiandrakitra
     {
         return $this->nationalite;
     }
-
     public function setNationalite(?string $nationalite): static
     {
         $this->nationalite = $nationalite;
@@ -305,33 +299,29 @@ class Mpiandrakitra
     {
         return $this->paysDelivranceMp;
     }
-
     public function setPaysDelivranceMp(?string $pays): static
     {
         $this->paysDelivranceMp = $pays;
         return $this;
     }
 
-    public function getDateEntrescout(): ?\DateTimeInterface
+    public function getDateEntrescout(): ?\DateTimeImmutable
     {
         return $this->dateEntrescout;
     }
-
-    public function setDateEntrescout(?\DateTimeInterface $date): static
+    public function setDateEntrescout(?\DateTimeImmutable $date): static
     {
         $this->dateEntrescout = $date;
         return $this;
     }
 
-    public function getVeliranoDateMp(): ?\DateTime
+    public function getVeliranoDateMp(): ?\DateTimeImmutable
     {
         return $this->veliranoDateMp;
     }
-
-    public function setVeliranoDateMp(\DateTime $veliranoDateMp): static
+    public function setVeliranoDateMp(?\DateTimeImmutable $date): static
     {
-        $this->veliranoDateMp = $veliranoDateMp;
-
+        $this->veliranoDateMp = $date;
         return $this;
     }
 
@@ -339,11 +329,9 @@ class Mpiandrakitra
     {
         return $this->fonctionscoutMp;
     }
-
-    public function setFonctionscoutMp(string $fonctionscoutMp): static
+    public function setFonctionscoutMp(string $val): static
     {
-        $this->fonctionscoutMp = $fonctionscoutMp;
-
+        $this->fonctionscoutMp = $val;
         return $this;
     }
 
@@ -351,11 +339,9 @@ class Mpiandrakitra
     {
         return $this->situationMatriMp;
     }
-
-    public function setSituationMatriMp(string $situationMatriMp): static
+    public function setSituationMatriMp(string $val): static
     {
-        $this->situationMatriMp = $situationMatriMp;
-
+        $this->situationMatriMp = $val;
         return $this;
     }
 
@@ -363,11 +349,9 @@ class Mpiandrakitra
     {
         return $this->nombreEnfantMp;
     }
-
-    public function setNombreEnfantMp(int $NombreEnfantMp): static
+    public function setNombreEnfantMp(?int $val): static
     {
-        $this->nombreEnfantMp = $NombreEnfantMp;
-
+        $this->nombreEnfantMp = $val;
         return $this;
     }
 
@@ -375,11 +359,9 @@ class Mpiandrakitra
     {
         return $this->lieuVeliranoMp;
     }
-
-    public function setLieuVeliranoMp(string $lieuVeliranoMp): static
+    public function setLieuVeliranoMp(string $val): static
     {
-        $this->lieuVeliranoMp = $lieuVeliranoMp;
-
+        $this->lieuVeliranoMp = $val;
         return $this;
     }
 
@@ -387,11 +369,9 @@ class Mpiandrakitra
     {
         return $this->TompokompanompoanaMp;
     }
-
-    public function setTompokompanompoanaMp(string $TompokompanompoanaMp): static
+    public function setTompokompanompoanaMp(string $val): static
     {
-        $this->TompokompanompoanaMp = $TompokompanompoanaMp;
-
+        $this->TompokompanompoanaMp = $val;
         return $this;
     }
 
@@ -399,11 +379,29 @@ class Mpiandrakitra
     {
         return $this->religionMp;
     }
-
-    public function setReligionMp(string $religionMp): static
+    public function setReligionMp(string $val): static
     {
-        $this->religionMp = $religionMp;
+        $this->religionMp = $val;
+        return $this;
+    }
 
+    public function getLieudetravail(): ?string
+    {
+        return $this->lieudetravail;
+    }
+    public function setLieudetravail(string $val): static
+    {
+        $this->lieudetravail = $val;
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+    public function setCreatedAt(?\DateTimeImmutable $date): static
+    {
+        $this->createdAt = $date;
         return $this;
     }
 }

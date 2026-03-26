@@ -51,29 +51,37 @@ final class MpiandrakitraController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // Génération automatique du code Mp
+            // ✅ Génération automatique du code Mp
             $lastMpiandrakitra = $mpiandrakitraRepository->findOneBy([], ['id' => 'DESC']);
             $lastId = 0;
 
             if ($lastMpiandrakitra && $lastMpiandrakitra->getCodeMp()) {
                 $lastCodeMp = $lastMpiandrakitra->getCodeMp(); // ex: MP0010
-                $lastId = (int) substr($lastCodeMp, 2);        // -> 10
+                $lastId = (int) substr($lastCodeMp, 2);
             }
 
-            $mpiandrakitra->setCodeMp('MP' . str_pad($lastId + 1, 4, '0', STR_PAD_LEFT));
+            $mpiandrakitra->setCodeMp(
+                'MP' . str_pad($lastId + 1, 4, '0', STR_PAD_LEFT)
+            );
 
-            // Date : le form renvoie déjà un DateTimeInterface
-            $myDate = $form->get('dateNaissMp')->getData(); // DateTimeInterface
+            // ✅ Correction Date (IMPORTANT)
+            $myDate = $form->get('dateNaissMp')->getData();
+
+            if ($myDate instanceof \DateTime) {
+                $myDate = \DateTimeImmutable::createFromMutable($myDate);
+            }
+
             $mpiandrakitra->setDateNaissMp($myDate);
 
-            // Image
+            // ✅ VichUploader (NE PAS setter le nom manuellement)
             $mpiandrakitraPictureFile = $form->get('mpiandrakitraPictureFile')->getData();
 
             if ($mpiandrakitraPictureFile) {
-                $mpiandrakitra->setMpiandrakitraPictureName(
-                    $mpiandrakitraPictureFile->getClientOriginalName()
-                );
+                $mpiandrakitra->setMpiandrakitraPictureFile($mpiandrakitraPictureFile);
             }
+
+            // ✅ CreatedAt
+            $mpiandrakitra->setCreatedAt(new \DateTimeImmutable());
 
             $entityManager->persist($mpiandrakitra);
             $entityManager->flush();
@@ -87,6 +95,7 @@ final class MpiandrakitraController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
 
 
     //view id mpiandrakitra

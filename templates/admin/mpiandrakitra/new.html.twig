@@ -5,49 +5,49 @@
 {% endblock %}
 
 {% block body %}
-	{% include 'component/headeradmin.html.twig' %}
-	{% include 'component/sidebaradmin.html.twig' %}
+{% include 'component/headeradmin.html.twig' %}
+{% include 'component/sidebaradmin.html.twig' %}
 
-	<!-- ========== MAIN CONTENT ========== -->
-	<main class="main" id="main" role="main">
-		<div class="page-header">
-			<div class="page-title">
-				<h1>Update
-					{{ user.username ?? 'User' }}</h1>
-				<p>Update Mpiandrakitra profile access</p>
-			</div>
-			<div class="page-actions">
-				<a href="{{ path('app_admin_mpiandrakitra') }}" class="btn-secondary">
-					<i class="bi bi-arrow-left"></i>
-					Back to mpiandrakitra list
-				</a>
-			</div>
+<!-- ========== MAIN CONTENT ========== -->
+<main class="main" id="main" role="main">
+	<div class="page-header">
+		<div class="page-title">
+			<h1>Update
+				{{ user.username ?? 'User' }}</h1>
+			<p>Update Mpiandrakitra profile access</p>
 		</div>
+		<div class="page-actions">
+			<a href="{{ path('app_admin_mpiandrakitra') }}" class="btn-secondary">
+				<i class="bi bi-arrow-left"></i>
+				Back to mpiandrakitra list
+			</a>
+		</div>
+	</div>
 
-		<!-- User Update Form -->
-		{{ form_start(form, {
+	<!-- User Update Form -->
+	{{ form_start(form, {
             attr: {
                 id: 'mpIdform'
             }
         }) }}
 
-		<!-- Basic Information Card -->
-		<div class="form-card">
-			<div class="form-header">
-				<h3 class="form-title">
-					<i class="bi bi-person"></i>
-					Basic Information
-				</h3>
-				<p class="form-subtitle">Provide personal details and contact information</p>
+	<!-- Basic Information Card -->
+	<div class="form-card">
+		<div class="form-header">
+			<h3 class="form-title">
+				<i class="bi bi-person"></i>
+				Basic Information
+			</h3>
+			<p class="form-subtitle">Provide personal details and contact information</p>
+		</div>
+
+		<div class="avatar-upload">
+			<div class="avatar-preview" id="avatarPreviewWrapper">
+				<img id="avatarPreview" src="{{ asset('images/75hc.jpg') }}" alt="Avatar">
 			</div>
 
-			<div class="avatar-upload">
-				<div class="avatar-preview" id="avatarPreviewWrapper">
-					<img id="avatarPreview" src="{{ asset('images/75hc.jpg') }}" alt="Avatar">
-				</div>
-
-				<div class="avatar-upload-controls">
-					{{ form_row(form.mpiandrakitraPictureFile, {
+			<div class="avatar-upload-controls">
+				{{ form_row(form.mpiandrakitraPictureFile, {
                         label: false,
                         attr: {
                             class: 'avatar-input form-control',
@@ -56,20 +56,20 @@
                             type: 'file'
                         }
                     }) }}
-					<div class="avatar-hint">
-						Recommended: Square image, 500x500px, max 2MB
-					</div>
+				<div class="avatar-hint">
+					Recommended: Square image, 500x500px, max 2MB
 				</div>
 			</div>
+		</div>
 
-			<div class="row">
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="fullName">
-							Full Name
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.nomMp, {
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="fullName">
+						Full Name
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.nomMp, {
                             label: false,
                             attr: {
                                 class: 'form-control',
@@ -78,15 +78,15 @@
                                 required: true
                             }
                         }) }}
-					</div>
 				</div>
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="adresse">
-							Adresse
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.adresseMp, {
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="adresse">
+						Adresse
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.adresseMp, {
                             label: false,
                             attr: {
                                 class: 'form-control',
@@ -95,18 +95,18 @@
                                 required: true
                             }
                         }) }}
-					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="row">
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="email">
-							Email Address
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.emailMp, {
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="email">
+						Email Address
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.emailMp, {
                             label: false,
                             attr: {
                                 class: 'form-control',
@@ -114,12 +114,12 @@
                                 placeholder: 'user@company.com'
                             }
                         }) }}
-					</div>
 				</div>
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="phone">Phone Number</label>
-						{{ form_row(form.contactMp, {
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="phone">Phone Number</label>
+					{{ form_row(form.contactMp, {
                             label: false,
                             attr: {
                                 class: 'form-control',
@@ -127,18 +127,18 @@
                                 placeholder: '+1 (555) 000-0000'
                             }
                         }) }}
-					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="row">
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="jobTitle">
-							Profession Title
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.professionMp, {
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="jobTitle">
+						Profession Title
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.professionMp, {
                             label: false,
                             attr: {
                                 class: 'form-control',
@@ -146,15 +146,29 @@
                                 placeholder: 'e.g., Senior Designer, Project Manager'
                             }
                         }) }}
-					</div>
 				</div>
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="sexe">
-							Sexe
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.sexe, {
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="dateEntrescout">
+						Lieu du travail
+					</label>
+					{{ form_row(form.lieudetravail, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieudetravail'
+                            }
+                        }) }}
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="sexe">
+						Sexe
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.sexe, {
                             label: false,
                             attr: {
                                 class: 'form-control',
@@ -162,33 +176,33 @@
                                 placeholder: 'e.g., Male, Female'
                             }
                         }) }}
-					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="row">
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="dateNaissance">
-							Date de naissance
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.dateNaissMp, {
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="dateNaissance">
+						Date de naissance
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.dateNaissMp, {
                             label: false,
                             attr: {
                                 class: 'form-control',
                                 id: 'dateNaissance'
                             }
                         }) }}
-					</div>
 				</div>
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="lieuNaissance">
-							Lieu de naissance
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.lieuNaissMp, {
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="lieuNaissance">
+						Lieu de naissance
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.lieuNaissMp, {
                             label: false,
                             attr: {
                                 class: 'form-control',
@@ -196,31 +210,31 @@
                                 placeholder: 'e.g., Paris, London'
                             }
                         }) }}
-					</div>
 				</div>
 			</div>
-
-
 		</div>
 
-		<!-- National Identity Card Setup -->
-		<div class="form-card">
-			<div class="form-header">
-				<h3 class="form-title">
-					<i class="bi bi-gear"></i>
-					National Identity Card Setup
-				</h3>
-				<p class="form-subtitle">Configure CIN</p>
-			</div>
 
-			<div class="row">
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="cin">
-							Carte d'identité Nationale
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.cinMp, {
+	</div>
+
+	<!-- National Identity Card Setup -->
+	<div class="form-card">
+		<div class="form-header">
+			<h3 class="form-title">
+				<i class="bi bi-gear"></i>
+				National Identity Card Setup
+			</h3>
+			<p class="form-subtitle">Configure CIN</p>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="cin">
+						Carte d'identité Nationale
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.cinMp, {
                             label: false,
                             attr: {
                                 class: 'form-control cin-input',
@@ -229,15 +243,15 @@
                                 required: false
                             }
                         }) }}
-					</div>
 				</div>
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="nationalite">
-							Nationalité
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.nationalite, {
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="nationalite">
+						Nationalité
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.nationalite, {
                             label: false,
                             attr: {
                                 class: 'form-control cin-input',
@@ -246,34 +260,16 @@
                                 required: false
                             }
                         }) }}
-					</div>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="lieuDelivrance">
-							Lieu de délivrance
-						</label>
-						{{ form_row(form.lieuCinMp, {
-                            label: false,
-                            attr: {
-                                class: 'form-control cin-input',
-                                id: 'lieuDelivrance',
-                                placeholder: 'Enter lieu de delivrance',
-                                required: false
-                            }
-                        }) }}
-					</div>
-				</div>
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="dateDelivrance">
-							Date de delivrance
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.dateDelivraceCINMp, {
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="dateDelivrance">
+						Date de delivrance
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.dateDelivraceCINMp, {
                             label: false,
                             attr: {
                                 class: 'form-control cin-input',
@@ -282,20 +278,73 @@
                                 required: false
                             }
                         }) }}
-					</div>
 				</div>
-				<div class="col">
-					<div class="form-group">
-						<label class="form-label" for="paysDelivrance">
-							Pays de délivrance
-							<span class="required">*</span>
-						</label>
-						{{ form_row(form.paysDelivranceMp, {
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="lieuDelivrance">
+						Lieu de délivrance
+					</label>
+					{{ form_row(form.lieuCinMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control cin-input',
+                                id: 'lieuDelivrance',
+                                placeholder: 'Enter lieu de delivrance',
+                                required: false
+                            }
+                        }) }}
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="paysDelivrance">
+						Pays de délivrance
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.paysDelivranceMp, {
                             label: false,
                             attr: {
                                 class: 'form-control cin-input',
                                 id: 'paysDelivrance',
                                 placeholder: 'Enter pays de delivrance',
+                                required: false
+                            }
+                        }) }}
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="paysDelivrance">
+						Situation Matrimoniale
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.situationMatriMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control cin-input',
+                                id: 'situationMatriMp',
+                                placeholder: 'Situation Matrimoniale',
+                                required: false
+                            }
+                        }) }}
+				</div>
+			</div>
+			<div class="col">
+				<div class="form-group">
+					<label class="form-label" for="paysDelivrance">
+						Nombre d'enfant prise en charge
+						<span class="required">*</span>
+					</label>
+					{{ form_row(form.nombreEnfantMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control cin-input',
+                                id: 'nombreEnfantMp',
+                                placeholder: 'Nombre d\'enfant prise en charge',
                                 required: false
                             }
                         }) }}
@@ -335,6 +384,20 @@
 				<div class="col">
 					<div class="form-group">
 						<label class="form-label" for="dateEntrescout">
+							Fonction dans le scout
+						</label>
+						{{ form_row(form.fonctionscoutMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'fonctionscoutMp'
+                            }
+                        }) }}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
 							Start Date for scout
 						</label>
 						{{ form_row(form.dateEntrescout, {
@@ -342,6 +405,64 @@
                             attr: {
                                 class: 'form-control',
                                 id: 'dateEntrescout'
+                            }
+                        }) }}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
+							Velirano Date for scout
+						</label>
+						{{ form_row(form.veliranoDateMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'dateVelirano'
+                            }
+                        }) }}
+					</div>
+				</div>
+								<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
+							Lieu velirano
+						</label>
+						{{ form_row(form.lieuVeliranoMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieuVeliranoMp'
+                            }
+                        }) }}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
+							Tokompanompoana Date for scout
+						</label>
+						{{ form_row(form.TompokompanompoanaMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'dateTokompanompoana'
+                            }
+                        }) }}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
+						Réligion
+						</label>
+						{{ form_row(form.religionMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'religonMp'
                             }
                         }) }}
 					</div>
@@ -375,64 +496,64 @@
 	{% include 'component/footeradmin.html.twig' %}
 
 	{% block javascript %}
-		 <script>
-				document.addEventListener('DOMContentLoaded', function() {
-				    const cinInput = document.querySelector('.cin-input');
-				
-				    if (!cinInput) {
-				        console.warn('Champ CIN non trouvé (classe: .cin-input)');
-				        return;
-				    }
-				
-				    // Fonction pour nettoyer et obtenir la valeur brute
-				    function getCleanCinValue(value) {
-				        return value
-				            .replace(/\s/g, '')           // Supprime tous les espaces
-				            .replace(/[^\d]/g, '')        // Garde uniquement les chiffres
-				            .slice(0, 12);                // Limite à 12 chiffres maximum
-				    }
-				
-				    // Événement input : formatage en temps réel
-				    cinInput.addEventListener('input', function(e) {
-				        let value = e.target.value;
-				        let cleanValue = getCleanCinValue(value);
-				        
-				        // Formatage avec espaces tous les 3 chiffres
-				        let formatted = '';
-				        for (let i = 0; i < cleanValue.length; i += 3) {
-				            formatted += cleanValue.substr(i, 3) + ' ';
-				        }
-				        e.target.value = formatted.trim();
-				    });
-				
-				    // Événement focus : sélectionne tout le texte
-				    cinInput.addEventListener('focus', function() {
-				        this.select();
-				    });
-				
-				    // Événement blur : nettoie complètement (optionnel)
-				    cinInput.addEventListener('blur', function() {
-				        let cleanValue = getCleanCinValue(this.value);
-				        if (cleanValue.length === 12) {
-				            // Reformate proprement si complet
-				            let formatted = '';
-				            for (let i = 0; i < cleanValue.length; i += 3) {
-				                formatted += cleanValue.substr(i, 3) + ' ';
-				            }
-				            this.value = formatted.trim();
-				        } else if (cleanValue.length === 0) {
-				            this.value = ''; // Vide si rien
-				        }
-				    });
-				
-				    // Fonction utilitaire pour récupérer la valeur brute n'importe où
-				    window.getCinValue = function() {
-				        return getCleanCinValue(cinInput.value);
-				    };
-				
-				    // Exemple d'utilisation
-				    console.log('CIN brute:', window.getCinValue());
-				});
-			</script>
+		     <script>
+								document.addEventListener('DOMContentLoaded', function() {
+								    const cinInput = document.querySelector('.cin-input');
+								
+								    if (!cinInput) {
+								        console.warn('Champ CIN non trouvé (classe: .cin-input)');
+								        return;
+								    }
+								
+								    // Fonction pour nettoyer et obtenir la valeur brute
+								    function getCleanCinValue(value) {
+								        return value
+								            .replace(/\s/g, '')           // Supprime tous les espaces
+								            .replace(/[^\d]/g, '')        // Garde uniquement les chiffres
+								            .slice(0, 12);                // Limite à 12 chiffres maximum
+								    }
+								
+								    // Événement input : formatage en temps réel
+								    cinInput.addEventListener('input', function(e) {
+								        let value = e.target.value;
+								        let cleanValue = getCleanCinValue(value);
+								        
+								        // Formatage avec espaces tous les 3 chiffres
+								        let formatted = '';
+								        for (let i = 0; i < cleanValue.length; i += 3) {
+								            formatted += cleanValue.substr(i, 3) + ' ';
+								        }
+								        e.target.value = formatted.trim();
+								    });
+								
+								    // Événement focus : sélectionne tout le texte
+								    cinInput.addEventListener('focus', function() {
+								        this.select();
+								    });
+								
+								    // Événement blur : nettoie complètement (optionnel)
+								    cinInput.addEventListener('blur', function() {
+								        let cleanValue = getCleanCinValue(this.value);
+								        if (cleanValue.length === 12) {
+								            // Reformate proprement si complet
+								            let formatted = '';
+								            for (let i = 0; i < cleanValue.length; i += 3) {
+								                formatted += cleanValue.substr(i, 3) + ' ';
+								            }
+								            this.value = formatted.trim();
+								        } else if (cleanValue.length === 0) {
+								            this.value = ''; // Vide si rien
+								        }
+								    });
+								
+								    // Fonction utilitaire pour récupérer la valeur brute n'importe où
+								    window.getCinValue = function() {
+								        return getCleanCinValue(cinInput.value);
+								    };
+								
+								    // Exemple d'utilisation
+								    console.log('CIN brute:', window.getCinValue());
+								});
+							</script>
 	{% endblock %}
 {% endblock %}

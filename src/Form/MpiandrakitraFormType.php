@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Mpiandrakitra;
 use App\Entity\Sampana;
+use Doctrine\Common\Collections\Placeholder;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,6 +15,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 class MpiandrakitraFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -21,7 +23,7 @@ class MpiandrakitraFormType extends AbstractType
         $builder
             // ->add('codeMp')
             ->add('nomMp', null, [
-                'required'=> true,
+                'required' => true,
                 'label' => 'Nom complète',
                 'attr' => [
                     'placeholder' => 'Entrez le nom complète'
@@ -78,7 +80,7 @@ class MpiandrakitraFormType extends AbstractType
                     new NotBlank(
                         message: 'Please enter a number for CIN',
                     ),
-                    new Regex(  
+                    new Regex(
                         pattern: '/^(?:\s*\d){12}\s*$/',
                         message: 'Le CIN doit contenir exactement 12 chiffres',
                     ),
@@ -90,7 +92,7 @@ class MpiandrakitraFormType extends AbstractType
             ])
             ->add('dateDelivraceCINMp', DateType::class, [
                 'required' => false,
-                'widget' => 'single_text',  
+                'widget' => 'single_text',
             ])
             ->add('lieuCinMp', null, [
                 'required' => false,
@@ -157,6 +159,64 @@ class MpiandrakitraFormType extends AbstractType
                 'label' => 'Date d\'entrée au scout',
                 'attr' => [
                     'placeholder' => 'Date d\'entrée au scout',
+                ],
+            ])
+            ->add('veliranoDateMp', DateType::class, [
+                'label' => 'Date velirano',
+                'required' => false,
+            ])
+
+            ->add('lieuVeliranoMp', null, [
+                'label' => 'lieu velirano Mp',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Entrez le lieu du velirano'
+                ]
+            ])
+
+            ->add('TompokompanompoanaMp',  null, [
+                'label' => 'Lieu et date tokompanompoana',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Lieu et date tokompanompoana'
+                ]
+            ])
+            ->add('religionMp', null, [
+                'label' => 'Religion',
+                'required' => true,
+                'attr' => [
+                    'placeholder' => 'Entrez votre réligion'
+                ]
+            ])
+            ->add('lieudetravail', null, [
+                'label' => 'Lieu du travail',
+                'required' => false,
+                'attr' => [
+                    'Placeholder' => 'Lieu du travail'
+                ]
+            ])
+            ->add('fonctionscoutMp', null, [
+                'label' => 'Fonction dans le scout',
+                'required' => false,
+                'attr' => [
+                    'Placeholder' => 'Fonction dans la scout'
+                ]
+            ])
+            ->add('nombreEnfantMp', null, [
+                'label' => 'Nombre d\'enfant prise en charge',
+                'required' => false,
+                'attr' => [
+                    'placeholder' => 'Nombre d\'enfant prise en charge'
+                ]
+            ])
+            ->add('situationMatriMp', ChoiceType::class, [
+                'label' => 'Situation Matrimonnialle',
+                'choices' => [
+                    'Célibataire' => 'Célibataire',
+                    'Marié' => 'Marié',
+                    'Réligieuse' => 'Réligieuse',
+                    'Veuve' => 'Veuve',
+                    'Autre' => 'Autre',
                 ],
             ])
         ;

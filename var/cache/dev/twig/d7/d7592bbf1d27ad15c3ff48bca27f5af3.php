@@ -232,33 +232,35 @@ class __TwigTemplate_040c12f12002f493950d668650f2d8e9 extends Template
 \t\t\t\t\t\t<div class=\"metric-item\">
 \t\t\t\t\t\t\t<div class=\"metric-value\">";
             // line 100
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["mp"], "professionMp", [], "any", false, false, false, 100), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["mp"], "veliranoDateMp", [], "any", false, false, false, 100), "d-m-y"), "html", null, true);
             yield "</div>
-\t\t\t\t\t\t\t<div class=\"metric-label\">Profession</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Velirano</div>
 \t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
+\t\t\t\t\t\t";
+            // line 107
+            yield "\t\t\t\t\t</div>
 
 \t\t\t\t\t<!-- ACTIONS -->
 \t\t\t\t\t<div class=\"member-actions\">
 \t\t\t\t\t\t<a href=\"";
-            // line 107
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_mpiandrakitra_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["mp"], "id", [], "any", false, false, false, 107)]), "html", null, true);
+            // line 111
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_mpiandrakitra_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["mp"], "id", [], "any", false, false, false, 111)]), "html", null, true);
             yield "\" class=\"action-btn\">
 \t\t\t\t\t\t\t<i class=\"bi bi-pencil\"></i>
 \t\t\t\t\t\t\tedit
 \t\t\t\t\t\t</a>
 
 \t\t\t\t\t\t<a href=\"";
-            // line 112
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_mpiandrakitra_view", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["mp"], "id", [], "any", false, false, false, 112)]), "html", null, true);
+            // line 116
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_mpiandrakitra_view", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["mp"], "id", [], "any", false, false, false, 116)]), "html", null, true);
             yield "\" class=\"action-btn\">
 \t\t\t\t\t\t\t<i class=\"bi bi-eye\"></i>
 \t\t\t\t\t\t\tView
 \t\t\t\t\t\t</a>
 
 \t\t\t\t\t\t<a href=\"";
-            // line 117
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_mpiandrakitra_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["mp"], "id", [], "any", false, false, false, 117)]), "html", null, true);
+            // line 121
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_mpiandrakitra_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["mp"], "id", [], "any", false, false, false, 121)]), "html", null, true);
             yield "\" class=\"action-btn\" onclick=\"return confirm('Are you sure you want to delete this sampana?')\">
 \t\t\t\t\t\t\t<i class=\"bi bi-trash\"></i>
 \t\t\t\t\t\t\tdelete
@@ -271,7 +273,7 @@ class __TwigTemplate_040c12f12002f493950d668650f2d8e9 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['mp'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 125
+        // line 129
         yield "\t\t</div>
 
 \t\t<!-- Pagination -->
@@ -280,34 +282,34 @@ class __TwigTemplate_040c12f12002f493950d668650f2d8e9 extends Template
 \t\t\t\tclass=\"pagination justify-content-center\">
 
 \t\t\t\t";
-        // line 133
+        // line 137
         yield "\t\t\t\t<li class=\"page-item ";
-        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 133, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 133) == 1)) ? ("disabled") : (""));
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 137, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 137) == 1)) ? ("disabled") : (""));
         yield "\">
 \t\t\t\t\t<a class=\"page-link\" href=\"";
-        // line 134
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 134, $this->source); })()), "request", [], "any", false, false, false, 134), "attributes", [], "any", false, false, false, 134), "get", ["_route"], "method", false, false, false, 134), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 134, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 134) - 1)]), "html", null, true);
+        // line 138
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 138, $this->source); })()), "request", [], "any", false, false, false, 138), "attributes", [], "any", false, false, false, 138), "get", ["_route"], "method", false, false, false, 138), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 138, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 138) - 1)]), "html", null, true);
         yield "\">
 \t\t\t\t\t\t<i class=\"bi bi-chevron-left\"></i>
 \t\t\t\t\t</a>
 \t\t\t\t</li>
 
 \t\t\t\t";
-        // line 140
+        // line 144
         yield "\t\t\t\t";
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(range(1, CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 140, $this->source); })()), "pageCount", [], "any", false, false, false, 140)));
+        $context['_seq'] = CoreExtension::ensureTraversable(range(1, CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 144, $this->source); })()), "pageCount", [], "any", false, false, false, 144)));
         foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-            // line 141
+            // line 145
             yield "\t\t\t\t\t<li class=\"page-item ";
-            yield ((($context["page"] == CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 141, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 141))) ? ("active") : (""));
+            yield ((($context["page"] == CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 145, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 145))) ? ("active") : (""));
             yield "\">
 \t\t\t\t\t\t<a class=\"page-link\" href=\"";
-            // line 142
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 142, $this->source); })()), "request", [], "any", false, false, false, 142), "attributes", [], "any", false, false, false, 142), "get", ["_route"], "method", false, false, false, 142), ["page" => $context["page"]]), "html", null, true);
+            // line 146
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 146, $this->source); })()), "request", [], "any", false, false, false, 146), "attributes", [], "any", false, false, false, 146), "get", ["_route"], "method", false, false, false, 146), ["page" => $context["page"]]), "html", null, true);
             yield "\">
 \t\t\t\t\t\t\t";
-            // line 143
+            // line 147
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["page"], "html", null, true);
             yield "
 \t\t\t\t\t\t</a>
@@ -317,16 +319,16 @@ class __TwigTemplate_040c12f12002f493950d668650f2d8e9 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['page'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 147
+        // line 151
         yield "
 \t\t\t\t";
-        // line 149
+        // line 153
         yield "\t\t\t\t<li class=\"page-item ";
-        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 149, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 149) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 149, $this->source); })()), "pageCount", [], "any", false, false, false, 149))) ? ("disabled") : (""));
+        yield (((CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 153, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 153) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 153, $this->source); })()), "pageCount", [], "any", false, false, false, 153))) ? ("disabled") : (""));
         yield "\">
 \t\t\t\t\t<a class=\"page-link\" href=\"";
-        // line 150
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 150, $this->source); })()), "request", [], "any", false, false, false, 150), "attributes", [], "any", false, false, false, 150), "get", ["_route"], "method", false, false, false, 150), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 150, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 150) + 1)]), "html", null, true);
+        // line 154
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 154, $this->source); })()), "request", [], "any", false, false, false, 154), "attributes", [], "any", false, false, false, 154), "get", ["_route"], "method", false, false, false, 154), ["page" => (CoreExtension::getAttribute($this->env, $this->source, (isset($context["mpiandrakitra"]) || array_key_exists("mpiandrakitra", $context) ? $context["mpiandrakitra"] : (function () { throw new RuntimeError('Variable "mpiandrakitra" does not exist.', 154, $this->source); })()), "currentPageNumber", [], "any", false, false, false, 154) + 1)]), "html", null, true);
         yield "\">
 \t\t\t\t\t\t<i class=\"bi bi-chevron-right\"></i>
 \t\t\t\t\t</a>
@@ -338,8 +340,8 @@ class __TwigTemplate_040c12f12002f493950d668650f2d8e9 extends Template
 
 \t</main>
 \t";
-        // line 160
-        yield from $this->load("component/footeradmin.html.twig", 160)->unwrap()->yield($context);
+        // line 164
+        yield from $this->load("component/footeradmin.html.twig", 164)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -370,7 +372,7 @@ class __TwigTemplate_040c12f12002f493950d668650f2d8e9 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  342 => 160,  329 => 150,  324 => 149,  321 => 147,  311 => 143,  307 => 142,  302 => 141,  297 => 140,  289 => 134,  284 => 133,  275 => 125,  261 => 117,  253 => 112,  245 => 107,  235 => 100,  228 => 96,  221 => 92,  205 => 79,  200 => 76,  194 => 68,  187 => 64,  183 => 63,  179 => 62,  175 => 61,  166 => 57,  157 => 51,  154 => 50,  150 => 49,  146 => 47,  144 => 41,  120 => 20,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  344 => 164,  331 => 154,  326 => 153,  323 => 151,  313 => 147,  309 => 146,  304 => 145,  299 => 144,  291 => 138,  286 => 137,  277 => 129,  263 => 121,  255 => 116,  247 => 111,  241 => 107,  235 => 100,  228 => 96,  221 => 92,  205 => 79,  200 => 76,  194 => 68,  187 => 64,  183 => 63,  179 => 62,  175 => 61,  166 => 57,  157 => 51,  154 => 50,  150 => 49,  146 => 47,  144 => 41,  120 => 20,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -474,9 +476,13 @@ class __TwigTemplate_040c12f12002f493950d668650f2d8e9 extends Template
 \t\t\t\t\t\t\t<div class=\"metric-label\">Scout</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"metric-item\">
+\t\t\t\t\t\t\t<div class=\"metric-value\">{{mp.veliranoDateMp | date('d-m-y')}}</div>
+\t\t\t\t\t\t\t<div class=\"metric-label\">Velirano</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t{# <div class=\"metric-item\">
 \t\t\t\t\t\t\t<div class=\"metric-value\">{{mp.professionMp}}</div>
 \t\t\t\t\t\t\t<div class=\"metric-label\">Profession</div>
-\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div> #}
 \t\t\t\t\t</div>
 
 \t\t\t\t\t<!-- ACTIONS -->
