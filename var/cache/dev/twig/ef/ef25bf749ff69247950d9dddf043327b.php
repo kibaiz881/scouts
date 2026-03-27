@@ -140,14 +140,14 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 
 \t\t\t\t</div>
 
-\t\t\t\t";
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 34
         yield "
-\t\t\t</div>
+\t\t</div>
 \t\t<div class=\"page-header\">
 \t\t\t<div class=\"page-title\">
 \t\t\t\t<h1>User Profile</h1>
@@ -165,7 +165,15 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_setting_list");
         yield "\" class=\"btn-primary\">
 \t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
-\t\t\t\t\tBack to user</a>
+\t\t\t\t\tBack to user
+\t\t\t\t</a>
+\t\t\t\t<a href=\"";
+        // line 49
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_settingadmin_pdf", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 49, $this->source); })()), "id", [], "any", false, false, false, 49)]), "html", null, true);
+        yield "\" target=\"_blank\" class=\"btn btn-danger\">
+\t\t\t\t\t<i class=\"bi bi-file-earmark-pdf\"></i>
+\t\t\t\t\tPDF
+\t\t\t\t</a>
 \t\t\t</div>
 \t\t</div>
 
@@ -176,47 +184,47 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t<div class=\"user-header-content\">
 \t\t\t\t<div class=\"user-avatar\" id=\"userAvatar\">
 \t\t\t\t\t";
-        // line 57
-        if ((($tmp = (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 57, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 58
+        // line 62
+        if ((($tmp = (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 62, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 63
             yield "\t\t\t\t\t\t<img src=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 58, $this->source); })()), "profilePictureName", [], "any", false, false, false, 58))), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("images/profiles/" . CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 63, $this->source); })()), "profilePictureName", [], "any", false, false, false, 63))), "html", null, true);
             yield "\" alt=\"Photo de profil de ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 58, $this->source); })()), "user", [], "any", false, false, false, 58), "username", [], "any", false, false, false, 58), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "username", [], "any", false, false, false, 63), "html", null, true);
             yield "\" class=\"avatar-img\" width=\"50\" height=\"50\" loading=\"lazy\">
 \t\t\t\t\t";
         }
-        // line 60
+        // line 65
         yield "\t\t\t\t</div>
 \t\t\t\t<div class=\"user-info\">
 \t\t\t\t\t<div class=\"user-name\">";
-        // line 62
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 62, $this->source); })()), "username", [], "any", false, false, false, 62), "html", null, true);
+        // line 67
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 67, $this->source); })()), "username", [], "any", false, false, false, 67), "html", null, true);
         yield "</div>
 \t\t\t\t\t<div class=\"user-title\">";
-        // line 63
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 63, $this->source); })()), "fonctionScout", [], "any", false, false, false, 63), "html", null, true);
+        // line 68
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 68, $this->source); })()), "fonctionScout", [], "any", false, false, false, 68), "html", null, true);
         yield "</div>
 \t\t\t\t\t<div class=\"user-contact\">
 \t\t\t\t\t\t<div class=\"contact-item\">
 \t\t\t\t\t\t\t<i class=\"bi bi-envelope\"></i>
 \t\t\t\t\t\t\t<span>";
-        // line 67
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 67, $this->source); })()), "email", [], "any", false, false, false, 67), "html", null, true);
+        // line 72
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 72, $this->source); })()), "email", [], "any", false, false, false, 72), "html", null, true);
         yield "</span>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"contact-item\">
 \t\t\t\t\t\t\t<i class=\"bi bi-telephone\"></i>
 \t\t\t\t\t\t\t<span>";
-        // line 71
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 71, $this->source); })()), "phone", [], "any", false, false, false, 71), "html", null, true);
+        // line 76
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 76, $this->source); })()), "phone", [], "any", false, false, false, 76), "html", null, true);
         yield "</span>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"contact-item\">
 \t\t\t\t\t\t\t<i class=\"bi bi-building\"></i>
 \t\t\t\t\t\t\t<span>Scout ID: HC/AMI/-00";
-        // line 75
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 75, $this->source); })()), "id", [], "any", false, false, false, 75), "html", null, true);
+        // line 80
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 80, $this->source); })()), "id", [], "any", false, false, false, 80), "html", null, true);
         yield "</span>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -227,8 +235,8 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t</span>
 \t\t\t\t\t\t<span class=\"text-muted\">Joined:
 \t\t\t\t\t\t\t";
-        // line 84
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 84, $this->source); })()), "createdAt", [], "any", false, false, false, 84), "F j, Y"), "html", null, true);
+        // line 89
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["currentUser"]) || array_key_exists("currentUser", $context) ? $context["currentUser"] : (function () { throw new RuntimeError('Variable "currentUser" does not exist.', 89, $this->source); })()), "createdAt", [], "any", false, false, false, 89), "F j, Y"), "html", null, true);
         yield "</span>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -311,9 +319,9 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"bio-content\" id=\"bioContent\">
 \t\t\t\t\t\t\t\tSenior UI/UX Designer with 8+ years of experience creating intuitive and beautiful
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                digital products. Currently leading the Design Team at Panelry while contributing
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                to cross-functional product initiatives. Passionate about user-centered design, design
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                systems, and mentoring junior designers.
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                digital products. Currently leading the Design Team at Panelry while contributing
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                to cross-functional product initiatives. Passionate about user-centered design, design
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                systems, and mentoring junior designers.
 
 \t\t\t\t\t\t\t\t<div class=\"mt-3\">
 \t\t\t\t\t\t\t\t\t<strong>Key Responsibilities:</strong>
@@ -670,7 +678,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t\t<div class=\"timeline-date\">2024 - Present</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-title\">Senior UI/UX Designer & Project Lead</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-description\">Panelry Inc. • Leading design team, managing
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    projects, and contributing to product strategy.</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    projects, and contributing to product strategy.</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"timeline-item\">
@@ -679,7 +687,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t\t<div class=\"timeline-date\">2021 - 2024</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-title\">Senior Product Designer</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-description\">TechSolutions Corp. • Designed enterprise SaaS
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    products and established design systems.</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    products and established design systems.</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"timeline-item\">
@@ -688,7 +696,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t\t<div class=\"timeline-date\">2019 - 2021</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-title\">UI/UX Designer</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-description\">CreativeMinds Agency • Worked with various clients on
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    web and mobile applications.</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    web and mobile applications.</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"timeline-item\">
@@ -697,7 +705,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t\t<div class=\"timeline-date\">2017 - 2019</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-title\">Junior Designer</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-description\">DigitalWorks Studio • Started career focusing on web
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    design and user interfaces.</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    design and user interfaces.</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
@@ -1099,8 +1107,8 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t</main>
 
 \t";
-        // line 953
-        yield from $this->load("component/footeradmin.html.twig", 953)->unwrap()->yield($context);
+        // line 958
+        yield from $this->load("component/footeradmin.html.twig", 958)->unwrap()->yield($context);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -1131,7 +1139,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  1103 => 953,  231 => 84,  219 => 75,  212 => 71,  205 => 67,  198 => 63,  194 => 62,  190 => 60,  182 => 58,  180 => 57,  165 => 45,  159 => 42,  149 => 34,  137 => 28,  127 => 21,  121 => 17,  116 => 16,  110 => 11,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
+        return array (  1111 => 958,  239 => 89,  227 => 80,  220 => 76,  213 => 72,  206 => 68,  202 => 67,  198 => 65,  190 => 63,  188 => 62,  172 => 49,  165 => 45,  159 => 42,  149 => 34,  137 => 28,  127 => 21,  121 => 17,  116 => 16,  110 => 11,  108 => 10,  105 => 9,  102 => 8,  89 => 7,  77 => 4,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -1168,9 +1176,9 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 
 \t\t\t\t</div>
 
-\t\t\t\t{% endfor %}
+\t\t\t{% endfor %}
 
-\t\t\t</div>
+\t\t</div>
 \t\t<div class=\"page-header\">
 \t\t\t<div class=\"page-title\">
 \t\t\t\t<h1>User Profile</h1>
@@ -1182,7 +1190,12 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t</a>
 \t\t\t\t<a href=\"{{ path('admin_setting_list') }}\" class=\"btn-primary\">
 \t\t\t\t\t<i class=\"bi bi-arrow-left\"></i>
-\t\t\t\t\tBack to user</a>
+\t\t\t\t\tBack to user
+\t\t\t\t</a>
+\t\t\t\t<a href=\"{{ path('app_admin_settingadmin_pdf', {id: currentUser.id}) }}\" target=\"_blank\" class=\"btn btn-danger\">
+\t\t\t\t\t<i class=\"bi bi-file-earmark-pdf\"></i>
+\t\t\t\t\tPDF
+\t\t\t\t</a>
 \t\t\t</div>
 \t\t</div>
 
@@ -1301,9 +1314,9 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t<div class=\"bio-content\" id=\"bioContent\">
 \t\t\t\t\t\t\t\tSenior UI/UX Designer with 8+ years of experience creating intuitive and beautiful
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                digital products. Currently leading the Design Team at Panelry while contributing
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                to cross-functional product initiatives. Passionate about user-centered design, design
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                systems, and mentoring junior designers.
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                digital products. Currently leading the Design Team at Panelry while contributing
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                to cross-functional product initiatives. Passionate about user-centered design, design
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                systems, and mentoring junior designers.
 
 \t\t\t\t\t\t\t\t<div class=\"mt-3\">
 \t\t\t\t\t\t\t\t\t<strong>Key Responsibilities:</strong>
@@ -1660,7 +1673,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t\t<div class=\"timeline-date\">2024 - Present</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-title\">Senior UI/UX Designer & Project Lead</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-description\">Panelry Inc. • Leading design team, managing
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    projects, and contributing to product strategy.</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    projects, and contributing to product strategy.</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"timeline-item\">
@@ -1669,7 +1682,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t\t<div class=\"timeline-date\">2021 - 2024</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-title\">Senior Product Designer</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-description\">TechSolutions Corp. • Designed enterprise SaaS
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    products and established design systems.</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    products and established design systems.</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"timeline-item\">
@@ -1678,7 +1691,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t\t<div class=\"timeline-date\">2019 - 2021</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-title\">UI/UX Designer</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-description\">CreativeMinds Agency • Worked with various clients on
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    web and mobile applications.</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    web and mobile applications.</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"timeline-item\">
@@ -1687,7 +1700,7 @@ class __TwigTemplate_895dfd4f3c3c7d6bcf6a93df7e89c03b extends Template
 \t\t\t\t\t\t\t\t<div class=\"timeline-date\">2017 - 2019</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-title\">Junior Designer</div>
 \t\t\t\t\t\t\t\t<div class=\"timeline-description\">DigitalWorks Studio • Started career focusing on web
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    design and user interfaces.</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                                    design and user interfaces.</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t</div>

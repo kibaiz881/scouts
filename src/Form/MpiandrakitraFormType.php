@@ -165,7 +165,6 @@ class MpiandrakitraFormType extends AbstractType
                 'label' => 'Date velirano',
                 'required' => false,
             ])
-
             ->add('lieuVeliranoMp', null, [
                 'label' => 'lieu velirano Mp',
                 'required' => false,
@@ -173,7 +172,6 @@ class MpiandrakitraFormType extends AbstractType
                     'placeholder' => 'Entrez le lieu du velirano'
                 ]
             ])
-
             ->add('TompokompanompoanaMp',  null, [
                 'label' => 'Lieu et date tokompanompoana',
                 'required' => false,

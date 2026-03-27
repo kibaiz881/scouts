@@ -30,9 +30,9 @@
 
 				</div>
 
-				{% endfor %}
+			{% endfor %}
 
-			</div>
+		</div>
 		<div class="page-header">
 			<div class="page-title">
 				<h1>User Profile</h1>
@@ -44,7 +44,12 @@
 				</a>
 				<a href="{{ path('admin_setting_list') }}" class="btn-primary">
 					<i class="bi bi-arrow-left"></i>
-					Back to user</a>
+					Back to user
+				</a>
+				<a href="{{ path('app_admin_settingadmin_pdf', {id: currentUser.id}) }}" target="_blank" class="btn btn-danger">
+					<i class="bi bi-file-earmark-pdf"></i>
+					PDF
+				</a>
 			</div>
 		</div>
 
@@ -163,9 +168,9 @@
 							</div>
 							<div class="bio-content" id="bioContent">
 								Senior UI/UX Designer with 8+ years of experience creating intuitive and beautiful
-																																                                digital products. Currently leading the Design Team at Panelry while contributing
-																																                                to cross-functional product initiatives. Passionate about user-centered design, design
-																																                                systems, and mentoring junior designers.
+																																								                                digital products. Currently leading the Design Team at Panelry while contributing
+																																								                                to cross-functional product initiatives. Passionate about user-centered design, design
+																																								                                systems, and mentoring junior designers.
 
 								<div class="mt-3">
 									<strong>Key Responsibilities:</strong>
@@ -522,7 +527,7 @@
 								<div class="timeline-date">2024 - Present</div>
 								<div class="timeline-title">Senior UI/UX Designer & Project Lead</div>
 								<div class="timeline-description">Panelry Inc. • Leading design team, managing
-																																				                                    projects, and contributing to product strategy.</div>
+																																													                                    projects, and contributing to product strategy.</div>
 							</div>
 						</div>
 						<div class="timeline-item">
@@ -531,7 +536,7 @@
 								<div class="timeline-date">2021 - 2024</div>
 								<div class="timeline-title">Senior Product Designer</div>
 								<div class="timeline-description">TechSolutions Corp. • Designed enterprise SaaS
-																																				                                    products and established design systems.</div>
+																																													                                    products and established design systems.</div>
 							</div>
 						</div>
 						<div class="timeline-item">
@@ -540,7 +545,7 @@
 								<div class="timeline-date">2019 - 2021</div>
 								<div class="timeline-title">UI/UX Designer</div>
 								<div class="timeline-description">CreativeMinds Agency • Worked with various clients on
-																																				                                    web and mobile applications.</div>
+																																													                                    web and mobile applications.</div>
 							</div>
 						</div>
 						<div class="timeline-item">
@@ -549,7 +554,7 @@
 								<div class="timeline-date">2017 - 2019</div>
 								<div class="timeline-title">Junior Designer</div>
 								<div class="timeline-description">DigitalWorks Studio • Started career focusing on web
-																																				                                    design and user interfaces.</div>
+																																													                                    design and user interfaces.</div>
 							</div>
 						</div>
 					</div>

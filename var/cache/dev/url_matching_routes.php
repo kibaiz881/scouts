@@ -91,12 +91,13 @@ return [
                             .'|ettingadmin/(?'
                                 .'|edit/([^/]++)(*:628)'
                                 .'|view/([^/]++)(*:649)'
+                                .'|pdf/([^/]++)(*:669)'
                             .')'
                         .')'
-                        .'|useradmin/delete/([^/]++)(*:684)'
+                        .'|useradmin/delete/([^/]++)(*:704)'
                     .')'
                 .')'
-                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:721)'
+                .'|/blog(?:/(\\d+)(?:/(\\d+))?)?(*:741)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -124,8 +125,9 @@ return [
         591 => [[['_route' => 'app_admin_sampana_delete', '_controller' => 'App\\Controller\\admin\\SampanaController::delete'], ['id'], null, null, false, true, null]],
         628 => [[['_route' => 'admin_setting_edit', '_controller' => 'App\\Controller\\admin\\SettingadminController::edit'], ['id'], null, null, false, true, null]],
         649 => [[['_route' => 'admin_setting_view', '_controller' => 'App\\Controller\\admin\\SettingadminController::view'], ['id'], null, null, false, true, null]],
-        684 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        721 => [
+        669 => [[['_route' => 'app_admin_settingadmin_pdf', '_controller' => 'App\\Controller\\admin\\SettingadminController::generatePdf'], ['id'], null, null, false, true, null]],
+        704 => [[['_route' => 'app_admin_user_delete', '_controller' => 'App\\Controller\\admin\\SettingadminController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        741 => [
             [['_route' => 'app_blog', 'page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\BlogController::index'], ['page', 'itemsPerPage'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

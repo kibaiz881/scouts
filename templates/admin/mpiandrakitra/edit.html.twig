@@ -150,6 +150,22 @@
 				</div>
 				<div class="col">
 					<div class="form-group">
+						<label class="form-label" for="lieuNaissance">
+							Lieu du travail
+							<span class="required">*</span>
+						</label>
+						{{ form_row(form.lieudetravail, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieutravail',
+                                placeholder: 'e.g., Paris, London'
+                            }
+                        }) }}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
 						<label class="form-label" for="sexe">
 							Sexe
 							<span class="required">*</span>
@@ -164,6 +180,23 @@
                         }) }}
 					</div>
 				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="sexe">
+							Situation matrimonniale
+							<span class="required">*</span>
+						</label>
+						{{ form_row(form.situationMatriMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'sexe',
+                                placeholder: 'e.g., Male, Female'
+                            }
+                        }) }}
+					</div>
+				</div>
+
 			</div>
 
 			<div class="row">
@@ -194,6 +227,22 @@
                                 class: 'form-control',
                                 id: 'lieuNaissance',
                                 placeholder: 'e.g., Paris, London'
+                            }
+                        }) }}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="lieuNaissance">
+							Nombre d'enfant prise en charge
+							<span class="required"></span>
+						</label>
+						{{ form_row(form.nombreEnfantMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieuNaissance',
+                                placeholder: 'Nombre d\'enfant prise en charge'
                             }
                         }) }}
 					</div>
@@ -346,6 +395,81 @@
                         }) }}
 					</div>
 				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
+							Velirano Date for scout
+						</label>
+						{{ form_row(form.veliranoDateMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'veliranoDateMp'
+                            }
+                        }) }}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
+							Lieu Velirano 
+						</label>
+						{{ form_row(form.lieuVeliranoMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieuVeliranoMp'
+                            }
+                        }) }}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="fonctionScout">
+							Fonction Scout Mpiandrakitra
+							<span class="required">*</span>
+						</label>
+						{{ form_row(form.fonctionscoutMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'fonctionScout',
+                                placeholder: 'Enter fonction dans le scout',
+                                required: true
+                            }
+                        }) }}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
+							Tokompanompoana Date for scout
+						</label>
+						{{ form_row(form.TompokompanompoanaMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'dateEntrescout'
+                            }
+                        }) }}
+					</div>
+				</div>
+				<div class="col">
+					<div class="form-group">
+						<label class="form-label" for="dateEntrescout">
+							Réligion
+						</label>
+						{{ form_row(form.religionMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'veliranoDateMp'
+                            }
+                        }) }}
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -376,63 +500,63 @@
 
 	{% block javascript %}
 		 <script>
-				document.addEventListener('DOMContentLoaded', function() {
-				    const cinInput = document.querySelector('.cin-input');
-				
-				    if (!cinInput) {
-				        console.warn('Champ CIN non trouvé (classe: .cin-input)');
-				        return;
-				    }
-				
-				    // Fonction pour nettoyer et obtenir la valeur brute
-				    function getCleanCinValue(value) {
-				        return value
-				            .replace(/\s/g, '')           // Supprime tous les espaces
-				            .replace(/[^\d]/g, '')        // Garde uniquement les chiffres
-				            .slice(0, 12);                // Limite à 12 chiffres maximum
-				    }
-				
-				    // Événement input : formatage en temps réel
-				    cinInput.addEventListener('input', function(e) {
-				        let value = e.target.value;
-				        let cleanValue = getCleanCinValue(value);
-				        
-				        // Formatage avec espaces tous les 3 chiffres
-				        let formatted = '';
-				        for (let i = 0; i < cleanValue.length; i += 3) {
-				            formatted += cleanValue.substr(i, 3) + ' ';
-				        }
-				        e.target.value = formatted.trim();
-				    });
-				
-				    // Événement focus : sélectionne tout le texte
-				    cinInput.addEventListener('focus', function() {
-				        this.select();
-				    });
-				
-				    // Événement blur : nettoie complètement (optionnel)
-				    cinInput.addEventListener('blur', function() {
-				        let cleanValue = getCleanCinValue(this.value);
-				        if (cleanValue.length === 12) {
-				            // Reformate proprement si complet
-				            let formatted = '';
-				            for (let i = 0; i < cleanValue.length; i += 3) {
-				                formatted += cleanValue.substr(i, 3) + ' ';
-				            }
-				            this.value = formatted.trim();
-				        } else if (cleanValue.length === 0) {
-				            this.value = ''; // Vide si rien
-				        }
-				    });
-				
-				    // Fonction utilitaire pour récupérer la valeur brute n'importe où
-				    window.getCinValue = function() {
-				        return getCleanCinValue(cinInput.value);
-				    };
-				
-				    // Exemple d'utilisation
-				    console.log('CIN brute:', window.getCinValue());
-				});
-			</script>
+								document.addEventListener('DOMContentLoaded', function() {
+								    const cinInput = document.querySelector('.cin-input');
+								
+								    if (!cinInput) {
+								        console.warn('Champ CIN non trouvé (classe: .cin-input)');
+								        return;
+								    }
+								
+								    // Fonction pour nettoyer et obtenir la valeur brute
+								    function getCleanCinValue(value) {
+								        return value
+								            .replace(/\s/g, '')           // Supprime tous les espaces
+								            .replace(/[^\d]/g, '')        // Garde uniquement les chiffres
+								            .slice(0, 12);                // Limite à 12 chiffres maximum
+								    }
+								
+								    // Événement input : formatage en temps réel
+								    cinInput.addEventListener('input', function(e) {
+								        let value = e.target.value;
+								        let cleanValue = getCleanCinValue(value);
+								        
+								        // Formatage avec espaces tous les 3 chiffres
+								        let formatted = '';
+								        for (let i = 0; i < cleanValue.length; i += 3) {
+								            formatted += cleanValue.substr(i, 3) + ' ';
+								        }
+								        e.target.value = formatted.trim();
+								    });
+								
+								    // Événement focus : sélectionne tout le texte
+								    cinInput.addEventListener('focus', function() {
+								        this.select();
+								    });
+								
+								    // Événement blur : nettoie complètement (optionnel)
+								    cinInput.addEventListener('blur', function() {
+								        let cleanValue = getCleanCinValue(this.value);
+								        if (cleanValue.length === 12) {
+								            // Reformate proprement si complet
+								            let formatted = '';
+								            for (let i = 0; i < cleanValue.length; i += 3) {
+								                formatted += cleanValue.substr(i, 3) + ' ';
+								            }
+								            this.value = formatted.trim();
+								        } else if (cleanValue.length === 0) {
+								            this.value = ''; // Vide si rien
+								        }
+								    });
+								
+								    // Fonction utilitaire pour récupérer la valeur brute n'importe où
+								    window.getCinValue = function() {
+								        return getCleanCinValue(cinInput.value);
+								    };
+								
+								    // Exemple d'utilisation
+								    console.log('CIN brute:', window.getCinValue());
+								});
+							</script>
 	{% endblock %}
 {% endblock %}

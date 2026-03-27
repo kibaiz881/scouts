@@ -237,17 +237,44 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t</div>
 \t\t\t\t<div class=\"col\">
 \t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"lieuNaissance\">
+\t\t\t\t\t\t\tLieu du travail
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 157
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 157, $this->source); })()), "lieudetravail", [], "any", false, false, false, 157), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "lieutravail", "placeholder" => "e.g., Paris, London"]]);
+        // line 164
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t\t<label class=\"form-label\" for=\"sexe\">
 \t\t\t\t\t\t\tSexe
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 157
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 157, $this->source); })()), "sexe", [], "any", false, false, false, 157), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "sexe", "placeholder" => "e.g., Male, Female"]]);
-        // line 164
+        // line 173
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 173, $this->source); })()), "sexe", [], "any", false, false, false, 173), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "sexe", "placeholder" => "e.g., Male, Female"]]);
+        // line 180
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"sexe\">
+\t\t\t\t\t\t\tSituation matrimonniale
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 189
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 189, $this->source); })()), "situationMatriMp", [], "any", false, false, false, 189), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "sexe", "placeholder" => "e.g., Male, Female"]]);
+        // line 196
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+
 \t\t\t</div>
 
 \t\t\t<div class=\"row\">
@@ -258,9 +285,9 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 176
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 176, $this->source); })()), "dateNaissMp", [], "any", false, false, false, 176), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "dateNaissance"]]);
-        // line 182
+        // line 209
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 209, $this->source); })()), "dateNaissMp", [], "any", false, false, false, 209), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "dateNaissance"]]);
+        // line 215
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -271,9 +298,22 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 191
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 191, $this->source); })()), "lieuNaissMp", [], "any", false, false, false, 191), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "lieuNaissance", "placeholder" => "e.g., Paris, London"]]);
-        // line 198
+        // line 224
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 224, $this->source); })()), "lieuNaissMp", [], "any", false, false, false, 224), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "lieuNaissance", "placeholder" => "e.g., Paris, London"]]);
+        // line 231
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"lieuNaissance\">
+\t\t\t\t\t\t\tNombre d'enfant prise en charge
+\t\t\t\t\t\t\t<span class=\"required\"></span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 240
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 240, $this->source); })()), "nombreEnfantMp", [], "any", false, false, false, 240), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "lieuNaissance", "placeholder" => "Nombre d'enfant prise en charge"]]);
+        // line 247
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -300,9 +340,9 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 223
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 223, $this->source); })()), "cinMp", [], "any", false, false, false, 223), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "cin", "placeholder" => "Enter CIN", "required" => false]]);
-        // line 231
+        // line 272
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 272, $this->source); })()), "cinMp", [], "any", false, false, false, 272), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "cin", "placeholder" => "Enter CIN", "required" => false]]);
+        // line 280
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -313,9 +353,9 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 240
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 240, $this->source); })()), "nationalite", [], "any", false, false, false, 240), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "nationalite", "placeholder" => "Enter nationalité", "required" => false]]);
-        // line 248
+        // line 289
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 289, $this->source); })()), "nationalite", [], "any", false, false, false, 289), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "nationalite", "placeholder" => "Enter nationalité", "required" => false]]);
+        // line 297
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -328,9 +368,9 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\tLieu de délivrance
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 259
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 259, $this->source); })()), "lieuCinMp", [], "any", false, false, false, 259), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "lieuDelivrance", "placeholder" => "Enter lieu de delivrance", "required" => false]]);
-        // line 267
+        // line 308
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 308, $this->source); })()), "lieuCinMp", [], "any", false, false, false, 308), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "lieuDelivrance", "placeholder" => "Enter lieu de delivrance", "required" => false]]);
+        // line 316
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -341,9 +381,9 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 276
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 276, $this->source); })()), "dateDelivraceCINMp", [], "any", false, false, false, 276), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "dateDelivrance", "placeholder" => "Enter date of delivrance", "required" => false]]);
-        // line 284
+        // line 325
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 325, $this->source); })()), "dateDelivraceCINMp", [], "any", false, false, false, 325), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "dateDelivrance", "placeholder" => "Enter date of delivrance", "required" => false]]);
+        // line 333
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -354,9 +394,9 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 293
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 293, $this->source); })()), "paysDelivranceMp", [], "any", false, false, false, 293), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "paysDelivrance", "placeholder" => "Enter pays de delivrance", "required" => false]]);
-        // line 301
+        // line 342
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 342, $this->source); })()), "paysDelivranceMp", [], "any", false, false, false, 342), 'row', ["label" => false, "attr" => ["class" => "form-control cin-input", "id" => "paysDelivrance", "placeholder" => "Enter pays de delivrance", "required" => false]]);
+        // line 350
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -381,9 +421,9 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 324
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 324, $this->source); })()), "sampana", [], "any", false, false, false, 324), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "fonctionScout", "placeholder" => "Enter fonction dans le scout", "required" => true]]);
-        // line 332
+        // line 373
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 373, $this->source); })()), "sampana", [], "any", false, false, false, 373), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "fonctionScout", "placeholder" => "Enter fonction dans le scout", "required" => true]]);
+        // line 381
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -393,9 +433,72 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t\t\t\tStart Date for scout
 \t\t\t\t\t\t</label>
 \t\t\t\t\t\t";
-        // line 340
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 340, $this->source); })()), "dateEntrescout", [], "any", false, false, false, 340), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "dateEntrescout"]]);
-        // line 346
+        // line 389
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 389, $this->source); })()), "dateEntrescout", [], "any", false, false, false, 389), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "dateEntrescout"]]);
+        // line 395
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tVelirano Date for scout
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 403
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 403, $this->source); })()), "veliranoDateMp", [], "any", false, false, false, 403), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "veliranoDateMp"]]);
+        // line 409
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tLieu Velirano 
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 417
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 417, $this->source); })()), "lieuVeliranoMp", [], "any", false, false, false, 417), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "lieuVeliranoMp"]]);
+        // line 423
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"fonctionScout\">
+\t\t\t\t\t\t\tFonction Scout Mpiandrakitra
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 434
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 434, $this->source); })()), "fonctionscoutMp", [], "any", false, false, false, 434), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "fonctionScout", "placeholder" => "Enter fonction dans le scout", "required" => true]]);
+        // line 442
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tTokompanompoana Date for scout
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 450
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 450, $this->source); })()), "TompokompanompoanaMp", [], "any", false, false, false, 450), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "dateEntrescout"]]);
+        // line 456
+        yield "
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tRéligion
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t";
+        // line 464
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 464, $this->source); })()), "religionMp", [], "any", false, false, false, 464), 'row', ["label" => false, "attr" => ["class" => "form-control", "id" => "veliranoDateMp"]]);
+        // line 470
         yield "
 \t\t\t\t\t</div>
 \t\t\t\t</div>
@@ -423,18 +526,18 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t</div>
 
 \t\t";
-        // line 372
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 372, $this->source); })()), 'form_end');
+        // line 496
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 496, $this->source); })()), 'form_end');
         yield "
 \t</main>
 
 \t";
-        // line 375
-        yield from $this->load("component/footeradmin.html.twig", 375)->unwrap()->yield($context);
-        // line 376
+        // line 499
+        yield from $this->load("component/footeradmin.html.twig", 499)->unwrap()->yield($context);
+        // line 500
         yield "
 \t";
-        // line 377
+        // line 501
         yield from $this->unwrap()->yieldBlock('javascript', $context, $blocks);
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -457,66 +560,66 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 378
+        // line 502
         yield "\t\t <script>
-\t\t\t\tdocument.addEventListener('DOMContentLoaded', function() {
-\t\t\t\t    const cinInput = document.querySelector('.cin-input');
-\t\t\t\t
-\t\t\t\t    if (!cinInput) {
-\t\t\t\t        console.warn('Champ CIN non trouvé (classe: .cin-input)');
-\t\t\t\t        return;
-\t\t\t\t    }
-\t\t\t\t
-\t\t\t\t    // Fonction pour nettoyer et obtenir la valeur brute
-\t\t\t\t    function getCleanCinValue(value) {
-\t\t\t\t        return value
-\t\t\t\t            .replace(/\\s/g, '')           // Supprime tous les espaces
-\t\t\t\t            .replace(/[^\\d]/g, '')        // Garde uniquement les chiffres
-\t\t\t\t            .slice(0, 12);                // Limite à 12 chiffres maximum
-\t\t\t\t    }
-\t\t\t\t
-\t\t\t\t    // Événement input : formatage en temps réel
-\t\t\t\t    cinInput.addEventListener('input', function(e) {
-\t\t\t\t        let value = e.target.value;
-\t\t\t\t        let cleanValue = getCleanCinValue(value);
-\t\t\t\t        
-\t\t\t\t        // Formatage avec espaces tous les 3 chiffres
-\t\t\t\t        let formatted = '';
-\t\t\t\t        for (let i = 0; i < cleanValue.length; i += 3) {
-\t\t\t\t            formatted += cleanValue.substr(i, 3) + ' ';
-\t\t\t\t        }
-\t\t\t\t        e.target.value = formatted.trim();
-\t\t\t\t    });
-\t\t\t\t
-\t\t\t\t    // Événement focus : sélectionne tout le texte
-\t\t\t\t    cinInput.addEventListener('focus', function() {
-\t\t\t\t        this.select();
-\t\t\t\t    });
-\t\t\t\t
-\t\t\t\t    // Événement blur : nettoie complètement (optionnel)
-\t\t\t\t    cinInput.addEventListener('blur', function() {
-\t\t\t\t        let cleanValue = getCleanCinValue(this.value);
-\t\t\t\t        if (cleanValue.length === 12) {
-\t\t\t\t            // Reformate proprement si complet
-\t\t\t\t            let formatted = '';
-\t\t\t\t            for (let i = 0; i < cleanValue.length; i += 3) {
-\t\t\t\t                formatted += cleanValue.substr(i, 3) + ' ';
-\t\t\t\t            }
-\t\t\t\t            this.value = formatted.trim();
-\t\t\t\t        } else if (cleanValue.length === 0) {
-\t\t\t\t            this.value = ''; // Vide si rien
-\t\t\t\t        }
-\t\t\t\t    });
-\t\t\t\t
-\t\t\t\t    // Fonction utilitaire pour récupérer la valeur brute n'importe où
-\t\t\t\t    window.getCinValue = function() {
-\t\t\t\t        return getCleanCinValue(cinInput.value);
-\t\t\t\t    };
-\t\t\t\t
-\t\t\t\t    // Exemple d'utilisation
-\t\t\t\t    console.log('CIN brute:', window.getCinValue());
-\t\t\t\t});
-\t\t\t</script>
+\t\t\t\t\t\t\t\tdocument.addEventListener('DOMContentLoaded', function() {
+\t\t\t\t\t\t\t\t    const cinInput = document.querySelector('.cin-input');
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    if (!cinInput) {
+\t\t\t\t\t\t\t\t        console.warn('Champ CIN non trouvé (classe: .cin-input)');
+\t\t\t\t\t\t\t\t        return;
+\t\t\t\t\t\t\t\t    }
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Fonction pour nettoyer et obtenir la valeur brute
+\t\t\t\t\t\t\t\t    function getCleanCinValue(value) {
+\t\t\t\t\t\t\t\t        return value
+\t\t\t\t\t\t\t\t            .replace(/\\s/g, '')           // Supprime tous les espaces
+\t\t\t\t\t\t\t\t            .replace(/[^\\d]/g, '')        // Garde uniquement les chiffres
+\t\t\t\t\t\t\t\t            .slice(0, 12);                // Limite à 12 chiffres maximum
+\t\t\t\t\t\t\t\t    }
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Événement input : formatage en temps réel
+\t\t\t\t\t\t\t\t    cinInput.addEventListener('input', function(e) {
+\t\t\t\t\t\t\t\t        let value = e.target.value;
+\t\t\t\t\t\t\t\t        let cleanValue = getCleanCinValue(value);
+\t\t\t\t\t\t\t\t        
+\t\t\t\t\t\t\t\t        // Formatage avec espaces tous les 3 chiffres
+\t\t\t\t\t\t\t\t        let formatted = '';
+\t\t\t\t\t\t\t\t        for (let i = 0; i < cleanValue.length; i += 3) {
+\t\t\t\t\t\t\t\t            formatted += cleanValue.substr(i, 3) + ' ';
+\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t        e.target.value = formatted.trim();
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Événement focus : sélectionne tout le texte
+\t\t\t\t\t\t\t\t    cinInput.addEventListener('focus', function() {
+\t\t\t\t\t\t\t\t        this.select();
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Événement blur : nettoie complètement (optionnel)
+\t\t\t\t\t\t\t\t    cinInput.addEventListener('blur', function() {
+\t\t\t\t\t\t\t\t        let cleanValue = getCleanCinValue(this.value);
+\t\t\t\t\t\t\t\t        if (cleanValue.length === 12) {
+\t\t\t\t\t\t\t\t            // Reformate proprement si complet
+\t\t\t\t\t\t\t\t            let formatted = '';
+\t\t\t\t\t\t\t\t            for (let i = 0; i < cleanValue.length; i += 3) {
+\t\t\t\t\t\t\t\t                formatted += cleanValue.substr(i, 3) + ' ';
+\t\t\t\t\t\t\t\t            }
+\t\t\t\t\t\t\t\t            this.value = formatted.trim();
+\t\t\t\t\t\t\t\t        } else if (cleanValue.length === 0) {
+\t\t\t\t\t\t\t\t            this.value = ''; // Vide si rien
+\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Fonction utilitaire pour récupérer la valeur brute n'importe où
+\t\t\t\t\t\t\t\t    window.getCinValue = function() {
+\t\t\t\t\t\t\t\t        return getCleanCinValue(cinInput.value);
+\t\t\t\t\t\t\t\t    };
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Exemple d'utilisation
+\t\t\t\t\t\t\t\t    console.log('CIN brute:', window.getCinValue());
+\t\t\t\t\t\t\t\t});
+\t\t\t\t\t\t\t</script>
 \t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -548,7 +651,7 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  461 => 378,  438 => 377,  435 => 376,  433 => 375,  427 => 372,  399 => 346,  397 => 340,  387 => 332,  385 => 324,  360 => 301,  358 => 293,  347 => 284,  345 => 276,  334 => 267,  332 => 259,  319 => 248,  317 => 240,  306 => 231,  304 => 223,  277 => 198,  275 => 191,  264 => 182,  262 => 176,  248 => 164,  246 => 157,  235 => 148,  233 => 141,  219 => 129,  217 => 122,  209 => 116,  207 => 109,  193 => 97,  191 => 89,  180 => 80,  178 => 72,  162 => 58,  160 => 50,  153 => 46,  137 => 32,  135 => 28,  124 => 20,  117 => 16,  109 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
+        return array (  564 => 502,  541 => 501,  538 => 500,  536 => 499,  530 => 496,  502 => 470,  500 => 464,  490 => 456,  488 => 450,  478 => 442,  476 => 434,  463 => 423,  461 => 417,  451 => 409,  449 => 403,  439 => 395,  437 => 389,  427 => 381,  425 => 373,  400 => 350,  398 => 342,  387 => 333,  385 => 325,  374 => 316,  372 => 308,  359 => 297,  357 => 289,  346 => 280,  344 => 272,  317 => 247,  315 => 240,  304 => 231,  302 => 224,  291 => 215,  289 => 209,  274 => 196,  272 => 189,  261 => 180,  259 => 173,  248 => 164,  246 => 157,  235 => 148,  233 => 141,  219 => 129,  217 => 122,  209 => 116,  207 => 109,  193 => 97,  191 => 89,  180 => 80,  178 => 72,  162 => 58,  160 => 50,  153 => 46,  137 => 32,  135 => 28,  124 => 20,  117 => 16,  109 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -705,6 +808,22 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 \t\t\t\t</div>
 \t\t\t\t<div class=\"col\">
 \t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"lieuNaissance\">
+\t\t\t\t\t\t\tLieu du travail
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.lieudetravail, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieutravail',
+                                placeholder: 'e.g., Paris, London'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
 \t\t\t\t\t\t<label class=\"form-label\" for=\"sexe\">
 \t\t\t\t\t\t\tSexe
 \t\t\t\t\t\t\t<span class=\"required\">*</span>
@@ -719,6 +838,23 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
                         }) }}
 \t\t\t\t\t</div>
 \t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"sexe\">
+\t\t\t\t\t\t\tSituation matrimonniale
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.situationMatriMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'sexe',
+                                placeholder: 'e.g., Male, Female'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+
 \t\t\t</div>
 
 \t\t\t<div class=\"row\">
@@ -749,6 +885,22 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
                                 class: 'form-control',
                                 id: 'lieuNaissance',
                                 placeholder: 'e.g., Paris, London'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"lieuNaissance\">
+\t\t\t\t\t\t\tNombre d'enfant prise en charge
+\t\t\t\t\t\t\t<span class=\"required\"></span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.nombreEnfantMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieuNaissance',
+                                placeholder: 'Nombre d\\'enfant prise en charge'
                             }
                         }) }}
 \t\t\t\t\t</div>
@@ -901,6 +1053,81 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
                         }) }}
 \t\t\t\t\t</div>
 \t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tVelirano Date for scout
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.veliranoDateMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'veliranoDateMp'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tLieu Velirano 
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.lieuVeliranoMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'lieuVeliranoMp'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"fonctionScout\">
+\t\t\t\t\t\t\tFonction Scout Mpiandrakitra
+\t\t\t\t\t\t\t<span class=\"required\">*</span>
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.fonctionscoutMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'fonctionScout',
+                                placeholder: 'Enter fonction dans le scout',
+                                required: true
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tTokompanompoana Date for scout
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.TompokompanompoanaMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'dateEntrescout'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"col\">
+\t\t\t\t\t<div class=\"form-group\">
+\t\t\t\t\t\t<label class=\"form-label\" for=\"dateEntrescout\">
+\t\t\t\t\t\t\tRéligion
+\t\t\t\t\t\t</label>
+\t\t\t\t\t\t{{ form_row(form.religionMp, {
+                            label: false,
+                            attr: {
+                                class: 'form-control',
+                                id: 'veliranoDateMp'
+                            }
+                        }) }}
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 \t\t\t</div>
 \t\t</div>
 
@@ -931,64 +1158,64 @@ class __TwigTemplate_5a2d713ae2a7687669ae76708893bc38 extends Template
 
 \t{% block javascript %}
 \t\t <script>
-\t\t\t\tdocument.addEventListener('DOMContentLoaded', function() {
-\t\t\t\t    const cinInput = document.querySelector('.cin-input');
-\t\t\t\t
-\t\t\t\t    if (!cinInput) {
-\t\t\t\t        console.warn('Champ CIN non trouvé (classe: .cin-input)');
-\t\t\t\t        return;
-\t\t\t\t    }
-\t\t\t\t
-\t\t\t\t    // Fonction pour nettoyer et obtenir la valeur brute
-\t\t\t\t    function getCleanCinValue(value) {
-\t\t\t\t        return value
-\t\t\t\t            .replace(/\\s/g, '')           // Supprime tous les espaces
-\t\t\t\t            .replace(/[^\\d]/g, '')        // Garde uniquement les chiffres
-\t\t\t\t            .slice(0, 12);                // Limite à 12 chiffres maximum
-\t\t\t\t    }
-\t\t\t\t
-\t\t\t\t    // Événement input : formatage en temps réel
-\t\t\t\t    cinInput.addEventListener('input', function(e) {
-\t\t\t\t        let value = e.target.value;
-\t\t\t\t        let cleanValue = getCleanCinValue(value);
-\t\t\t\t        
-\t\t\t\t        // Formatage avec espaces tous les 3 chiffres
-\t\t\t\t        let formatted = '';
-\t\t\t\t        for (let i = 0; i < cleanValue.length; i += 3) {
-\t\t\t\t            formatted += cleanValue.substr(i, 3) + ' ';
-\t\t\t\t        }
-\t\t\t\t        e.target.value = formatted.trim();
-\t\t\t\t    });
-\t\t\t\t
-\t\t\t\t    // Événement focus : sélectionne tout le texte
-\t\t\t\t    cinInput.addEventListener('focus', function() {
-\t\t\t\t        this.select();
-\t\t\t\t    });
-\t\t\t\t
-\t\t\t\t    // Événement blur : nettoie complètement (optionnel)
-\t\t\t\t    cinInput.addEventListener('blur', function() {
-\t\t\t\t        let cleanValue = getCleanCinValue(this.value);
-\t\t\t\t        if (cleanValue.length === 12) {
-\t\t\t\t            // Reformate proprement si complet
-\t\t\t\t            let formatted = '';
-\t\t\t\t            for (let i = 0; i < cleanValue.length; i += 3) {
-\t\t\t\t                formatted += cleanValue.substr(i, 3) + ' ';
-\t\t\t\t            }
-\t\t\t\t            this.value = formatted.trim();
-\t\t\t\t        } else if (cleanValue.length === 0) {
-\t\t\t\t            this.value = ''; // Vide si rien
-\t\t\t\t        }
-\t\t\t\t    });
-\t\t\t\t
-\t\t\t\t    // Fonction utilitaire pour récupérer la valeur brute n'importe où
-\t\t\t\t    window.getCinValue = function() {
-\t\t\t\t        return getCleanCinValue(cinInput.value);
-\t\t\t\t    };
-\t\t\t\t
-\t\t\t\t    // Exemple d'utilisation
-\t\t\t\t    console.log('CIN brute:', window.getCinValue());
-\t\t\t\t});
-\t\t\t</script>
+\t\t\t\t\t\t\t\tdocument.addEventListener('DOMContentLoaded', function() {
+\t\t\t\t\t\t\t\t    const cinInput = document.querySelector('.cin-input');
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    if (!cinInput) {
+\t\t\t\t\t\t\t\t        console.warn('Champ CIN non trouvé (classe: .cin-input)');
+\t\t\t\t\t\t\t\t        return;
+\t\t\t\t\t\t\t\t    }
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Fonction pour nettoyer et obtenir la valeur brute
+\t\t\t\t\t\t\t\t    function getCleanCinValue(value) {
+\t\t\t\t\t\t\t\t        return value
+\t\t\t\t\t\t\t\t            .replace(/\\s/g, '')           // Supprime tous les espaces
+\t\t\t\t\t\t\t\t            .replace(/[^\\d]/g, '')        // Garde uniquement les chiffres
+\t\t\t\t\t\t\t\t            .slice(0, 12);                // Limite à 12 chiffres maximum
+\t\t\t\t\t\t\t\t    }
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Événement input : formatage en temps réel
+\t\t\t\t\t\t\t\t    cinInput.addEventListener('input', function(e) {
+\t\t\t\t\t\t\t\t        let value = e.target.value;
+\t\t\t\t\t\t\t\t        let cleanValue = getCleanCinValue(value);
+\t\t\t\t\t\t\t\t        
+\t\t\t\t\t\t\t\t        // Formatage avec espaces tous les 3 chiffres
+\t\t\t\t\t\t\t\t        let formatted = '';
+\t\t\t\t\t\t\t\t        for (let i = 0; i < cleanValue.length; i += 3) {
+\t\t\t\t\t\t\t\t            formatted += cleanValue.substr(i, 3) + ' ';
+\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t        e.target.value = formatted.trim();
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Événement focus : sélectionne tout le texte
+\t\t\t\t\t\t\t\t    cinInput.addEventListener('focus', function() {
+\t\t\t\t\t\t\t\t        this.select();
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Événement blur : nettoie complètement (optionnel)
+\t\t\t\t\t\t\t\t    cinInput.addEventListener('blur', function() {
+\t\t\t\t\t\t\t\t        let cleanValue = getCleanCinValue(this.value);
+\t\t\t\t\t\t\t\t        if (cleanValue.length === 12) {
+\t\t\t\t\t\t\t\t            // Reformate proprement si complet
+\t\t\t\t\t\t\t\t            let formatted = '';
+\t\t\t\t\t\t\t\t            for (let i = 0; i < cleanValue.length; i += 3) {
+\t\t\t\t\t\t\t\t                formatted += cleanValue.substr(i, 3) + ' ';
+\t\t\t\t\t\t\t\t            }
+\t\t\t\t\t\t\t\t            this.value = formatted.trim();
+\t\t\t\t\t\t\t\t        } else if (cleanValue.length === 0) {
+\t\t\t\t\t\t\t\t            this.value = ''; // Vide si rien
+\t\t\t\t\t\t\t\t        }
+\t\t\t\t\t\t\t\t    });
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Fonction utilitaire pour récupérer la valeur brute n'importe où
+\t\t\t\t\t\t\t\t    window.getCinValue = function() {
+\t\t\t\t\t\t\t\t        return getCleanCinValue(cinInput.value);
+\t\t\t\t\t\t\t\t    };
+\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t    // Exemple d'utilisation
+\t\t\t\t\t\t\t\t    console.log('CIN brute:', window.getCinValue());
+\t\t\t\t\t\t\t\t});
+\t\t\t\t\t\t\t</script>
 \t{% endblock %}
 {% endblock %}
 ", "admin/mpiandrakitra/edit.html.twig", "C:\\Users\\M_INFO\\Music\\scouts\\templates\\admin\\mpiandrakitra\\edit.html.twig");
