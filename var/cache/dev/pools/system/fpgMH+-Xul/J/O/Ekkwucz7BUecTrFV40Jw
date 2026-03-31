@@ -1,0 +1,3 @@
+<?php //13f25b0d1bfdfdca3fae2cffb32c0dd2
+
+return [PHP_INT_MAX, 'plugin/chart/chart.js'];

@@ -146,59 +146,79 @@ final class SettingadminController extends AbstractController
         return $this->json(['success' => true]);
     }
 
-    #[Route('/admin/settingadmin/view/{id}', name: 'admin_setting_view')]
+    #[Route('/admin/settingadmin/pdf/{id}', name: 'app_admin_settingadmin_pdf')]
     #[IsGranted('ROLE_ADMIN')]
-    public function view(int $id, EntityManagerInterface $em): Response
+    public function generatePdf(int $id, UserRepository $userRepository): Response
     {
-        $user = $em->getRepository(User::class)->find($id);
-
+        // 0️⃣ Récupération sécurisée de l'utilisateur
+        $user = $userRepository->find($id);
         if (!$user) {
             throw $this->createNotFoundException('Utilisateur introuvable.');
         }
 
-        return $this->render('admin/settingadmin/view.html.twig', [
-            'user' => $user
-        ]);
-    }
-
-    #[Route('/admin/settingadmin/pdf/{id}', name: 'app_admin_settingadmin_pdf')]
-    #[IsGranted('ROLE_ADMIN')]
-    public function generatePdf(User $user): Response
-    {
-        // 1️⃣ Génération du QR code PNG
+        // 1️⃣ Génération du QR Code
         $result = Builder::create()
             ->writer(new PngWriter())
-            ->data('User ID: ' . $user->getId() . ' | Email: ' . $user->getEmail())
+            ->data(
+                'User ID: ' . $user->getId() .
+                    ' | Email: ' . $user->getEmail() .
+                    ' | Photo: ' . $user->getProfilePictureName()
+            )
             ->encoding(new Encoding('UTF-8'))
-            ->errorCorrectionLevel(ErrorCorrectionLevel::High) // ✅ Enum pour v5+
+            ->errorCorrectionLevel(ErrorCorrectionLevel::High)
             ->size(150)
             ->margin(10)
             ->build();
 
         $qrCodeBase64 = base64_encode($result->getString());
 
-        // 2️⃣ Configuration Dompdf
+        // 2️⃣ Configuration DomPDF
         $options = new Options();
-        $options->set('isRemoteEnabled', true);
         $options->set('defaultFont', 'DejaVu Sans');
-
         $dompdf = new Dompdf($options);
 
-        // 3️⃣ Chargement du template Twig
+        // 3️⃣ CHEMIN DES IMAGES (PUBLIC)
+        $basePath = $this->getParameter('kernel.project_dir') . '/public/images/';
+
+        $imageBase64   = $this->getBase64Image($basePath . '75hc.png');
+        $imageBase641  = $this->getBase64Image($basePath . '20215.jpg');
+        $imageBase642  = $this->getBase64Image($basePath . 'AIM.png'); // logo
+
+        // ✅ PHOTO DU PROFIL EN BASE64
+        $profileBase64 = '';
+        if ($user->getProfilePictureName()) {
+            $profilePath = $basePath . 'profiles/' . $user->getProfilePictureName();
+            $profileBase64 = $this->getBase64Image($profilePath);
+        }
+
+        // 4️⃣ Génération HTML
         $html = $this->renderView('admin/settingadmin/pdf.html.twig', [
             'user' => $user,
             'qrCode' => $qrCodeBase64,
+            'image_base64' => $imageBase64,
+            'image_base641' => $imageBase641,
+            'image_base642' => $imageBase642,
+            'profileBase64' => $profileBase64, // injecté pour Twig
         ]);
 
-        // 4️⃣ Génération du PDF
+        // 5️⃣ Génération PDF
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
         $dompdf->render();
 
-        // 5️⃣ Retour du PDF
+        // 6️⃣ Retour PDF
         return new Response($dompdf->output(), 200, [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'inline; filename="user_' . $user->getId() . '.pdf"',
         ]);
+    }
+
+    // ✅ MÉTHODE UTILITAIRE
+    private function getBase64Image(string $path): string
+    {
+        if (!file_exists($path)) {
+            return ''; // évite crash si image absente
+        }
+        return base64_encode(file_get_contents($path));
     }
 }

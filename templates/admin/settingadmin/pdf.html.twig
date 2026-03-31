@@ -2,176 +2,263 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Badge Scout CIN Style</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+<title>Badge Scout Recto Verso</title>
 <style>
 body {
-    background: #e5e7eb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: 'DejaVu Sans', Arial, sans-serif;
 }
 
-/* Carte CIN style */
+/* FORMAT A4 */
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
+
+/* TABLE PRINCIPALE */
+.main-table {
+    width: 100%;
+    max-width: 190mm;
+    margin: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.main-table td {
+    padding: 5mm;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* BADGE */
 .badge-scout {
-    width: 320px;
-    height: 180px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    position: relative;
+    width: 90mm;
+    height: 60mm;
+    border-radius: 4mm;
+    border: 1mm double #000;
     overflow: hidden;
-    border: 2px solid #065f46;
+    position: relative;
 }
 
-/* Header avec logo et titre */
-.badge-header {
-    display: flex;
-    align-items: center;
-    background: #065f46; /* Vert du drapeau */
-    padding: 6px 10px;
-    color: #fff;
-}
-
-.badge-header img {
-    width: 28px;
-    height: 28px;
-    margin-right: 8px;
-}
-
-.badge-header span {
-    font-weight: 600;
-    font-size: 13px;
-}
-
-/* BODY = photo + infos */
-.badge-body {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px;
-}
-
-/* Photo utilisateur */
-.badge-photo {
-    width: 70px;
-    height: 90px;
+/* IMAGE BACKGROUND */
+.bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border: 2px solid #065f46;
-    border-radius: 4px;
-    flex-shrink: 0;
+    z-index: 0;
 }
 
-/* Infos utilisateur */
+/* OVERLAY LÉGER */
+.badge-scout::before {
+    content: "";
+    position: absolute;
+    inset: 0;   
+    background: rgba(255, 255, 255, 0.18);
+    z-index: 1;
+}
+
+/* CONTENU AU PREMIER PLAN */
+.badge-header,
+.badge-table,
+.badge-info,
+.back-info,
+.back-footer {
+    position: relative;
+    z-index: 5;
+}
+
+/* HEADER */
+.badge-header {
+    text-align: center;
+    background: #1b1b1b;
+    padding: 2mm;
+    color: #fff;
+    font-size: 3mm;
+    font-weight: bold;
+}
+
+/* TABLE INTERNE */
+.badge-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.badge-table td {
+    padding: 2mm;
+    vertical-align: middle;
+}
+
+/* PHOTO */
+.badge-photo {
+    width: 25mm;
+    height: 25mm;
+    object-fit: cover;
+    border: 0.5mm solid #000;
+    border-radius: 2mm;
+}
+
+/* INFOS */
 .badge-info {
-    flex-grow: 1;
-    font-size: 11px;
+    font-size: 3mm;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.53);
+    padding: 2mm;
+    border-radius: 2mm;
 }
 
 .label {
-    color: #6b7280;
-    font-size: 9px;
-}
-.value {
-    font-weight: 600;
-    font-size: 11px;
+    font-size: 2mm;
+    color: #555;
 }
 
-/* QR code */
-.badge-qr {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #065f46;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f9fafb;
+/* QR */
+.qr-large {
+    width: 30mm;
+    height: 30mm;
+    border: 0.5mm solid #000;
 }
-.badge-qr img {
+
+.qr-large img {
     width: 100%;
     height: 100%;
+}
+
+/* TEXTE VERSO */
+.back-info {
+    font-size: 3mm;
+    background: rgba(255, 255, 255, 0.53);
+    padding: 2mm;
+    border-radius: 2mm;
+}
+
+.back-footer {
+    font-size: 2.5mm;
+    text-align: center;
+    color: #5e5e5e;
+}
+
+/* PRINT */
+@media print {
+    body {
+        background: white;
+    }
+    .main-table {
+        margin: auto;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="badge-scout">
+<table class="main-table">
+<tr>
 
-    <!-- HEADER -->
-    <div class="badge-header">
-        <!-- Logo scout -->
-        {# <img src="{{ absolute_url(asset('images/hc.png')) }}" alt="Logo Scout"> #}
-        <span>Badge Scout - Madagascar</span>
-    </div>
-
-    <!-- BODY -->
-    <div class="badge-body">
-
-        <!-- PHOTO -->
-        {% if user.profilePictureName %}
-            <img src="{{ absolute_url(asset('images/profiles/' ~ user.profilePictureName)) }}" class="badge-photo">
-        {% else %}
-            <div class="badge-photo d-flex align-items-center justify-content-center text-muted">
-                No Photo
-            </div>
+<!-- ================= RECTO ================= -->
+<td>
+    <div class="badge-scout">
+        <!-- IMAGE BACKGROUND -->
+        {% if image_base64 %}
+            <img src="data:image/png;base64,{{ image_base64 }}" class="bg-img">
         {% endif %}
 
-        <!-- INFOS -->
-        <div class="badge-info">
-            <div class="mb-1">
-                <div class="label">Nom</div>
-                <div class="value">{{ user.username }}</div>
-            </div>
-
-            <div class="mb-1">
-                <div class="label">Email</div>
-                <div class="value text-truncate">{{ user.email }}</div>
-            </div>
-
-            <div class="d-flex justify-content-between mb-1">
-                <div>
-                    <div class="label">Rôle</div>
-                    <div class="value">
-                        {% if 'ROLE_ADMIN' in user.roles %}ADMIN{% else %}MEMBRE{% endif %}
-                    </div>
-                </div>
-
-                <div>
-                    <div class="label">ID</div>
-                    <div class="value">{{ user.id }}</div>
-                </div>
-            </div>
-
-            <div>
-                <div class="label">Émis le</div>
-                <div class="value">{{ user.createdAt|date('d/m/Y') }}</div>
-            </div>
+        <div class="badge-header">
+            HELDER CAMARA
         </div>
 
-    </div>
+        <table class="badge-table">
+            <tr>
+                <!-- PHOTO -->
+                <td>
+                    {% if profileBase64 %}
+                        <img src="data:image/png;base64,{{ profileBase64 }}" class="badge-photo">
+                    {% else %}
+                        <div style="width:25mm;height:25mm;border:1px solid #000;text-align:center;line-height:25mm;">👤</div>
+                    {% endif %}
+                </td>
 
-    <!-- QR -->
-    <div class="badge-qr">
-        {% if qrCode is defined %}
-            <img src="data:image/png;base64,{{ qrCode }}">
-        {% else %}
-            QR
+                <!-- INFOS -->
+                <td>
+                    <div class="badge-info">
+                        <div class="label">Nom et prénoms</div>
+                        {{ user.username|default('N/A') }}
+
+                        <div class="label">Naissance</div>
+                        {{ user.dateNaissance ? user.dateNaissance|date('d/m/Y') : 'N/A' }} - {{ user.lieuNaissance|default('N/A') }}
+
+                        <div class="label">Email</div>
+                        {{ user.email|default('N/A') }}
+
+                        <div class="label">Fonction</div>
+                        {{ user.fonctionScout|default('N/A') }}
+
+                        <div class="label">Téléphone</div>
+                        {{ user.phone|default('N/A') }}
+
+                        <div class="label">CIN</div>
+                        {{ user.cin|default('N/A') }} à {{ user.lieuDelivrance|default('N/A') }}
+
+                        <div class="label">Adresse</div>
+                        {{ user.adresse|default('N/A') }}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</td>
+
+<!-- ================= VERSO ================= -->
+<td>
+    <div class="badge-scout">
+        <!-- IMAGE BACKGROUND -->
+        {% if image_base64 %}
+            <img src="data:image/png;base64,{{ image_base64 }}" class="bg-img">
         {% endif %}
-    </div>
 
-</div>
+        <div class="badge-header">
+            ANTILIN'I MADAGASIKARA
+        </div>
+
+        <table class="badge-table">
+            <tr>
+                <!-- QR -->
+                <td>
+                    <div class="qr-large">
+                        {% if qrCode %}
+                            <img src="data:image/png;base64,{{ qrCode }}">
+                        {% else %}
+                            <div style="width:100%;height:100%;text-align:center;line-height:30mm;">QR</div>
+                        {% endif %}
+                    </div>
+                </td>
+
+                <!-- TEXTE -->
+                <td>
+                    <div class="back-info">
+                        Ity olona ity dia mpikambana ao amin'ny Antilin'i Madagasikara.
+                        <p>Ary nahavita vatom-panorenana ara-dalana tato anatin'ny fikambanana</p><br>
+                        <center><u>Sonia</u></center>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="back-footer">
+                    Badge personnel - En cas de perte, contactez l’organisation. Taompikatrohana 2025 - 2026
+                </td>
+            </tr>
+        </table>
+    </div>
+</td>
+
+</tr>
+</table>
 
 </body>
 </html>
