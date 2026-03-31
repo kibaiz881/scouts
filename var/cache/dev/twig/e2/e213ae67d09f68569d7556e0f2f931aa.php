@@ -82,32 +82,15 @@ body {
 
 /* BADGE */
 .badge-scout {
-    width: 95mm;
+    width: 90mm;
     height: 60mm;
     border-radius: 4mm;
     border: 1mm double #000;
     overflow: hidden;
     position: relative;
-}
-
-/* IMAGE BACKGROUND */
-.bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-/* OVERLAY LÉGER */
-.badge-scout::before {
-    content: \"\";
-    position: absolute;
-    inset: 0;   
-    background: rgba(255, 255, 255, 0.18);
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* CONTENU AU PREMIER PLAN */
@@ -210,40 +193,38 @@ body {
 <!-- ================= RECTO ================= -->
 <td>
     <div class=\"badge-scout\">
-        <!-- IMAGE BACKGROUND -->
         ";
-        // line 167
-        if ((($tmp = (isset($context["image_base64"]) || array_key_exists("image_base64", $context) ? $context["image_base64"] : (function () { throw new RuntimeError('Variable "image_base64" does not exist.', 167, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 168
+        // line 149
+        if ((($tmp = (isset($context["image_base641"]) || array_key_exists("image_base641", $context) ? $context["image_base641"] : (function () { throw new RuntimeError('Variable "image_base641" does not exist.', 149, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 150
             yield "            <img src=\"data:image/png;base64,";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["image_base64"]) || array_key_exists("image_base64", $context) ? $context["image_base64"] : (function () { throw new RuntimeError('Variable "image_base64" does not exist.', 168, $this->source); })()), "html", null, true);
-            yield "\" class=\"bg-img\">
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["image_base641"]) || array_key_exists("image_base641", $context) ? $context["image_base641"] : (function () { throw new RuntimeError('Variable "image_base641" does not exist.', 150, $this->source); })()), "html", null, true);
+            yield "\" 
+                 style=\"position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:4mm;\">
         ";
         }
-        // line 170
+        // line 153
         yield "
-        <div class=\"badge-header\">
-            HELDER CAMARA
-        </div>
+        <div class=\"badge-header\">HELDER CAMARA</div>
 
         <table class=\"badge-table\">
             <tr>
                 <!-- PHOTO -->
                 <td>
                     ";
-        // line 179
-        if ((($tmp = (isset($context["profileBase64"]) || array_key_exists("profileBase64", $context) ? $context["profileBase64"] : (function () { throw new RuntimeError('Variable "profileBase64" does not exist.', 179, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 180
+        // line 160
+        if ((($tmp = (isset($context["profileBase64"]) || array_key_exists("profileBase64", $context) ? $context["profileBase64"] : (function () { throw new RuntimeError('Variable "profileBase64" does not exist.', 160, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 161
             yield "                        <img src=\"data:image/png;base64,";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["profileBase64"]) || array_key_exists("profileBase64", $context) ? $context["profileBase64"] : (function () { throw new RuntimeError('Variable "profileBase64" does not exist.', 180, $this->source); })()), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["profileBase64"]) || array_key_exists("profileBase64", $context) ? $context["profileBase64"] : (function () { throw new RuntimeError('Variable "profileBase64" does not exist.', 161, $this->source); })()), "html", null, true);
             yield "\" class=\"badge-photo\">
                     ";
         } else {
-            // line 182
+            // line 163
             yield "                        <div style=\"width:25mm;height:25mm;border:1px solid #000;text-align:center;line-height:25mm;\">👤</div>
                     ";
         }
-        // line 184
+        // line 165
         yield "                </td>
 
                 <!-- INFOS -->
@@ -251,48 +232,48 @@ body {
                     <div class=\"badge-info\">
                         <div class=\"label\">Nom et prénoms</div>
                         ";
-        // line 190
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", true, true, false, 190)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 190, $this->source); })()), "username", [], "any", false, false, false, 190), "N/A")) : ("N/A")), "html", null, true);
+        // line 171
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", true, true, false, 171)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 171, $this->source); })()), "username", [], "any", false, false, false, 171), "N/A")) : ("N/A")), "html", null, true);
         yield "
 
                         <div class=\"label\">Naissance</div>
                         ";
-        // line 193
-        yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 193, $this->source); })()), "dateNaissance", [], "any", false, false, false, 193)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 193, $this->source); })()), "dateNaissance", [], "any", false, false, false, 193), "d/m/Y"), "html", null, true)) : ("N/A"));
+        // line 174
+        yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 174, $this->source); })()), "dateNaissance", [], "any", false, false, false, 174)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 174, $this->source); })()), "dateNaissance", [], "any", false, false, false, 174), "d/m/Y"), "html", null, true)) : ("N/A"));
         yield " - ";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "lieuNaissance", [], "any", true, true, false, 193)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 193, $this->source); })()), "lieuNaissance", [], "any", false, false, false, 193), "N/A")) : ("N/A")), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "lieuNaissance", [], "any", true, true, false, 174)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 174, $this->source); })()), "lieuNaissance", [], "any", false, false, false, 174), "N/A")) : ("N/A")), "html", null, true);
         yield "
 
                         <div class=\"label\">Email</div>
                         ";
-        // line 196
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "email", [], "any", true, true, false, 196)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 196, $this->source); })()), "email", [], "any", false, false, false, 196), "N/A")) : ("N/A")), "html", null, true);
+        // line 177
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "email", [], "any", true, true, false, 177)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 177, $this->source); })()), "email", [], "any", false, false, false, 177), "N/A")) : ("N/A")), "html", null, true);
         yield "
 
                         <div class=\"label\">Fonction</div>
                         ";
-        // line 199
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "fonctionScout", [], "any", true, true, false, 199)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 199, $this->source); })()), "fonctionScout", [], "any", false, false, false, 199), "N/A")) : ("N/A")), "html", null, true);
+        // line 180
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "fonctionScout", [], "any", true, true, false, 180)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 180, $this->source); })()), "fonctionScout", [], "any", false, false, false, 180), "N/A")) : ("N/A")), "html", null, true);
         yield "
 
                         <div class=\"label\">Téléphone</div>
                         ";
-        // line 202
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "phone", [], "any", true, true, false, 202)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 202, $this->source); })()), "phone", [], "any", false, false, false, 202), "N/A")) : ("N/A")), "html", null, true);
+        // line 183
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "phone", [], "any", true, true, false, 183)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 183, $this->source); })()), "phone", [], "any", false, false, false, 183), "N/A")) : ("N/A")), "html", null, true);
         yield "
 
                         <div class=\"label\">CIN</div>
                         ";
-        // line 205
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "cin", [], "any", true, true, false, 205)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 205, $this->source); })()), "cin", [], "any", false, false, false, 205), "N/A")) : ("N/A")), "html", null, true);
+        // line 186
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "cin", [], "any", true, true, false, 186)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 186, $this->source); })()), "cin", [], "any", false, false, false, 186), "N/A")) : ("N/A")), "html", null, true);
         yield " à ";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "lieuDelivrance", [], "any", true, true, false, 205)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 205, $this->source); })()), "lieuDelivrance", [], "any", false, false, false, 205), "N/A")) : ("N/A")), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "lieuDelivrance", [], "any", true, true, false, 186)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 186, $this->source); })()), "lieuDelivrance", [], "any", false, false, false, 186), "N/A")) : ("N/A")), "html", null, true);
         yield "
 
                         <div class=\"label\">Adresse</div>
                         ";
-        // line 208
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "adresse", [], "any", true, true, false, 208)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 208, $this->source); })()), "adresse", [], "any", false, false, false, 208), "N/A")) : ("N/A")), "html", null, true);
+        // line 189
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((CoreExtension::getAttribute($this->env, $this->source, ($context["user"] ?? null), "adresse", [], "any", true, true, false, 189)) ? (Twig\Extension\CoreExtension::default(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 189, $this->source); })()), "adresse", [], "any", false, false, false, 189), "N/A")) : ("N/A")), "html", null, true);
         yield "
                     </div>
                 </td>
@@ -304,21 +285,19 @@ body {
 <!-- ================= VERSO ================= -->
 <td>
     <div class=\"badge-scout\">
-        <!-- IMAGE BACKGROUND -->
         ";
-        // line 220
-        if ((($tmp = (isset($context["image_base64"]) || array_key_exists("image_base64", $context) ? $context["image_base64"] : (function () { throw new RuntimeError('Variable "image_base64" does not exist.', 220, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 221
+        // line 200
+        if ((($tmp = (isset($context["image_base641"]) || array_key_exists("image_base641", $context) ? $context["image_base641"] : (function () { throw new RuntimeError('Variable "image_base641" does not exist.', 200, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 201
             yield "            <img src=\"data:image/png;base64,";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["image_base64"]) || array_key_exists("image_base64", $context) ? $context["image_base64"] : (function () { throw new RuntimeError('Variable "image_base64" does not exist.', 221, $this->source); })()), "html", null, true);
-            yield "\" class=\"bg-img\">
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["image_base641"]) || array_key_exists("image_base641", $context) ? $context["image_base641"] : (function () { throw new RuntimeError('Variable "image_base641" does not exist.', 201, $this->source); })()), "html", null, true);
+            yield "\" 
+                 style=\"position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:4mm;\">
         ";
         }
-        // line 223
+        // line 204
         yield "
-        <div class=\"badge-header\">
-            ANTILIN'I MADAGASIKARA
-        </div>
+        <div class=\"badge-header\">ANTILIN'I MADAGASIKARA</div>
 
         <table class=\"badge-table\">
             <tr>
@@ -326,19 +305,19 @@ body {
                 <td>
                     <div class=\"qr-large\">
                         ";
-        // line 233
-        if ((($tmp = (isset($context["qrCode"]) || array_key_exists("qrCode", $context) ? $context["qrCode"] : (function () { throw new RuntimeError('Variable "qrCode" does not exist.', 233, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 234
+        // line 212
+        if ((($tmp = (isset($context["qrCode"]) || array_key_exists("qrCode", $context) ? $context["qrCode"] : (function () { throw new RuntimeError('Variable "qrCode" does not exist.', 212, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 213
             yield "                            <img src=\"data:image/png;base64,";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["qrCode"]) || array_key_exists("qrCode", $context) ? $context["qrCode"] : (function () { throw new RuntimeError('Variable "qrCode" does not exist.', 234, $this->source); })()), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["qrCode"]) || array_key_exists("qrCode", $context) ? $context["qrCode"] : (function () { throw new RuntimeError('Variable "qrCode" does not exist.', 213, $this->source); })()), "html", null, true);
             yield "\">
                         ";
         } else {
-            // line 236
+            // line 215
             yield "                            <div style=\"width:100%;height:100%;text-align:center;line-height:30mm;\">QR</div>
                         ";
         }
-        // line 238
+        // line 217
         yield "                    </div>
                 </td>
 
@@ -397,7 +376,7 @@ body {
      */
     public function getDebugInfo(): array
     {
-        return array (  342 => 238,  338 => 236,  332 => 234,  330 => 233,  318 => 223,  312 => 221,  310 => 220,  295 => 208,  287 => 205,  281 => 202,  275 => 199,  269 => 196,  261 => 193,  255 => 190,  247 => 184,  243 => 182,  237 => 180,  235 => 179,  224 => 170,  218 => 168,  216 => 167,  48 => 1,);
+        return array (  321 => 217,  317 => 215,  311 => 213,  309 => 212,  299 => 204,  292 => 201,  290 => 200,  276 => 189,  268 => 186,  262 => 183,  256 => 180,  250 => 177,  242 => 174,  236 => 171,  228 => 165,  224 => 163,  218 => 161,  216 => 160,  207 => 153,  200 => 150,  198 => 149,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -439,32 +418,15 @@ body {
 
 /* BADGE */
 .badge-scout {
-    width: 95mm;
+    width: 90mm;
     height: 60mm;
     border-radius: 4mm;
     border: 1mm double #000;
     overflow: hidden;
     position: relative;
-}
-
-/* IMAGE BACKGROUND */
-.bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-/* OVERLAY LÉGER */
-.badge-scout::before {
-    content: \"\";
-    position: absolute;
-    inset: 0;   
-    background: rgba(255, 255, 255, 0.18);
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* CONTENU AU PREMIER PLAN */
@@ -567,14 +529,12 @@ body {
 <!-- ================= RECTO ================= -->
 <td>
     <div class=\"badge-scout\">
-        <!-- IMAGE BACKGROUND -->
-        {% if image_base64 %}
-            <img src=\"data:image/png;base64,{{ image_base64 }}\" class=\"bg-img\">
+        {% if image_base641 %}
+            <img src=\"data:image/png;base64,{{ image_base641 }}\" 
+                 style=\"position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:4mm;\">
         {% endif %}
 
-        <div class=\"badge-header\">
-            HELDER CAMARA
-        </div>
+        <div class=\"badge-header\">HELDER CAMARA</div>
 
         <table class=\"badge-table\">
             <tr>
@@ -620,14 +580,12 @@ body {
 <!-- ================= VERSO ================= -->
 <td>
     <div class=\"badge-scout\">
-        <!-- IMAGE BACKGROUND -->
-        {% if image_base64 %}
-            <img src=\"data:image/png;base64,{{ image_base64 }}\" class=\"bg-img\">
+        {% if image_base641 %}
+            <img src=\"data:image/png;base64,{{ image_base641 }}\" 
+                 style=\"position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:4mm;\">
         {% endif %}
 
-        <div class=\"badge-header\">
-            ANTILIN'I MADAGASIKARA
-        </div>
+        <div class=\"badge-header\">ANTILIN'I MADAGASIKARA</div>
 
         <table class=\"badge-table\">
             <tr>

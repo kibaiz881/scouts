@@ -35,32 +35,15 @@ body {
 
 /* BADGE */
 .badge-scout {
-    width: 95mm;
+    width: 90mm;
     height: 60mm;
     border-radius: 4mm;
     border: 1mm double #000;
     overflow: hidden;
     position: relative;
-}
-
-/* IMAGE BACKGROUND */
-.bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-/* OVERLAY LÉGER */
-.badge-scout::before {
-    content: "";
-    position: absolute;
-    inset: 0;   
-    background: rgba(255, 255, 255, 0.18);
-    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* CONTENU AU PREMIER PLAN */
@@ -163,14 +146,12 @@ body {
 <!-- ================= RECTO ================= -->
 <td>
     <div class="badge-scout">
-        <!-- IMAGE BACKGROUND -->
-        {% if image_base64 %}
-            <img src="data:image/png;base64,{{ image_base64 }}" class="bg-img">
+        {% if image_base641 %}
+            <img src="data:image/png;base64,{{ image_base641 }}" 
+                 style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:4mm;">
         {% endif %}
 
-        <div class="badge-header">
-            HELDER CAMARA
-        </div>
+        <div class="badge-header">HELDER CAMARA</div>
 
         <table class="badge-table">
             <tr>
@@ -216,14 +197,12 @@ body {
 <!-- ================= VERSO ================= -->
 <td>
     <div class="badge-scout">
-        <!-- IMAGE BACKGROUND -->
-        {% if image_base64 %}
-            <img src="data:image/png;base64,{{ image_base64 }}" class="bg-img">
+        {% if image_base641 %}
+            <img src="data:image/png;base64,{{ image_base641 }}" 
+                 style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:4mm;">
         {% endif %}
 
-        <div class="badge-header">
-            ANTILIN'I MADAGASIKARA
-        </div>
+        <div class="badge-header">ANTILIN'I MADAGASIKARA</div>
 
         <table class="badge-table">
             <tr>
