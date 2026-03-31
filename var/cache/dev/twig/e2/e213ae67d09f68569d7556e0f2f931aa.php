@@ -82,7 +82,7 @@ body {
 
 /* BADGE */
 .badge-scout {
-    width: 90mm;
+    width: 95mm;
     height: 60mm;
     border-radius: 4mm;
     border: 1mm double #000;
@@ -439,7 +439,7 @@ body {
 
 /* BADGE */
 .badge-scout {
-    width: 90mm;
+    width: 95mm;
     height: 60mm;
     border-radius: 4mm;
     border: 1mm double #000;

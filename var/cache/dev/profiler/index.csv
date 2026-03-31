@@ -86,3 +86,5 @@ bd2b1f,127.0.0.1,GET,http://127.0.0.1:8000/admin/settingadmin,1774950841,,200,re
 1626e7,127.0.0.1,GET,http://127.0.0.1:8000/admin/settingadmin/pdf/3,1774950844,,500,request
 4a9a56,127.0.0.1,GET,http://127.0.0.1:8000/admin/settingadmin,1774950991,,200,request
 c2db62,127.0.0.1,GET,http://127.0.0.1:8000/admin/settingadmin/pdf/3,1774951005,,200,request
+49b660,127.0.0.1,GET,http://127.0.0.1:8000/admin/settingadmin/pdf/3,1774951113,,200,request
+0597f7,127.0.0.1,GET,http://127.0.0.1:8000/admin/settingadmin/pdf/3,1774951125,,200,request
