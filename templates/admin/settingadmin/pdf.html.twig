@@ -59,9 +59,9 @@ body {
 /* HEADER */
 .badge-header {
     text-align: center;
-    background: #1b1b1b;
+    background: #ff000000;
     padding: 2mm;
-    color: #fff;
+    color: #f02020;
     font-size: 3mm;
     font-weight: bold;
 }
@@ -90,40 +90,45 @@ body {
 .badge-info {
     font-size: 3mm;
     text-align: left;
-    background: rgba(255, 255, 255, 0.53);
+    background: rgba(250, 223, 173, 0.49);
     padding: 2mm;
     border-radius: 2mm;
 }
 
 .label {
     font-size: 2mm;
-    color: #555;
+    color: #fff7f7;
 }
 
 /* QR */
 .qr-large {
     width: 30mm;
     height: 30mm;
-    border: 0.5mm solid #000;
+    border: 0.5mm solid #e02151;
+    border-radius: 5mm;
 }
 
 .qr-large img {
     width: 100%;
     height: 100%;
+    border: 0.5mm solid #ff1c1c;
+    border-radius: 5mm;
 }
 
 /* TEXTE VERSO */
 .back-info {
     font-size: 3mm;
-    background: rgba(255, 255, 255, 0.53);
+    background: rgba(190, 186, 186, 0);
     padding: 2mm;
     border-radius: 2mm;
+    color: #000000;
+    text-align: justify;
 }
 
 .back-footer {
     font-size: 2.5mm;
     text-align: center;
-    color: #5e5e5e;
+    color: #696565;
 }
 
 /* PRINT */
@@ -146,12 +151,15 @@ body {
 <!-- ================= RECTO ================= -->
 <td>
     <div class="badge-scout">
-        {% if image_base641 %}
-            <img src="data:image/png;base64,{{ image_base641 }}" 
+        {% if image_base64 %}
+            <img src="data:image/png;base64,{{ image_base64 }}" 
+                 style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:4mm; margin-top: 3mm; margin-left: 18mm; ">
+        {% endif %}
+        {% if image_base642 %}
+            <img src="data:image/png;base64,{{ image_base642 }}" 
                  style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:4mm;">
         {% endif %}
-
-        <div class="badge-header">HELDER CAMARA</div>
+        <div class="badge-header">Fivondronana Helder Camara</div>
 
         <table class="badge-table">
             <tr>
@@ -160,7 +168,7 @@ body {
                     {% if profileBase64 %}
                         <img src="data:image/png;base64,{{ profileBase64 }}" class="badge-photo">
                     {% else %}
-                        <div style="width:25mm;height:25mm;border:1px solid #000;text-align:center;line-height:25mm;">👤</div>
+                        <div style="width:25mm;height:25mm;border:1px solid #000;text-align:center;line-height:25mm; padding-top: 2mm; background-repeat: no-repeat; background-position: center; background-size: cover;">👤</div>
                     {% endif %}
                 </td>
 

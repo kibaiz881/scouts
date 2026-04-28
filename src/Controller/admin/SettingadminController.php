@@ -180,9 +180,9 @@ final class SettingadminController extends AbstractController
         // 3️⃣ CHEMIN DES IMAGES (PUBLIC)
         $basePath = $this->getParameter('kernel.project_dir') . '/public/images/';
 
-        $imageBase64   = $this->getBase64Image($basePath . '75hc.png');
-        $imageBase641  = $this->getBase64Image($basePath . '20215.jpg');
-        $imageBase642  = $this->getBase64Image($basePath . 'AIM.png'); // logo
+        $imageBase64   = $this->getBase64Image($basePath . '75hc.jpg');
+        $imageBase641  = $this->getBase64Image($basePath . 'freee.PNG');
+        $imageBase642  = $this->getBase64Image($basePath . 'bgjust.jpg'); // logo
 
         // ✅ PHOTO DU PROFIL EN BASE64
         $profileBase64 = '';
