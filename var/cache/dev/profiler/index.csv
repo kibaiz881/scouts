@@ -112,3 +112,17 @@ c10d73,127.0.0.1,GET,http://127.0.0.1:8000/,1777377587,,200,request
 8f721d,127.0.0.1,GET,http://127.0.0.1:8000/images/lys-removebg-preview.png,1777377601,,404,request
 d02965,127.0.0.1,GET,http://127.0.0.1:8000/images/lys-removebg-preview.png,1777377618,87dd9f,404,request
 87dd9f,127.0.0.1,GET,http://127.0.0.1:8000/images/lys-removebg-preview.png,1777377618,,404,request
+154a83,127.0.0.1,GET,http://127.0.0.1:8000/admin,1777377721,,302,request
+7e01da,127.0.0.1,GET,http://127.0.0.1:8000/login,1777377722,,200,request
+284c34,127.0.0.1,GET,http://127.0.0.1:8000/images/lys-removebg-preview.png,1777377722,ab8fc8,404,request
+ab8fc8,127.0.0.1,GET,http://127.0.0.1:8000/images/lys-removebg-preview.png,1777377722,,404,request
+5c03e5,127.0.0.1,POST,http://127.0.0.1:8000/login,1777377733,,302,request
+513ee2,127.0.0.1,GET,http://127.0.0.1:8000/admin,1777377734,,200,request
+ee4c90,127.0.0.1,GET,http://127.0.0.1:8000/admin/fivondronanna,1777377808,,200,request
+e3cedf,127.0.0.1,GET,http://127.0.0.1:8000/admin/sampana,1777377822,,200,request
+289773,127.0.0.1,GET,http://127.0.0.1:8000/admin/mpiandrakitra,1777377835,,200,request
+926d03,127.0.0.1,GET,http://127.0.0.1:8000/admin/post/admin,1777377845,,200,request
+e718cd,127.0.0.1,GET,http://127.0.0.1:8000/admin/post/newpostadmin,1777377850,,200,request
+e89a5d,127.0.0.1,POST,http://127.0.0.1:8000/admin/post/newpostadmin,1777377913,,302,request
+8c41ce,127.0.0.1,GET,http://127.0.0.1:8000/admin/post/admin,1777377914,,200,request
+7c4f3d,127.0.0.1,POST,http://127.0.0.1:8000/admin/post/approve/2,1777377919,,200,request
