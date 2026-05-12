@@ -61,10 +61,14 @@ class Sampana
     #[ORM\OneToMany(targetEntity: Mpiandrakitra::class, mappedBy: 'Sampana')]
     private Collection $mpiandrakitras;
 
+    #[ORM\OneToMany(targetEntity: Beazina::class, mappedBy: 'Sampana')]
+    private Collection $beazina;
+
     public function __construct()
     {
         $this->categorySmp = new ArrayCollection();
         $this->mpiandrakitras = new ArrayCollection();
+        $this->beazina = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -243,6 +247,18 @@ class Sampana
                 $mpiandrakitra->setSampana(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getBeazina(): ?Collection
+    {
+        return $this->beazina;
+    }
+
+    public function setBeazina(?Collection $beazina): static
+    {
+        $this->beazina = $beazina;
 
         return $this;
     }

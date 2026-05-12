@@ -9,8 +9,8 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">C:/Users/M_INFO/Music/scouts/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">C:/Users/M_INFO/Music/scouts/var/cache/dev</parameter>
+    <parameter key="kernel.build_dir">C:\Users\M_INFO\Music\scouts\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:\Users\M_INFO\Music\scouts\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">C:\Users\M_INFO\Music\scouts\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -205,15 +205,15 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">C:\Users\M_INFO\Music\scouts/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:/Users/M_INFO/Music/scouts/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:\Users\M_INFO\Music\scouts\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"/>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">C:/Users/M_INFO/Music/scouts/var/cache/dev</parameter>
+    <parameter key="router.cache_dir">C:\Users\M_INFO\Music\scouts\var\cache\dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">C:/Users/M_INFO/Music/scouts/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">C:\Users\M_INFO\Music\scouts\var\cache\dev/serialization.php</parameter>
     <parameter key=".serializer.named_serializers" type="collection"/>
     <parameter key="cache.prefix.seed">_C:\Users\M_INFO\Music\scouts.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
@@ -231,11 +231,11 @@
       <parameter key="data-controller">csrf-protection</parameter>
     </parameter>
     <parameter key=".form.type_extension.csrf.token_id">submit</parameter>
-    <parameter key="validator.mapping.cache.file">C:/Users/M_INFO/Music/scouts/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">C:\Users\M_INFO\Music\scouts\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_main_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:/Users/M_INFO/Music/scouts/var/cache/dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:\Users\M_INFO\Music\scouts\var\cache\dev/profiler</parameter>
     <parameter key="doctrine.entity_managers" type="collection">
       <parameter key="default">doctrine.orm.default_entity_manager</parameter>
     </parameter>
@@ -647,6 +647,10 @@
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;Doctrine\Bundle\FixturesBundle\Fixture&quot; not found while loading &quot;App\DataFixtures\AppFixtures&quot;."/>
     </service>
+    <service id="App\Entity\Beazina" class="App\Entity\Beazina" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\Entity\Category" class="App\Entity\Category" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
@@ -664,6 +668,10 @@
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
     <service id="App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Tondro" class="App\Entity\Tondro" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
@@ -696,6 +704,10 @@
     <service id="App\Form\SampanaFormType" class="App\Form\SampanaFormType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
+    <service id="App\Repository\BeazinaRepository" class="App\Repository\BeazinaRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -713,6 +725,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TondroRepository" class="App\Repository\TondroRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -856,7 +872,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -1970,7 +1986,7 @@
       <argument/>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -2169,7 +2185,7 @@
     <service id="asset_mapper.cached_mapped_asset_factory" class="Symfony\Component\AssetMapper\Factory\CachedMappedAssetFactory">
       <tag name="container.decorator" id="asset_mapper.mapped_asset_factory" inner="asset_mapper.cached_mapped_asset_factory.inner"/>
       <argument type="service" id="asset_mapper.cached_mapped_asset_factory.inner"/>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/asset_mapper</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/asset_mapper</argument>
       <argument>true</argument>
     </service>
     <service id="asset_mapper.repository" class="Symfony\Component\AssetMapper\AssetMapperRepository">
@@ -2572,7 +2588,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/Users/M_INFO/Music/scouts/var/cache/dev/translations</argument>
+        <argument key="cache_dir">C:\Users\M_INFO\Music\scouts\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -4212,7 +4228,7 @@
       <argument type="service" id=".service_locator.xdLQ5FJ.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:/Users/M_INFO/Music/scouts/var/cache/dev</argument>
+        <argument key="cache_dir">C:\Users\M_INFO\Music\scouts\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -4413,10 +4429,10 @@
       <argument type="collection">
         <argument type="service" id="serializer.mapping.attribute_loader"/>
       </argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/serialization.php</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/serialization.php</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -4638,7 +4654,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/sessions</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -4875,10 +4891,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/validation.php</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/validation.php</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory">
@@ -5607,7 +5623,7 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage">
-      <argument>file:C:/Users/M_INFO/Music/scouts/var/cache/dev/profiler</argument>
+      <argument>file:C:\Users\M_INFO\Music\scouts\var\cache\dev/profiler</argument>
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.reset" method="?reset"/>
@@ -5688,7 +5704,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/App_KernelDevDebugContainer</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/App_KernelDevDebugContainer</argument>
       <argument type="service" id=".virtual_request_stack" on-invalid="ignore"/>
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector">
@@ -6238,7 +6254,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.eCA7L3i"/>
+      <argument type="service" id=".service_locator.949W9sA"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6881,7 +6897,7 @@
       <tag name="kernel.reset" method="?resetGlobals"/>
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
-        <argument key="cache">C:/Users/M_INFO/Music/scouts/var/cache/dev/twig</argument>
+        <argument key="cache">C:\Users\M_INFO\Music\scouts\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -8767,7 +8783,7 @@
       </argument>
     </service>
     <service id="vich_uploader.metadata.cache.file_cache" class="Metadata\Cache\FileCache">
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/vich_uploader</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/vich_uploader</argument>
     </service>
     <service id="vich_uploader.metadata_factory" class="Metadata\MetadataFactory">
       <argument type="service" id="vich_uploader.metadata_driver.chain"/>
@@ -8782,7 +8798,7 @@
     </service>
     <service id="Vich\UploaderBundle\Metadata\CacheWarmer" class="Vich\UploaderBundle\Metadata\CacheWarmer">
       <tag name="kernel.cache_warmer"/>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/vich_uploader</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/vich_uploader</argument>
       <argument type="service" id="vich_uploader.metadata_reader"/>
     </service>
     <service id="vich_uploader.property_mapping_resolver" class="Vich\UploaderBundle\Mapping\PropertyMappingResolver">
@@ -9091,10 +9107,10 @@
         <argument key="_default">C:\Users\M_INFO\Music\scouts/public/build/entrypoints.json</argument>
       </argument>
       <argument type="service" id="http_client.uri_template" on-invalid="null"/>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/webpack_encore.cache.php</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/webpack_encore.cache.php</argument>
     </service>
     <service id="webpack_encore.cache" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" constructor="create">
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/webpack_encore.cache.php</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/webpack_encore.cache.php</argument>
       <argument type="service" id="cache.webpack_encore"/>
     </service>
     <service id="cache.webpack_encore" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
@@ -9260,6 +9276,8 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\admin\UseradminController.0.App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\admin\UseradminController" class="App\Controller\admin\UseradminController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Beazina.0.App\Entity\Beazina" class="App\Entity\Beazina" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Beazina" class="App\Entity\Beazina" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Category.0.App\Entity\Category" class="App\Entity\Category" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Category" class="App\Entity\Category" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Fivondronana.0.App\Entity\Fivondronana" class="App\Entity\Fivondronana" autowire="true" abstract="true"/>
@@ -9270,6 +9288,8 @@
     <service id=".abstract.instanceof.App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Sampana.0.App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Tondro.0.App\Entity\Tondro" class="App\Entity\Tondro" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Tondro" class="App\Entity\Tondro" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" abstract="true"/>
@@ -9286,6 +9306,8 @@
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SampanaFormType" class="App\Form\SampanaFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SampanaFormType" class="App\Form\SampanaFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BeazinaRepository" class="App\Repository\BeazinaRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\BeazinaRepository" class="App\Repository\BeazinaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CategoryRepository" class="App\Repository\CategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FivondronanaRepository" class="App\Repository\FivondronanaRepository" autowire="true" abstract="true"/>
@@ -9296,6 +9318,8 @@
     <service id=".abstract.instanceof.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TondroRepository" class="App\Repository\TondroRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TondroRepository" class="App\Repository\TondroRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Vich\UploaderBundle\Naming\NamerInterface.0.Vich\UploaderBundle\Naming\UniqidNamer" class="Vich\UploaderBundle\Naming\UniqidNamer" autowire="true" abstract="true"/>
@@ -10697,14 +10721,16 @@
         <argument key="vich_uploader.listener.upload.mpiandrakitra_image" type="service_closure" id="vich_uploader.listener.upload.mpiandrakitra_image"/>
       </argument>
     </service>
-    <service id=".service_locator.eCA7L3i" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.949W9sA" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\BeazinaRepository" type="service_closure" id="App\Repository\BeazinaRepository"/>
         <argument key="App\Repository\CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
         <argument key="App\Repository\FivondronanaRepository" type="service_closure" id="App\Repository\FivondronanaRepository"/>
         <argument key="App\Repository\MpiandrakitraRepository" type="service_closure" id="App\Repository\MpiandrakitraRepository"/>
         <argument key="App\Repository\PostRepository" type="service_closure" id="App\Repository\PostRepository"/>
         <argument key="App\Repository\SampanaRepository" type="service_closure" id="App\Repository\SampanaRepository"/>
+        <argument key="App\Repository\TondroRepository" type="service_closure" id="App\Repository\TondroRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -12584,7 +12610,7 @@
       <argument>utiXp7bPIq</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12592,7 +12618,7 @@
       <argument>a+phJ66mlT</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12600,7 +12626,7 @@
       <argument>j9IbjjZZdL</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12608,7 +12634,7 @@
       <argument>etWEMGgOWG</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12616,7 +12642,7 @@
       <argument>fpgMH+-Xul</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12642,7 +12668,7 @@
       <argument>3VRmP8i6tj</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12652,7 +12678,7 @@
       <argument>zSJt2w9LXQ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12660,7 +12686,7 @@
       <argument>s0gjCpcctK</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12668,7 +12694,7 @@
       <argument>d9QqmDgie0</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12676,7 +12702,7 @@
       <argument>PDnDgLAFTL</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -12684,7 +12710,7 @@
       <argument>HZGf+0Mv88</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>C:/Users/M_INFO/Music/scouts/var/cache/dev/pools/system</argument>
+      <argument>C:\Users\M_INFO\Music\scouts\var\cache\dev/pools/system</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
