@@ -1,0 +1,3 @@
+<?php //43377b3da990ed232dfe1a0c63f1ca20
+
+return [PHP_INT_MAX, 'images/icon-01.svg'];

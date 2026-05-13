@@ -245,13 +245,9 @@ class __TwigTemplate_3d1b89dfb1aa331a3a7183a936c9705d extends Template
             yield "\" class=\"action-btn\">
                             <i class=\"bi bi-pencil\"></i> Edit
                         </a>
-                        <a href=\"";
-            // line 91
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_setting_view", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 91)]), "html", null, true);
-            yield "\" class=\"action-btn\">
-                            <i class=\"bi bi-eye\"></i> View
-                        </a>
-                </div>
+                        ";
+            // line 94
+            yield "                </div>
         </div>
         ";
         }
@@ -477,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     public function getDebugInfo(): array
     {
-        return array (  393 => 158,  380 => 157,  368 => 215,  366 => 157,  363 => 156,  361 => 155,  353 => 149,  345 => 143,  338 => 138,  336 => 137,  335 => 136,  331 => 134,  328 => 133,  325 => 131,  315 => 127,  311 => 126,  307 => 125,  304 => 124,  299 => 123,  296 => 121,  288 => 115,  281 => 110,  279 => 109,  278 => 108,  274 => 106,  271 => 105,  262 => 97,  250 => 91,  244 => 88,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
+        return array (  389 => 158,  376 => 157,  364 => 215,  362 => 157,  359 => 156,  357 => 155,  349 => 149,  341 => 143,  334 => 138,  332 => 137,  331 => 136,  327 => 134,  324 => 133,  321 => 131,  311 => 127,  307 => 126,  303 => 125,  300 => 124,  295 => 123,  292 => 121,  284 => 115,  277 => 110,  275 => 109,  274 => 108,  270 => 106,  267 => 105,  258 => 97,  250 => 94,  244 => 88,  238 => 84,  234 => 82,  230 => 80,  228 => 79,  219 => 77,  212 => 73,  204 => 68,  197 => 64,  193 => 63,  188 => 60,  182 => 58,  176 => 55,  171 => 54,  169 => 53,  157 => 48,  154 => 47,  150 => 46,  123 => 22,  110 => 11,  108 => 10,  106 => 9,  103 => 8,  90 => 7,  78 => 4,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -572,9 +568,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         <a href=\"{{path('admin_setting_edit', {'id': user.id})}}\" class=\"action-btn\">
                             <i class=\"bi bi-pencil\"></i> Edit
                         </a>
-                        <a href=\"{{path('admin_setting_view', {'id': user.id})}}\" class=\"action-btn\">
+                        {# <a href=\"{{path('admin_setting_view', {'id': user.id})}}\" class=\"action-btn\">
                             <i class=\"bi bi-eye\"></i> View
-                        </a>
+                        </a> #}
                 </div>
         </div>
         {% endfor %}
