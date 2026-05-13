@@ -368,20 +368,12 @@ class Tondro
         return $this;
     }
 
-    /**
-     * Get the value of beazina
-     */ 
-    public function getBeazina()
+    public function getBeazina(): ?Beazina
     {
         return $this->beazina;
     }
 
-    /**
-     * Set the value of beazina
-     *
-     * @return  self
-     */ 
-    public function setBeazina($beazina)
+    public function setBeazina(?Beazina $beazina): static
     {
         $this->beazina = $beazina;
 
