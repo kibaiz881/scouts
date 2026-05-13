@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\BeazinaRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -21,7 +23,7 @@ class Beazina
     private ?string $PrenomBzn = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTime $DateNaiss = null;
+    private ?\DateTimeInterface $DateNaiss = null;
 
     #[ORM\Column(length: 100)]
     private ?string $LieuNaiss = null;
@@ -50,6 +52,14 @@ class Beazina
     #[ORM\ManyToOne(inversedBy: 'beazinas')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Sampana $Sampana = null;
+
+    #[ORM\OneToMany(mappedBy: 'beazina', targetEntity: Tondro::class)]
+    private Collection $tondros;
+
+    public function __construct()
+    {
+        $this->tondros = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -80,12 +90,12 @@ class Beazina
         return $this;
     }
 
-    public function getDateNaiss(): ?\DateTime
+    public function getDateNaiss(): ?\DateTimeInterface
     {
         return $this->DateNaiss;
     }
 
-    public function setDateNaiss(\DateTime $DateNaiss): static
+    public function setDateNaiss(\DateTimeInterface $DateNaiss): static
     {
         $this->DateNaiss = $DateNaiss;
 
@@ -196,6 +206,35 @@ class Beazina
     public function setSampana(?Sampana $Sampana): static
     {
         $this->Sampana = $Sampana;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Tondro>
+     */
+    public function getTondros(): Collection
+    {
+        return $this->tondros;
+    }
+
+    public function addTondro(Tondro $tondro): static
+    {
+        if (!$this->tondros->contains($tondro)) {
+            $this->tondros->add($tondro);
+            $tondro->setBeazina($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTondro(Tondro $tondro): static
+    {
+        if ($this->tondros->removeElement($tondro)) {
+            if ($tondro->getBeazina() === $this) {
+                $tondro->setBeazina(null);
+            }
+        }
 
         return $this;
     }

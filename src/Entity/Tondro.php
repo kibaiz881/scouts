@@ -83,6 +83,10 @@ class Tondro
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'tondros')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Beazina $beazina = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -360,6 +364,26 @@ class Tondro
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of beazina
+     */ 
+    public function getBeazina()
+    {
+        return $this->beazina;
+    }
+
+    /**
+     * Set the value of beazina
+     *
+     * @return  self
+     */ 
+    public function setBeazina($beazina)
+    {
+        $this->beazina = $beazina;
 
         return $this;
     }
