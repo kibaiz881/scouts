@@ -41,6 +41,7 @@ return [
         '/users/beazina' => [[['_route' => 'app_user_beazina', '_controller' => 'App\\Controller\\users\\BeazinaController::index'], null, null, null, false, false, null]],
         '/users/sokajy' => [[['_route' => 'app_user_sokajy', '_controller' => 'App\\Controller\\users\\SokajyController::index'], null, null, null, false, false, null]],
         '/users/tondro' => [[['_route' => 'app_user_tondro', '_controller' => 'App\\Controller\\users\\TondroController::index'], null, null, null, false, false, null]],
+        '/users/vatompanorenana' => [[['_route' => 'app_user_vatompanorenana', '_controller' => 'App\\Controller\\users\\VatompanorenanaController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

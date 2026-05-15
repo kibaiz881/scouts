@@ -85,3 +85,7 @@ e13471,127.0.0.1,GET,http://127.0.0.1:8000/images/lys-removebg-preview.png,17788
 2141ba,127.0.0.1,GET,http://127.0.0.1:8000/images/lys-removebg-preview.png,1778849340,,404,request
 a72efd,127.0.0.1,POST,http://127.0.0.1:8000/login,1778849365,,302,request
 0786ca,127.0.0.1,GET,http://127.0.0.1:8000/user,1778849366,,200,request
+2bf00d,127.0.0.1,GET,http://127.0.0.1:8000/user,1778852005,,200,request
+994bd2,127.0.0.1,GET,http://127.0.0.1:8000/users/vatompanorenana,1778852011,,200,request
+e75c6d,127.0.0.1,GET,http://127.0.0.1:8000/users/sokajy,1778852059,,200,request
+a98b66,127.0.0.1,GET,http://127.0.0.1:8000/user,1778852103,,200,request
