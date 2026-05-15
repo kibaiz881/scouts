@@ -707,6 +707,10 @@
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
+    <service id="App\Entity\Vatompanorenana" class="App\Entity\Vatompanorenana" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
     <service id="App\EventListener\LogoutListener" class="App\EventListener\LogoutListener" autowire="true" autoconfigure="true">
       <tag name="kernel.event_listener" event="Symfony\Component\Security\Http\Event\LogoutEvent" method="onLogout"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
@@ -765,6 +769,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\VatompanorenanaRepository" class="App\Repository\VatompanorenanaRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -6289,7 +6297,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.iBPwXod"/>
+      <argument type="service" id=".service_locator.gucSUSq"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -9341,6 +9349,8 @@
     <service id=".abstract.instanceof.App\Entity\Tondro" class="App\Entity\Tondro" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\User" class="App\Entity\User" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Vatompanorenana.0.App\Entity\Vatompanorenana" class="App\Entity\Vatompanorenana" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Vatompanorenana" class="App\Entity\Vatompanorenana" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AddnewuserFormAdminType" class="App\Form\AddnewuserFormAdminType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FivondronanaFormType" class="App\Form\FivondronanaFormType" autowire="true" abstract="true"/>
@@ -9373,6 +9383,8 @@
     <service id=".abstract.instanceof.App\Repository\TondroRepository" class="App\Repository\TondroRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VatompanorenanaRepository" class="App\Repository\VatompanorenanaRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\VatompanorenanaRepository" class="App\Repository\VatompanorenanaRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Vich\UploaderBundle\Naming\NamerInterface.0.Vich\UploaderBundle\Naming\UniqidNamer" class="Vich\UploaderBundle\Naming\UniqidNamer" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.Vich\UploaderBundle\Naming\UniqidNamer" class="Vich\UploaderBundle\Naming\UniqidNamer" abstract="true"/>
     <service id=".instanceof.Vich\UploaderBundle\Naming\NamerInterface.0.Vich\UploaderBundle\Naming\PropertyNamer" class="Vich\UploaderBundle\Naming\PropertyNamer" autowire="true" abstract="true"/>
@@ -10772,7 +10784,7 @@
         <argument key="vich_uploader.listener.upload.mpiandrakitra_image" type="service_closure" id="vich_uploader.listener.upload.mpiandrakitra_image"/>
       </argument>
     </service>
-    <service id=".service_locator.iBPwXod" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gucSUSq" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\BeazinaRepository" type="service_closure" id="App\Repository\BeazinaRepository"/>
@@ -10784,6 +10796,7 @@
         <argument key="App\Repository\SokajyRepository" type="service_closure" id="App\Repository\SokajyRepository"/>
         <argument key="App\Repository\TondroRepository" type="service_closure" id="App\Repository\TondroRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="App\Repository\VatompanorenanaRepository" type="service_closure" id="App\Repository\VatompanorenanaRepository"/>
       </argument>
     </service>
     <service id=".service_locator.W55Po6X" class="Symfony\Component\DependencyInjection\ServiceLocator">
