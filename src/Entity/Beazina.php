@@ -56,6 +56,14 @@ class Beazina
     #[ORM\OneToMany(mappedBy: 'beazina', targetEntity: Tondro::class)]
     private Collection $tondros;
 
+    #[ORM\ManyToOne(inversedBy: 'beazinas')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Sokajy $sokajy = null;
+
+    #[ORM\ManyToOne(inversedBy: 'Beazina')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Vatompanorenana $vatompanorenana = null;
+
     public function __construct()
     {
         $this->tondros = new ArrayCollection();
@@ -235,6 +243,30 @@ class Beazina
                 $tondro->setBeazina(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSokajy(): ?Sokajy
+    {
+        return $this->sokajy;
+    }
+
+    public function setSokajy(?Sokajy $sokajy): static
+    {
+        $this->sokajy = $sokajy;
+
+        return $this;
+    }
+
+    public function getVatompanorenana(): ?Vatompanorenana
+    {
+        return $this->vatompanorenana;
+    }
+
+    public function setVatompanorenana(?Vatompanorenana $vatompanorenana): static
+    {
+        $this->vatompanorenana = $vatompanorenana;
 
         return $this;
     }

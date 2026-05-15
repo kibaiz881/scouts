@@ -39,6 +39,7 @@ return [
         '/admin/useradmin' => [[['_route' => 'app_admin_useradmin', '_controller' => 'App\\Controller\\admin\\UseradminController::index'], null, null, null, false, false, null]],
         '/admin/useradmin/new' => [[['_route' => 'app_admin_useradmin_newuser', '_controller' => 'App\\Controller\\admin\\UseradminController::new'], null, null, null, false, false, null]],
         '/users/beazina' => [[['_route' => 'app_user_beazina', '_controller' => 'App\\Controller\\users\\BeazinaController::index'], null, null, null, false, false, null]],
+        '/users/sokajy' => [[['_route' => 'app_user_sokajy', '_controller' => 'App\\Controller\\users\\SokajyController::index'], null, null, null, false, false, null]],
         '/users/tondro' => [[['_route' => 'app_user_tondro', '_controller' => 'App\\Controller\\users\\TondroController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList

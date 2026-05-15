@@ -652,6 +652,14 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\users\BeazinaController"/>
       </call>
     </service>
+    <service id="App\Controller\users\SokajyController" class="App\Controller\users\SokajyController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="routing.controller"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.TJNRSaV.App\Controller\users\SokajyController"/>
+      </call>
+    </service>
     <service id="App\Controller\users\TondroController" class="App\Controller\users\TondroController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.controller"/>
@@ -684,6 +692,10 @@
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
     <service id="App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" autoconfigure="true">
+      <tag name="container.excluded" source="because it's a Doctrine entity"/>
+      <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
+    </service>
+    <service id="App\Entity\Sokajy" class="App\Entity\Sokajy" autowire="true" autoconfigure="true">
       <tag name="container.excluded" source="because it's a Doctrine entity"/>
       <tag name="container.excluded" source="with #[Doctrine\ORM\Mapping\Entity] attribute"/>
     </service>
@@ -741,6 +753,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\SokajyRepository" class="App\Repository\SokajyRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -4216,6 +4232,7 @@
         <argument>App\Controller\admin\SettingadminController</argument>
         <argument>App\Controller\admin\UseradminController</argument>
         <argument>App\Controller\users\BeazinaController</argument>
+        <argument>App\Controller\users\SokajyController</argument>
         <argument>App\Controller\users\TondroController</argument>
       </argument>
     </service>
@@ -6272,7 +6289,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.949W9sA"/>
+      <argument type="service" id=".service_locator.iBPwXod"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -9298,6 +9315,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\users\BeazinaController" class="App\Controller\users\BeazinaController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\users\BeazinaController.0.App\Controller\users\BeazinaController" class="App\Controller\users\BeazinaController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\users\BeazinaController" class="App\Controller\users\BeazinaController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\users\SokajyController" class="App\Controller\users\SokajyController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\users\SokajyController" class="App\Controller\users\SokajyController" autowire="true" abstract="true"/>
+    <service id=".instanceof.App\Controller\users\SokajyController.0.App\Controller\users\SokajyController" class="App\Controller\users\SokajyController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\users\SokajyController" class="App\Controller\users\SokajyController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\users\TondroController" class="App\Controller\users\TondroController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\users\TondroController" class="App\Controller\users\TondroController" autowire="true" abstract="true"/>
     <service id=".instanceof.App\Controller\users\TondroController.0.App\Controller\users\TondroController" class="App\Controller\users\TondroController" autowire="true" abstract="true"/>
@@ -9314,6 +9335,8 @@
     <service id=".abstract.instanceof.App\Entity\Post" class="App\Entity\Post" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Sampana.0.App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Sampana" class="App\Entity\Sampana" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.App\Entity\Sokajy.0.App\Entity\Sokajy" class="App\Entity\Sokajy" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Entity\Sokajy" class="App\Entity\Sokajy" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\Tondro.0.App\Entity\Tondro" class="App\Entity\Tondro" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Entity\Tondro" class="App\Entity\Tondro" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.App\Entity\User.0.App\Entity\User" class="App\Entity\User" autowire="true" abstract="true"/>
@@ -9344,6 +9367,8 @@
     <service id=".abstract.instanceof.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SampanaRepository" class="App\Repository\SampanaRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SokajyRepository" class="App\Repository\SokajyRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SokajyRepository" class="App\Repository\SokajyRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TondroRepository" class="App\Repository\TondroRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TondroRepository" class="App\Repository\TondroRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -10747,7 +10772,7 @@
         <argument key="vich_uploader.listener.upload.mpiandrakitra_image" type="service_closure" id="vich_uploader.listener.upload.mpiandrakitra_image"/>
       </argument>
     </service>
-    <service id=".service_locator.949W9sA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.iBPwXod" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\BeazinaRepository" type="service_closure" id="App\Repository\BeazinaRepository"/>
@@ -10756,6 +10781,7 @@
         <argument key="App\Repository\MpiandrakitraRepository" type="service_closure" id="App\Repository\MpiandrakitraRepository"/>
         <argument key="App\Repository\PostRepository" type="service_closure" id="App\Repository\PostRepository"/>
         <argument key="App\Repository\SampanaRepository" type="service_closure" id="App\Repository\SampanaRepository"/>
+        <argument key="App\Repository\SokajyRepository" type="service_closure" id="App\Repository\SokajyRepository"/>
         <argument key="App\Repository\TondroRepository" type="service_closure" id="App\Repository\TondroRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
@@ -11140,6 +11166,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.TJNRSaV" method="withContext"/>
     </service>
+    <service id=".service_locator.TJNRSaV.App\Controller\users\SokajyController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\users\SokajyController"/>
+      <argument>App\Controller\users\SokajyController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.TJNRSaV" method="withContext"/>
+    </service>
     <service id=".service_locator.TJNRSaV.App\Controller\users\TondroController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\users\TondroController"/>
       <argument>App\Controller\users\TondroController</argument>
@@ -11377,6 +11409,7 @@
           <argument>App\Controller\admin\SettingadminController</argument>
           <argument>App\Controller\admin\UseradminController</argument>
           <argument>App\Controller\users\BeazinaController</argument>
+          <argument>App\Controller\users\SokajyController</argument>
           <argument>App\Controller\users\TondroController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>

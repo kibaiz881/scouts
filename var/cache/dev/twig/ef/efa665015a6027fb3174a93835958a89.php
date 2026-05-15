@@ -135,13 +135,13 @@ class __TwigTemplate_936243f6ef24fc9c99e62528353358a2 extends Template
             <li class=\"menu-item\" role=\"none\">
                 <a href=\"";
         // line 74
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_useradmin");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_sokajy");
         yield "\" role=\"menuitem\" title=\"User\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                     <circle cx=\"12\" cy=\"8\" r=\"4\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     <path d=\"M4 20c2-4 6-6 8-6s6 2 8 6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     </svg>
-                    <span class=\"label\">User Profiles</span>
+                    <span class=\"label\">Sokajy</span>
                 </a>
             </li>
 
@@ -272,12 +272,12 @@ class __TwigTemplate_936243f6ef24fc9c99e62528353358a2 extends Template
             </li>
 
             <li class=\"menu-item\" role=\"none\">
-                <a href=\"{{path('app_admin_useradmin')}}\" role=\"menuitem\" title=\"User\">
+                <a href=\"{{path('app_user_sokajy')}}\" role=\"menuitem\" title=\"User\">
                     <svg viewBox=\"0 0 24 24\" fill=\"none\">
                     <circle cx=\"12\" cy=\"8\" r=\"4\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     <path d=\"M4 20c2-4 6-6 8-6s6 2 8 6\" stroke=\"currentColor\" stroke-width=\"1.6\"/>
                     </svg>
-                    <span class=\"label\">User Profiles</span>
+                    <span class=\"label\">Sokajy</span>
                 </a>
             </li>
 
