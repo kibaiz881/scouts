@@ -155,7 +155,7 @@ class __TwigTemplate_09af3cf4e593370aed0da0170122dbfa extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"stat-value\">2,845</div>
-\t\t\t\t<div class=\"stat-label\">Total Users</div>
+\t\t\t\t<div class=\"stat-label\">Total Membres</div>
 \t\t\t</div>
 
 \t\t\t<div class=\"stat-card\">
@@ -169,7 +169,7 @@ class __TwigTemplate_09af3cf4e593370aed0da0170122dbfa extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"stat-value\">\$24,580</div>
-\t\t\t\t<div class=\"stat-label\">Total Revenue</div>
+\t\t\t\t<div class=\"stat-label\">Total Vatom-panorenana</div>
 \t\t\t</div>
 
 \t\t\t<div class=\"stat-card\">
@@ -183,7 +183,7 @@ class __TwigTemplate_09af3cf4e593370aed0da0170122dbfa extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"stat-value\">1,249</div>
-\t\t\t\t<div class=\"stat-label\">Total Orders</div>
+\t\t\t\t<div class=\"stat-label\">Total FIBO</div>
 \t\t\t</div>
 
 \t\t\t<div class=\"stat-card\">
@@ -197,7 +197,7 @@ class __TwigTemplate_09af3cf4e593370aed0da0170122dbfa extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"stat-value\">4.8%</div>
-\t\t\t\t<div class=\"stat-label\">Conversion Rate</div>
+\t\t\t\t<div class=\"stat-label\">Activité</div>
 \t\t\t</div>
 \t\t</div>
 
@@ -532,7 +532,7 @@ class __TwigTemplate_09af3cf4e593370aed0da0170122dbfa extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"stat-value\">2,845</div>
-\t\t\t\t<div class=\"stat-label\">Total Users</div>
+\t\t\t\t<div class=\"stat-label\">Total Membres</div>
 \t\t\t</div>
 
 \t\t\t<div class=\"stat-card\">
@@ -546,7 +546,7 @@ class __TwigTemplate_09af3cf4e593370aed0da0170122dbfa extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"stat-value\">\$24,580</div>
-\t\t\t\t<div class=\"stat-label\">Total Revenue</div>
+\t\t\t\t<div class=\"stat-label\">Total Vatom-panorenana</div>
 \t\t\t</div>
 
 \t\t\t<div class=\"stat-card\">
@@ -560,7 +560,7 @@ class __TwigTemplate_09af3cf4e593370aed0da0170122dbfa extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"stat-value\">1,249</div>
-\t\t\t\t<div class=\"stat-label\">Total Orders</div>
+\t\t\t\t<div class=\"stat-label\">Total FIBO</div>
 \t\t\t</div>
 
 \t\t\t<div class=\"stat-card\">
@@ -574,7 +574,7 @@ class __TwigTemplate_09af3cf4e593370aed0da0170122dbfa extends Template
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t\t<div class=\"stat-value\">4.8%</div>
-\t\t\t\t<div class=\"stat-label\">Conversion Rate</div>
+\t\t\t\t<div class=\"stat-label\">Activité</div>
 \t\t\t</div>
 \t\t</div>
 

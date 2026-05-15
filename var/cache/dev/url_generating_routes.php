@@ -59,6 +59,8 @@ return [
     'app_admin_settingadmin_pdf' => [['id'], ['_controller' => 'App\\Controller\\admin\\SettingadminController::generatePdf'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/settingadmin/pdf']], [], [], []],
     'app_admin_useradmin' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::index'], [], [['text', '/admin/useradmin']], [], [], []],
     'app_admin_useradmin_newuser' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::new'], [], [['text', '/admin/useradmin/new']], [], [], []],
+    'app_user_beazina' => [[], ['_controller' => 'App\\Controller\\users\\BeazinaController::index'], [], [['text', '/users/beazina']], [], [], []],
+    'app_user_tondro' => [[], ['_controller' => 'App\\Controller\\users\\TondroController::index'], [], [['text', '/users/tondro']], [], [], []],
     'App\Controller\ActualiteController::index' => [['page', 'itemsPerPage'], ['page' => 1, 'itemsPerPage' => 10, '_controller' => 'App\\Controller\\ActualiteController::index'], ['page' => '\\d+', 'itemsPerPage' => '\\d+'], [['variable', '/', '\\d+', 'itemsPerPage', true], ['variable', '/', '\\d+', 'page', true], ['text', '/actualite']], [], [], []],
     'App\Controller\ActualiteController::show' => [['post'], ['_controller' => 'App\\Controller\\ActualiteController::show'], [], [['variable', '/', '[^/]++', 'post', true], ['text', '/actualite/show']], [], [], []],
     'App\Controller\ActualiteController::category' => [['category'], ['_controller' => 'App\\Controller\\ActualiteController::category'], [], [['variable', '/', '[^/]++', 'category', true], ['text', '/actualite/category']], [], [], []],
@@ -100,4 +102,6 @@ return [
     'App\Controller\admin\SettingadminController::generatePdf' => [['id'], ['_controller' => 'App\\Controller\\admin\\SettingadminController::generatePdf'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/settingadmin/pdf']], [], [], []],
     'App\Controller\admin\UseradminController::index' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::index'], [], [['text', '/admin/useradmin']], [], [], []],
     'App\Controller\admin\UseradminController::new' => [[], ['_controller' => 'App\\Controller\\admin\\UseradminController::new'], [], [['text', '/admin/useradmin/new']], [], [], []],
+    'App\Controller\users\BeazinaController::index' => [[], ['_controller' => 'App\\Controller\\users\\BeazinaController::index'], [], [['text', '/users/beazina']], [], [], []],
+    'App\Controller\users\TondroController::index' => [[], ['_controller' => 'App\\Controller\\users\\TondroController::index'], [], [['text', '/users/tondro']], [], [], []],
 ];
